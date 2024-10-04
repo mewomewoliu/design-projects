@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .App {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+  }
+  
+  .Navigation {
+    flex: 1;
+  }
+  
+  .Navigation ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .Navigation ul ul {
+    padding-left: 20px;
+  }
+  
+  .Intro {
+    flex: 2;
+    text-align: center;
+  }
+  
+  .SocialLinks {
+    flex: 1;
+    text-align: right;
+  }
+  
+  .SocialLinks ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .ProjectsContainer {
+    /* Add styles for the projects container */
+  }

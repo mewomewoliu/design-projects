@@ -1,0 +1,23 @@
+.case-study-footer {
+  margin-top: 4rem;
+  padding: 2rem 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.next-case-study {
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.next-case-study:hover {
+  color: #666;
+}

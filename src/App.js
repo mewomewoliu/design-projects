@@ -1,24 +1,40 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import Navigation from './components/Navigation';
+import RightColumn from './components/RightColumn';
+import CaseStudy from './components/CaseStudy';
 import './App.css';
+
+function AppContent() {
+  const location = useLocation();
+  const isCaseStudy = location.pathname.includes('/case-study');
+
+  return (
+    <div className="App">
+      <div className="body-container">
+        {!isCaseStudy && (
+          <div className="left-column">
+            <Navigation />
+          </div>
+        )}
+        <Routes>
+          <Route path="/" element={<RightColumn />} />
+          <Route path="/web-design" element={<RightColumn />} />
+          <Route path="/mobile-design" element={<RightColumn />} />
+          <Route path="/design-system" element={<RightColumn />} />
+          <Route path="/ux-research" element={<RightColumn />} />
+          <Route path="/case-study/:id" element={<CaseStudy />} />
+        </Routes>
+      </div>
+    </div>
+  );
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <AppContent />
+    </Router>
   );
 }
 
