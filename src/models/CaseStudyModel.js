@@ -171,7 +171,7 @@ class CaseStudyModel {
 
       //******* BlaBlaCar project *******
       'bbc': {
-        id: 'bbc-project',
+        id: 'bbc',
         title: 'BBC News App Redesign',
         client: 'BBC',
         role: 'UX/UI Design Lead',

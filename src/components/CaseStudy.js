@@ -75,16 +75,29 @@ function CaseStudy() {
     return null;
   };
 
+  const generateAnchorId = (title) => {
+    return title.toLowerCase().replace(/\s+/g, '-');
+  };
+
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="case-study">
       <div className="case-study-left-column">
-        <Link to="/" className="back-link">[DESIGN PROJECTS]</Link>
-        <h1>{study.title}</h1>
-        <div className="case-study-brief">
-          <p><strong>[Client]</strong> {study.client}</p>
-          <p><strong>[Role]</strong> {study.role}</p>
-          <p><strong>[Time]</strong> {study.time}</p>
-          <p><strong>[Process]</strong> {study.process}</p>
+        <div className="case-study-left-content">
+          <Link to="/" className="back-link">[DESIGN PROJECTS]</Link>
+          <h1>{study.title}</h1>
+          <div className="case-study-brief">
+            <p><strong>[Client]</strong> {study.client}</p>
+            <p><strong>[Role]</strong> {study.role}</p>
+            <p><strong>[Time]</strong> {study.time}</p>
+            <p><strong>[Process]</strong> {study.process}</p>
+          </div>
         </div>
         <div className="case-study-credits">
           <h3>[Credits]</h3>
@@ -97,6 +110,7 @@ function CaseStudy() {
       </div>
       <div className="case-study-right-column">
         <h2 className="case-study-description">{study.description}</h2>
+        <p className="case-study-update">[2023 UPDATE]</p>
         {study.videoSrc ? (
           <video 
             src={study.videoSrc} 
@@ -122,6 +136,7 @@ function CaseStudy() {
               key={index} 
               className="case-study-section"
               ref={el => sectionsRef.current[index] = el}
+              id={generateAnchorId(section.title)}
             >
               <h2>{section.title}</h2>
               {section.paragraphs.map((paragraph, pIndex) => (
@@ -131,7 +146,28 @@ function CaseStudy() {
             </div>
           ))}
         </div>
-        <Footer nextCaseStudy={nextStudy} />
+        <Footer 
+          nextCaseStudy={nextStudy} 
+          nextCaseStudyLink={nextStudy ? `/case-study/${nextStudy.id}` : null}
+        />
+      </div>
+      <div className="case-study-menu">
+        <h3>[CONTENTS]</h3>
+        <ul>
+          {study.sections.map((section, index) => (
+            <li key={index}>
+              <a 
+                href={`#${generateAnchorId(section.title)}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(generateAnchorId(section.title));
+                }}
+              >
+                {section.title}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
