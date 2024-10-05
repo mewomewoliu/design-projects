@@ -6,9 +6,9 @@ class ProjectModel {
       { id: 'blankt-web', type: 'video', src: `${process.env.PUBLIC_URL}/media/videos/blankt.mp4`, alt: 'blankt' },
       { id: 'blankt-mobile', type: 'video', src: `${process.env.PUBLIC_URL}/media/videos/blanktmobile.mp4`, alt: 'blankt Mobile' },
       { id: 'blankt-home', type: 'video', src: `${process.env.PUBLIC_URL}/media/videos/blankthome.mp4`, alt: 'blankt Home' },
-      { id: 'Musicmash', type: 'image', src: `${process.env.PUBLIC_URL}/media/images/yourbeetweb.png`, alt: 'Yourbeet' },
-      { id: 'Beet', type: 'video', src: `${process.env.PUBLIC_URL}/media/videos/beet.mp4`, alt: 'Beet' },
-      { id: 'Particle', type: 'image', src: `${process.env.PUBLIC_URL}/media/images/Particle.png`, alt: 'Particle' },
+      { id: 'yourbeetweb', type: 'image', src: `${process.env.PUBLIC_URL}/media/images/yourbeetweb.png`, alt: 'Yourbeet' },
+      { id: 'yourbeetmobile', type: 'video', src: `${process.env.PUBLIC_URL}/media/videos/beet.mp4`, alt: 'Beet' },
+      { id: 'particle', type: 'image', src: `${process.env.PUBLIC_URL}/media/images/Particle.png`, alt: 'Particle' },
     ];
       
   }
