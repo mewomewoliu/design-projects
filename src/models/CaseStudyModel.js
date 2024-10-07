@@ -267,14 +267,14 @@ class CaseStudyModel {
        *        Blankt project           *  
        ***********************************/
       'blankt-web': {
-        id: 'bbc-project',
-        title: 'BBC News App Redesign',
-        client: 'BBC',
-        role: 'UX/UI Design Lead',
-        time: 'Jan 2023 - Jun 2023',
+        id: 'blankt-web',
+        title: 'blankt Web design',
+        client: 'blankt',
+        role: 'UX & UI Design & Front-end Development',
+        time: 'December  2021 — September 2022',
         process: 'Research → Ideation → Design → Prototype → Test',
-        description: '"Reimagining the BBC News app for a more personalized and engaging user experience."',
-        credits: ['Jane Smith', 'John Doe', 'Alice Johnson', 'Bob Williams'],
+        description: 'Blankt is a Web-based online Art Poster online shopping app that empowers users to recreate artistic posters using its disruptive technology invention',
+        credits: ['Max He'],
         videoSrc: `${process.env.PUBLIC_URL}/media/videos/bbc-demo.mp4`,
         detailedIntro: 'The BBC News app redesign project aimed to modernize the user interface, improve content discovery, and enhance the overall user experience for millions of global users.',
         sections: [
@@ -364,9 +364,9 @@ class CaseStudyModel {
        *        Blankt Mobile project           *  
        ***********************************/
       'blankt-mobile': {
-        id: 'bbc-project',
-        title: 'BBC News App Redesign',
-        client: 'BBC',
+        id: 'blankt-mobile',
+        title: 'blankt Mobile design',
+        client: 'blankt',
         role: 'UX/UI Design Lead',
         time: 'Jan 2023 - Jun 2023',
         process: 'Research → Ideation → Design → Prototype → Test',
@@ -461,9 +461,9 @@ class CaseStudyModel {
        *        Blankt Home project           *  
        ***********************************/
       'blankt-home': {
-        id: 'bbc-project',
-        title: 'BBC News App Redesign',
-        client: 'BBC',
+        id: 'blankt-home',
+        title: 'blankt Home design',
+        client: 'blankt',
         role: 'UX/UI Design Lead',
         time: 'Jan 2023 - Jun 2023',
         process: 'Research → Ideation → Design → Prototype → Test',
@@ -558,9 +558,9 @@ class CaseStudyModel {
        *        Yourbeet Web project           *  
        ***********************************/
       'yourbeetweb': {
-        id: 'bbc-project',
-        title: 'BBC News App Redesign',
-        client: 'BBC',
+        id: 'yourbeetweb',
+        title: 'Yourbeet Web design',
+        client: 'Yourbeet',
         role: 'UX/UI Design Lead',
         time: 'Jan 2023 - Jun 2023',
         process: 'Research → Ideation → Design → Prototype → Test',
@@ -655,9 +655,9 @@ class CaseStudyModel {
        *        Yourbeet Mobile project           *  
        ***********************************/
       'yourbeetmobile': {
-        id: 'bbc-project',
-        title: 'BBC News App Redesign',
-        client: 'BBC',
+        id: 'yourbeetmobile',
+        title: 'Yourbeet Mobile design',
+        client: 'Yourbeet',
         role: 'UX/UI Design Lead',
         time: 'Jan 2023 - Jun 2023',
         process: 'Research → Ideation → Design → Prototype → Test',
@@ -751,196 +751,196 @@ class CaseStudyModel {
       /***********************************
        *        Scania Help Center project           *  
        ***********************************/
-      'scania-help-center': {
-        id: 'bbc-project',
-        title: 'BBC News App Redesign',
-        client: 'BBC',
-        role: 'UX/UI Design Lead',
-        time: 'Jan 2023 - Jun 2023',
-        process: 'Research → Ideation → Design → Prototype → Test',
-        description: '"Reimagining the BBC News app for a more personalized and engaging user experience."',
-        credits: ['Jane Smith', 'John Doe', 'Alice Johnson', 'Bob Williams'],
-        videoSrc: `${process.env.PUBLIC_URL}/media/videos/bbc-demo.mp4`,
-        detailedIntro: 'The BBC News app redesign project aimed to modernize the user interface, improve content discovery, and enhance the overall user experience for millions of global users.',
-        sections: [
-          {
-            title: "1. Context",
-            paragraphs: [
-              "The BBC News app is one of the most popular news applications globally, serving millions of users with up-to-date news and information.",
-              "With changing user behaviors and expectations in the digital news landscape, BBC recognized the need to evolve its mobile app to maintain its competitive edge and better serve its diverse user base.",
-              "Our team was tasked with redesigning the app to improve content discovery, personalization, and overall user engagement while maintaining BBC's reputation for reliable and impartial news reporting."
-            ],
-            media: {
-              type: "image",
-              src: `${process.env.PUBLIC_URL}/media/images/bbc-context.png`,
-              alt: "BBC News App Context"
-            }
-          },
-          {
-            title: "2. Problem",
-            paragraphs: [
-              "The existing BBC News app faced several challenges:",
-              "• Limited personalization options, leading to a one-size-fits-all approach to news delivery",
-              "• Difficulty in discovering diverse content beyond top headlines",
-              "• Outdated user interface that didn't align with modern design standards",
-              "• Lack of features to encourage user engagement and interaction with news content"
-            ],
-            media: {
-              type: "image",
-              src: `${process.env.PUBLIC_URL}/media/images/bbc-problem.png`,
-              alt: "BBC News App Problems"
-            }
-          },
-          {
-            title: "3. Design Process",
-            paragraphs: [
-              "Our design process for the BBC News app redesign involved the following steps:",
-              "• User Research: Conducted surveys, interviews, and usability tests with existing app users to understand pain points and desires.",
-              "• Competitive Analysis: Analyzed other popular news apps to identify best practices and potential areas for innovation.",
-              "• Ideation: Brainstormed solutions for key issues identified in the research phase, focusing on personalization and content discovery.",
-              "• Wireframing: Created low-fidelity wireframes to quickly iterate on layout and functionality ideas.",
-              "• Prototyping: Developed high-fidelity prototypes to visualize the new design and test user flows.",
-              "• User Testing: Conducted multiple rounds of user testing with prototypes to gather feedback and refine the design.",
-              "• Visual Design: Crafted a modern, clean visual design language that aligned with BBC's brand guidelines while introducing fresh elements.",
-              "• Handoff & Implementation: Worked closely with the development team to ensure accurate implementation of the design."
-            ],
-            media: {
-              type: "image",
-              src: `${process.env.PUBLIC_URL}/media/images/bbc-design-process.png`,
-              alt: "BBC News App Design Process"
-            }
-          },
-          {
-            title: "4. Key Features",
-            paragraphs: [
-              "The redesigned BBC News app introduced several key features:",
-              "• Personalized News Feed: An AI-driven feed that learns from user behavior to deliver more relevant content.",
-              "• Topic Explorer: A new section allowing users to dive deep into specific topics or regions of interest.",
-              "• Interactive Content: Integration of polls, quizzes, and comment sections to increase user engagement.",
-              "• Dark Mode: Implementation of a dark theme for improved readability in low-light conditions.",
-              "• Customizable Navigation: Allowing users to tailor their quick access menu to their most-used sections."
-            ],
-            media: {
-              type: "video",
-              src: `${process.env.PUBLIC_URL}/media/videos/bbc-features-demo.mp4`,
-              alt: "BBC News App Key Features Demo"
-            }
-          },
-          {
-            title: "5. Impacts",
-            paragraphs: [
-              "The redesigned BBC News app has been well-received by users and stakeholders alike. Key impacts include:",
-              "• 30% increase in daily active users within the first month of launch",
-              "• 45% improvement in user engagement metrics, including time spent in the app and articles read",
-              "• 25% increase in user-generated content interactions (comments, polls, etc.)",
-              "• Positive user feedback, with the app store rating improving from 3.8 to 4.6 stars",
-              "• Successfully modernized BBC's digital presence while maintaining its core values and reputation"
-            ],
-            media: {
-              type: "image",
-              src: `${process.env.PUBLIC_URL}/media/images/bbc-impact.png`,
-              alt: "BBC News App Redesign Impact"
-            }
-          }
-        ]
-      },
+      // 'scania-help-center': {
+      //   id: 'bbc-project',
+      //   title: 'BBC News App Redesign',
+      //   client: 'BBC',
+      //   role: 'UX/UI Design Lead',
+      //   time: 'Jan 2023 - Jun 2023',
+      //   process: 'Research → Ideation → Design → Prototype → Test',
+      //   description: '"Reimagining the BBC News app for a more personalized and engaging user experience."',
+      //   credits: ['Jane Smith', 'John Doe', 'Alice Johnson', 'Bob Williams'],
+      //   videoSrc: `${process.env.PUBLIC_URL}/media/videos/bbc-demo.mp4`,
+      //   detailedIntro: 'The BBC News app redesign project aimed to modernize the user interface, improve content discovery, and enhance the overall user experience for millions of global users.',
+      //   sections: [
+      //     {
+      //       title: "1. Context",
+      //       paragraphs: [
+      //         "The BBC News app is one of the most popular news applications globally, serving millions of users with up-to-date news and information.",
+      //         "With changing user behaviors and expectations in the digital news landscape, BBC recognized the need to evolve its mobile app to maintain its competitive edge and better serve its diverse user base.",
+      //         "Our team was tasked with redesigning the app to improve content discovery, personalization, and overall user engagement while maintaining BBC's reputation for reliable and impartial news reporting."
+      //       ],
+      //       media: {
+      //         type: "image",
+      //         src: `${process.env.PUBLIC_URL}/media/images/bbc-context.png`,
+      //         alt: "BBC News App Context"
+      //       }
+      //     },
+      //     {
+      //       title: "2. Problem",
+      //       paragraphs: [
+      //         "The existing BBC News app faced several challenges:",
+      //         "• Limited personalization options, leading to a one-size-fits-all approach to news delivery",
+      //         "• Difficulty in discovering diverse content beyond top headlines",
+      //         "• Outdated user interface that didn't align with modern design standards",
+      //         "• Lack of features to encourage user engagement and interaction with news content"
+      //       ],
+      //       media: {
+      //         type: "image",
+      //         src: `${process.env.PUBLIC_URL}/media/images/bbc-problem.png`,
+      //         alt: "BBC News App Problems"
+      //       }
+      //     },
+      //     {
+      //       title: "3. Design Process",
+      //       paragraphs: [
+      //         "Our design process for the BBC News app redesign involved the following steps:",
+      //         "• User Research: Conducted surveys, interviews, and usability tests with existing app users to understand pain points and desires.",
+      //         "• Competitive Analysis: Analyzed other popular news apps to identify best practices and potential areas for innovation.",
+      //         "• Ideation: Brainstormed solutions for key issues identified in the research phase, focusing on personalization and content discovery.",
+      //         "• Wireframing: Created low-fidelity wireframes to quickly iterate on layout and functionality ideas.",
+      //         "• Prototyping: Developed high-fidelity prototypes to visualize the new design and test user flows.",
+      //         "• User Testing: Conducted multiple rounds of user testing with prototypes to gather feedback and refine the design.",
+      //         "• Visual Design: Crafted a modern, clean visual design language that aligned with BBC's brand guidelines while introducing fresh elements.",
+      //         "• Handoff & Implementation: Worked closely with the development team to ensure accurate implementation of the design."
+      //       ],
+      //       media: {
+      //         type: "image",
+      //         src: `${process.env.PUBLIC_URL}/media/images/bbc-design-process.png`,
+      //         alt: "BBC News App Design Process"
+      //       }
+      //     },
+      //     {
+      //       title: "4. Key Features",
+      //       paragraphs: [
+      //         "The redesigned BBC News app introduced several key features:",
+      //         "• Personalized News Feed: An AI-driven feed that learns from user behavior to deliver more relevant content.",
+      //         "• Topic Explorer: A new section allowing users to dive deep into specific topics or regions of interest.",
+      //         "• Interactive Content: Integration of polls, quizzes, and comment sections to increase user engagement.",
+      //         "• Dark Mode: Implementation of a dark theme for improved readability in low-light conditions.",
+      //         "• Customizable Navigation: Allowing users to tailor their quick access menu to their most-used sections."
+      //       ],
+      //       media: {
+      //         type: "video",
+      //         src: `${process.env.PUBLIC_URL}/media/videos/bbc-features-demo.mp4`,
+      //         alt: "BBC News App Key Features Demo"
+      //       }
+      //     },
+      //     {
+      //       title: "5. Impacts",
+      //       paragraphs: [
+      //         "The redesigned BBC News app has been well-received by users and stakeholders alike. Key impacts include:",
+      //         "• 30% increase in daily active users within the first month of launch",
+      //         "• 45% improvement in user engagement metrics, including time spent in the app and articles read",
+      //         "• 25% increase in user-generated content interactions (comments, polls, etc.)",
+      //         "• Positive user feedback, with the app store rating improving from 3.8 to 4.6 stars",
+      //         "• Successfully modernized BBC's digital presence while maintaining its core values and reputation"
+      //       ],
+      //       media: {
+      //         type: "image",
+      //         src: `${process.env.PUBLIC_URL}/media/images/bbc-impact.png`,
+      //         alt: "BBC News App Redesign Impact"
+      //       }
+      //     }
+      //   ]
+      // },
 
-      /***********************************
-       *        Other project           *  
-       ***********************************/
-      'other-project': {
-        id: 'bbc-project',
-        title: 'BBC News App Redesign',
-        client: 'BBC',
-        role: 'UX/UI Design Lead',
-        time: 'Jan 2023 - Jun 2023',
-        process: 'Research → Ideation → Design → Prototype → Test',
-        description: '"Reimagining the BBC News app for a more personalized and engaging user experience."',
-        credits: ['Jane Smith', 'John Doe', 'Alice Johnson', 'Bob Williams'],
-        videoSrc: `${process.env.PUBLIC_URL}/media/videos/bbc-demo.mp4`,
-        detailedIntro: 'The BBC News app redesign project aimed to modernize the user interface, improve content discovery, and enhance the overall user experience for millions of global users.',
-        sections: [
-          {
-            title: "1. Context",
-            paragraphs: [
-              "The BBC News app is one of the most popular news applications globally, serving millions of users with up-to-date news and information.",
-              "With changing user behaviors and expectations in the digital news landscape, BBC recognized the need to evolve its mobile app to maintain its competitive edge and better serve its diverse user base.",
-              "Our team was tasked with redesigning the app to improve content discovery, personalization, and overall user engagement while maintaining BBC's reputation for reliable and impartial news reporting."
-            ],
-            media: {
-              type: "image",
-              src: `${process.env.PUBLIC_URL}/media/images/bbc-context.png`,
-              alt: "BBC News App Context"
-            }
-          },
-          {
-            title: "2. Problem",
-            paragraphs: [
-              "The existing BBC News app faced several challenges:",
-              "• Limited personalization options, leading to a one-size-fits-all approach to news delivery",
-              "• Difficulty in discovering diverse content beyond top headlines",
-              "• Outdated user interface that didn't align with modern design standards",
-              "• Lack of features to encourage user engagement and interaction with news content"
-            ],
-            media: {
-              type: "image",
-              src: `${process.env.PUBLIC_URL}/media/images/bbc-problem.png`,
-              alt: "BBC News App Problems"
-            }
-          },
-          {
-            title: "3. Design Process",
-            paragraphs: [
-              "Our design process for the BBC News app redesign involved the following steps:",
-              "• User Research: Conducted surveys, interviews, and usability tests with existing app users to understand pain points and desires.",
-              "• Competitive Analysis: Analyzed other popular news apps to identify best practices and potential areas for innovation.",
-              "• Ideation: Brainstormed solutions for key issues identified in the research phase, focusing on personalization and content discovery.",
-              "• Wireframing: Created low-fidelity wireframes to quickly iterate on layout and functionality ideas.",
-              "• Prototyping: Developed high-fidelity prototypes to visualize the new design and test user flows.",
-              "• User Testing: Conducted multiple rounds of user testing with prototypes to gather feedback and refine the design.",
-              "• Visual Design: Crafted a modern, clean visual design language that aligned with BBC's brand guidelines while introducing fresh elements.",
-              "• Handoff & Implementation: Worked closely with the development team to ensure accurate implementation of the design."
-            ],
-            media: {
-              type: "image",
-              src: `${process.env.PUBLIC_URL}/media/images/bbc-design-process.png`,
-              alt: "BBC News App Design Process"
-            }
-          },
-          {
-            title: "4. Key Features",
-            paragraphs: [
-              "The redesigned BBC News app introduced several key features:",
-              "• Personalized News Feed: An AI-driven feed that learns from user behavior to deliver more relevant content.",
-              "• Topic Explorer: A new section allowing users to dive deep into specific topics or regions of interest.",
-              "• Interactive Content: Integration of polls, quizzes, and comment sections to increase user engagement.",
-              "• Dark Mode: Implementation of a dark theme for improved readability in low-light conditions.",
-              "• Customizable Navigation: Allowing users to tailor their quick access menu to their most-used sections."
-            ],
-            media: {
-              type: "video",
-              src: `${process.env.PUBLIC_URL}/media/videos/bbc-features-demo.mp4`,
-              alt: "BBC News App Key Features Demo"
-            }
-          },
-          {
-            title: "5. Impacts",
-            paragraphs: [
-              "The redesigned BBC News app has been well-received by users and stakeholders alike. Key impacts include:",
-              "• 30% increase in daily active users within the first month of launch",
-              "• 45% improvement in user engagement metrics, including time spent in the app and articles read",
-              "• 25% increase in user-generated content interactions (comments, polls, etc.)",
-              "• Positive user feedback, with the app store rating improving from 3.8 to 4.6 stars",
-              "• Successfully modernized BBC's digital presence while maintaining its core values and reputation"
-            ],
-            media: {
-              type: "image",
-              src: `${process.env.PUBLIC_URL}/media/images/bbc-impact.png`,
-              alt: "BBC News App Redesign Impact"
-            }
-          }
-        ]
-      }
+      // /***********************************
+      //  *        Other project           *  
+      //  ***********************************/
+      // 'other-project': {
+      //   id: 'bbc-project',
+      //   title: 'BBC News App Redesign',
+      //   client: 'BBC',
+      //   role: 'UX/UI Design Lead',
+      //   time: 'Jan 2023 - Jun 2023',
+      //   process: 'Research → Ideation → Design → Prototype → Test',
+      //   description: '"Reimagining the BBC News app for a more personalized and engaging user experience."',
+      //   credits: ['Jane Smith', 'John Doe', 'Alice Johnson', 'Bob Williams'],
+      //   videoSrc: `${process.env.PUBLIC_URL}/media/videos/bbc-demo.mp4`,
+      //   detailedIntro: 'The BBC News app redesign project aimed to modernize the user interface, improve content discovery, and enhance the overall user experience for millions of global users.',
+      //   sections: [
+      //     {
+      //       title: "1. Context",
+      //       paragraphs: [
+      //         "The BBC News app is one of the most popular news applications globally, serving millions of users with up-to-date news and information.",
+      //         "With changing user behaviors and expectations in the digital news landscape, BBC recognized the need to evolve its mobile app to maintain its competitive edge and better serve its diverse user base.",
+      //         "Our team was tasked with redesigning the app to improve content discovery, personalization, and overall user engagement while maintaining BBC's reputation for reliable and impartial news reporting."
+      //       ],
+      //       media: {
+      //         type: "image",
+      //         src: `${process.env.PUBLIC_URL}/media/images/bbc-context.png`,
+      //         alt: "BBC News App Context"
+      //       }
+      //     },
+      //     {
+      //       title: "2. Problem",
+      //       paragraphs: [
+      //         "The existing BBC News app faced several challenges:",
+      //         "• Limited personalization options, leading to a one-size-fits-all approach to news delivery",
+      //         "• Difficulty in discovering diverse content beyond top headlines",
+      //         "• Outdated user interface that didn't align with modern design standards",
+      //         "• Lack of features to encourage user engagement and interaction with news content"
+      //       ],
+      //       media: {
+      //         type: "image",
+      //         src: `${process.env.PUBLIC_URL}/media/images/bbc-problem.png`,
+      //         alt: "BBC News App Problems"
+      //       }
+      //     },
+      //     {
+      //       title: "3. Design Process",
+      //       paragraphs: [
+      //         "Our design process for the BBC News app redesign involved the following steps:",
+      //         "• User Research: Conducted surveys, interviews, and usability tests with existing app users to understand pain points and desires.",
+      //         "• Competitive Analysis: Analyzed other popular news apps to identify best practices and potential areas for innovation.",
+      //         "• Ideation: Brainstormed solutions for key issues identified in the research phase, focusing on personalization and content discovery.",
+      //         "• Wireframing: Created low-fidelity wireframes to quickly iterate on layout and functionality ideas.",
+      //         "• Prototyping: Developed high-fidelity prototypes to visualize the new design and test user flows.",
+      //         "• User Testing: Conducted multiple rounds of user testing with prototypes to gather feedback and refine the design.",
+      //         "• Visual Design: Crafted a modern, clean visual design language that aligned with BBC's brand guidelines while introducing fresh elements.",
+      //         "• Handoff & Implementation: Worked closely with the development team to ensure accurate implementation of the design."
+      //       ],
+      //       media: {
+      //         type: "image",
+      //         src: `${process.env.PUBLIC_URL}/media/images/bbc-design-process.png`,
+      //         alt: "BBC News App Design Process"
+      //       }
+      //     },
+      //     {
+      //       title: "4. Key Features",
+      //       paragraphs: [
+      //         "The redesigned BBC News app introduced several key features:",
+      //         "• Personalized News Feed: An AI-driven feed that learns from user behavior to deliver more relevant content.",
+      //         "• Topic Explorer: A new section allowing users to dive deep into specific topics or regions of interest.",
+      //         "• Interactive Content: Integration of polls, quizzes, and comment sections to increase user engagement.",
+      //         "• Dark Mode: Implementation of a dark theme for improved readability in low-light conditions.",
+      //         "• Customizable Navigation: Allowing users to tailor their quick access menu to their most-used sections."
+      //       ],
+      //       media: {
+      //         type: "video",
+      //         src: `${process.env.PUBLIC_URL}/media/videos/bbc-features-demo.mp4`,
+      //         alt: "BBC News App Key Features Demo"
+      //       }
+      //     },
+      //     {
+      //       title: "5. Impacts",
+      //       paragraphs: [
+      //         "The redesigned BBC News app has been well-received by users and stakeholders alike. Key impacts include:",
+      //         "• 30% increase in daily active users within the first month of launch",
+      //         "• 45% improvement in user engagement metrics, including time spent in the app and articles read",
+      //         "• 25% increase in user-generated content interactions (comments, polls, etc.)",
+      //         "• Positive user feedback, with the app store rating improving from 3.8 to 4.6 stars",
+      //         "• Successfully modernized BBC's digital presence while maintaining its core values and reputation"
+      //       ],
+      //       media: {
+      //         type: "image",
+      //         src: `${process.env.PUBLIC_URL}/media/images/bbc-impact.png`,
+      //         alt: "BBC News App Redesign Impact"
+      //       }
+      //     }
+      //   ]
+      // }
       // ******* You can add more case studies here as needed *******
 
     };
