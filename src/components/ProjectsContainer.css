@@ -75,11 +75,5 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .left-column {
-    position: static;
-    width: 100%;
-    height: auto;
-    padding: 1rem;
-    flex-direction: column; 
-  }
+
 }
