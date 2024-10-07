@@ -5,6 +5,7 @@ import RightColumn from './components/RightColumn';
 import CaseStudy from './components/CaseStudy';
 import './App.css';
 
+
 function AppContent() {
   const location = useLocation();
   const isCaseStudy = location.pathname.includes('/case-study');

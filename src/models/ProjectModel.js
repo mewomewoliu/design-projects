@@ -8,7 +8,7 @@ class ProjectModel {
       { id: 'blankt-home', type: 'video', src: `${process.env.PUBLIC_URL}/media/videos/blankthome.mp4`, alt: 'blankt Home' },
       { id: 'yourbeetweb', type: 'image', src: `${process.env.PUBLIC_URL}/media/images/yourbeetweb.png`, alt: 'Yourbeet' },
       { id: 'yourbeetmobile', type: 'video', src: `${process.env.PUBLIC_URL}/media/videos/beet.mp4`, alt: 'Beet' },
-      { id: 'particle', type: 'image', src: `${process.env.PUBLIC_URL}/media/images/Particle.png`, alt: 'Particle' },
+      { id: 'music-mash', type: 'video', src: `${process.env.PUBLIC_URL}/media/videos/music-mash-demo.mp4`, alt: 'Music mash' },
     ];
       
   }

@@ -118,12 +118,13 @@ body {
 
 .Intro p {
 
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   font-variant: normal;
   font-style: normal;
-  font-weight: 560;
+  font-weight: 500;
   margin-bottom: 1rem;
   max-width: 80ch;
+  color: #000000;
 }
 
 .social-links-container {
