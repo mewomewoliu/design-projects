@@ -118,7 +118,7 @@ body {
 
 .Intro p {
 
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-variant: normal;
   font-style: normal;
   font-weight: 500;
@@ -167,8 +167,8 @@ body {
 }
 
 .chinese-characters {
-  font-size: 16rem;
-  font-weight: 300;
+  font-size: 18rem;
+  font-weight: 400;
   margin: 2rem 0;
   color: #000000;
 }

@@ -42,13 +42,13 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-username/design-portfolio.git"
+    "url": "git+https://github.com/mewomewoliu/design-projects"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mewomewliu/design-portfolio/issues"
+    "url": "https://github.com/mewomewoliu/design-projects/issues"
   },
   "homepage": "/"
 

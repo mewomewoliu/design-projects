@@ -1,6 +1,166 @@
 class CaseStudyModel {
   constructor() {
     this.caseStudies = {
+      'scania-helpcenter': {
+        id: 'scania-helpcenter',
+        title: 'Scania Helpcenter',
+        client: 'Scania',
+        role: 'UI Design Lead',
+        time: 'Dec 2022 - Mar 2023',
+        process: 'Research → Design → Test → Deliver',
+        description: '"A music browser that makes finding the perfect track fun, fast, and effortless for your videos."',
+        credits: ['Shapour jahanshahi', 'Oksana Romaniuk', 'Emil Sivervík', 'Alexei', 'Marcus Nirbrant'],
+        videoSrc: `${process.env.PUBLIC_URL}/media/videos/storykit.mp4`,
+        detailedIntro: 'Detailed introduction of the Music Library project goes here. This should be a longer paragraph explaining the project in depth.',
+        sections: [
+          {
+            // Section 1: Context & Problem Framing
+            title: "1. Context & Problem Framing",
+            paragraphs: [
+              "1. Context:",
+              "Storykit.io is an AI - powered video creation platform that helps users create high - quality video content with ease.It enables marketing teams, organizations, and individuals to craft compelling stories that seamlessly connect with their audiences.Music plays a crucial role in making videos captivating.At Storykit, we knew we needed to provide users with an outstanding music selection while making the search process faster and more intuitive.I took on the challenge of designing a new Music Library to bring this vision to life.",
+              "2. Problem: ",
+              "The old music browser had limited music options, making it frustrating for users to find the right track.This impacted the quality of their videos and slowed down the entire creation process, leading to a less- than - ideal user experience.",
+            ],
+            media: {
+              type: "image",
+              src: ``,
+              alt: ""
+            }
+          },
+          // Section 2: Goals & Success Criteria
+          {
+            title: "2. Goals & Success Criteria",
+            paragraphs: [
+              "Our main objectives were:",
+              "• Enhance Music Discovery: Revamp the music browser to make finding the perfect track a breeze.",
+              "• Encourage Upgrades: Show the value of premium music offerings to motivate freemium users to upgrade.",
+              "• Strengthen Brand Identity: Elevate Storykit's visual identity with a UI that truly reflects the brand's personality.",
+            ],
+            media: {
+              type: "image",
+                src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-problem.png`,
+              alt: "Music Library Problem"
+            }
+          },
+            // Section 3: Research & Discovery
+            {
+                title: "3. Research & Discovery",
+                paragraphs: [
+                  "To fully understand user needs and industry standards, I conducted in-depth research. This involved analyzing Storykit's user segments, reviewing current music browsing experiences, and studying competitors like Storyblocks.com. Our key questions included:",
+                  "• Who is our target audience?",
+                  "• What challenges do we need to address?",
+                  "• Why are these challenges important, and what value can we unlock by solving them?",
+                  "• How can we effectively tackle these challenges?",
+                ],
+                media: {
+                  type: "image",
+                src: ``,
+                alt: "Music Library Premium"
+                }
+          },
+             // Section 4: Ideation & Conceptualization
+            {
+              title: "4. Ideation & Conceptualization",
+              paragraphs: [
+                "To create an effective solution, I followed a structured design process:",
+                "• Roundtable Discussion: Collaborated with the Product Manager, Tech Lead, developers, and QA manager to align on project goals and gather different perspectives. This helped us prioritize key user needs and technical considerations.",
+                "• Research: Conducted competitive analysis and user research to identify limitations in existing music browsers and find opportunities for improvement.",
+                "• Design Solution: Created quick sketches and user flows to explore ideas and lay the foundation for a more efficient music discovery experience.",
+                "• Prototyping: Built high-fidelity prototypes to visualize the new music library, showing off improved user flows and interactions.",
+                "• Team Feedback: Shared prototypes internally to gather feedback, ensuring technical alignment and refining the design as needed. One key consideration was preventing direct music downloads while keeping a great preview experience.",
+                "• User Testing: Conducted guerrilla testing with five users from Netlight to validate our design hypotheses. Their feedback, both verbal and nonverbal, helped further refine the prototype.",
+                "• Design Refinement: Incorporated user feedback to improve the UI and overall experience, making sure all pain points were addressed.",
+                "• Delivery & Issue Resolution: Worked closely with the development team during implementation, addressing minor issues related to interactions, brand consistency, and technical limitations.",
+                
+                "Key Strategies:",
+                "• Effortless Music Discovery: Made it easier for users to find the right track quickly by improving search and filtering options.",
+                "• Intuitive Feedback System: Designed a user-friendly interface with clear feedback mechanisms to guide users smoothly.",
+                "• Upgrade Pathway: Added clear calls-to-action (CTAs) to encourage freemium users to upgrade to premium subscriptions.",
+                "• Brand Cohesion: Created a cohesive user experience that reinforced Storykit's brand identity throughout the interface.",
+              ],
+                media: {
+                    type: "image",
+                    src: ``,
+                    alt: ""
+                }
+            },
+
+            // Section 5: Design Exploration & Refinement
+            {
+                title: "5. Design Exploration & Refinement",
+                paragraphs: [
+                  "To address the lack of brand presence in the product UI, I spearheaded the creation of marketing banners to strengthen Storykit's identity. These banners served several purposes:",
+                  "• Reinforced the brand's identity within the app.",
+                  "• Informed users about the 27,000 additional audio tracks available with a premium upgrade.",
+                  "• Provided a seamless upgrade pathway by integrating marketing directly into the user journey.",
+                  "• Provided a seamless upgrade pathway by integrating marketing directly into the user journey.",
+                ],
+                media: {
+                    type: "image",
+                    src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-home.png`,
+                    alt: "Premium View Premium music library Full access to all premium music tracks"
+                },
+                
+               
+          },
+            // Section 6: Final Solution & Impact
+            {
+                title: "6. Final Solution & Impact",
+                paragraphs: [
+                    "Efficiency Gains: Users were able to find the right music much faster, saving an average of 4 minutes per session.",
+                    "User Upgrades: The marketing banner led to a significant boost in premium upgrades, with 14 new subscriptions within the first two days.",                ],
+                media: {
+                    type: "image",
+                    src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-premium.png`,
+                    alt: "Premium View Premium music library Full access to all premium music tracks"
+                },
+          },
+             // Section 7: Results & Impact
+            {
+                title: "7. Results & Impact",
+                paragraphs: [
+                    "",
+                ],
+                media: {
+                    type: "image",
+                    src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-delete.png`,
+                    alt: "Premium View Premium music library Full access to all premium music tracks"
+                }
+          },
+             // Section 8: Key Learnings & Reflection
+            {
+                title: "8. Key Learnings & Reflection",
+                paragraphs: [
+                  "User Testing Matters: Early user testing was crucial for validating our design hypotheses and ensuring that we addressed real user pain points.",
+                  "Cross-functional Collaboration: Working closely with the development team helped ensure a smooth implementation and made sure that the design was technically feasible without compromising the user experience.",
+                ],
+                media: {
+                    type: "video",
+                    src: `${process.env.PUBLIC_URL}/media/videos/musiclibrary-demo.mp4`,
+                    alt: "Music Library Demo"
+                }
+          },
+             // Section 9: Future Considerations & Next Steps
+            {
+                title: "9. Future Considerations & Next Steps",
+                paragraphs: [
+                    "In the previous design, Storykit's brand identity was not integrated into the product UI, resulting in a lack of brand cohesion. ",
+                    "I spearheaded the creation of Storykit banners within the music library for several essential purposes:",
+                    "• To strengthen Storykit's brand identity within the app and maintain brand cohesion.",
+                    "• To inform users about the 27,000 additional audio tracks available upon upgrading their subscription.",
+                    "• To offer users a convenient and streamlined pathway to complete the subscription upgrade process.",
+                ],
+                media: {
+                    type: "image",
+                    src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-premium.png`,
+                    alt: "Premium View Premium music library Full access to all premium music tracks"
+                }
+            },
+           
+        ],
+      },
+
       'music-library': {
         id: 'music-library',
         title: 'Music Library',
