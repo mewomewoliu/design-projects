@@ -110,7 +110,7 @@ function CaseStudy() {
       </div>
       <div className="case-study-right-column">
         <h2 className="case-study-description">{study.description}</h2>
-        <p className="case-study-update">[2023 UPDATE]</p>
+        <p className="case-study-update">[2024 UPDATE]</p>
         {study.videoSrc ? (
           <video 
             src={study.videoSrc} 

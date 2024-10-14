@@ -3,24 +3,23 @@ class CaseStudyModel {
     this.caseStudies = {
       'scania-helpcenter': {
         id: 'scania-helpcenter',
-        title: 'Scania Helpcenter',
+        title: 'Scania Help Center',
         client: 'Scania',
-        role: 'UI Design Lead',
-        time: 'Dec 2022 - Mar 2023',
+        role: 'UX Designer',
+        time: 'Sep 2023 - Oct 2024',
         process: 'Research → Design → Test → Deliver',
-        description: '"A music browser that makes finding the perfect track fun, fast, and effortless for your videos."',
-        credits: ['Shapour jahanshahi', 'Oksana Romaniuk', 'Emil Sivervík', 'Alexei', 'Marcus Nirbrant'],
-        videoSrc: `${process.env.PUBLIC_URL}/media/videos/storykit.mp4`,
-        detailedIntro: 'Detailed introduction of the Music Library project goes here. This should be a longer paragraph explaining the project in depth.',
+        description: 'Redesigned Help Center for Seamless Support',
+        credits: ['Anders Odevik', 'Moa Axelsson', 'Jonas Howding'],
+        videoSrc: `${process.env.PUBLIC_URL}/media/videos/scania-helpcenter.mp4`,
+        detailedIntro: '',
         sections: [
           {
             // Section 1: Context & Problem Framing
-            title: "1. Context & Problem Framing",
+            title: "Context & Problem Framing",
             paragraphs: [
-              "1. Context:",
-              "Storykit.io is an AI - powered video creation platform that helps users create high - quality video content with ease.It enables marketing teams, organizations, and individuals to craft compelling stories that seamlessly connect with their audiences.Music plays a crucial role in making videos captivating.At Storykit, we knew we needed to provide users with an outstanding music selection while making the search process faster and more intuitive.I took on the challenge of designing a new Music Library to bring this vision to life.",
-              "2. Problem: ",
-              "The old music browser had limited music options, making it frustrating for users to find the right track.This impacted the quality of their videos and slowed down the entire creation process, leading to a less- than - ideal user experience.",
+              'Scania Help Center is a platform that provides support and resources to Scania customers and employees. It is a centralized location for all Scania-related information, including product manuals, technical specifications, troubleshooting guides, and customer service information.', 
+              'To improve the user experience, I focused on creating a more intuitive and user-friendly interface. I conducted user research to understand user needs and pain points, and I used this information to inform the design of the new Help Center.',
+              'Contact me to learn more about the project!'
             ],
             media: {
               type: "image",
@@ -30,54 +29,34 @@ class CaseStudyModel {
           },
           // Section 2: Goals & Success Criteria
           {
-            title: "2. Goals & Success Criteria",
+            title: "",
             paragraphs: [
-              "Our main objectives were:",
-              "• Enhance Music Discovery: Revamp the music browser to make finding the perfect track a breeze.",
-              "• Encourage Upgrades: Show the value of premium music offerings to motivate freemium users to upgrade.",
-              "• Strengthen Brand Identity: Elevate Storykit's visual identity with a UI that truly reflects the brand's personality.",
+             
             ],
-            media: {
-              type: "image",
-                src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-problem.png`,
-              alt: "Music Library Problem"
-            }
+            // media: {
+            //   type: "image",
+            //     src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-problem.png`,
+            //   alt: "Music Library Problem"
+            // }
           },
             // Section 3: Research & Discovery
             {
-                title: "3. Research & Discovery",
+                title: "",
                 paragraphs: [
-                  "To fully understand user needs and industry standards, I conducted in-depth research. This involved analyzing Storykit's user segments, reviewing current music browsing experiences, and studying competitors like Storyblocks.com. Our key questions included:",
-                  "• Who is our target audience?",
-                  "• What challenges do we need to address?",
-                  "• Why are these challenges important, and what value can we unlock by solving them?",
-                  "• How can we effectively tackle these challenges?",
-                ],
+            
+              ],
                 media: {
                   type: "image",
                 src: ``,
-                alt: "Music Library Premium"
+                alt: ""
                 }
           },
              // Section 4: Ideation & Conceptualization
             {
-              title: "4. Ideation & Conceptualization",
+              title: "",
               paragraphs: [
-                "To create an effective solution, I followed a structured design process:",
-                "• Roundtable Discussion: Collaborated with the Product Manager, Tech Lead, developers, and QA manager to align on project goals and gather different perspectives. This helped us prioritize key user needs and technical considerations.",
-                "• Research: Conducted competitive analysis and user research to identify limitations in existing music browsers and find opportunities for improvement.",
-                "• Design Solution: Created quick sketches and user flows to explore ideas and lay the foundation for a more efficient music discovery experience.",
-                "• Prototyping: Built high-fidelity prototypes to visualize the new music library, showing off improved user flows and interactions.",
-                "• Team Feedback: Shared prototypes internally to gather feedback, ensuring technical alignment and refining the design as needed. One key consideration was preventing direct music downloads while keeping a great preview experience.",
-                "• User Testing: Conducted guerrilla testing with five users from Netlight to validate our design hypotheses. Their feedback, both verbal and nonverbal, helped further refine the prototype.",
-                "• Design Refinement: Incorporated user feedback to improve the UI and overall experience, making sure all pain points were addressed.",
-                "• Delivery & Issue Resolution: Worked closely with the development team during implementation, addressing minor issues related to interactions, brand consistency, and technical limitations.",
-                
-                "Key Strategies:",
-                "• Effortless Music Discovery: Made it easier for users to find the right track quickly by improving search and filtering options.",
-                "• Intuitive Feedback System: Designed a user-friendly interface with clear feedback mechanisms to guide users smoothly.",
-                "• Upgrade Pathway: Added clear calls-to-action (CTAs) to encourage freemium users to upgrade to premium subscriptions.",
-                "• Brand Cohesion: Created a cohesive user experience that reinforced Storykit's brand identity throughout the interface.",
+               
+              
               ],
                 media: {
                     type: "image",
@@ -88,74 +67,69 @@ class CaseStudyModel {
 
             // Section 5: Design Exploration & Refinement
             {
-                title: "5. Design Exploration & Refinement",
+                title: "",
                 paragraphs: [
-                  "To address the lack of brand presence in the product UI, I spearheaded the creation of marketing banners to strengthen Storykit's identity. These banners served several purposes:",
-                  "• Reinforced the brand's identity within the app.",
-                  "• Informed users about the 27,000 additional audio tracks available with a premium upgrade.",
-                  "• Provided a seamless upgrade pathway by integrating marketing directly into the user journey.",
-                  "• Provided a seamless upgrade pathway by integrating marketing directly into the user journey.",
-                ],
-                media: {
-                    type: "image",
-                    src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-home.png`,
-                    alt: "Premium View Premium music library Full access to all premium music tracks"
-                },
+                
+              
+              ],
+                // media: {
+                //     type: "image",
+                //     src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-home.png`,
+                //     alt: "Premium View Premium music library Full access to all premium music tracks"
+                // },
                 
                
           },
             // Section 6: Final Solution & Impact
             {
-                title: "6. Final Solution & Impact",
+                title: "",
                 paragraphs: [
-                    "Efficiency Gains: Users were able to find the right music much faster, saving an average of 4 minutes per session.",
-                    "User Upgrades: The marketing banner led to a significant boost in premium upgrades, with 14 new subscriptions within the first two days.",                ],
-                media: {
-                    type: "image",
-                    src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-premium.png`,
-                    alt: "Premium View Premium music library Full access to all premium music tracks"
-                },
+                                
+              
+              ],
+                // media: {
+                //     type: "image",
+                //     src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-premium.png`,
+                //     alt: "Premium View Premium music library Full access to all premium music tracks"
+                // },
           },
              // Section 7: Results & Impact
             {
-                title: "7. Results & Impact",
+                title: "",
                 paragraphs: [
-                    "",
+                    
                 ],
-                media: {
-                    type: "image",
-                    src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-delete.png`,
-                    alt: "Premium View Premium music library Full access to all premium music tracks"
-                }
+                // media: {
+                //     type: "image",
+                //     src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-delete.png`,
+                //     alt: "Premium View Premium music library Full access to all premium music tracks"
+                // }
           },
              // Section 8: Key Learnings & Reflection
             {
-                title: "8. Key Learnings & Reflection",
+                title: "",
                 paragraphs: [
-                  "User Testing Matters: Early user testing was crucial for validating our design hypotheses and ensuring that we addressed real user pain points.",
-                  "Cross-functional Collaboration: Working closely with the development team helped ensure a smooth implementation and made sure that the design was technically feasible without compromising the user experience.",
-                ],
-                media: {
-                    type: "video",
-                    src: `${process.env.PUBLIC_URL}/media/videos/musiclibrary-demo.mp4`,
-                    alt: "Music Library Demo"
-                }
+                
+              
+              ],
+                // media: {
+                //     type: "video",
+                //     src: `${process.env.PUBLIC_URL}/media/videos/musiclibrary-demo.mp4`,
+                //     alt: "Music Library Demo"
+                // }
           },
              // Section 9: Future Considerations & Next Steps
             {
-                title: "9. Future Considerations & Next Steps",
+                title: "",
                 paragraphs: [
-                    "In the previous design, Storykit's brand identity was not integrated into the product UI, resulting in a lack of brand cohesion. ",
-                    "I spearheaded the creation of Storykit banners within the music library for several essential purposes:",
-                    "• To strengthen Storykit's brand identity within the app and maintain brand cohesion.",
-                    "• To inform users about the 27,000 additional audio tracks available upon upgrading their subscription.",
-                    "• To offer users a convenient and streamlined pathway to complete the subscription upgrade process.",
-                ],
-                media: {
-                    type: "image",
-                    src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-premium.png`,
-                    alt: "Premium View Premium music library Full access to all premium music tracks"
-                }
+                  
+              
+              ],
+                // media: {
+                //     type: "image",
+                //     src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-premium.png`,
+                //     alt: "Premium View Premium music library Full access to all premium music tracks"
+                // }
             },
            
         ],
@@ -175,7 +149,7 @@ class CaseStudyModel {
         sections: [
           {
             // Section 1: Context & Problem Framing
-            title: "1. Context & Problem Framing",
+            title: "Context & Problem Framing",
             paragraphs: [
               "1. Context:",
               "Storykit.io is an AI - powered video creation platform that helps users create high - quality video content with ease.It enables marketing teams, organizations, and individuals to craft compelling stories that seamlessly connect with their audiences.Music plays a crucial role in making videos captivating.At Storykit, we knew we needed to provide users with an outstanding music selection while making the search process faster and more intuitive.I took on the challenge of designing a new Music Library to bring this vision to life.",
@@ -190,7 +164,7 @@ class CaseStudyModel {
           },
           // Section 2: Goals & Success Criteria
           {
-            title: "2. Goals & Success Criteria",
+            title: "Goals & Success Criteria",
             paragraphs: [
               "Our main objectives were:",
               "• Enhance Music Discovery: Revamp the music browser to make finding the perfect track a breeze.",
@@ -205,7 +179,7 @@ class CaseStudyModel {
           },
             // Section 3: Research & Discovery
             {
-                title: "3. Research & Discovery",
+                title: "Research & Discovery",
                 paragraphs: [
                   "To fully understand user needs and industry standards, I conducted in-depth research. This involved analyzing Storykit's user segments, reviewing current music browsing experiences, and studying competitors like Storyblocks.com. Our key questions included:",
                   "• Who is our target audience?",
@@ -221,7 +195,7 @@ class CaseStudyModel {
           },
              // Section 4: Ideation & Conceptualization
             {
-              title: "4. Ideation & Conceptualization",
+              title: "Ideation & Conceptualization",
               paragraphs: [
                 "To create an effective solution, I followed a structured design process:",
                 "• Roundtable Discussion: Collaborated with the Product Manager, Tech Lead, developers, and QA manager to align on project goals and gather different perspectives. This helped us prioritize key user needs and technical considerations.",
@@ -248,7 +222,7 @@ class CaseStudyModel {
 
             // Section 5: Design Exploration & Refinement
             {
-                title: "5. Design Exploration & Refinement",
+                title: "Design Exploration & Refinement",
                 paragraphs: [
                   "To address the lack of brand presence in the product UI, I spearheaded the creation of marketing banners to strengthen Storykit's identity. These banners served several purposes:",
                   "• Reinforced the brand's identity within the app.",
@@ -266,7 +240,7 @@ class CaseStudyModel {
           },
             // Section 6: Final Solution & Impact
             {
-                title: "6. Final Solution & Impact",
+                title: "Final Solution & Impact",
                 paragraphs: [
                     "Efficiency Gains: Users were able to find the right music much faster, saving an average of 4 minutes per session.",
                     "User Upgrades: The marketing banner led to a significant boost in premium upgrades, with 14 new subscriptions within the first two days.",                ],
@@ -278,7 +252,7 @@ class CaseStudyModel {
           },
              // Section 7: Results & Impact
             {
-                title: "7. Results & Impact",
+                title: "Results & Impact",
                 paragraphs: [
                     "",
                 ],
@@ -290,7 +264,7 @@ class CaseStudyModel {
           },
              // Section 8: Key Learnings & Reflection
             {
-                title: "8. Key Learnings & Reflection",
+                title: "Key Learnings & Reflection",
                 paragraphs: [
                   "User Testing Matters: Early user testing was crucial for validating our design hypotheses and ensuring that we addressed real user pain points.",
                   "Cross-functional Collaboration: Working closely with the development team helped ensure a smooth implementation and made sure that the design was technically feasible without compromising the user experience.",
@@ -303,7 +277,7 @@ class CaseStudyModel {
           },
              // Section 9: Future Considerations & Next Steps
             {
-                title: "9. Future Considerations & Next Steps",
+                title: "Future Considerations & Next Steps",
                 paragraphs: [
                     "In the previous design, Storykit's brand identity was not integrated into the product UI, resulting in a lack of brand cohesion. ",
                     "I spearheaded the creation of Storykit banners within the music library for several essential purposes:",
@@ -337,7 +311,7 @@ class CaseStudyModel {
         detailedIntro: '',
         sections: [
           {
-            title: "1. Context & Problem Framing",
+            title: "Context & Problem Framing",
             paragraphs: [
               "The challenge was to rebuild driver trust in the pricing system of BlaBlaCar by testing and refining the newly introduced 'Smart Pricing' feature. We wanted to assess how drivers responded to the updated feature, specifically focusing on similar ride comparisons to help guide their pricing decisions. The project aimed to bring transparency, ease of use, and confidence to drivers when setting their ride prices.",
             ],
@@ -348,7 +322,7 @@ class CaseStudyModel {
             // }
           },
           {
-            title: "2. Goals & Success Criteria",
+            title: "Goals & Success Criteria",
             paragraphs: [
               "Our main goals were to:",
               "• Test Usability and Comprehension: Ensure the new pricing feature was intuitive and easy for users to understand.",
@@ -363,7 +337,7 @@ class CaseStudyModel {
             // }
           },
           {
-            title: "3. Research & Discovery",
+            title: "Research & Discovery",
             paragraphs: [
               "To explore these goals, we conducted six moderated user tests with BlaBlaCar drivers in France. The participants represented a range of driver experiences: newbies, casual drivers, and top drivers. Testing sessions were conducted remotely using high-fidelity prototypes, with users providing insights into their pricing motivations and how they interpreted the new features.",
               "Key Findings:",
@@ -379,7 +353,7 @@ class CaseStudyModel {
             // }
           },
           {
-            title: "4. Ideation & Conceptualization",
+            title: "Ideation & Conceptualization",
             paragraphs: [
               "Our ideation process focused on improving transparency and usability, making the price-setting experience straightforward and informative:",
               "• Worst Possible Ideas: We first explored deliberately unhelpful features, such as excessive complexity in fee breakdowns. This led us to appreciate the need for simplicity and clarity.",
@@ -393,7 +367,7 @@ class CaseStudyModel {
             // }
           },
           {
-            title: "5. Design Exploration & Refinement",
+            title: "Design Exploration & Refinement",
             paragraphs: [
               "The iterative design process included:",
               "• Low-Fidelity Sketches: Rough sketches of pricing elements that emphasized simplicity.",
@@ -407,7 +381,7 @@ class CaseStudyModel {
             // }
           },
           {
-            title: "6. Final Solution & Impact",
+            title: "Final Solution & Impact",
             paragraphs: [
               "The final 'Smart Pricing' feature includes:",
               "• Similar Rides Display: A comparison tool for drivers to view how similar routes are priced, aimed at helping them make informed decisions.",
@@ -421,7 +395,7 @@ class CaseStudyModel {
             // }
           },
           {
-            title: "7. Results & Impact",
+            title: "Results & Impact",
             paragraphs: [
               "Ease of Use: The new pricing feature was well received, with most users finding it straightforward to adjust prices using the new tools.",
               "Mixed Influence on Pricing Decisions: While the 'similar rides' comparison helped some drivers make decisions, others continued to use their own logic (such as fuel costs or solidarity).",
@@ -434,7 +408,7 @@ class CaseStudyModel {
             // }
           },
           {
-            title: "8. Key Learnings & Reflection",
+            title: "Key Learnings & Reflection",
             paragraphs: [
               "Transparency is Crucial: Drivers need to understand exactly what makes up the ride price. Lack of clarity around fees diminished trust in the feature.",
               "User Autonomy: While tools for comparison are useful, many users ultimately rely on their instincts and experience. Designing for flexibility was key.",
@@ -447,7 +421,7 @@ class CaseStudyModel {
             // }
           },
           {
-            title: "9. Future Considerations & Next Steps",
+            title: "Future Considerations & Next Steps",
             paragraphs: [
               "Moving forward, we plan to:",
               "• Enhance Transparency: Include more explicit details on BBC fees to help drivers understand their pricing options better.",
@@ -478,7 +452,7 @@ class CaseStudyModel {
         detailedIntro: 'The BBC News app redesign project aimed to modernize the user interface, improve content discovery, and enhance the overall user experience for millions of global users.',
         sections: [
           {
-            title: "1. Introduction (Context & Problem Framing)",
+            title: "Introduction (Context & Problem Framing)",
             paragraphs: [
               "Blankt Group AB, a creative poster retailer based in Stockholm, offers customized posters to bring customers' ideas to life. To launch their new online shopping platform, Blankt wanted to integrate an innovative graphic editing tool, revolutionizing how customers design and buy posters. The challenge? Build an engaging design that meets both business needs and customer desires, making the experience fun and easy.",
 
@@ -490,7 +464,7 @@ class CaseStudyModel {
             // }
           },
           {
-            title: "2. Goals & Success Criteria",
+            title: "Goals & Success Criteria",
             paragraphs: [
               "Our main goals were:",
               "• Translate Vision into Design: Create a seamless shopping experience that reflected Blankt's core values of creativity and customization.",
@@ -506,7 +480,7 @@ class CaseStudyModel {
             // }
           },
           {
-            title: "3. Research & Discovery",
+            title: "Research & Discovery",
             paragraphs: [
               "We began by digging into the e-commerce landscape, customer shopping behaviors, and users' needs when designing posters. Through user research and competitive analysis, we discovered:",
               "• Customers Want Creative Freedom: Users wanted more control over poster design but without a complex interface.",
@@ -522,7 +496,7 @@ class CaseStudyModel {
             // }
           },
           {
-            title: "4. Ideation & Conceptualization",
+            title: "Ideation & Conceptualization",
             paragraphs: [
               "In this phase, we aimed to balance creativity with ease of use. Here’s what we did:",
               "• Concept Sketches: Quickly visualized the user journey for browsing, selecting, and customizing posters.",
@@ -536,7 +510,7 @@ class CaseStudyModel {
             }
           },
           {
-            title: "5. Design Exploration & Refinement",
+            title: "Design Exploration & Refinement",
             paragraphs: [
               "The design process was all about iteration, learning, and improvement:",
               "• Prototyping: Created high-fidelity prototypes to showcase the customization journey, making it visually appealing yet easy to navigate.",
@@ -550,7 +524,7 @@ class CaseStudyModel {
             }
           },
           {
-            title: "6. Final Solution & Impact",
+            title: "Final Solution & Impact",
             paragraphs: [
               "The final product was a vibrant e-commerce platform with an integrated poster customization tool that featured:",
               "• Easy-to-Use Interface: Users could effortlessly create and customize posters with simple navigation and real-time editing.",
@@ -607,7 +581,7 @@ class CaseStudyModel {
         detailedIntro: 'The BBC News app redesign project aimed to modernize the user interface, improve content discovery, and enhance the overall user experience for millions of global users.',
         sections: [
           {
-            title: "1. Introduction (Context & Problem Framing)",
+            title: "Introduction (Context & Problem Framing)",
             paragraphs: [
               "Blankt Group AB, a creative poster retailer based in Stockholm, offers customized posters to bring customers' ideas to life. To launch their new online shopping platform, Blankt wanted to integrate an innovative graphic editing tool, revolutionizing how customers design and buy posters. The challenge? Build an engaging design that meets both business needs and customer desires, making the experience fun and easy.",
 
@@ -619,7 +593,7 @@ class CaseStudyModel {
             // }
           },
           {
-            title: "2. Goals & Success Criteria",
+            title: "Goals & Success Criteria",
             paragraphs: [
               "Our main goals were:",
               "• Translate Vision into Design: Create a seamless shopping experience that reflected Blankt's core values of creativity and customization.",
@@ -635,7 +609,7 @@ class CaseStudyModel {
             // }
           },
           {
-            title: "3. Research & Discovery",
+            title: "Research & Discovery",
             paragraphs: [
               "We began by digging into the e-commerce landscape, customer shopping behaviors, and users' needs when designing posters. Through user research and competitive analysis, we discovered:",
               "• Customers Want Creative Freedom: Users wanted more control over poster design but without a complex interface.",
@@ -651,7 +625,7 @@ class CaseStudyModel {
             // }
           },
           {
-            title: "4. Ideation & Conceptualization",
+            title: "Ideation & Conceptualization",
             paragraphs: [
               "In this phase, we aimed to balance creativity with ease of use. Here’s what we did:",
               "• Concept Sketches: Quickly visualized the user journey for browsing, selecting, and customizing posters.",
@@ -679,7 +653,7 @@ class CaseStudyModel {
             }
           },
           {
-            title: "6. Final Solution & Impact",
+            title: "Final Solution & Impact",
             paragraphs: [
               "The final product was a vibrant e-commerce platform with an integrated poster customization tool that featured:",
               "• Easy-to-Use Interface: Users could effortlessly create and customize posters with simple navigation and real-time editing.",
@@ -689,7 +663,7 @@ class CaseStudyModel {
             ],
           },
           {
-            title: "7. Results & Impact",
+            title: "Results & Impact",
             paragraphs: [
               "Positive User Feedback: Usability testing showed high satisfaction. Users loved the ease of customization and creative control.",
               "Stronger Brand Identity: The visual design enhanced Blankt's brand recognition, establishing a strong emotional connection with users.",
@@ -698,7 +672,7 @@ class CaseStudyModel {
             ],
           },
           {
-            title: "8. Key Learnings & Reflection",
+            title: "Key Learnings & Reflection",
             paragraphs: [
               "Creativity Meets Simplicity: The biggest challenge was creating a customization tool that was powerful but not overwhelming. We learned that clear user flows and real-time feedback are key to maintaining simplicity.",
               "User Testing is Essential: Regular usability testing was crucial to refine the product and ensure it resonated with users.",
@@ -707,7 +681,7 @@ class CaseStudyModel {
             ]
           },
           {
-            title: "9. Future Considerations & Next Steps",
+            title: "Future Considerations & Next Steps",
             paragraphs: [
               "More Customization Options: Add new design elements and collaborative features, allowing users to get even more creative.",
               "Enhanced Personalization: Use AI-driven recommendations to personalize the experience, making it even more engaging.",
@@ -734,7 +708,7 @@ class CaseStudyModel {
         detailedIntro: 'The BBC News app redesign project aimed to modernize the user interface, improve content discovery, and enhance the overall user experience for millions of global users.',
         sections: [
           {
-            title: "1. Introduction (Context & Problem Framing)",
+            title: "Introduction (Context & Problem Framing)",
             paragraphs: [
               "Blankt Group AB, a creative poster retailer based in Stockholm, offers customized posters to bring customers' ideas to life. To launch their new online shopping platform, Blankt wanted to integrate an innovative graphic editing tool, revolutionizing how customers design and buy posters. The challenge? Build an engaging design that meets both business needs and customer desires, making the experience fun and easy.",
 
@@ -746,7 +720,7 @@ class CaseStudyModel {
             // }
           },
           {
-            title: "2. Goals & Success Criteria",
+            title: "Goals & Success Criteria",
             paragraphs: [
               "Our main goals were:",
               "• Translate Vision into Design: Create a seamless shopping experience that reflected Blankt's core values of creativity and customization.",
@@ -762,7 +736,7 @@ class CaseStudyModel {
             // }
           },
           {
-            title: "3. Research & Discovery",
+            title: "Research & Discovery",
             paragraphs: [
               "We began by digging into the e-commerce landscape, customer shopping behaviors, and users' needs when designing posters. Through user research and competitive analysis, we discovered:",
               "• Customers Want Creative Freedom: Users wanted more control over poster design but without a complex interface.",
@@ -778,7 +752,7 @@ class CaseStudyModel {
             // }
           },
           {
-            title: "4. Ideation & Conceptualization",
+            title: "Ideation & Conceptualization",
             paragraphs: [
               "In this phase, we aimed to balance creativity with ease of use. Here’s what we did:",
               "• Concept Sketches: Quickly visualized the user journey for browsing, selecting, and customizing posters.",
@@ -792,7 +766,7 @@ class CaseStudyModel {
             }
           },
           {
-            title: "5. Design Exploration & Refinement",
+            title: "Design Exploration & Refinement",
             paragraphs: [
               "The design process was all about iteration, learning, and improvement:",
               "• Prototyping: Created high-fidelity prototypes to showcase the customization journey, making it visually appealing yet easy to navigate.",
@@ -806,7 +780,7 @@ class CaseStudyModel {
             // }
           },
           {
-            title: "6. Final Solution & Impact",
+            title: "Final Solution & Impact",
             paragraphs: [
               "The final product was a vibrant e-commerce platform with an integrated poster customization tool that featured:",
               "• Easy-to-Use Interface: Users could effortlessly create and customize posters with simple navigation and real-time editing.",
@@ -816,7 +790,7 @@ class CaseStudyModel {
             ],
           },
           {
-            title: "7. Results & Impact",
+            title: "Results & Impact",
             paragraphs: [
               "Positive User Feedback: Usability testing showed high satisfaction. Users loved the ease of customization and creative control.",
               "Stronger Brand Identity: The visual design enhanced Blankt's brand recognition, establishing a strong emotional connection with users.",
@@ -825,7 +799,7 @@ class CaseStudyModel {
             ],
           },
           {
-            title: "8. Key Learnings & Reflection",
+            title: "Key Learnings & Reflection",
             paragraphs: [
               "Creativity Meets Simplicity: The biggest challenge was creating a customization tool that was powerful but not overwhelming. We learned that clear user flows and real-time feedback are key to maintaining simplicity.",
               "User Testing is Essential: Regular usability testing was crucial to refine the product and ensure it resonated with users.",
@@ -834,7 +808,7 @@ class CaseStudyModel {
             ]
           },
           {
-            title: "9. Future Considerations & Next Steps",
+            title: "Future Considerations & Next Steps",
             paragraphs: [
               "More Customization Options: Add new design elements and collaborative features, allowing users to get even more creative.",
               "Enhanced Personalization: Use AI-driven recommendations to personalize the experience, making it even more engaging.",
@@ -863,7 +837,7 @@ class CaseStudyModel {
         detailedIntro: '',
         sections: [
           {
-            title: "1. Introduction (Context & Problem Framing)",
+            title: "Introduction (Context & Problem Framing)",
             paragraphs: [
               "Plant-based diets are great for your health and the planet, but let's be honest—they're not always easy to stick with. Many people struggle with finding balanced nutrition, variety, and time to plan meals. Your Beet was designed to change all that. Our mission? To create a fun, easy-to-use mobile app that makes adopting a plant-based lifestyle not only simple but also enjoyable, while helping users reduce their CO2 footprint."
             
@@ -875,7 +849,7 @@ class CaseStudyModel {
             }
           },
           {
-            title: "2. Goals & Success Criteria",
+            title: "Goals & Success Criteria",
             paragraphs: [
               "Our main goals were:",
               "• Make Plant-Based Eating Easy: Provide a personalized meal-planning app that makes plant-based eating accessible to everyone.",
@@ -892,7 +866,7 @@ class CaseStudyModel {
             }
           },
           {
-            title: "3. Research & Discovery",
+            title: "Research & Discovery",
             paragraphs: [
               "We kicked off with in-depth research: user interviews, market analysis, and climate impact studies. Here’s what we found:",
               "Plant-Based Struggles: People often quit plant-based diets because it's hard to maintain balanced nutrition and variety.",
@@ -906,7 +880,7 @@ class CaseStudyModel {
             // }
           },
           {
-            title: "4. Ideation & Conceptualization",
+            title: "Ideation & Conceptualization",
             paragraphs: [
               "With these insights, we brainstormed ways to make plant-based eating fun and easy:",
               "Persona Development: We created personas like Ellinor (busy mom), Ana (vegetarian student), and Wendy (nutritionist) to keep our focus user-centric.",
@@ -924,7 +898,7 @@ class CaseStudyModel {
             }
           },
           {
-            title: "5. Design Exploration & Refinement",
+            title: "Design Exploration & Refinement",
             paragraphs: [
               "The design process was a journey of creativity and iteration:",
               "User Testing: We ran usability tests to understand how users interacted with the app and identified areas that needed improvement.",
@@ -940,7 +914,7 @@ class CaseStudyModel {
             }
           },
           {
-            title: "6. Final Solution & Impact",
+            title: "Final Solution & Impact",
             paragraphs: [
               "The final product, Your Beet, is a mobile app designed to:",
               "• Offer Personalized Plant-Based Recipes: Users get meal recommendations tailored to their nutritional needs, making it easy to eat balanced and delicious plant-based meals.",
@@ -955,7 +929,7 @@ class CaseStudyModel {
             // }
           },
           {
-            title: "7. Results & Impact",
+            title: "Results & Impact",
             paragraphs: [
               "High User Satisfaction: Our usability testing scored 5.8 out of 7 for ease of use. Users loved the personalization and found the app intuitive.",
               "More Engagement: Fun features like swiping and tracking CO2 impact kept users hooked and motivated.",
@@ -969,7 +943,7 @@ class CaseStudyModel {
             }
           },
           {
-            title: "8. Key Learnings & Reflection",
+            title: "Key Learnings & Reflection",
             paragraphs: [
               "Simplicity is Key: Even small UI details can make or break the experience. Simplifying icons and terms helped a lot.",
               "Consistency is Crucial: Maintaining a consistent look and feel throughout the app boosted user trust and understanding.",
@@ -983,7 +957,7 @@ class CaseStudyModel {
             // }
           },
           {
-            title: "9. Future Considerations & Next Steps",
+            title: "Future Considerations & Next Steps",
             paragraphs: [
               "Improve Accessibility: Make text easier to read and include color-blind friendly options for better inclusivity.",
               "Expand Customization: Add more recipe customization options to cater to different tastes and dietary needs.",
@@ -1011,7 +985,7 @@ class CaseStudyModel {
         detailedIntro: '',
         sections: [
           {
-            title: "1. Introduction (Context & Problem Framing)",
+            title: "Introduction (Context & Problem Framing)",
             paragraphs: [
               "Plant-based diets are great for your health and the planet, but let's be honest—they're not always easy to stick with. Many people struggle with finding balanced nutrition, variety, and time to plan meals. Your Beet was designed to change all that. Our mission? To create a fun, easy-to-use mobile app that makes adopting a plant-based lifestyle not only simple but also enjoyable, while helping users reduce their CO2 footprint."
             
@@ -1023,7 +997,7 @@ class CaseStudyModel {
             }
           },
           {
-            title: "2. Goals & Success Criteria",
+            title: "Goals & Success Criteria",
             paragraphs: [
               "Our main goals were:",
               "• Make Plant-Based Eating Easy: Provide a personalized meal-planning app that makes plant-based eating accessible to everyone.",
@@ -1040,7 +1014,7 @@ class CaseStudyModel {
             }
           },
           {
-            title: "3. Research & Discovery",
+            title: "Research & Discovery",
             paragraphs: [
               "We kicked off with in-depth research: user interviews, market analysis, and climate impact studies. Here’s what we found:",
               "Plant-Based Struggles: People often quit plant-based diets because it's hard to maintain balanced nutrition and variety.",
@@ -1054,7 +1028,7 @@ class CaseStudyModel {
             // }
           },
           {
-            title: "4. Ideation & Conceptualization",
+            title: "Ideation & Conceptualization",
             paragraphs: [
               "With these insights, we brainstormed ways to make plant-based eating fun and easy:",
               "Persona Development: We created personas like Ellinor (busy mom), Ana (vegetarian student), and Wendy (nutritionist) to keep our focus user-centric.",
@@ -1072,7 +1046,7 @@ class CaseStudyModel {
             }
           },
           {
-            title: "5. Design Exploration & Refinement",
+            title: "Design Exploration & Refinement",
             paragraphs: [
               "The design process was a journey of creativity and iteration:",
               "User Testing: We ran usability tests to understand how users interacted with the app and identified areas that needed improvement.",
@@ -1088,7 +1062,7 @@ class CaseStudyModel {
             }
           },
           {
-            title: "6. Final Solution & Impact",
+            title: "Final Solution & Impact",
             paragraphs: [
               "The final product, Your Beet, is a mobile app designed to:",
               "• Offer Personalized Plant-Based Recipes: Users get meal recommendations tailored to their nutritional needs, making it easy to eat balanced and delicious plant-based meals.",
@@ -1103,7 +1077,7 @@ class CaseStudyModel {
             // }
           },
           {
-            title: "7. Results & Impact",
+            title: "Results & Impact",
             paragraphs: [
               "High User Satisfaction: Our usability testing scored 5.8 out of 7 for ease of use. Users loved the personalization and found the app intuitive.",
               "More Engagement: Fun features like swiping and tracking CO2 impact kept users hooked and motivated.",
@@ -1117,7 +1091,7 @@ class CaseStudyModel {
             }
           },
           {
-            title: "8. Key Learnings & Reflection",
+            title: "Key Learnings & Reflection",
             paragraphs: [
               "Simplicity is Key: Even small UI details can make or break the experience. Simplifying icons and terms helped a lot.",
               "Consistency is Crucial: Maintaining a consistent look and feel throughout the app boosted user trust and understanding.",
@@ -1131,7 +1105,7 @@ class CaseStudyModel {
             // }
           },
           {
-            title: "9. Future Considerations & Next Steps",
+            title: "Future Considerations & Next Steps",
             paragraphs: [
               "Improve Accessibility: Make text easier to read and include color-blind friendly options for better inclusivity.",
               "Expand Customization: Add more recipe customization options to cater to different tastes and dietary needs.",
@@ -1159,7 +1133,7 @@ class CaseStudyModel {
         detailedIntro: 'MusicMash: Turning DJ Fear into Collective Fun at Parties',
         sections: [
           {
-            title: "1. Introduction (Context & Problem Framing)",
+            title: "Introduction (Context & Problem Framing)",
             paragraphs: [
               "Imagine being asked to DJ at a party—exciting for some, nerve-wracking for many. We found that most people dread being judged for their music choices and fear the party could flop because of their playlists. MusicMash aims to change that by shifting DJ pressure from one person to a collective, making music selection a fun, shared experience for everyone.",
               "We interviewed 12 people aged 21-28 who had recently thrown parties or played DJ. Ten of them admitted feeling nervous as DJs due to fear of judgment or disappointing guests. They worried their music taste would be criticized, or worse, ruin the party vibe. To avoid scrutiny, some DJs opted to play generic, recommended songs on Spotify instead of making personalized playlists. Clearly, the joy of DJing was overshadowed by fear.",
@@ -1171,7 +1145,7 @@ class CaseStudyModel {
             }
           },
           {
-            title: "2. Goals & Success Criteria",
+            title: "Goals & Success Criteria",
             paragraphs: [
               "Our key goals were:",
               "• Reduce DJ Pressure: Create a way to ease the stress of being the sole DJ at a party.",
@@ -1186,7 +1160,7 @@ class CaseStudyModel {
           },
 
           {
-            title: "3. Research & Discovery",
+            title: "Research & Discovery",
             paragraphs: [
               "• We began with interviews to dig deeper into party music dynamics. We found that people loved using Spotify but struggled with the 'Session' feature's limitations. The insights from our research included:",
               "• Fear of Judgment: People often feel their music taste will be judged, creating anxiety around DJing.",
@@ -1200,7 +1174,7 @@ class CaseStudyModel {
             }
           },
           {
-            title: "4. Ideation & Conceptualization",
+            title: "Ideation & Conceptualization",
             paragraphs: [
               "Our design process focused on answering the question:",
               "How might we help party DJs to engage all party participants by playing music that everyone feels satisfied with?",
@@ -1219,7 +1193,7 @@ class CaseStudyModel {
             }
           },
           {
-            title: "5. Design Exploration & Refinement",
+            title: "Design Exploration & Refinement",
             paragraphs: [
               "We drafted a user journey to show how MusicMash could work at a party. We then moved from low-fidelity sketches to a fully interactive hi-fi prototype, refining along the way based on user testing. We conducted guerrilla tests and Think Aloud sessions to identify areas for improvement.",
               "Low-Fi Sketches: We sketched out screens for creating and joining party sessions.",
@@ -1235,7 +1209,7 @@ class CaseStudyModel {
             }
           },
           {
-            title: "6. Final Solution & Impact",
+            title: "Final Solution & Impact",
             paragraphs: [
               "We designed a new feature for Spotify called MusicMash. This feature allows party DJs to create a collective party session where everyone can contribute songs to the playlist. Guests can vote on songs, helping shape the order of the playlist in real time. This turns DJing into a group activity where everyone gets a say, ensuring no one feels left out, and the party vibe stays alive.",
               "Key Features",
@@ -1252,7 +1226,7 @@ class CaseStudyModel {
             }
           },
           {
-            title: "7. Results & Impact",
+            title: "Results & Impact",
             paragraphs: [
               "Reduced DJ Anxiety: Guests reported feeling more comfortable contributing to the music selection, reducing the pressure on a single DJ.",
               "Higher Engagement: Parties using MusicMash saw increased participation, with guests actively adding songs and voting on the playlist.",
@@ -1265,7 +1239,7 @@ class CaseStudyModel {
             }
           },
           {
-            title: "8. Key Learnings & Reflection",
+            title: "Key Learnings & Reflection",
             paragraphs: [
               "Collaboration is Key: Encouraging shared control over the music helped ease anxiety and boosted overall enjoyment.",
               "Iterative Design: Testing and iterating was essential to make MusicMash a feature that truly resonated with users.",

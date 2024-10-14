@@ -10,8 +10,8 @@ class ProjectModel {
       { id: 'yourbeetweb', type: 'image', src: `${process.env.PUBLIC_URL}/media/images/yourbeetweb.png`, alt: 'Yourbeet' },
       { id: 'yourbeetmobile', type: 'video', src: `${process.env.PUBLIC_URL}/media/videos/beet.mp4`, alt: 'Beet' },
       { id: 'music-mash', type: 'video', src: `${process.env.PUBLIC_URL}/media/videos/music-mash-demo.mp4`, alt: 'Music mash' },
-      { id: 'creative-coding-project', type: 'video', src: `${process.env.PUBLIC_URL}/media/videos/creative-coding-project2.mp4`, alt: 'Creative Coding Project' },
-      { id: 'creative-coding-project2', type: 'video', src: `${process.env.PUBLIC_URL}/media/videos/creative-coding-project.mp4`, alt: 'Creative Coding Project' },
+      // { id: 'creative-coding-project', type: 'video', src: `${process.env.PUBLIC_URL}/media/videos/creative-coding-project2.mp4`, alt: 'Creative Coding Project' },
+      // { id: 'creative-coding-project2', type: 'video', src: `${process.env.PUBLIC_URL}/media/videos/creative-coding-project.mp4`, alt: 'Creative Coding Project' },
     ];
       
   }

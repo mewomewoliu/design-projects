@@ -14,6 +14,7 @@ body {
   flex-direction: column;
   line-height: 1.6;
   
+  
 }
 
 .App {
@@ -25,6 +26,7 @@ body {
   margin: 0 auto;
   padding: 0rem;
   box-sizing: border-box;
+  
 }
 
 .body-container {
@@ -34,6 +36,8 @@ body {
   gap: 0rem;
   height: 100vh; /* Full viewport height */
   overflow: hidden; /* Prevent scrolling on the main container */
+  margin-right: 0rem;
+  padding-right: 0rem;
 }
 
 /* Left column styles */
@@ -51,8 +55,9 @@ body {
 }
 
 .navigation h2 {
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   font-weight: 700;
+  margin-top: 0.8rem;
   margin-bottom: 1rem;
   text-transform: uppercase;
 }
@@ -72,8 +77,8 @@ body {
 .navigation a {
   color: #000000;
   text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 .navigation a:hover {
@@ -89,6 +94,7 @@ body {
   overflow-y: auto; /* Make the right column scrollable */
   height: 100%; /* Full height of the container */
   padding-left: 220px; /* Add space for the fixed navigation */
+  margin-right: 0rem;
 }
 
 /* Header styles */
@@ -106,19 +112,21 @@ body {
 
 .intro-container {
   align-items: start;
+  margin-right: 2rem;
   padding-top: 1rem;
   flex: 2;
 }
 
 .Intro h1 {
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   font-weight: 700;
+  margin-top: 0.8rem;
   margin-bottom: 1rem;
 }
 
 .Intro p {
 
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-variant: normal;
   font-style: normal;
   font-weight: 500;
@@ -139,7 +147,7 @@ body {
 .social-links h2 {
   padding-top: 0rem;
   text-align: right;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   font-weight: 700;
   margin-bottom: 1rem;
   text-transform: uppercase;
@@ -151,15 +159,16 @@ body {
 }
 
 .social-links li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0rem;
   text-align: right;
 }
 
 .social-links a {
-  color: #1b1b1b;
+  color: #000000;
   text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
 }
 
 .social-links a:hover {
@@ -167,8 +176,10 @@ body {
 }
 
 .chinese-characters {
-  font-size: 18rem;
-  font-weight: 400;
+  font-family: "Long Cang", cursive;
+  font-size: 21rem;
+  font-weight: 300;
+  /* line-height: 1.4; */
   margin: 2rem 0;
   color: #000000;
 }
@@ -196,6 +207,14 @@ body {
     align-items: flex-start;
   }
 
+  .chinese-characters {
+    width: 100%;
+    font-size: 13rem;
+    font-weight: 500;
+    line-height: 1.4;
+
+  }
+
   .left-column {
     width: 200px;
     flex-shrink: 0;
@@ -214,6 +233,59 @@ body {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
+  }
+}
+
+/* New styles for smaller screens */
+@media (max-width: 767px) {
+  .body-container {
+    flex-direction: column;
+  }
+  .chinese-characters {
+    font-size: 11rem;
+    font-weight: 400;
+    line-height: 1.2;
+
+  }
+  .left-column {
+    position: static;
+    width: auto;
+    border-right: none;
+    padding: 1rem;
+  }
+
+  .navigation ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  .navigation li {
+    margin-bottom: 0;
+  }
+
+  .Intro p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .right-column {
+    padding-left: 1rem;
+    margin-right:1rem;
+  }
+
+  .info-social-container {
+    flex-direction: column;
+  }
+
+  .social-links {
+    padding-right: 0;
+  }
+
+  .social-links h2,
+  .social-links li {
+    text-align: left;
   }
 }
 
