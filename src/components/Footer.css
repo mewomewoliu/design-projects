@@ -1,19 +1,20 @@
 .case-study-footer {
-  margin-top: 4rem;
+  margin-top: 2rem;
   padding: 2rem 0;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid #efefef;
   align-items: center;
-  background-color: #ffffff;
+  background-color: #ffffff00;
 }
 
 .footer-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 0.8rem;
 }
 
 .next-case-study {
-  font-size: 1rem;
+  font-size: 0.8rem;
   justify-content: center;
   font-weight: 500;
   text-decoration: none;
@@ -53,9 +54,9 @@
 }
 
   .next-case-study-link {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 
   }
 }

@@ -211,62 +211,69 @@
 @media (max-width: 768px) {
   .case-study {
     flex-direction: column;
+    gap: 0rem;
     height: auto;
     overflow: visible;
   }
 
   .case-study-left-column {
     position: static;
-    width: 100%;
+    width: auto;
     height: auto;
     padding: 1rem;
     flex-direction: column;
-    gap: 2rem;
+    gap: 0.5rem;
+    /* border-bottom: 1px solid #000000; */
     
   }
 
   .case-study-right-column {
     padding: 1rem;
+    margin-top: 0.5rem;
     /* padding-right: 2rem; */
     width: auto;
     overflow: visible;
   }
 
   .case-study h1 {
-    font-size: 2rem;
+    font-size: 1.3rem;
+    
   }
 
   .case-study-brief p {
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 400;
   }
 
   .case-study-description {
-    font-size: 2.6rem;
-    line-height: 1.2;
-    margin-bottom: 1rem;
+    font-size: 2.8rem;
+    justify-content: start;
+    margin-top: 0rem;
+    width: 100%;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
   }
 
   .case-study-update {
-    font-size: 1rem;
-    margin-bottom: 2rem;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
   }
 
   .case-study-credits {
-    padding-top: 1rem;
+    padding-top: 0rem;
     padding-bottom: 0rem;
   }
 
   .case-study-credits h3 {
-    font-size: 1.1rem;
+    font-size: 0.8rem;
   }
 
   .case-study-credits li {
-    font-size: 1.1rem;
+    font-size: 0.8rem;
   }
 
   .case-study-section h2 {
-    font-size: 2.1rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     line-height: 1.2;
   }
@@ -277,7 +284,7 @@
   }
 
   .case-study-section p {
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1.4;
     margin-bottom: 1rem;
   }
@@ -310,7 +317,7 @@
   }
   .back-link {
     display: block;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
 
   }
   
