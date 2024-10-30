@@ -15,11 +15,12 @@ class CaseStudyModel {
         sections: [
           {
             // Section 1: Context & Problem Framing
-            title: "Context & Problem Framing",
+            title: "Brief",
             paragraphs: [
-              'Scania Help Center is a platform that provides support and resources to Scania customers and employees. It is a centralized location for all Scania-related information, including product manuals, technical specifications, troubleshooting guides, and customer service information.', 
-              'To improve the user experience, I focused on creating a more intuitive and user-friendly interface. I conducted user research to understand user needs and pain points, and I used this information to inform the design of the new Help Center.',
-              'Contact me to learn more about the project!'
+              "The Scania Help Center is a comprehensive support platform offering Scania customers and employees a centralized hub for essential resources, including product manuals, technical specifications, troubleshooting guides, and customer service information.",
+              "To elevate the user experience, I led efforts to design an intuitive, user-friendly interface tailored to our diverse user base. Through in-depth research, I explored user needs, contexts, and pain points to ensure the design meets real-world demands. Additionally, to support users from various business units and language backgrounds, our team implemented AI-driven solutions to deliver high-quality translations. To guarantee a smooth, effective user experience, we established key performance metrics to continually monitor and enhance the Help Center’s functionality.",
+              "Curious to learn more about this project? Feel free to reach out to me to learn more!"
+
             ],
             media: {
               type: "image",
@@ -135,6 +136,7 @@ class CaseStudyModel {
         ],
       },
 
+
       'music-library': {
         id: 'music-library',
         title: 'Music Library',
@@ -142,97 +144,95 @@ class CaseStudyModel {
         role: 'UI Design Lead',
         time: 'Dec 2022 - Mar 2023',
         process: 'Research → Design → Test → Deliver',
-        description: '"A music browser that makes finding the perfect track fun, fast, and effortless for your videos."',
-        credits: ['Shapour jahanshahi', 'Oksana Romaniuk', 'Emil Sivervík', 'Alexei', 'Marcus Nirbrant'],
+        description: 'Finding Your Soundtrack: A Storykit Music Makeover',
+        credits: ['Shapour jahanshahi', 'Oksana Romaniuk', 'Emil Sivervík', 'Alexei', 'Marcus Nirbrant',],
         videoSrc: `${process.env.PUBLIC_URL}/media/videos/storykit.mp4`,
-        detailedIntro: 'Detailed introduction of the Music Library project goes here. This should be a longer paragraph explaining the project in depth.',
+        detailedIntro: 'Finding Your Soundtrack: A Storykit Music Makeover',
         sections: [
           {
             // Section 1: Context & Problem Framing
-            title: "Context & Problem Framing",
+            title: "The Challenge",
             paragraphs: [
-              "1. Context:",
-              "Storykit.io is an AI - powered video creation platform that helps users create high - quality video content with ease.It enables marketing teams, organizations, and individuals to craft compelling stories that seamlessly connect with their audiences.Music plays a crucial role in making videos captivating.At Storykit, we knew we needed to provide users with an outstanding music selection while making the search process faster and more intuitive.I took on the challenge of designing a new Music Library to bring this vision to life.",
-              "2. Problem: ",
-              "The old music browser had limited music options, making it frustrating for users to find the right track.This impacted the quality of their videos and slowed down the entire creation process, leading to a less- than - ideal user experience.",
+              "Storykit.io is an AI-powered video creation platform, enabling teams to produce high-quality, engaging videos with ease. We knew music was essential to elevate each story, yet the existing music browser didn’t make the cut. Limited music options and a clunky search process frustrated users and slowed down their creative flow. I took on the mission to design a fresh, intuitive Music Library that would make finding the perfect track simple and enjoyable.",
+            
             ],
             media: {
               type: "image",
-              src: ``,
-              alt: ""
+              src: `${process.env.PUBLIC_URL}/media/images/music-library-problem.png`,
+              alt: "Music Library Problem"
             }
           },
           // Section 2: Goals & Success Criteria
           {
-            title: "Goals & Success Criteria",
+            title: "The Vison",
             paragraphs: [
-              "Our main objectives were:",
-              "• Enhance Music Discovery: Revamp the music browser to make finding the perfect track a breeze.",
-              "• Encourage Upgrades: Show the value of premium music offerings to motivate freemium users to upgrade.",
-              "• Strengthen Brand Identity: Elevate Storykit's visual identity with a UI that truly reflects the brand's personality.",
+              "The vision was clear:",
+
+              "• Make music discovery seamless: Redesign the music browser to turn track searching into a fun, fast experience.",
+              "• Encourage upgrades: Highlight the perks of premium music to motivate users on free plans to upgrade.",
+              "• Strengthen Storykit’s brand: Craft a UI that reflects Storykit’s distinct personality.",
             ],
             media: {
               type: "image",
-                src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-problem.png`,
-              alt: "Music Library Problem"
+                src: `${process.env.PUBLIC_URL}/media/images/storykit-vision.png`,
+              alt: "Music Library Vision"
             }
           },
+
+
             // Section 3: Research & Discovery
             {
-                title: "Research & Discovery",
+                title: "Designing the Solution",
                 paragraphs: [
-                  "To fully understand user needs and industry standards, I conducted in-depth research. This involved analyzing Storykit's user segments, reviewing current music browsing experiences, and studying competitors like Storyblocks.com. Our key questions included:",
-                  "• Who is our target audience?",
-                  "• What challenges do we need to address?",
-                  "• Why are these challenges important, and what value can we unlock by solving them?",
-                  "• How can we effectively tackle these challenges?",
+                  "We started with thorough research. Analyzing Storykit’s audience, studying competitors like Storyblocks, and asking big questions helped us dig deep into what users needed. Collaborative sessions with the Product Manager, developers, and QA lead aligned our team and helped prioritize features.",
+                  "Key findings set our design direction:",
                 ],
                 media: {
                   type: "image",
-                src: ``,
-                alt: "Music Library Premium"
+                src: `${process.env.PUBLIC_URL}/media/images/storykit-solution.png`,
+                alt: "Music Library Solution"
                 }
           },
              // Section 4: Ideation & Conceptualization
             {
-              title: "Ideation & Conceptualization",
+              title: "Prototyping and Testing",
               paragraphs: [
-                "To create an effective solution, I followed a structured design process:",
-                "• Roundtable Discussion: Collaborated with the Product Manager, Tech Lead, developers, and QA manager to align on project goals and gather different perspectives. This helped us prioritize key user needs and technical considerations.",
-                "• Research: Conducted competitive analysis and user research to identify limitations in existing music browsers and find opportunities for improvement.",
-                "• Design Solution: Created quick sketches and user flows to explore ideas and lay the foundation for a more efficient music discovery experience.",
-                "• Prototyping: Built high-fidelity prototypes to visualize the new music library, showing off improved user flows and interactions.",
-                "• Team Feedback: Shared prototypes internally to gather feedback, ensuring technical alignment and refining the design as needed. One key consideration was preventing direct music downloads while keeping a great preview experience.",
-                "• User Testing: Conducted guerrilla testing with five users from Netlight to validate our design hypotheses. Their feedback, both verbal and nonverbal, helped further refine the prototype.",
-                "• Design Refinement: Incorporated user feedback to improve the UI and overall experience, making sure all pain points were addressed.",
-                "• Delivery & Issue Resolution: Worked closely with the development team during implementation, addressing minor issues related to interactions, brand consistency, and technical limitations.",
-                
-                "Key Strategies:",
-                "• Effortless Music Discovery: Made it easier for users to find the right track quickly by improving search and filtering options.",
-                "• Intuitive Feedback System: Designed a user-friendly interface with clear feedback mechanisms to guide users smoothly.",
-                "• Upgrade Pathway: Added clear calls-to-action (CTAs) to encourage freemium users to upgrade to premium subscriptions.",
-                "• Brand Cohesion: Created a cohesive user experience that reinforced Storykit's brand identity throughout the interface.",
+                "From sketches to high-fidelity prototypes, we mapped out the music discovery flow. To ensure the design hit the mark, we ran guerrilla testing with a group of users. Their feedback guided refinements, helping us streamline interactions, clarify CTAs, and create a seamless preview experience.",
+                "Freemium users will land at the standard library, where they can browse and preview music tracks. The premium library is only accessible to paid users.",
               ],
                 media: {
                     type: "image",
-                    src: ``,
-                    alt: ""
+                    src: `${process.env.PUBLIC_URL}/media/images/storykit-standardlibrary.png`,
+                    alt: "Music Library Prototyping"
                 }
-            },
+          },
+          {
+            title: "",
+            paragraphs: [
+             "Premium & Enterprise users will have access to the premium library, where they can browse and preview music tracks. The premium library is only accessible to paid users.",
+            
+            ],
+              media: {
+                  type: "image",
+                  src: `${process.env.PUBLIC_URL}/media/images/storykit-premium.png`,
+                  alt: "Music Library Prototyping"
+              }
+          },
 
             // Section 5: Design Exploration & Refinement
             {
-                title: "Design Exploration & Refinement",
+                title: "The Final Solution & Impact",
                 paragraphs: [
-                  "To address the lack of brand presence in the product UI, I spearheaded the creation of marketing banners to strengthen Storykit's identity. These banners served several purposes:",
-                  "• Reinforced the brand's identity within the app.",
-                  "• Informed users about the 27,000 additional audio tracks available with a premium upgrade.",
-                  "• Provided a seamless upgrade pathway by integrating marketing directly into the user journey.",
-                  "• Provided a seamless upgrade pathway by integrating marketing directly into the user journey.",
-                ],
+                  "The results were immediate and impactful:",
+
+                  "• Saved Time: Users found tracks in less time, with a 4-minute reduction in average session duration.",
+                  "• User Upgrades: In-app marketing banners contributed to 14 new premium subscriptions within two days.",
+                
+                
+              ],
                 media: {
-                    type: "image",
-                    src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-home.png`,
+                    type: "video",
+                    src:  `${process.env.PUBLIC_URL}/media/videos/storykit.mp4`,
                     alt: "Premium View Premium music library Full access to all premium music tracks"
                 },
                 
@@ -240,57 +240,176 @@ class CaseStudyModel {
           },
             // Section 6: Final Solution & Impact
             {
-                title: "Final Solution & Impact",
+                title: "Reflections and Next Steps",
                 paragraphs: [
-                    "Efficiency Gains: Users were able to find the right music much faster, saving an average of 4 minutes per session.",
-                    "User Upgrades: The marketing banner led to a significant boost in premium upgrades, with 14 new subscriptions within the first two days.",                ],
-                media: {
-                    type: "image",
-                    src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-premium.png`,
-                    alt: "Premium View Premium music library Full access to all premium music tracks"
-                },
+                  "Early user testing was a game-changer, validating our design choices and revealing real user needs. Cross-functional collaboration ensured we built an experience as technically feasible as it was user-friendly. Moving forward, we’ll explore ways to bring even more personalization and brand alignment into the platform.",
+              
+              ],
+                // media: {
+                //     type: "image",
+                //     src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-premium.png`,
+                //     alt: "Premium View Premium music library Full access to all premium music tracks"
+                // },
           },
-             // Section 7: Results & Impact
+            
+           
+        ],
+      },
+
+      'create': {
+        id: 'create',
+        title: 'Storykit Create',
+        client: 'Storykit',
+        role: 'UI Design Lead',
+        time: 'Dec 2022 - Mar 2023',
+        process: 'Research → Design → Test → Deliver',
+        description: 'Finding Your Soundtrack: A Storykit Music Makeover',
+        credits: ['Shapour jahanshahi', 'Oksana Romaniuk', 'Emil Sivervík', 'Alexei', 'Marcus Nirbrant',],
+        videoSrc: `${process.env.PUBLIC_URL}/media/videos/storykit.mp4`,
+        detailedIntro: 'Finding Your Soundtrack: A Storykit Music Makeover',
+        sections: [
+          {
+            // Section 1: Context & Problem Framing
+            title: "The Challenge",
+            paragraphs: [
+              "The current setup in the Storykit Admin Tool for managing user seats across agencies and clients lacks flexibility, leading to challenges in effectively managing seat allocation. While an agency can set a maximum number of user seats, there are limitations in managing these seats among different clients and roles. Specifically:",
+              "1. Reserved vs. Floating Seats: The need to balance reserved seats for specific clients versus allowing free-floating seats within the agency’s pool can lead to conflicts or unavailability if seat usage isn’t carefully managed.",
+              "2. Role-Based Reservation Limits: Seats reserved at the agency level for specific roles (like Agency Admins or Editors) add further complexity, potentially conflicting with client allocations and leading to confusion around available seats.",
+              "3. Global Seat Limit Constraints: Ensuring that the sum of all reserved, agency-level, and floating seats does not exceed the agency’s global limit creates an additional layer of complexity, often requiring manual adjustments to avoid overuse or underutilization.",    
+            
+            ],
+            media: {
+              type: "image",
+              src: `${process.env.PUBLIC_URL}/media/images/storykit-create-requirements.png`,
+              alt: "Storykit Create Requirements"
+            }
+          },
+          // Section 2: Goals & Success Criteria
+          {
+            title: "The Scenarios ",
+            paragraphs: [
+              "Scenario 1: Reserved Seats",
+              "If you've set a maximum number of seats and a reserved number of seats for a specific client:",
+            
+            ],
+            media: {
+              type: "image",
+                src: `${process.env.PUBLIC_URL}/media/images/storykit-create-senario1.png`,
+              alt: "Storykit Create Scenario 1"
+            }
+          },
+          {
+            title: " ",
+            paragraphs: [
+              "Scenario 2: No Reserved Seats",
+              "If you haven't set a reserved number of seats for a specific client:",
+            ],
+            media: {
+              type: "image",
+                src: `${process.env.PUBLIC_URL}/media/images/storykit-create-senario2.png`,
+              alt: "Storykit Create Scenario 2"
+            }
+          },
+           // Section 2: Goals & Success Criteria
+          {
+            title: "How Might We?",
+            paragraphs: [
+             
+            ],
+            media: {
+              type: "image",
+                src: `${process.env.PUBLIC_URL}/media/images/storykit-create-hmw.png`,
+              alt: "Storykit Create How Might We?"
+            }
+          },
+
+
+            // Section 3: Research & Discovery
             {
-                title: "Results & Impact",
+                title: "Designing the Solution & Hypotheses",
                 paragraphs: [
-                    "",
-                ],
+                  "We set out to design a solution that would allow users to:", 
+
+                  "• Understand the hierarchical relationship between Clients and Users.",
+                  "• Comprehend the significance of the number '20' as the total user limit.",
+                  "• Recognize that Users can belong to multiple Clients and have specific roles within each.",
+                  "• Interpret the data presented at the bottom of each Client's user list.",
+                  "• Understand the roles of Agency Admins and Editors and their visibility across different Clients.",
+                
+              ],
                 media: {
-                    type: "image",
-                    src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-delete.png`,
-                    alt: "Premium View Premium music library Full access to all premium music tracks"
+                  type: "image",
+                src: `${process.env.PUBLIC_URL}/media/images/storykit-create-hmw-solution.png`,
+                alt: "Storykit Create How Might We? Solution"
                 }
           },
-             // Section 8: Key Learnings & Reflection
+             // Section 4: Ideation & Conceptualization
             {
-                title: "Key Learnings & Reflection",
-                paragraphs: [
-                  "User Testing Matters: Early user testing was crucial for validating our design hypotheses and ensuring that we addressed real user pain points.",
-                  "Cross-functional Collaboration: Working closely with the development team helped ensure a smooth implementation and made sure that the design was technically feasible without compromising the user experience.",
-                ],
-                media: {
-                    type: "video",
-                    src: `${process.env.PUBLIC_URL}/media/videos/musiclibrary-demo.mp4`,
-                    alt: "Music Library Demo"
-                }
-          },
-             // Section 9: Future Considerations & Next Steps
-            {
-                title: "Future Considerations & Next Steps",
-                paragraphs: [
-                    "In the previous design, Storykit's brand identity was not integrated into the product UI, resulting in a lack of brand cohesion. ",
-                    "I spearheaded the creation of Storykit banners within the music library for several essential purposes:",
-                    "• To strengthen Storykit's brand identity within the app and maintain brand cohesion.",
-                    "• To inform users about the 27,000 additional audio tracks available upon upgrading their subscription.",
-                    "• To offer users a convenient and streamlined pathway to complete the subscription upgrade process.",
-                ],
+              title: "Prototyping and Testing",
+              paragraphs: [
+                "We created a prototype that would allow users to:",
+                "• View the hierarchical relationship between Clients and Users.",
+                "• Understand the significance of the number '20' as the total user limit.",
+                "• Recognize that Users can belong to multiple Clients and have specific roles within each.",
+                "• Interpret the data presented at the bottom of each Client's user list.",
+                "• Understand the roles of Agency Admins and Editors and their visibility across different Clients.",
+              "1. From Agency Dashboard:",
+              ],
                 media: {
                     type: "image",
-                    src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-premium.png`,
-                    alt: "Premium View Premium music library Full access to all premium music tracks"
+                    src: `${process.env.PUBLIC_URL}/media/images/storykit-create-demo1.png`,
+                    alt: "Storykit Create Prototyping"
                 }
-            },
+          },
+          {
+            title: "",
+            paragraphs: [
+            "2. From Client Dashboard:",  
+              
+            ],
+              media: {
+                  type: "image",
+                  src: `${process.env.PUBLIC_URL}/media/images/storykit-create-demo2.png`,
+                  alt: "Storykit Create Prototyping"
+              }
+          },
+
+            // Section 5: Design Exploration & Refinement
+            {
+                title: "The Final Solution & Impact",
+                paragraphs: [
+                  "The final solution was a prototype that would allow users to:",
+                  "• View the hierarchical relationship between Clients and Users.",
+                  "• Understand the significance of the number '20' as the total user limit.",
+                  "• Recognize that Users can belong to multiple Clients and have specific roles within each.",
+                  "• Interpret the data presented at the bottom of each Client's user list.",
+                  "• Understand the roles of Agency Admins and Editors and their visibility across different Clients.",
+                
+
+                  "Also, the new design improved the overall user experience by providing a more intuitive and user-friendly interface for managing user seats across clients and roles.",
+              ],
+                // media: {
+                //     type: "video",
+                //     src:  `${process.env.PUBLIC_URL}/media/videos/storykit.mp4`,
+                //     alt: "Premium View Premium music library Full access to all premium music tracks"
+                // },
+                
+               
+          },
+            // Section 6: Final Solution & Impact
+            {
+                title: "Reflections and Next Steps",
+                paragraphs: [
+                  "Early user testing was a game-changer, validating our design choices and revealing real user needs. Cross-functional collaboration ensured we built an experience as technically feasible as it was user-friendly. Moving forward, we’ll explore ways to bring even more personalization and brand alignment into the platform.",
+              
+              ],
+                // media: {
+                //     type: "image",
+                //     src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-premium.png`,
+                //     alt: "Premium View Premium music library Full access to all premium music tracks"
+                // },
+          },
+            
            
         ],
       },
@@ -306,7 +425,7 @@ class CaseStudyModel {
         time: 'Jan 2022 - Jun 2022',
         process: 'Prototype → Test',
         description: 'Validating Trust in Pricing for Drivers',
-        credits: ['Aleksei'],
+        credits: ['Aleksei',],
         videoSrc: `${process.env.PUBLIC_URL}/media/videos/bbc.mp4`,
         detailedIntro: '',
         sections: [

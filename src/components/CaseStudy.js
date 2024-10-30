@@ -86,11 +86,22 @@ function CaseStudy() {
     }
   };
 
+  // Function to randomly highlight words in a paragraph
+  const highlightRandomWords = (text) => {
+    return text.split(' ').map((word, index) => {
+      // Randomly decide to highlight (about 10% chance)
+      const shouldHighlight = Math.random() < 0.1;
+      return shouldHighlight ? 
+        <span key={index} className="highlight">{word + ' '}</span> : 
+        <span key={index}>{word + ' '}</span>;
+    });
+  };
+
   return (
     <div className="case-study">
       <div className="case-study-left-column">
         <div className="case-study-left-content">
-          <Link to="/" className="back-link">[DESIGN PROJECTS]</Link>
+          <Link to="/" className="back-link">[ BACK TO DESIGN PROJECTS ]</Link>
           <h1>{study.title}</h1>
           <div className="case-study-brief">
             <p><strong>[Client]</strong> {study.client}</p>
@@ -140,7 +151,7 @@ function CaseStudy() {
             >
               <h2>{section.title}</h2>
               {section.paragraphs.map((paragraph, pIndex) => (
-                <p key={pIndex}>{paragraph}</p>
+                <p key={pIndex}>{highlightRandomWords(paragraph)}</p>
               ))}
               {renderMedia(section.media)}
             </div>
@@ -152,7 +163,7 @@ function CaseStudy() {
         />
       </div>
       <div className="case-study-menu">
-        <h3>[CONTENTS]</h3>
+        <h3>[ON THIS PAGE]</h3>
         <ul>
           {study.sections.map((section, index) => (
             <li key={index}>

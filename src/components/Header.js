@@ -11,7 +11,7 @@ function Header() {
           <SocialLinks />
         </div>
         <div className="chinese-characters">
-          在这设计
+          {/* 在这设计 */}
         </div>
       </div>
     </header>

@@ -4,6 +4,7 @@ class ProjectModel {
       { id: 'scania-helpcenter', type: 'image', src: `${process.env.PUBLIC_URL}/media/images/scania-helpcenter-home.png`, alt: 'Scania Helpcenter' },
       { id: 'bbc', type: 'video', src: `${process.env.PUBLIC_URL}/media/videos/bbc.mp4`, alt: 'Blablacar' },
       { id: 'music-library', type: 'video', src: `${process.env.PUBLIC_URL}/media/videos/storykit.mp4`, alt: 'Music Library' },
+      { id: 'create', type: 'image', src: `${process.env.PUBLIC_URL}/media/images/storykit-create-home.png`, alt: 'Create' },
       { id: 'blankt-web', type: 'video', src: `${process.env.PUBLIC_URL}/media/videos/blankt.mp4`, alt: 'blankt' },
       { id: 'blankt-mobile', type: 'video', src: `${process.env.PUBLIC_URL}/media/videos/blanktmobile.mp4`, alt: 'blankt Mobile' },
       { id: 'blankt-home', type: 'video', src: `${process.env.PUBLIC_URL}/media/videos/blankthome.mp4`, alt: 'blankt Home' },
