@@ -20,10 +20,13 @@ function AppContent() {
         )}
         <Routes>
           <Route path="/" element={<RightColumn />} />
-          <Route path="/web-design" element={<RightColumn />} />
-          <Route path="/mobile-design" element={<RightColumn />} />
-          <Route path="/design-system" element={<RightColumn />} />
-          <Route path="/ux-research" element={<RightColumn />} />
+          <Route path="/Product-Design" element={<RightColumn />} />
+          {/* <Route path="/Web-Design" element={<RightColumn />} />
+          <Route path="/Mobile-Design" element={<RightColumn />} /> */}
+          <Route path="/Design-System" element={<RightColumn />} />
+          <Route path="/Research" element={<RightColumn />} />
+          <Route path="/Graphic-Design" element={<RightColumn />} />
+          <Route path="/Creative-Coding" element={<RightColumn />} />
           <Route path="/case-study/:id" element={<CaseStudy />} />
         </Routes>
       </div>

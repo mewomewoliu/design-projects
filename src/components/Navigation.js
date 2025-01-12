@@ -6,10 +6,15 @@ function Navigation() {
       <h2>[DESIGN PROJECTS]</h2>
       {/* <h1>在这设计</h1> */}
       <ul>
-        <li><a href="/web-design">Web Design</a></li>
-        <li><a href="/mobile-design">Mobile Design</a></li>
-        <li><a href="/design-system">Design System</a></li>
-        <li><a href="/ux-research">UX Research</a></li>
+      
+        <li><a href="/Product-Design">Product Design</a></li>
+        {/* <li><a href="/Web-Design">Web Design</a></li>
+        <li><a href="/Mobile-Design">Mobile Design</a></li> */}
+        <li><a href="/Design-System">Design System</a></li>
+        <li><a href="/Research">Research</a></li>
+        <li><a href="/Graphic-Design">Graphic Design</a></li>
+        <li><a href="/Creative-Coding">Creative Coding</a></li>
+        
       </ul>
     </nav>
   );

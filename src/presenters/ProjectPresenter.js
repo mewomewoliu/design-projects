@@ -8,6 +8,8 @@ class ProjectPresenter {
     const projects = this.model.getAllProjects();
     this.view.renderProjects(projects);
   }
+  
 }
+
 
 export default ProjectPresenter;

@@ -11,7 +11,8 @@
 
 .case-study-left-column {
   width: 220px;
-  background-color: rgb(246, 246, 246);
+  background-color:#fcfcfc;
+  
   height: 100vh;
   padding: 1rem;
   position: fixed;
@@ -52,21 +53,21 @@
 .back-link {
   display: block;
   font-size: 0.8rem;
-  font-weight: 800;
+  font-weight: 400;
   margin-bottom: 2rem;
   text-decoration: none;
-  color: #4e4d4d;
+  color: #183a2c;
 }
 .back-link:hover {
   text-decoration: line-through;
-  color: #2e2e2e;
+  color: #183a2c;
 }
 
 .case-study h1 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  color: #2e2e2e;
+  color: #183a2c;
 }
 
 .case-study-brief {
@@ -75,15 +76,15 @@
 
 .case-study-brief p {
   margin-bottom: 0.5rem;
-  color: #2e2e2e;
+  color: #183a2c;
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 800;
 }
 
 .case-study-description {
   font-size: 5rem;
   max-width: 100%;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1;
   /* margin-bottom: 1.5rem; */
   justify-content: start;
@@ -92,7 +93,7 @@
 }
 
 .case-study-update {
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 600;
   margin-bottom: 2rem;
 }
@@ -105,7 +106,8 @@
 
 .case-study-credits h3 {
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 400;
+  line-height: 0;
   margin-bottom: 1rem;
 }
 
@@ -117,7 +119,7 @@
 .case-study-credits li {
   margin-bottom: 0.5rem;
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 800;
 }
 
 .case-study-video,
@@ -199,7 +201,7 @@
 .case-study-menu h3 {
   margin-top: 0;
   font-size: 0.8rem;
-  font-weight: 800;
+  font-weight: 400;
   margin-bottom: 1rem;
 }
 
@@ -252,8 +254,9 @@
 
   .case-study-left-column {
     position: static;
+    overflow: visible;
     width: auto;
-    height: auto;
+    height: 100%;
     padding: 1rem;
     flex-direction: column;
     gap: 0.5rem;

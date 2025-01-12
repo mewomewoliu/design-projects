@@ -104,10 +104,10 @@ function CaseStudy() {
           <Link to="/" className="back-link">[ BACK TO DESIGN PROJECTS ]</Link>
           <h1>{study.title}</h1>
           <div className="case-study-brief">
-            <p><strong>[Client]</strong> {study.client}</p>
-            <p><strong>[Role]</strong> {study.role}</p>
-            <p><strong>[Time]</strong> {study.time}</p>
-            <p><strong>[Process]</strong> {study.process}</p>
+            <p>[Client] {study.client}</p>
+            <p>[Role] {study.role}</p>
+            <p>[Time] {study.time}</p>
+            <p>[Process] {study.process}</p>
           </div>
         </div>
         <div className="case-study-credits">

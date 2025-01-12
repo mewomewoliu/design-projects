@@ -136,7 +136,6 @@ class CaseStudyModel {
         ],
       },
 
-
       'music-library': {
         id: 'music-library',
         title: 'Music Library',
@@ -1357,6 +1356,7 @@ class CaseStudyModel {
               alt: "Music Mash User Testing"
             }
           },
+          
           {
             title: "Key Learnings & Reflection",
             paragraphs: [
@@ -1364,7 +1364,48 @@ class CaseStudyModel {
               "Iterative Design: Testing and iterating was essential to make MusicMash a feature that truly resonated with users.",
               "Keep it Fun: Making the process playful, like allowing voting and incorporating creative features, made all the difference in turning a stressful task into a fun one.",
             ],
+            
           }
+        ]
+      },
+       
+       'bbc-design-system': {
+        id: 'bbc-design-system',
+        title: 'BBC Design System',
+        client: 'BBC',
+        role: 'Product Designer Prototyper',
+        time: 'Dec 2021 - Jul 2022',
+        process: 'Stakeholder Workshop → Design System → Prototype',
+        description: 'Blablacar Pixar Design System • Customer Success',
+        credits: ['Aleksei'],
+        imageSrc: `${process.env.PUBLIC_URL}/media/images/bbc-designsystem-cover.png`,
+        detailedIntro: 'Blablacar Customer Success team needed a design system to help them maintain consistent communication with Blablacar customers.',
+        sections: [
+          {
+            title: "Demo",
+            paragraphs: [
+             
+            ],
+            media: {
+              type: "image",
+              src: `${process.env.PUBLIC_URL}/media/images/bbc-designsystem-column.png`,
+              alt: "Music Mash"
+            }
+          },
+          {
+            title: "",
+            paragraphs: [
+            
+            
+            ],
+            media: {
+              type: "image",
+              src: `${process.env.PUBLIC_URL}/media/images/bbc-designsystem-guideline.png`,
+              alt: "Music Mash Persona"
+            }
+          },
+
+          
         ]
       },
 
