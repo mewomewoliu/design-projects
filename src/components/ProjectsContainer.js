@@ -4,10 +4,11 @@ import ProjectModel from '../models/ProjectModel';
 import ProjectPresenter from '../presenters/ProjectPresenter';
 import './ProjectsContainer.css';
 
-function ProjectsContainer() {
+function ProjectsContainer({ selectedTag }) {
   const [projects, setProjects] = useState([]);
   const projectRefs = useRef([]);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
+  const [imageErrors, setImageErrors] = useState({});
 
   useEffect(() => {
     const model = new ProjectModel();
@@ -68,14 +69,25 @@ function ProjectsContainer() {
     };
   }, [projects, isMobile]);
 
+  // Filter projects based on selectedTag if it exists
+  const filteredProjects = selectedTag
+    ? projects.filter(project => project.tags.includes(selectedTag))
+    : projects;
+
   if (projects.length === 0) {
     console.log('No projects loaded');
     return <div>Loading...</div>;
   }
 
+  const handleImageError = (projectId, e) => {
+    console.error(`Error loading image for project ${projectId}:`, e);
+    setImageErrors(prev => ({ ...prev, [projectId]: true }));
+    e.target.src = '/media/images/fallback.png';
+  };
+
   return (
     <div className="projects-container"> 
-      {projects.map((project, index) => {
+      {filteredProjects.map((project, index) => {
         console.log(`Rendering project ${index}:`, project);
         return (
           <Link to={`/case-study/${project.id}`} key={project.id} className="project-link">
@@ -91,11 +103,8 @@ function ProjectsContainer() {
                   src={project.src} 
                   alt={project.alt} 
                   loading="lazy"
-                  onError={(e) => {
-                    console.error(`Error loading image ${project.id}:`, e);
-                    e.target.src = '/media/images/fallback.png';
-                  }} 
-                  className="project-image" 
+                  onError={(e) => handleImageError(project.id, e)}
+                  className={`project-image ${imageErrors[project.id] ? 'error' : ''}`}
                 />
               ) : (
                 <video 
@@ -112,7 +121,7 @@ function ProjectsContainer() {
                     const img = document.createElement('img');
                     img.src = '/media/images/fallback.png';
                     img.alt = project.alt;
-                    img.className = 'project-image';
+                    img.className = 'project-image error';
                     e.target.parentNode.replaceChild(img, e.target);
                   }}
                 >

@@ -101,7 +101,7 @@ function CaseStudy() {
     <div className="case-study">
       <div className="case-study-left-column">
         <div className="case-study-left-content">
-          <Link to="/" className="back-link">[ BACK TO DESIGN PROJECTS ]</Link>
+          <Link to="/" className="back-link">✦ BACK TO DESIGN PROJECTS</Link>
           <h1>{study.title}</h1>
           <div className="case-study-brief">
             <p>[Client] {study.client}</p>
@@ -111,7 +111,7 @@ function CaseStudy() {
           </div>
         </div>
         <div className="case-study-credits">
-          <h3>[Credits]</h3>
+          <h3>◼ Credits</h3>
           <ul>
             {study.credits.map((credit, index) => (
               <li key={index}>{credit}</li>
@@ -163,7 +163,7 @@ function CaseStudy() {
         />
       </div>
       <div className="case-study-menu">
-        <h3>[ON THIS PAGE]</h3>
+        <h3>◼ ON THIS PAGE</h3>
         <ul>
           {study.sections.map((section, index) => (
             <li key={index}>

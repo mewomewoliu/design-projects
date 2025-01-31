@@ -3,7 +3,7 @@ import React from 'react';
 function SocialLinks() {
   return (
     <div className="social-links">
-      <h2>[MORE]</h2>
+      <h2>◼ MORE</h2>
       <ul>
         <li><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
         <li><a href="https://medium.com" target="_blank" rel="noopener noreferrer">Medium</a></li>

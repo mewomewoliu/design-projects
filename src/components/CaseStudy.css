@@ -6,13 +6,13 @@
   width: 100%; 
   height: 100vh;
   overflow: hidden;
-  font-family: "AktivGrotesk-Medium", sans-serif;
+  font-family: "Archivo-Variable", sans-serif;
 }
 
 .case-study-left-column {
   width: 220px;
-  background-color:#fcfcfc;
-  
+  background-color:#ffffff;
+  border-right: 1px solid #000;
   height: 100vh;
   padding: 1rem;
   position: fixed;
@@ -31,7 +31,7 @@
 
 .case-study-right-column {
   flex-grow: 1;
-  padding-left: 280px;
+  padding-left: 270px;
   padding-right: 280px;
   overflow-y: auto;
   height: 100%;
@@ -39,49 +39,55 @@
   scroll-behavior: smooth;
   
 }
-.highlight {
+/* .highlight {
   text-decoration: underline;
-  text-decoration-color: #fff069;
+  text-decoration-color: #fff06900;
   text-decoration-thickness: 0.3em;
   text-decoration-skip-ink: none;
   text-underline-offset: -0.4em;
   color: inherit;
-  background: linear-gradient(180deg, transparent 65%, #fff397 65%);
+  background: linear-gradient(180deg, transparent 65%, #fff39700 65%);
   display: inline;
-}
+} */
 
 .back-link {
+  font-family: "Archivo-Medium", sans-serif;
   display: block;
   font-size: 0.8rem;
   font-weight: 400;
   margin-bottom: 2rem;
   text-decoration: none;
-  color: #183a2c;
+  color: #6e6e6e;
 }
 .back-link:hover {
   text-decoration: line-through;
-  color: #183a2c;
+  color: #400bff;
 }
 
 .case-study h1 {
+  font-family: "Archivo-Bold", sans-serif;
   font-size: 1.2rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  color: #183a2c;
+  color: #000000;
 }
 
 .case-study-brief {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .case-study-brief p {
+  font-family: "Archivo-Medium", sans-serif;
   margin-bottom: 0.5rem;
-  color: #183a2c;
+  padding-bottom: 0.5rem;
+  color: #000000;
   font-size: 0.8rem;
-  font-weight: 800;
+  font-weight: 500;
+  border-bottom: 1px solid #000;
 }
 
 .case-study-description {
+  font-family: "Archivo-Medium", sans-serif;
   font-size: 5rem;
   max-width: 100%;
   font-weight: 800;
@@ -118,6 +124,7 @@
 
 .case-study-credits li {
   margin-bottom: 0.5rem;
+  border-bottom: 1px solid #000;
   font-size: 0.8rem;
   font-weight: 800;
 }
@@ -182,7 +189,7 @@
   line-height: 1.6;
   margin-bottom: 1.5rem;
   max-width: 70ch;
-  color: #000000;
+  color: #6e6e6e;
 }
 
 .case-study-menu {
@@ -230,7 +237,7 @@
 
 .case-study-menu a {
   text-decoration: none;
-  color: #363636;
+  color: #6e6e6e;
   font-size: 0.8rem;
   font-weight: 400;
   transition: color 0.3s ease;
@@ -344,7 +351,7 @@
     max-width: 100%;
     margin-bottom: 1rem;
     object-fit: cover;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: auto;
   }
 
   .case-study-section {

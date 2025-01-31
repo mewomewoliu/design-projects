@@ -8,8 +8,7 @@ html, body {
 }
 
 body {
-  font-family: "AktivGrotesk-Medium", sans-serif;
-  /* font-family: "Host Grotesk", serif; */
+  font-family: "Archivo-Medium", sans-serif;
   background-color: #ffffff;
   color: #000000;
   display: flex;
@@ -47,14 +46,15 @@ body {
 .left-column {
   align-items: start;
   border-right: 0px solid #e0e0e0;
-  padding-left: 1rem;
+  padding-left: 2rem;
   padding-top: 0rem;
-  padding-right: 0rem;
+  padding-right: 2rem;
   position: fixed; /* Fix the navigation */
   top: 0rem; /* Align with the top padding of .App */
   left: 0rem; /* Align with the left padding of .App */
   bottom: 0rem; /* Align with the bottom padding of .App */
   overflow-y: auto; /* Allow scrolling if content is too long */
+  width: 220px; /* Fixed width for the left column */
 }
 
 .navigation h2 {
@@ -70,23 +70,52 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0rem;
+  gap: 0;
+  border-top: 1.5px solid #000;
 }
 
 .navigation li {
-  margin-bottom: 0rem;
-  
+  margin: 0;
+  border-bottom: 1.5px solid #000;
 }
 
 .navigation a {
   color: #202020;
   text-decoration: none;
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  transition: all 0.2s ease;
 }
 
 .navigation a:hover {
-  text-decoration:line-through;
+  /* background-color: rgba(0, 0, 0, 0); */
+  text-decoration: line-through;
+}
+
+.navigation a.selected {
+  font-weight: 500;
+  color: #400bff;
+  text-decoration: line-through;
+  /* background-color: rgba(0, 0, 0, 0.05); */
+}
+
+.navigation .tag-text {
+  flex: 1;
+}
+
+.navigation .item-number {
+  font-size: 0.8rem;
+  color: #202020;
+  font-weight: 400;
+  margin-left: 1rem;
+}
+
+.navigation a.selected .item-number {
+  font-weight: 500;
 }
 
 /* Right column styles */
@@ -94,11 +123,12 @@ body {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 0rem;
   overflow-y: auto; /* Make the right column scrollable */
   height: 100%; /* Full height of the container */
-  padding-left: 220px; /* Add space for the fixed navigation */
-  margin-right: 0rem;
+  padding-left: 280px; /* Left column width (220px) + desired gap (60px) */
+  padding-right: 2rem;
+  margin-right: 0;
   -webkit-overflow-scrolling: touch; /* Smooth scrolling for Safari */
 }
 
@@ -106,7 +136,7 @@ body {
 .header-content {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0rem;
 }
 
 .info-social-container {
@@ -125,8 +155,10 @@ body {
 .Intro h1 {
   font-size: 0.8rem;
   font-weight: 400;
+  padding-bottom: 1rem;
   margin-top: 0.8rem;
   margin-bottom: 1rem;
+  border-bottom: 1.5px solid #000;
 }
 
 .Intro p {
@@ -150,17 +182,19 @@ body {
 }
 
 .social-links h2 {
-  padding-top: 0rem;
+  padding-top: 0.15rem;
   text-align: right;
   font-size: 0.8rem;
   font-weight: 400;
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
   text-transform: uppercase;
+  border-bottom: 1.5px solid #000;
 }
 
 .social-links ul {
   list-style-type: none;
   padding: 0;
+  
 }
 
 .social-links li {
@@ -169,11 +203,11 @@ body {
 }
 
 .social-links a {
-  color: #000000;
+  color: #202020;
   text-decoration: none;
   font-size: 0.9rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
 }
 
 .social-links a:hover {
@@ -212,27 +246,15 @@ body {
     align-items: flex-start;
   }
 
-  .chinese-characters {
-    font-family: "Long Cang", cursive;
-    width: 100%;
-    font-size: 14rem;
-    font-weight: 500;
-    line-height: 1.4;
-
-  }
+  
 
   .left-column {
-    width: 200px;
     flex-shrink: 0;
     flex-direction: column;
   }
 
   .navigation {
     flex-direction: column;
-  }
-
-  .right-column {
-    padding-left: 220px; /* Adjust based on the width of the left column */
   }
 
   .info-social-container {
@@ -258,8 +280,8 @@ body {
     position: static;
     width: auto;
     border-right: none;
-    padding: 1rem;
-    
+    padding: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .navigation h2 {
@@ -269,14 +291,18 @@ body {
 
 
   .navigation ul {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 1rem;
+    flex-direction: column;
+    border-top: 1px solid #000;
   }
 
   .navigation li {
-    margin-bottom: 0;
+    margin: 0;
+    border-bottom: 1px solid #000;
+    padding: 0rem 0;
+  }
+
+  .navigation a {
+    justify-content: space-between;
   }
 
   .Intro p {
@@ -285,12 +311,18 @@ body {
   }
 
   .right-column {
-    padding-left: 1rem;
-    margin-right:1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-right: 0;
   }
 
   .info-social-container {
     flex-direction: column;
+    gap: 2rem;
+  }
+
+  .intro-container {
+    margin-right: 0;
   }
 
   .social-links {
@@ -300,6 +332,18 @@ body {
   .social-links h2,
   .social-links li {
     text-align: left;
+  }
+
+  .navigation ul {
+    border-top: 1px solid #000;
+  }
+
+  .navigation li {
+    border-bottom: 1px solid #000;
+  }
+
+  .navigation a {
+    padding: 0.75rem 0;
   }
 }
 

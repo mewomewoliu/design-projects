@@ -13,7 +13,7 @@ function Footer({ nextCaseStudy, nextCaseStudyLink }) {
             Next Case Study: {nextCaseStudy.title} →
           </Link>
         )}
-         <p>© {currentYear} All rights reserved by Mia </p>
+         <p>© {currentYear} crafted with love, pixels, and a touch of magic by Mia ✦ All rights reserved but high-fives are free ✋ </p>
       </div>
     </footer>
   );

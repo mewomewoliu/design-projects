@@ -1,16 +1,18 @@
 .case-study-footer {
   margin-top: 2rem;
-  padding: 2rem 0;
-  border-top: 1px solid #efefef;
+  padding: 1rem 0;
+  border-top: 1.5px solid #000000;
   align-items: center;
-  background-color: #ffffff00;
+  
 }
 
 .footer-content {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   font-size: 0.8rem;
+  color: #666;
 }
 
 .next-case-study {
@@ -29,7 +31,7 @@
 .next-case-study-link {
   display: inline-block;
   margin-top: 0rem;
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: 600;
   justify-content: center;
   color: #000000;

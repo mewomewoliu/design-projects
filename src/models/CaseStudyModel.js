@@ -254,6 +254,34 @@ class CaseStudyModel {
            
         ],
       },
+      'storykit-design-system': {
+        id: 'storykit-design-system',
+        title: 'Storykit Design System',
+        client: 'Storykit',
+        role: 'UI Design Lead',
+        time: 'Dec 2022 - Mar 2023',
+        process: 'Research → Design → Test → Deliver',
+        description: 'Finding Your Soundtrack: A Storykit Music Makeover',
+        credits: ['Shapour jahanshahi', 'Oksana Romaniuk', 'Emil Sivervík', 'Alexei', 'Marcus Nirbrant',],
+        videoSrc: `${process.env.PUBLIC_URL}/media/videos/storykit.mp4`,
+        detailedIntro: '',
+        sections: [
+          {
+            title: "The Challenge",
+            paragraphs: [
+              "The current setup in the Storykit Admin Tool for managing user seats across agencies and clients lacks flexibility, leading to challenges in effectively managing seat allocation.",
+            ],
+            media: {
+              type: "image",
+              src: `${process.env.PUBLIC_URL}/media/images/storykit-create-requirements.png`,
+              alt: "Storykit Create Requirements"
+            }
+          },
+
+
+        ],
+
+      },
 
       'create': {
         id: 'create',
@@ -1505,7 +1533,51 @@ class CaseStudyModel {
       //     }
       //   ]
       // },
+'creative-coding-project': {
+  id: 'creative-coding-project',
+  title: 'Creative Coding Project',
+  client: 'School project',
+  role: 'Creative Coding',
+  time: '2024',
+  process: 'Research → Ideation → Design → Prototype → Test',
+  description: 'Creative Coding Project: Index 1',
+  credits: [],
+  videoSrc: `${process.env.PUBLIC_URL}/media/videos/creative-coding-project.mp4`,
+  detailedIntro: 'Creative Coding Project: Index 1',
+  sections: [
 
+  ],
+      },
+'creative-coding-project1': {
+  id: 'creative-coding-project1',
+  title: 'Creative Coding Project',
+  client: 'School project',
+  role: 'Creative Coding',
+  time: '2024',
+  process: 'Research → Ideation → Design → Prototype → Test',
+  description: 'Creative Coding Project: Index 2',
+  credits: [],
+  videoSrc: `${process.env.PUBLIC_URL}/media/videos/creative-coding-project.mp4`,
+  detailedIntro: 'Creative Coding Project: Index 2',
+  sections: [
+
+  ],
+      },
+'creative-coding-project3': {
+  id: 'creative-coding-project3',
+  title: 'Creative Coding Project',
+  client: 'School project',
+  role: 'Creative Coding',
+  time: '2024',
+  process: 'Research → Ideation → Design → Prototype → Test',
+  description: 'Creative Coding Project: Firework',
+  credits: [],
+  videoSrc: `${process.env.PUBLIC_URL}/media/videos/creative-coding-firework.mp4`,
+  detailedIntro: 'Creative Coding Project: Firework',
+  sections: [
+
+  ],
+},
       // /***********************************
       //  *        Other project           *  
       //  ***********************************/
