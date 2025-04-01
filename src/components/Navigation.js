@@ -6,7 +6,8 @@ function Navigation({ onTagClick, projects = [], selectedTag }) {
     { text: 'Design System', number: '02' },
     { text: 'Research', number: '03' },
     { text: 'Graphic Design', number: '04' },
-    { text: 'Creative Coding', number: '05' }
+    { text: 'Creative Coding', number: '05' },
+    { text: 'Jewelry Design', number: '06' },
   ];
 
   // Calculate project counts for each category

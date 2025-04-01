@@ -17,6 +17,7 @@ class ProjectModel {
       { id: 'creative-coding-project', type: 'video', src: '/media/videos/creative-coding-project2.mp4', alt: 'Creative Coding Project: Index 1 ||| 2024', tags: ['Creative Coding', 'p5.js','Graphic Design'] },
       { id: 'creative-coding-project2', type: 'video', src: '/media/videos/creative-coding-project.mp4', alt: 'Creative Coding Project: Index 2 ||| 2024', tags: ['Creative Coding', 'p5.js'] },
       { id: 'creative-coding-project3', type: 'video', src: '/media/videos/creative-coding-firework.mp4', alt: 'Creative Coding Project: Firework ||| 2024', tags: ['Creative Coding', 'p5.js'] },
+    
       // { id: 'graphic-design', type: 'image', src: '/media/images/yourbeet-type.png', alt: 'Graphic Design', tags: ['Graphic Design'] }
     ];
       

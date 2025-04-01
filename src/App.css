@@ -46,9 +46,9 @@ body {
 .left-column {
   align-items: start;
   border-right: 0px solid #e0e0e0;
-  padding-left: 2rem;
+  padding-left: 1rem;
   padding-top: 0rem;
-  padding-right: 2rem;
+  padding-right: 1rem;
   position: fixed; /* Fix the navigation */
   top: 0rem; /* Align with the top padding of .App */
   left: 0rem; /* Align with the left padding of .App */
@@ -127,7 +127,7 @@ body {
   overflow-y: auto; /* Make the right column scrollable */
   height: 100%; /* Full height of the container */
   padding-left: 280px; /* Left column width (220px) + desired gap (60px) */
-  padding-right: 2rem;
+  padding-right: 1rem;
   margin-right: 0;
   -webkit-overflow-scrolling: touch; /* Smooth scrolling for Safari */
 }
@@ -178,7 +178,7 @@ body {
 
 .social-links {
   padding-top: 0rem;
-  padding-right: 1rem;
+  padding-right: 0rem;
 }
 
 .social-links h2 {
