@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
+import SocialList from './SocialList';
 
 function Footer({ nextCaseStudy, nextCaseStudyLink }) {
   const currentYear = new Date().getFullYear();
@@ -13,7 +14,10 @@ function Footer({ nextCaseStudy, nextCaseStudyLink }) {
             Next Case Study: {nextCaseStudy.title} →
           </Link>
         )}
-         <p>© {currentYear} crafted with love, pixels, and a touch of magic by Mia ✦ All rights reserved but high-fives are free ✋ </p>
+        <div className="footer-text">
+          <SocialList />
+          <p>© {currentYear} crafted with love, pixels, and a touch of magic by Mia ✦ All rights reserved but high-fives are free ✋</p>
+        </div>
       </div>
     </footer>
   );

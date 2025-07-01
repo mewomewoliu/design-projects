@@ -1,6 +1,7 @@
 class ProjectModel {
   constructor() {
     this.projects = [
+      { id: 'thermo-cal', type: 'video', src: '/media/videos/thermo-cal.mp4', alt: 'Thermo Cal ||| 2025', tags: ['Product Design', 'UX/UI Design', 'Research', 'AI-Integrated designworkflow'] },
       { id: 'bbc', type: 'video', src: '/media/videos/bbc.mp4', alt: 'Blablacar App ||| 2020-2021', tags: ['Product Design','Framer prototyping'] },
       { id: 'storykit-design-system', type: 'image', src: '/media/images/storykit-design-system.png', alt: 'Storykit Design System ||| 2023-2024', tags: ['Design System', 'Product Design'] },
       { id: 'scania-helpcenter', type: 'video', src: '/media/videos/scania-helpcenter.mp4', alt: 'Scania Help Center ||| 2024', tags: ['Product Design', 'Research', 'Copy Writing', 'UI Design', 'Workshop'] },  
@@ -14,9 +15,9 @@ class ProjectModel {
       { id: 'create', type: 'image', src: '/media/images/storykit-create-demo.png', alt: 'Storykit AI Video Creator ||| 2023-2024', tags: ['UX Design', 'UI Design', 'Research', 'Growth', 'Design System']},
       { id: 'yourbeetweb', type: 'image', src: '/media/images/yourbeetweb.png', alt: 'Yourbeet ||| 2020-2021', tags: ['UX Design', 'UI Design', 'Research', 'Testing', 'Branding', 'Product Design'] },
       { id: 'yourbeetmobile', type: 'video', src: '/media/videos/beet.mp4', alt: 'Your Beet Recipe App ||| 2020-2021', tags: ['UX Design', 'UI Design', 'Research', 'Testing', 'Branding', 'Product Design'] },
-      { id: 'creative-coding-project', type: 'video', src: '/media/videos/creative-coding-project2.mp4', alt: 'Creative Coding Project: Index 1 ||| 2024', tags: ['Creative Coding', 'p5.js','Graphic Design'] },
-      { id: 'creative-coding-project2', type: 'video', src: '/media/videos/creative-coding-project.mp4', alt: 'Creative Coding Project: Index 2 ||| 2024', tags: ['Creative Coding', 'p5.js'] },
-      { id: 'creative-coding-project3', type: 'video', src: '/media/videos/creative-coding-firework.mp4', alt: 'Creative Coding Project: Firework ||| 2024', tags: ['Creative Coding', 'p5.js'] },
+      // { id: 'creative-coding-project', type: 'video', src: '/media/videos/creative-coding-project2.mp4', alt: 'Creative Coding Project: Index 1 ||| 2024', tags: ['Creative Coding', 'p5.js','Graphic Design'] },
+      // { id: 'creative-coding-project2', type: 'video', src: '/media/videos/creative-coding-project.mp4', alt: 'Creative Coding Project: Index 2 ||| 2024', tags: ['Creative Coding', 'p5.js'] },
+      // { id: 'creative-coding-project3', type: 'video', src: '/media/videos/creative-coding-firework.mp4', alt: 'Creative Coding Project: Firework ||| 2024', tags: ['Creative Coding', 'p5.js'] },
     
       // { id: 'graphic-design', type: 'image', src: '/media/images/yourbeet-type.png', alt: 'Graphic Design', tags: ['Graphic Design'] }
     ];

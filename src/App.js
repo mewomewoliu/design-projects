@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import Intro from './components/Intro';
+import SocialList from './components/SocialList';
 import Navigation from './components/Navigation';
-import RightColumn from './components/RightColumn';
+import ProjectsContainer from './components/ProjectsContainer';
+import Footer from './components/Footer';
 import CaseStudy from './components/CaseStudy';
 import ProjectModel from './models/ProjectModel';
 import ProjectPresenter from './presenters/ProjectPresenter';
@@ -56,22 +59,47 @@ function AppContent() {
     }
   };
 
+  if (isCaseStudy) {
+    return (
+      <div className="App">
+        <Routes>
+          <Route path="/case-study/:id" element={<CaseStudy />} />
+        </Routes>
+      </div>
+    );
+  }
+
   return (
     <div className="App">
-      <div className="body-container">
-        {!isCaseStudy && (
-          <div className="left-column">
+      <div className="main-container">
+        {/* Top Row: Portfolio label, Intro, Navigation, and Social Media */}
+        <div className="top-row">
+          <div className="portfolio-section">
+            <h2 className="portfolio-label">◼_Miaomiao Liu</h2>
+            <Intro />
+          </div>
+          {/* <div className="navigation-section">
             <Navigation 
-              onTagClick={handleTagClick} 
+              onTagClick={handleTagClick}
               projects={projects}
               selectedTag={selectedTag}
             />
+          </div> */}
+          <div className="social-section">
+            {/* <SocialList /> */}
           </div>
-        )}
-        <Routes>
-          <Route path="/" element={<RightColumn selectedTag={selectedTag} />} />
-          <Route path="/case-study/:id" element={<CaseStudy />} />
-        </Routes>
+        </div>
+
+        {/* Middle: Project Container */}
+        <div className="projects-section">
+          <ProjectsContainer selectedTag={selectedTag} />
+        </div>
+
+        {/* Bottom Row: Footer */}
+        <div className="footer-section">
+
+          <Footer />
+        </div>
       </div>
     </div>
   );
@@ -80,7 +108,9 @@ function AppContent() {
 function App() {
   return (
     <Router>
-      <AppContent />
+      <Routes>
+        <Route path="/*" element={<AppContent />} />
+      </Routes>
     </Router>
   );
 }

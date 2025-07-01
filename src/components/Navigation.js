@@ -33,7 +33,7 @@ function Navigation({ onTagClick, projects = [], selectedTag }) {
 
   return (
     <nav className="navigation">
-      <h2>◼ DESIGN PROJECTS INDEX</h2>
+      <h2>CATEGORIES</h2>
       <ul>
         {navigationItems.map((item) => {
           const count = getProjectCount(item.text);

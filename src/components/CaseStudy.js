@@ -99,10 +99,16 @@ function CaseStudy() {
 
   return (
     <div className="case-study">
-      <div className="case-study-left-column">
-        <div className="case-study-left-content">
-          <Link to="/" className="back-link">✦ BACK TO DESIGN PROJECTS</Link>
-          <h1>{study.title}</h1>
+      {/* Header Section */}
+      <div className="case-study-header">
+        <Link to="/" className="back-link">◼_ALL PROJECTS</Link>
+        
+        <div className="case-study-intro">
+          {/* <h1>{study.title}</h1> */}
+          <div className="case-study-title">
+          <h2 className="case-study-description">{study.description}</h2>
+          <p className="case-study-update">[2024 UPDATE]</p>
+          </div>
           <div className="case-study-brief">
             <p>[Client] {study.client}</p>
             <p>[Role] {study.role}</p>
@@ -110,18 +116,9 @@ function CaseStudy() {
             <p>[Process] {study.process}</p>
           </div>
         </div>
-        <div className="case-study-credits">
-          <h3>◼ Credits</h3>
-          <ul>
-            {study.credits.map((credit, index) => (
-              <li key={index}>{credit}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      <div className="case-study-right-column">
-        <h2 className="case-study-description">{study.description}</h2>
-        <p className="case-study-update">[2024 UPDATE]</p>
+
+        {/* Hero Media */}
+        <div className="case-study-media-container"> 
         {study.videoSrc ? (
           <video 
             src={study.videoSrc} 
@@ -141,44 +138,59 @@ function CaseStudy() {
             className="case-study-image"
           />
         )}
-        <div className="case-study-content">
-          {study.sections.map((section, index) => (
-            <div 
-              key={index} 
-              className="case-study-section"
-              ref={el => sectionsRef.current[index] = el}
-              id={generateAnchorId(section.title)}
-            >
-              <h2>{section.title}</h2>
-              {section.paragraphs.map((paragraph, pIndex) => (
-                <p key={pIndex}>{highlightRandomWords(paragraph)}</p>
-              ))}
-              {renderMedia(section.media)}
-            </div>
-          ))}
         </div>
+        
+      </div>
+
+      {/* Content Section */}
+      <div className="case-study-content">
+        {study.sections.map((section, index) => (
+          <div 
+            key={index} 
+            className="case-study-section"
+            ref={el => sectionsRef.current[index] = el}
+            id={generateAnchorId(section.title)}
+          >
+            <h2>{section.title}</h2>
+            
+            {/* Two-column text content */}
+            <div className="case-study-section-content">
+              <div className="case-study-text-column">
+                {section.paragraphs.slice(0, Math.ceil(section.paragraphs.length / 2)).map((paragraph, pIndex) => (
+                  <p key={pIndex}>{highlightRandomWords(paragraph)}</p>
+                ))}
+              </div>
+              <div className="case-study-text-column">
+                {section.paragraphs.slice(Math.ceil(section.paragraphs.length / 2)).map((paragraph, pIndex) => (
+                  <p key={pIndex + Math.ceil(section.paragraphs.length / 2)}>{highlightRandomWords(paragraph)}</p>
+                ))}
+              </div>
+            </div>
+            
+            {/* Full-width media */}
+            {section.media && (
+              <div className="case-study-media-container">
+                {renderMedia(section.media)}
+              </div>
+            )}
+          </div>
+        ))}
+
+        {/* Credits Section */}
+        <div className="case-study-credits">
+          <h3>◼ CREDITS</h3>
+          <ul>
+            {study.credits.map((credit, index) => (
+              <li key={index}>{credit}</li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Footer */}
         <Footer 
           nextCaseStudy={nextStudy} 
           nextCaseStudyLink={nextStudy ? `/case-study/${nextStudy.id}` : null}
         />
-      </div>
-      <div className="case-study-menu">
-        <h3>◼ ON THIS PAGE</h3>
-        <ul>
-          {study.sections.map((section, index) => (
-            <li key={index}>
-              <a 
-                href={`#${generateAnchorId(section.title)}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection(generateAnchorId(section.title));
-                }}
-              >
-                {section.title}
-              </a>
-            </li>
-          ))}
-        </ul>
       </div>
     </div>
   );

@@ -1533,51 +1533,51 @@ class CaseStudyModel {
       //     }
       //   ]
       // },
-'creative-coding-project': {
-  id: 'creative-coding-project1',
-  title: 'Creative Coding Project',
-  client: 'School project',
-  role: 'Creative Coding',
-  time: '2024',
-  process: 'Research → Ideation → Design → Prototype → Test',
-  description: 'Creative Coding Project: Index 1',
-  credits: [],
-  videoSrc: `${process.env.PUBLIC_URL}/media/videos/creative-coding-project2.mp4`,
-  detailedIntro: 'Creative Coding Project: Index 1',
-  sections: [
+// 'creative-coding-project': {
+//   id: 'creative-coding-project1',
+//   title: 'Creative Coding Project',
+//   client: 'School project',
+//   role: 'Creative Coding',
+//   time: '2024',
+//   process: 'Research → Ideation → Design → Prototype → Test',
+//   description: 'Creative Coding Project: Index 1',
+//   credits: [],
+//   videoSrc: `${process.env.PUBLIC_URL}/media/videos/creative-coding-project2.mp4`,
+//   detailedIntro: 'Creative Coding Project: Index 1',
+//   sections: [
 
-  ],
-      },
-'creative-coding-project2': {
-  id: 'creative-coding-project2',
-  title: 'Creative Coding Project',
-  client: 'School project',
-  role: 'Creative Coding',
-  time: '2024',
-  process: 'Research → Ideation → Design → Prototype → Test',
-  description: 'Creative Coding Project: Index 2',
-  credits: [],
-  videoSrc: `${process.env.PUBLIC_URL}/media/videos/creative-coding-project.mp4`,
-  detailedIntro: 'Creative Coding Project: Index 2',
-  sections: [
+//   ],
+//       },
+// 'creative-coding-project2': {
+//   id: 'creative-coding-project2',
+//   title: 'Creative Coding Project',
+//   client: 'School project',
+//   role: 'Creative Coding',
+//   time: '2024',
+//   process: 'Research → Ideation → Design → Prototype → Test',
+//   description: 'Creative Coding Project: Index 2',
+//   credits: [],
+//   videoSrc: `${process.env.PUBLIC_URL}/media/videos/creative-coding-project.mp4`,
+//   detailedIntro: 'Creative Coding Project: Index 2',
+//   sections: [
 
-  ],
-      },
-'creative-coding-project3': {
-  id: 'creative-coding-project3',
-  title: 'Creative Coding Project',
-  client: 'School project',
-  role: 'Creative Coding',
-  time: '2024',
-  process: 'Research → Ideation → Design → Prototype → Test',
-  description: 'Creative Coding Project: Firework',
-  credits: [],
-  videoSrc: `${process.env.PUBLIC_URL}/media/videos/creative-coding-firework.mp4`,
-  detailedIntro: 'Creative Coding Project: Firework',
-  sections: [
+//   ],
+//       },
+// 'creative-coding-project3': {
+//   id: 'creative-coding-project3',
+//   title: 'Creative Coding Project',
+//   client: 'School project',
+//   role: 'Creative Coding',
+//   time: '2024',
+//   process: 'Research → Ideation → Design → Prototype → Test',
+//   description: 'Creative Coding Project: Firework',
+//   credits: [],
+//   videoSrc: `${process.env.PUBLIC_URL}/media/videos/creative-coding-firework.mp4`,
+//   detailedIntro: 'Creative Coding Project: Firework',
+//   sections: [
 
-  ],
-},
+//   ],
+// },
 
     };
   }

@@ -9,6 +9,63 @@ function ProjectsContainer({ selectedTag }) {
   const projectRefs = useRef([]);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
   const [imageErrors, setImageErrors] = useState({});
+  const [projectLayouts, setProjectLayouts] = useState([]);
+
+  // Generate random layout patterns
+  const generateRandomLayout = (projectsLength) => {
+    const layouts = [];
+    const patterns = [
+      { span: 'full', class: 'project-full' },      // Full width (3 columns)
+      { span: 'half', class: 'project-half' },      // Half width (2 columns)
+      { span: 'regular', class: 'project-regular' }  // Regular (1 column)
+    ];
+    
+    let currentRowFilled = 0; // Track how much of current row is filled (out of 3)
+    
+    for (let i = 0; i < projectsLength; i++) {
+      if (i === 0) {
+        // First project is always full width (featured)
+        layouts.push(patterns[0]);
+        currentRowFilled = 0; // Reset for next row since full width completes the row
+      } else {
+        // Determine what fits in current row
+        const remainingSpace = 3 - currentRowFilled;
+        
+        if (remainingSpace >= 3 || currentRowFilled === 0) {
+          // Start of new row - can choose any size
+          const rand = Math.random();
+          if (rand < 0.2) {
+            layouts.push(patterns[0]); // Full width (20%)
+            currentRowFilled = 0; // Full width resets row
+          } else if (rand < 0.5) {
+            layouts.push(patterns[1]); // Half width (30%)
+            currentRowFilled = 2;
+          } else {
+            layouts.push(patterns[2]); // Regular (50%)
+            currentRowFilled = 1;
+          }
+        } else if (remainingSpace >= 2) {
+          // Can fit half or regular
+          const rand = Math.random();
+          if (rand < 0.4) {
+            layouts.push(patterns[1]); // Half width
+            currentRowFilled += 2;
+            if (currentRowFilled >= 3) currentRowFilled = 0;
+          } else {
+            layouts.push(patterns[2]); // Regular
+            currentRowFilled += 1;
+            if (currentRowFilled >= 3) currentRowFilled = 0;
+          }
+        } else {
+          // Only regular fits (remainingSpace = 1)
+          layouts.push(patterns[2]); // Regular
+          currentRowFilled += 1;
+          if (currentRowFilled >= 3) currentRowFilled = 0;
+        }
+      }
+    }
+    return layouts;
+  };
 
   useEffect(() => {
     const model = new ProjectModel();
@@ -16,6 +73,7 @@ function ProjectsContainer({ selectedTag }) {
       renderProjects: (projectsData) => {
         console.log('Setting projects:', projectsData);
         setProjects(projectsData);
+        setProjectLayouts(generateRandomLayout(projectsData.length));
       }
     });
 
@@ -30,8 +88,20 @@ function ProjectsContainer({ selectedTag }) {
   }, []);
 
   useEffect(() => {
+    if (selectedTag) {
+      const firstMatchingProject = projectRefs.current.find((ref, index) => {
+        const project = projects[index];
+        return project && project.tags.includes(selectedTag);
+      });
+
+      if (firstMatchingProject) {
+        firstMatchingProject.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }, [selectedTag, projects]);
+
+  useEffect(() => {
     if (isMobile) {
-      // On mobile, make all items visible immediately
       projectRefs.current.forEach((ref) => {
         if (ref) ref.classList.add('visible');
       });
@@ -88,12 +158,14 @@ function ProjectsContainer({ selectedTag }) {
   return (
     <div className="projects-container"> 
       {filteredProjects.map((project, index) => {
-        console.log(`Rendering project ${index}:`, project);
+        const layoutClass = projectLayouts[index]?.class || 'project-regular';
+        console.log(`Project ${index}: ${project.alt} - Layout: ${layoutClass}`);
         return (
           <Link to={`/case-study/${project.id}`} key={project.id} className="project-link">
             <div
-              className="project-item"
+              className={`project-item ${layoutClass}`}
               ref={(el) => (projectRefs.current[index] = el)}
+              id={`project-${project.id}`}
             >
               <div className="corner-bl"></div>
               <div className="corner-br"></div>
@@ -133,7 +205,6 @@ function ProjectsContainer({ selectedTag }) {
                 <h1 className="project-alt-text">{project.alt}</h1>
                 <h2 className="project-tags">{'[' + project.tags.join(', ') + ']'}</h2>            
               </div>
-              
             </div>
           </Link>
         );
