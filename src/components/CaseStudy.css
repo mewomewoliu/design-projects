@@ -41,8 +41,13 @@
 
 .back-link {
   display: block;
+  /* flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 10; */
   font-size: clamp(1rem, 3vw, 1.5rem);
   font-weight: 500;
+  padding: 0rem;
   padding-bottom: 0.5rem;
   margin-top: 0;
   text-decoration: none;
@@ -96,13 +101,15 @@
 }
 
 .case-study-intro{
-  align-items: start;
+  
   display: flex;
-  flex-direction: column;
-  gap: 0rem;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 4rem;
   width: 100%;
   box-sizing: border-box;
-  padding-bottom: 0rem;
+  padding-bottom: 1rem;
   margin-bottom: 1rem;
   border-bottom: 1px solid #f1f1f1;
 }
@@ -119,20 +126,27 @@
 .case-study-update {
   font-size: clamp(14px, 2.5vw, 16px);
   font-weight: 500;
+  padding: 0rem;
   margin-bottom: 1rem;
   color: #6e6e6e;
 }
 
 .case-study-credits {
   margin-top: 0rem;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content:flex-start;
+  gap: 1rem;
   padding: 0rem;
-  padding-top: 1rem;
+  padding-top: 1.6rem;
   width: 100%;
   box-sizing: border-box;
-  border-bottom: 1px solid #f1f1f1;
+  border-top: 1px solid #f1f1f1;
 }
 
 .case-study-credits h3 {
+  width: 50%;
   font-size: clamp(12px, 2vw, 14px);
   font-weight: 500;
   margin-bottom: 1rem;
@@ -148,7 +162,7 @@
 
 .case-study-credits li {
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid #f1f1f1;
+  /* border-bottom: 1px solid #f1f1f1; */
   font-size: clamp(12px, 2vw, 14px);
   font-weight: 500;
   margin-bottom: 0.5rem;
@@ -285,10 +299,10 @@
   display: flex;
   align-items: stretch;
   justify-content: center;
-  border-radius: 1.5rem;
+  border-radius: 0rem;
   padding: 1rem;
-  border: 0.2rem solid #f1f1f1;
-  background: #000000;
+  /* border: 0.2rem solid #ffffff; */
+  /* background: #000000; */
   overflow: hidden;
 }
 
@@ -302,6 +316,7 @@
   display: block !important;
   border-radius: 1rem;
   box-sizing: border-box;
+  border: 0.2rem solid #ffffff;
 }
 
 .case-study-menu {
