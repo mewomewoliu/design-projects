@@ -90,13 +90,13 @@ function CaseStudy() {
     <div className="case-study">
       {/* Header Section */}
       <div className="case-study-header">
-        <Link to="/" className="back-link">◼_All_Projects</Link>
-        
+        <Link to="/" className="main-label">◼ All_Design_Projects</Link>
         <div className="case-study-intro">
-          {/* <h1>{study.title}</h1> */}
+          
           <div className="case-study-title">
-          <h2 className="case-study-description">{study.description}</h2>
-          <p className="case-study-update">[2024 UPDATE]</p>
+            <h1 className="main-h1">{study.title}</h1>
+            <h2 className="main-h2">{study.description}</h2>
+          {/* <p className="case-study-update">[2024 UPDATE]</p> */}
           </div>
           <div className="case-study-brief">
             <p>[Client] {study.client}</p>
@@ -141,16 +141,16 @@ function CaseStudy() {
             id={generateAnchorId(section.title)}
           >
             <div className="case-study-section-left">
-              <h2 className="case-study-section-title">{section.title}</h2>
+              <h2 className="main-h2" dangerouslySetInnerHTML={{ __html: section.title }}></h2>
               <div className="case-study-text-column">
                 {section.paragraphs.map((paragraph, pIndex) => (
-                  <p key={pIndex}>{paragraph}</p>
+                  <p key={pIndex} dangerouslySetInnerHTML={{ __html: paragraph }}></p>
                 ))}
               </div>
             </div>
             <div className="case-study-section-right">
               {section.media && (
-                <div className="case-study-media-container">
+                <div className="case-study-section-media">
                   {renderMedia(section.media)}
                 </div>
               )}

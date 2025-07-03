@@ -2,13 +2,18 @@
   margin-top: 0rem;
   margin-bottom: 0rem;
   width: 66%;
- padding-bottom: 1rem;
+  padding-bottom: 1rem;
+  animation: fadeIn 0.8s ease-out;
 }
-
+.intro-main .main-h1{
+  font-size: clamp(1.5rem, 2.5vw, 3rem);
+  font-weight: 500;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
 .intro-title {
   font-size: 36px;
   font-weight: 700;
-
   line-height: 1.1;
   color: #000000;
 }
@@ -41,13 +46,15 @@
   line-height: 1.35;
   margin-top: 0.5rem;
   display: inline-block;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .more-info-cta:hover {
   text-decoration: line-through;
+  transform: translateX(5px);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .intro-title {
     font-size: 40px;
     margin-bottom: 1rem;
@@ -68,9 +75,30 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .intro-title {
     font-size: 36px;
+    margin-bottom: 0.9rem;
+  }
+  
+  .intro-content {
+    font-size: 19px;
+    line-height: 1.42;
+  }
+  
+  .intro-content p {
+    margin-bottom: 0.9rem;
+  }
+
+  .more-info-cta {
+    font-size: 19px;
+    line-height: 1.42;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-title {
+    font-size: 34px;
     margin-bottom: 0.8rem;
   }
   
@@ -89,7 +117,7 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 320px) {
   .intro-title {
     font-size: 32px;
     margin-bottom: 0.6rem;

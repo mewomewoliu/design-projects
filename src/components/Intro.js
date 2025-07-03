@@ -10,9 +10,9 @@ function Intro() {
 
   return (
     <div className="intro-main">
-      {/* <h1 className="intro-title">Mia Liu</h1> */}
+      <h1 className="main-h1">Mia Liu </h1>
       <div className="intro-content">
-        <p>Mia is a Product Designer based in <span className="intro-highlight">Stockholm, Sweden</span>.</p>
+        <p>is a Product Designer based in <span className="intro-highlight">Stockholm, Sweden</span>.</p>
         <p>With extensive experience spanning both large-scale and startup tech companies, Mia has worn various hats in the design landscape, from <span className="intro-highlight">Product Designer</span> and <span className="intro-highlight">UX Designer</span> to <span className="intro-highlight">UI Design Lead</span> and <span className="intro-highlight">Design System Lead</span>.</p>
         
         {showMoreInfo && (

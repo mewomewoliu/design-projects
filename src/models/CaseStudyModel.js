@@ -1438,25 +1438,26 @@ class CaseStudyModel {
       },
        'thermo-cal': {
         id: 'thermo-cal',
-        title: 'Thermo Cal',
-        client: 'Thermo Cal',
+        title: 'Thermo-Cal Web Client Saas App',
+        client: 'Thermo-Cal Software AB',
         role: 'Product Designer',
         time: 'Feb 2025 - June 2025',
-        process: 'Research → Ideation → Design → Prototype → Test',
-        description: 'Thermo Cal',
+        process: 'Research → Product Discovery → Product Strategy → Ideation → Roadmap → UX Design → Prototype',
+        description: 'A simple & collaborative web-based Thermodynamic Calculator that helps engineers, scientists, students calculate thermodynamic properties of materials',
         credits: ['Johan Jeppsson', 'Marcus Fröling'],
         videoSrc: `${process.env.PUBLIC_URL}/media/videos/thermo-cal.mp4`,
-        detailedIntro: 'Thermo Cal is a smart home app that helps you manage your home energy consumption and reduce your carbon footprint.',
+        detailedIntro: 'Thermo-Cal is a simple & collaborative web-based Thermodynamic Calculator that helps engineers, scientists, students calculate thermodynamic properties of materials',
         sections: [
           {
-            title: "Demo",
+            title: "Context",
             paragraphs: [
-             
+              "Thermo-Calc Software AB is a Sweden-based company specializing in <span class='highlight'>computational materials engineering software</span>. The software leverages the CALPHAD method to model phase equilibria, transformation temperatures, thermophysical properties (e.g., heat capacity, elastic moduli), and kinetic processes (e.g., diffusion, precipitation) in multicomponent systems. Users can generate data for alloys, oxides, and high-entropy materials, enabling applications from alloy design to additive manufacturing.",
+              
             ],
             media: {
               type: "image",
-              src: `${process.env.PUBLIC_URL}/media/images/bbc-designsystem-column.png`,
-              alt: "Music Mash"
+              src: `${process.env.PUBLIC_URL}/media/images/thermo-calc-overview1.png`,
+              alt: "Thermo-Calc Overview"
             }
           },
           {
