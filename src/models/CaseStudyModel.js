@@ -1436,6 +1436,45 @@ class CaseStudyModel {
           
         ]
       },
+       'thermo-cal': {
+        id: 'thermo-cal',
+        title: 'Thermo Cal',
+        client: 'Thermo Cal',
+        role: 'Product Designer',
+        time: 'Feb 2025 - June 2025',
+        process: 'Research → Ideation → Design → Prototype → Test',
+        description: 'Thermo Cal',
+        credits: ['Johan Jeppsson', 'Marcus Fröling'],
+        videoSrc: `${process.env.PUBLIC_URL}/media/videos/thermo-cal.mp4`,
+        detailedIntro: 'Thermo Cal is a smart home app that helps you manage your home energy consumption and reduce your carbon footprint.',
+        sections: [
+          {
+            title: "Demo",
+            paragraphs: [
+             
+            ],
+            media: {
+              type: "image",
+              src: `${process.env.PUBLIC_URL}/media/images/bbc-designsystem-column.png`,
+              alt: "Music Mash"
+            }
+          },
+          {
+            title: "",
+            paragraphs: [
+            
+            
+            ],
+            media: {
+              type: "image",
+              src: `${process.env.PUBLIC_URL}/media/images/bbc-designsystem-guideline.png`,
+              alt: "Music Mash Persona"
+            }
+          },
+
+          
+        ]
+      },
 
       /***********************************
        *        Scania Help Center project           *  

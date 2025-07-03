@@ -1,9 +1,15 @@
 .case-study-footer {
 
-  border-radius: 1rem;
+  border-radius: 0rem;
   align-items: flex-start;
-  padding: 1rem;
-  /* background-color: #373737; */
+  padding: 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin:0;
+  margin-top: 1rem;
+  border-top: 1px solid #f3f3f3;
+  /* padding: 1rem; */
+  /* background-color: #f2f2f2; */
 
  
 }
@@ -11,14 +17,15 @@
 .footer-text {
   display: flex;
   flex-direction: column;
-  font-size: 1.2rem;
-  color: #6e6e6e;
+  font-size: 1rem;
+  color: #000000;
   align-items: flex-start;
   gap: 0rem;
 }
 
 .footer-text p {
-  margin: 0;
+  margin:0;
+  margin-top: 0.5rem;
 }
 
 .next-case-study {
@@ -35,7 +42,7 @@
 .next-case-study-link {
   display: inline-block;
   margin-top: 0rem;
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 500;
   justify-content: center;
   color: #000000;
@@ -55,19 +62,24 @@
   .case-study-footer {
     align-items: center;
   }
+
 .footer-content {
   display: flex;
   flex-direction: column;
   gap: 0rem;
-  text-align: center;
-  align-items:center;
-  padding: 0rem 0;
+  text-align: left;
+  align-items:flex-start;
+  padding:0;
+}
+.footer-content p {
+  margin:0;
+  margin-top: 1rem;
 }
 
   .next-case-study-link {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 
   }
 }

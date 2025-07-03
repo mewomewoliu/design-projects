@@ -86,22 +86,11 @@ function CaseStudy() {
     }
   };
 
-  // Function to randomly highlight words in a paragraph
-  const highlightRandomWords = (text) => {
-    return text.split(' ').map((word, index) => {
-      // Randomly decide to highlight (about 10% chance)
-      const shouldHighlight = Math.random() < 0.1;
-      return shouldHighlight ? 
-        <span key={index} className="highlight">{word + ' '}</span> : 
-        <span key={index}>{word + ' '}</span>;
-    });
-  };
-
   return (
     <div className="case-study">
       {/* Header Section */}
       <div className="case-study-header">
-        <Link to="/" className="back-link">◼_ALL PROJECTS</Link>
+        <Link to="/" className="back-link">◼_All_Projects</Link>
         
         <div className="case-study-intro">
           {/* <h1>{study.title}</h1> */}
@@ -151,28 +140,21 @@ function CaseStudy() {
             ref={el => sectionsRef.current[index] = el}
             id={generateAnchorId(section.title)}
           >
-            <h2>{section.title}</h2>
-            
-            {/* Two-column text content */}
-            <div className="case-study-section-content">
+            <div className="case-study-section-left">
+              <h2 className="case-study-section-title">{section.title}</h2>
               <div className="case-study-text-column">
-                {section.paragraphs.slice(0, Math.ceil(section.paragraphs.length / 2)).map((paragraph, pIndex) => (
-                  <p key={pIndex}>{highlightRandomWords(paragraph)}</p>
-                ))}
-              </div>
-              <div className="case-study-text-column">
-                {section.paragraphs.slice(Math.ceil(section.paragraphs.length / 2)).map((paragraph, pIndex) => (
-                  <p key={pIndex + Math.ceil(section.paragraphs.length / 2)}>{highlightRandomWords(paragraph)}</p>
+                {section.paragraphs.map((paragraph, pIndex) => (
+                  <p key={pIndex}>{paragraph}</p>
                 ))}
               </div>
             </div>
-            
-            {/* Full-width media */}
-            {section.media && (
-              <div className="case-study-media-container">
-                {renderMedia(section.media)}
-              </div>
-            )}
+            <div className="case-study-section-right">
+              {section.media && (
+                <div className="case-study-media-container">
+                  {renderMedia(section.media)}
+                </div>
+              )}
+            </div>
           </div>
         ))}
 

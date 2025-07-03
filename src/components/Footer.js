@@ -15,8 +15,9 @@ function Footer({ nextCaseStudy, nextCaseStudyLink }) {
           </Link>
         )}
         <div className="footer-text">
+         
           <SocialList />
-          <p>© {currentYear} crafted with love, pixels, and a touch of magic by Mia ✦ All rights reserved but high-fives are free ✋</p>
+          <p>© {currentYear} crafted with love by Mia ✦ All rights reserved but high-fives are free ✋</p>
         </div>
       </div>
     </footer>

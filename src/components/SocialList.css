@@ -1,18 +1,20 @@
 .social-list {
   
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  /* margin-top: 1rem; */
   padding: 0;
-  gap: clamp(1rem, 4vw, 4rem);
+  margin: 0;
+  gap: clamp(0rem, 4vw, 0.5rem);
   width: 100%;
   max-width: 100%;
   overflow-x: auto;
   flex-wrap: wrap;
-  /* border-bottom: 1px solid #e1e1e1;
-  border-top: 1px solid #e1e1e1; */
+  border-bottom: 1px solid #f3f3f3;
+  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  
 }
 
 .social-list li {
@@ -22,13 +24,14 @@
   flex-direction: row;
   align-items: flex-start;
   flex-shrink: 0;
+  
 }
 
 .social-list a {
   padding: 0;
-  color: #6e6e6e;
+  color: #000000;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 500;
 /* border-bottom: 1px solid #000000; */
   font-family: inherit;

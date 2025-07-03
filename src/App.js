@@ -75,7 +75,7 @@ function AppContent() {
         {/* Top Row: Portfolio label, Intro, Navigation, and Social Media */}
         <div className="top-row">
           <div className="portfolio-section">
-            <h2 className="portfolio-label">◼_Miaomiao Liu</h2>
+            <h2 className="portfolio-label">◼_Mia_Liu</h2>
             <Intro />
           </div>
           {/* <div className="navigation-section">

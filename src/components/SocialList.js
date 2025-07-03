@@ -6,7 +6,8 @@ const SOCIAL_LINKS = [
   { label: '[B] ADPList', url: 'https://adplist.org/mentors/mia-liu' },
   { label: '[C] Instagram', url: 'https://www.instagram.com/yourusername/' },
   { label: '[D] Medium', url: 'https://medium.com/@yourusername' },
-  { label: '[E] Contact', url: 'https://medium.com/@yourusername' },
+  { label: '[E] Creative_Coding', url: 'https://openprocessing.org/user/402146?view=sketches' },
+  { label: '[F] Email: helloicidesign@gmail.com', url: 'mailto:helloicidesign@gmail.com' },
 ];
 
 function SocialList() {
