@@ -277,7 +277,7 @@ h2, .main-h2 {
     font-size: 4.5rem;
   }
   h2, .main-h2 {
-    font-size: 3rem;
+    font-size: 4,5rem;
   }
 }
 
@@ -352,10 +352,30 @@ h2, .main-h2 {
   .main-label {
     margin-bottom: 1.5rem;
   }
+  
 }
 
 @media (max-width: 480px) {
+  .intro-main {
+    width: 100%;
+  }
+  .main-h1 {
+    font-size: 2.5rem;
+  }
+  .main-h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+  .intro-content{
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
   .main-label {
     margin-bottom: 1rem;
+    margin-top: 0.5rem;
   }
+  .projects-container {
+    gap: 4rem;
+  }
+  
 }

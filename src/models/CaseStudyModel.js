@@ -1449,9 +1449,10 @@ class CaseStudyModel {
         detailedIntro: 'Thermo-Cal is a simple & collaborative web-based Thermodynamic Calculator that helps engineers, scientists, students calculate thermodynamic properties of materials',
         sections: [
           {
-            title: "Context",
+            title: "Client",
             paragraphs: [
-              "Thermo-Calc Software AB is a Sweden-based company specializing in <span class='highlight'>computational materials engineering software</span>. The software leverages the CALPHAD method to model phase equilibria, transformation temperatures, thermophysical properties (e.g., heat capacity, elastic moduli), and kinetic processes (e.g., diffusion, precipitation) in multicomponent systems. Users can generate data for alloys, oxides, and high-entropy materials, enabling applications from alloy design to additive manufacturing.",
+              "Thermo-Calc Software AB is a Sweden-based company founded in 1997 specializing in <span class='highlight'>computational materials engineering software</span>.",
+              "The software leverages the CALPHAD method to model phase equilibria, transformation temperatures, thermophysical properties (e.g., heat capacity, elastic moduli), and kinetic processes (e.g., diffusion, precipitation) in multicomponent systems."
               
             ],
             media: {
@@ -1461,15 +1462,52 @@ class CaseStudyModel {
             }
           },
           {
-            title: "",
+            title: "Product",
             paragraphs: [
-            
+             
+              "Imagine you are a materials engineer and try creating a new metal material for super <span class='highlight'>strong knife blades</span>.",
+              "They need it to be: <span class='highlight'> Hard (so the knife stays sharp)</span>, <span class='highlight'>Strong (so it doesn’t snap)</span>, <span class='highlight'>Rust-proof (so it doesn’t turn orange)</span>",
+              "In traditional approach, engineers need to test 50+ alloy variations manually, which will take <span class='highlight'>at least 6 Months</span>.",
+              "With Thermo-Calc, they can simulate how the alloy will behave under different conditions and find the best alloy for their needs in <span class='highlight'>a few seconds</span>.",
+              "What they need to do is:",
+              "1. <span class='highlight'> Define Target Properties</span>: e.g., Hardness ≥ 60 HRC | Corrosion resistance ≈ surgical steel | Toughness > standard tool steel.", 
+              "2. <span class='highlight'> Define Composition</span>: e.g., Composition = Fe-0.8C-15Cr-1Mo-0.3V (wt%) Temperature = 25°C → 1100°C",
+              "3. <span class='highlight'> Run the simulation</span>: e.g., 1000 alloy variations will be generated and analyzed. And engineers can see the results in a few seconds in a visualise graph/table.",
+              "4. <span class='highlight'> Test/Iterate/Find the best alloy</span>: egineers can tweak a bit the compositions, conditions, or other parameters to see different simulation results, e.g. Increased V to 0.5% → VC volume ↑ 12% → predicted edge retention ↑ 30%. ",
+              "By comparing, they can find the alloy that meets their goals, e.g. Fe-0.8C-14Cr-1Mo-0.5V with a 62 HRC (+15% vs. baseline) and salt-spray resistant within 500h. ",
+              
             
             ],
             media: {
               type: "image",
-              src: `${process.env.PUBLIC_URL}/media/images/bbc-designsystem-guideline.png`,
-              alt: "Music Mash Persona"
+              src: `${process.env.PUBLIC_URL}/media/images/knife.jpg`,
+              alt: "Knife"
+            }
+          },
+          {
+            title: "Challenges to be solved",
+            paragraphs: [
+              "The Thermo-Calc legacy application, a Java-based desktop platform has been building since 27 years ago, prioritized <span class='highlight'>functionality over usability</span>. As Thermo Calc’s inaugural design lead,<span class='highlight'>my mission required transforming this system into a web-based application with simplified user flows while streamlining workflows for advanced calculators</span>. This entailed aligning historically siloed <span class='highlight'>stakeholders</span> on modernization goals and deconstructing specialized processes. ",
+              "<span class='highlight'>Key complexities</span> included reconciling the lack of product strategy, establishing clear product narratives and roadmaps, and transforming sophisticated calculation workflows into consistently simple interactions."
+            
+            ],
+            media: {
+              type: "image",
+              src: `${process.env.PUBLIC_URL}/media/images/knife.jpg`,
+              alt: "Knife"
+            }
+          },
+          {
+            title: "Design Approach",
+            paragraphs: [
+              "My <span class='highlight'>design approach</span> focused on transforming complex user flows into simple/straitforward steps leveraging <span class='highlight'>minimalistic design language & communications</span>, also add <span class='highlight'>product strateges</span> as the heart of the product.",
+              "The design process began with immense research and <span class='highlight'>product discovery</span>, where I defined the product strategy through focused <span class='highlight'>workshops</span> with Sales and Software teams. After mapping user needs, technical constraints, and business goals, I prioritized short- and long-term design initiatives with PM based on team capacity and impact. This enabled focused exploration of A&B solutions for simplifying web app workflows while integrating <span class='highlight'>new value propositions</span>: collaborative calculation features for efficient knowledge sharing and scalable license frameworks.",
+              "Concurrently, I built a <span class='highlight'>design system</span> leveraging Thermo Calc’s brand assets and <span class='highlight'>inspired by real-world ‘Calculator’</span> – with material scientists’ practice of manually writing down alloys before computation. The solutions were rigorously tested via <span class='highlight'>Binary phase diagram user flows</span>, incorporating <span class='highlight'>strategic elements</span> like License Management and Database Gallery enhancements. Ultimately, the team selected the solution optimized for adaptability with advanced calculators (e.g., Prisma) and complex workflows. Throughout, my approach transformed intricate processes into <span class='highlight'>minimalist, strategy-driven user experiences</span>."
+            ],
+            media: {
+              type: "image",
+              src: `${process.env.PUBLIC_URL}/media/images/thermo-calc-home.png`,
+              alt: "Knife"
             }
           },
 
