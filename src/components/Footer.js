@@ -4,15 +4,6 @@ import Intro from './Intro';
 import SocialList from './SocialList';
 import './Footer.css';
 
-const SOCIAL_LINKS = [
-  { label: '[A] Linkedin', url: 'https://www.linkedin.com/in/mia-liu-856290158/', external: true },
-  { label: '[B] ADPList', url: 'https://adplist.org/mentors/miaomiao', external: true },
-  { label: '[C] Instagram', url: 'https://www.instagram.com/things.design_and_mia/', external: true },
-  { label: '[D] Medium', url: 'https://medium.com/@mewomewoliu', external: true },
-  { label: '[E] Creative_Coding', url: 'https://openprocessing.org/user/402146?view=sketches', external: true },
-  { label: '[F] About me', url: '/about', external: false },
-];
-
 function Footer({ nextCaseStudy, nextCaseStudyLink }) {
   const currentYear = new Date().getFullYear();
 

@@ -29,6 +29,7 @@ function CaseStudy() {
   useEffect(() => {
     // Record start time for this case study view
     startTimeRef.current = Date.now();
+    const sectionViewTimes = sectionViewTimesRef.current;
     
     const model = new CaseStudyModel();
     const presenter = new CaseStudyPresenter(model, {
@@ -74,7 +75,7 @@ function CaseStudy() {
           time_spent_ms: timeSpent,
           time_spent_seconds: Math.round(timeSpent / 1000),
           time_spent_minutes: Math.round(timeSpent / 60000),
-          section_view_times: sectionViewTimesRef.current,
+          section_view_times: sectionViewTimes,
           device_type: window.innerWidth <= 768 ? 'mobile' : 'desktop'
         });
       }
@@ -83,9 +84,11 @@ function CaseStudy() {
 
   useEffect(() => {
     // Progressive enhancement: only add animation if intersection observer is supported
+    const sections = sectionsRef.current;
+    
     if (!('IntersectionObserver' in window)) {
       // Fallback: just ensure all sections are visible
-      sectionsRef.current.forEach(section => {
+      sections.forEach(section => {
         if (section) section.classList.add('visible');
       });
       return;
@@ -103,7 +106,7 @@ function CaseStudy() {
           entry.target.classList.add('visible');
           
           // Track section viewing
-          const sectionIndex = sectionsRef.current.indexOf(entry.target);
+          const sectionIndex = sections.indexOf(entry.target);
           const sectionTitle = study?.sections[sectionIndex]?.title || `Section ${sectionIndex + 1}`;
           
           // Record when user starts viewing this section
@@ -123,7 +126,7 @@ function CaseStudy() {
           });
         } else {
           // Track time spent when section leaves viewport
-          const sectionIndex = sectionsRef.current.indexOf(entry.target);
+          const sectionIndex = sections.indexOf(entry.target);
           if (sectionViewTimesRef.current[sectionIndex] && sectionViewTimesRef.current[sectionIndex].start_time) {
             const timeInSection = Date.now() - sectionViewTimesRef.current[sectionIndex].start_time;
             sectionViewTimesRef.current[sectionIndex].total_time += timeInSection;
@@ -134,7 +137,7 @@ function CaseStudy() {
     }, observerOptions);
 
     // Make sections visible immediately, then optionally add animation
-    sectionsRef.current.forEach(section => {
+    sections.forEach(section => {
       if (section) {
         section.classList.add('visible');
         observer.observe(section);
@@ -142,11 +145,11 @@ function CaseStudy() {
     });
 
     return () => {
-      sectionsRef.current.forEach(section => {
+      sections.forEach(section => {
         if (section) observer.unobserve(section);
       });
     };
-  }, [study]);
+  }, [study, id]);
 
   if (notFound) return <div>Case study not found</div>;
   if (!study) return <div>Loading...</div>;
@@ -178,13 +181,6 @@ function CaseStudy() {
 
   const generateAnchorId = (title) => {
     return title.toLowerCase().replace(/\s+/g, '-');
-  };
-
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
   };
 
   return (

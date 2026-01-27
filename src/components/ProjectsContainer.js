@@ -129,12 +129,14 @@ function ProjectsContainer({ selectedTag }) {
       { threshold: 0.1 }
     );
 
-    projectRefs.current.forEach((ref) => {
+    const refs = projectRefs.current;
+    
+    refs.forEach((ref) => {
       if (ref) observer.observe(ref);
     });
 
     return () => {
-      projectRefs.current.forEach((ref) => {
+      refs.forEach((ref) => {
         if (ref) observer.unobserve(ref);
       });
     };

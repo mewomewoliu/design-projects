@@ -1,9 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, NavLink } from 'react-router-dom';
 import posthog from 'posthog-js';
-import Intro from './components/Intro';
-import SocialList from './components/SocialList';
-import Navigation from './components/Navigation';
 import ProjectsContainer from './components/ProjectsContainer';
 import Blogs from './components/Blogs';
 import Footer from './components/Footer';
@@ -24,10 +21,8 @@ posthog.init('phc_wLQOzTGjeDsu2ZhwJBgSNc8qkerfTS1PA998617YbJY',
 
 function AppContent() {
   const location = useLocation();
-  const navigate = useNavigate();
   const isCaseStudy = location.pathname.includes('/case-study');
   const isAbout = location.pathname === '/about';
-  const [projects, setProjects] = useState([]);
   const [selectedTag, setSelectedTag] = useState(null);
   const sessionStartRef = useRef(null);
   const pageStartRef = useRef(null);
@@ -113,14 +108,14 @@ function AppContent() {
       window.removeEventListener('beforeunload', handleBeforeUnload);
       handleBeforeUnload(); // Track session end on component cleanup
     };
-  }, [sessionId]);
+  }, [sessionId, location.pathname, location.search]);
 
   // Load projects
   useEffect(() => {
     const model = new ProjectModel();
     const presenter = new ProjectPresenter(model, {
-      renderProjects: (projectsData) => {
-        setProjects(projectsData);
+      renderProjects: () => {
+        // Projects loaded
       }
     });
 
@@ -167,33 +162,7 @@ function AppContent() {
       console.error('Error handling URL parameters:', error);
       setSelectedTag(null);
     }
-  }, [location.search, location.pathname, sessionId, isCaseStudy, isAbout]);
-
-  const handleTagClick = (tag) => {
-    try {
-      const isDeselecting = tag === selectedTag;
-      
-      // Track tag click interaction
-      posthog.capture('tag_clicked', {
-        session_id: sessionId,
-        tag_name: tag,
-        action: isDeselecting ? 'deselect' : 'select',
-        previous_tag: selectedTag,
-        device_type: window.innerWidth <= 768 ? 'mobile' : 'desktop',
-        page_path: location.pathname
-      });
-      
-      if (isDeselecting) {
-        setSelectedTag(null);
-        navigate('/', { replace: true });
-      } else {
-        setSelectedTag(tag);
-        navigate(`/?tag=${encodeURIComponent(tag)}`, { replace: true });
-      }
-    } catch (error) {
-      console.error('Error handling tag click:', error);
-    }
-  };
+  }, [location.search, location.pathname, location.hash, sessionId, isCaseStudy, isAbout]);
 
   // General click tracking for the entire app
   useEffect(() => {
@@ -267,7 +236,6 @@ function AppContent() {
     }
     
     if (isCaseStudy) {
-      const caseStudyId = location.pathname.split('/case-study/')[1];
       return {
         title: `Case Study - ${baseTitle}`,
         description: `View design case study by Mia Liu (Miaomiao). Product Designer and UX Designer showcasing design work and methodology.`,
