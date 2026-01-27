@@ -1,6 +1,7 @@
 class CaseStudyModel {
   constructor() {
     this.caseStudies = {
+
       'scania-helpcenter': {
         id: 'scania-helpcenter',
         title: 'Scania Help Center',
@@ -8,19 +9,18 @@ class CaseStudyModel {
         role: 'UX Designer',
         time: 'Sep 2023 - Oct 2024',
         process: 'Research → Design → Test → Deliver',
-        description: 'Redesigned Help Center for Seamless Support',
+        description: 'Redesigned Help Center which reduced Customer Support Cost',
         credits: ['Anders Odevik', 'Moa Axelsson', 'Jonas Howding'],
         videoSrc: `${process.env.PUBLIC_URL}/media/videos/scania-helpcenter.mp4`,
         detailedIntro: '',
         sections: [
           {
             // Section 1: Context & Problem Framing
-            title: "Brief",
+            title: "Client",
             paragraphs: [
               "The Scania Help Center is a comprehensive support platform offering Scania customers and employees a centralized hub for essential resources, including product manuals, technical specifications, troubleshooting guides, and customer service information.",
               "To elevate the user experience, I led efforts to design an intuitive, user-friendly interface tailored to our diverse user base. Through in-depth research, I explored user needs, contexts, and pain points to ensure the design meets real-world demands. Additionally, to support users from various business units and language backgrounds, our team implemented AI-driven solutions to deliver high-quality translations. To guarantee a smooth, effective user experience, we established key performance metrics to continually monitor and enhance the Help Center’s functionality.",
-              "Curious to learn more about this project? Feel free to reach out to me to learn more!"
-
+              "Link to the website: <a href='https://www.help-my.scania.com/gb/en/home.html' target='_blank'>https://www.help-my.scania.com/gb/en/home.html</a>"
             ],
             media: {
               type: "image",
@@ -29,109 +29,97 @@ class CaseStudyModel {
             }
           },
           // Section 2: Goals & Success Criteria
-          {
-            title: "",
-            paragraphs: [
+          // {
+          //   title: "",
+          //   paragraphs: [
              
-            ],
-            // media: {
-            //   type: "image",
-            //     src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-problem.png`,
-            //   alt: "Music Library Problem"
-            // }
-          },
+          //   ],
+          //   // media: {
+          //   //   type: "image",
+          //   //     src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-problem.png`,
+          //   //   alt: "Music Library Problem"
+          //   // }
+          // },
             // Section 3: Research & Discovery
-            {
-                title: "",
-                paragraphs: [
+          //   {
+          //       title: "",
+          //       paragraphs: [
             
-              ],
-                media: {
-                  type: "image",
-                src: ``,
-                alt: ""
-                }
-          },
+          //     ],
+          //       media: {
+          //         type: "image",
+          //       src: ``,
+          //       alt: ""
+          //       }
+          // },
              // Section 4: Ideation & Conceptualization
-            {
-              title: "",
-              paragraphs: [
+            // {
+            //   title: "",
+            //   paragraphs: [
                
               
-              ],
-                media: {
-                    type: "image",
-                    src: ``,
-                    alt: ""
-                }
-            },
+            //   ],
+            //     media: {
+            //         type: "image",
+            //         src: ``,
+            //         alt: ""
+            //     }
+            // },
 
             // Section 5: Design Exploration & Refinement
-            {
-                title: "",
-                paragraphs: [
+          //   {
+          //       title: "",
+          //       paragraphs: [
                 
               
-              ],
-                // media: {
-                //     type: "image",
-                //     src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-home.png`,
-                //     alt: "Premium View Premium music library Full access to all premium music tracks"
-                // },
+          //     ],
+          //       // media: {
+          //       //     type: "image",
+          //       //     src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-home.png`,
+          //       //     alt: "Premium View Premium music library Full access to all premium music tracks"
+          //       // },
                 
                
-          },
+          // },
             // Section 6: Final Solution & Impact
-            {
-                title: "",
-                paragraphs: [
+          //   {
+          //       title: "",
+          //       paragraphs: [
                                 
               
-              ],
-                // media: {
-                //     type: "image",
-                //     src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-premium.png`,
-                //     alt: "Premium View Premium music library Full access to all premium music tracks"
-                // },
-          },
+          //     ],
+          //       // media: {
+          //       //     type: "image",
+          //       //     src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-premium.png`,
+          //       //     alt: "Premium View Premium music library Full access to all premium music tracks"
+          //       // },
+          // },
              // Section 7: Results & Impact
-            {
-                title: "",
-                paragraphs: [
+          //   {
+          //       title: "",
+          //       paragraphs: [
                     
-                ],
-                // media: {
-                //     type: "image",
-                //     src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-delete.png`,
-                //     alt: "Premium View Premium music library Full access to all premium music tracks"
-                // }
-          },
+          //       ],
+          //       // media: {
+          //       //     type: "image",
+          //       //     src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-delete.png`,
+          //       //     alt: "Premium View Premium music library Full access to all premium music tracks"
+          //       // }
+          // },
              // Section 8: Key Learnings & Reflection
-            {
-                title: "",
-                paragraphs: [
+          //   {
+          //       title: "",
+          //       paragraphs: [
                 
               
-              ],
-                // media: {
-                //     type: "video",
-                //     src: `${process.env.PUBLIC_URL}/media/videos/musiclibrary-demo.mp4`,
-                //     alt: "Music Library Demo"
-                // }
-          },
-             // Section 9: Future Considerations & Next Steps
-            {
-                title: "",
-                paragraphs: [
-                  
-              
-              ],
-                // media: {
-                //     type: "image",
-                //     src: `${process.env.PUBLIC_URL}/media/images/musiclibrary-premium.png`,
-                //     alt: "Premium View Premium music library Full access to all premium music tracks"
-                // }
-            },
+          //     ],
+          //       // media: {
+          //       //     type: "video",
+          //       //     src: `${process.env.PUBLIC_URL}/media/videos/musiclibrary-demo.mp4`,
+          //       //     alt: "Music Library Demo"
+          //       // }
+          // },
+            
            
         ],
       },
@@ -254,6 +242,7 @@ class CaseStudyModel {
            
         ],
       },
+      //Need to refine the content
       'storykit-design-system': {
         id: 'storykit-design-system',
         title: 'Storykit Design System',
@@ -263,21 +252,65 @@ class CaseStudyModel {
         process: 'Research → Design → Test → Deliver',
         description: 'Finding Your Soundtrack: A Storykit Music Makeover',
         credits: ['Shapour jahanshahi', 'Oksana Romaniuk', 'Emil Sivervík', 'Alexei', 'Marcus Nirbrant',],
-        videoSrc: `${process.env.PUBLIC_URL}/media/videos/storykit.mp4`,
+        imageSrc: `${process.env.PUBLIC_URL}/media/images/storykit-design-system.png`,
         detailedIntro: '',
         sections: [
           {
-            title: "The Challenge",
+            title: "",
             paragraphs: [
-              "The current setup in the Storykit Admin Tool for managing user seats across agencies and clients lacks flexibility, leading to challenges in effectively managing seat allocation.",
+             
             ],
             media: {
               type: "image",
-              src: `${process.env.PUBLIC_URL}/media/images/storykit-create-requirements.png`,
+              src: `${process.env.PUBLIC_URL}/media/images/storykit-design-system-color.png`,
               alt: "Storykit Create Requirements"
             }
           },
-
+          {
+            title: "",
+            paragraphs: [
+             
+            ],
+            media: {
+              type: "image",
+              src: `${process.env.PUBLIC_URL}/media/images/storykit-design-system-button.png`,
+              alt: "Storykit Create Requirements"
+            }
+          },
+          {
+            title: "",
+            paragraphs: [
+             
+            ],
+            media: {
+              type: "image",
+              src: `${process.env.PUBLIC_URL}/media/images/storykit-design-system-buttons.png`,
+              alt: "Storykit Create Design System"
+            }
+          },
+          {
+            title: "",
+            paragraphs: [
+             
+            ],
+            media: {
+              type: "image",
+              src: `${process.env.PUBLIC_URL}/media/images/storykit-design-system-video.png`,
+              alt: "Storykit Create Design System"
+            }
+          },
+          {
+            title: "",
+            paragraphs: [
+             
+            ],
+            media: {
+              type: "image",
+              src: `${process.env.PUBLIC_URL}/media/images/storykit-design-system-accessibility.png`,
+              alt: "Storykit Create Design System",
+             
+            }
+          },
 
         ],
 
@@ -305,11 +338,11 @@ class CaseStudyModel {
               "3. Global Seat Limit Constraints: Ensuring that the sum of all reserved, agency-level, and floating seats does not exceed the agency’s global limit creates an additional layer of complexity, often requiring manual adjustments to avoid overuse or underutilization.",    
             
             ],
-            media: {
-              type: "image",
-              src: `${process.env.PUBLIC_URL}/media/images/storykit-create-requirements.png`,
-              alt: "Storykit Create Requirements"
-            }
+            // media: {
+            //   type: "image",
+            //   src: `${process.env.PUBLIC_URL}/media/images/storykit-create-requirements.png`,
+            //   alt: "Storykit Create Requirements"
+            // }
           },
           // Section 2: Goals & Success Criteria
           {
@@ -442,7 +475,7 @@ class CaseStudyModel {
       },
 
       /***********************************
-       *        BBC project           *  
+       *        BBC project: Hard to Read           *  
        ***********************************/
       'bbc': {
         id: 'bbc',
@@ -457,18 +490,18 @@ class CaseStudyModel {
         detailedIntro: '',
         sections: [
           {
-            title: "Context & Problem Framing",
+            title: "Context",
             paragraphs: [
               "The challenge was to rebuild driver trust in the pricing system of BlaBlaCar by testing and refining the newly introduced 'Smart Pricing' feature. We wanted to assess how drivers responded to the updated feature, specifically focusing on similar ride comparisons to help guide their pricing decisions. The project aimed to bring transparency, ease of use, and confidence to drivers when setting their ride prices.",
             ],
-            // media: {
-            //   type: "image",
-            //   src: `${process.env.PUBLIC_URL}/media/images/bbc-context.png`,
-            //   alt: "BBC News App Context"
-            // }
+            media: {
+              type: "image",
+              src: `${process.env.PUBLIC_URL}/media/images/bbc-smartprice-1.png`,
+              alt: "BBC News App Context"
+            }
           },
           {
-            title: "Goals & Success Criteria",
+            title: "Missions",
             paragraphs: [
               "Our main goals were to:",
               "• Test Usability and Comprehension: Ensure the new pricing feature was intuitive and easy for users to understand.",
@@ -476,11 +509,11 @@ class CaseStudyModel {
               "• Enhance Transparency: Observe users' understanding of pricing components, including BBC fees.",
               "• Collect User Insights: Gather overall feedback on the pricing feature to inform future iterations.",
             ],
-            // media: {
-            //   type: "image",
-            //   src: `${process.env.PUBLIC_URL}/media/images/bbc-goals.png`,
-            //   alt: "BBC News App Goals and Challenges"
-            // }
+            media: {
+              type: "image",
+              src: `${process.env.PUBLIC_URL}/media/images/bbc-vision.png`,
+              alt: "BBC News App Goals and Challenges"
+            }
           },
           {
             title: "Research & Discovery",
@@ -583,7 +616,7 @@ class CaseStudyModel {
         ],
       },
       /***********************************
-       *        Blankt project           *  
+       *        Blankt project: Not priortised design work           *  
        ***********************************/
       'blankt-web': {
         id: 'blankt-web',
@@ -598,7 +631,7 @@ class CaseStudyModel {
         detailedIntro: 'The BBC News app redesign project aimed to modernize the user interface, improve content discovery, and enhance the overall user experience for millions of global users.',
         sections: [
           {
-            title: "Introduction (Context & Problem Framing)",
+            title: "Client",
             paragraphs: [
               "Blankt Group AB, a creative poster retailer based in Stockholm, offers customized posters to bring customers' ideas to life. To launch their new online shopping platform, Blankt wanted to integrate an innovative graphic editing tool, revolutionizing how customers design and buy posters. The challenge? Build an engaging design that meets both business needs and customer desires, making the experience fun and easy.",
 
@@ -610,7 +643,7 @@ class CaseStudyModel {
             // }
           },
           {
-            title: "Goals & Success Criteria",
+            title: "Mission",
             paragraphs: [
               "Our main goals were:",
               "• Translate Vision into Design: Create a seamless shopping experience that reflected Blankt's core values of creativity and customization.",
@@ -727,7 +760,7 @@ class CaseStudyModel {
         detailedIntro: 'The BBC News app redesign project aimed to modernize the user interface, improve content discovery, and enhance the overall user experience for millions of global users.',
         sections: [
           {
-            title: "Introduction (Context & Problem Framing)",
+            title: "Client",
             paragraphs: [
               "Blankt Group AB, a creative poster retailer based in Stockholm, offers customized posters to bring customers' ideas to life. To launch their new online shopping platform, Blankt wanted to integrate an innovative graphic editing tool, revolutionizing how customers design and buy posters. The challenge? Build an engaging design that meets both business needs and customer desires, making the experience fun and easy.",
 
@@ -854,7 +887,7 @@ class CaseStudyModel {
         detailedIntro: 'The BBC News app redesign project aimed to modernize the user interface, improve content discovery, and enhance the overall user experience for millions of global users.',
         sections: [
           {
-            title: "Introduction (Context & Problem Framing)",
+            title: "Client",
             paragraphs: [
               "Blankt Group AB, a creative poster retailer based in Stockholm, offers customized posters to bring customers' ideas to life. To launch their new online shopping platform, Blankt wanted to integrate an innovative graphic editing tool, revolutionizing how customers design and buy posters. The challenge? Build an engaging design that meets both business needs and customer desires, making the experience fun and easy.",
 
@@ -866,7 +899,7 @@ class CaseStudyModel {
             // }
           },
           {
-            title: "Goals & Success Criteria",
+            title: "Mission",
             paragraphs: [
               "Our main goals were:",
               "• Translate Vision into Design: Create a seamless shopping experience that reflected Blankt's core values of creativity and customization.",
@@ -1404,35 +1437,68 @@ class CaseStudyModel {
         role: 'Product Designer Prototyper',
         time: 'Dec 2021 - Jul 2022',
         process: 'Stakeholder Workshop → Design System → Prototype',
-        description: 'Blablacar Pixar Design System • Customer Success',
+        description: 'Blablacar Pixar Design System for Customer Success',
         credits: ['Aleksei'],
-        imageSrc: `${process.env.PUBLIC_URL}/media/images/bbc-designsystem-cover.png`,
+        imageSrc: `${process.env.PUBLIC_URL}/media/images/bbc-crm-overview.png`,
         detailedIntro: 'Blablacar Customer Success team needed a design system to help them maintain consistent communication with Blablacar customers.',
         sections: [
           {
-            title: "Demo",
+            title: "Client",
             paragraphs: [
-             
+             "BlaBlaCar is a top French tech company offering carpooling and bus services. BlaBlaCar App has over 80 million users and is operating in 22 countries covering Europe, Latin America, and Asia. ",
+             "BlaBlaCar's CRM team aimed to enhance the consistency and scalability of their email designs. They required a robust Design System that would streamline the design process and ensure brand consistency across all email communications."
             ],
             media: {
               type: "image",
-              src: `${process.env.PUBLIC_URL}/media/images/bbc-designsystem-column.png`,
+              src: `${process.env.PUBLIC_URL}/media/images/bbc-design-system.png`,
               alt: "Music Mash"
+            }
+          },
+          {
+            title: "Deliverables",
+            paragraphs: [
+              "I led the process of developing and implementing a Design System at BlaBlaCar, focusing on building a flexible and accessible library of UI components aligned with the company’s design principles. And I introduced secure measures to safeguard component integrity, preventing unintended modifications. The new Design System enabled designers to craft high-quality emails faster, enhancing user engagement and strengthening brand recognition.",
+            
+            ],
+            media: {
+              type: "image",
+              src: `${process.env.PUBLIC_URL}/media/images/bbc-design-system-patterns.png`,
+              alt: "Music Mash Persona"
             }
           },
           {
             title: "",
             paragraphs: [
-            
-            
+              
             ],
             media: {
               type: "image",
-              src: `${process.env.PUBLIC_URL}/media/images/bbc-designsystem-guideline.png`,
-              alt: "Music Mash Persona"
+              src: `${process.env.PUBLIC_URL}/media/images/bbc-design-system-showcase.png`,
+              alt: "BBC Design System Showcase"
             }
           },
-
+          {
+            title: "",
+            paragraphs: [
+              
+            ],
+            media: {
+              type: "image",
+              src: `${process.env.PUBLIC_URL}/media/images/bbc-design-system-button.png`,
+              alt: "BBC Design System Button"
+            }
+          },
+          {
+            title: "",
+            paragraphs: [
+              
+            ],
+            media: {
+              type: "image",
+              src: `${process.env.PUBLIC_URL}/media/images/bbc-design-system-example.png`,
+              alt: "BBC Design System Button"
+            }
+          },
           
         ]
       },
@@ -1443,7 +1509,7 @@ class CaseStudyModel {
         role: 'Product Designer',
         time: 'Feb 2025 - June 2025',
         process: 'Research → Product Discovery → Product Strategy → Ideation → Roadmap → UX Design → Prototype',
-        description: 'A simple & collaborative web-based Thermodynamic Calculator that helps engineers, scientists, students calculate thermodynamic properties of materials',
+        description: 'A simple & collaborative web-based Thermodynamic Calculator',
         credits: ['Johan Jeppsson', 'Marcus Fröling'],
         videoSrc: `${process.env.PUBLIC_URL}/media/videos/thermo-cal.mp4`,
         detailedIntro: 'Thermo-Cal is a simple & collaborative web-based Thermodynamic Calculator that helps engineers, scientists, students calculate thermodynamic properties of materials',
@@ -1472,8 +1538,8 @@ class CaseStudyModel {
               "What they need to do is:",
               "1. <span class='highlight'> Define Target Properties</span>: e.g., Hardness ≥ 60 HRC | Corrosion resistance ≈ surgical steel | Toughness > standard tool steel.", 
               "2. <span class='highlight'> Define Composition</span>: e.g., Composition = Fe-0.8C-15Cr-1Mo-0.3V (wt%) Temperature = 25°C → 1100°C",
-              "3. <span class='highlight'> Run the simulation</span>: e.g., 1000 alloy variations will be generated and analyzed. And engineers can see the results in a few seconds in a visualise graph/table.",
-              "4. <span class='highlight'> Test/Iterate/Find the best alloy</span>: egineers can tweak a bit the compositions, conditions, or other parameters to see different simulation results, e.g. Increased V to 0.5% → VC volume ↑ 12% → predicted edge retention ↑ 30%. ",
+              "3. <span class='highlight'> Run the simulation</span>: e.g., 1000 alloy variations will be generated and analyzed. And engineers can see the results in a few seconds in a graph/table.",
+              "4. <span class='highlight'> Test/Iterate/Find the best alloy</span>: egineers can tweak the compositions, conditions, environment, or other parameters to see different simulation results, e.g. Increased V to 0.5% → VC volume ↑ 12% → predicted edge retention ↑ 30%. ",
               "By comparing, they can find the alloy that meets their goals, e.g. Fe-0.8C-14Cr-1Mo-0.5V with a 62 HRC (+15% vs. baseline) and salt-spray resistant within 500h. ",
               
             
@@ -1485,7 +1551,7 @@ class CaseStudyModel {
             }
           },
           {
-            title: "Challenges to be solved",
+            title: "Challenges",
             paragraphs: [
               "The Thermo-Calc legacy application, a Java-based desktop platform has been building since 27 years ago, prioritized <span class='highlight'>functionality over usability</span>. As Thermo Calc’s inaugural design lead,<span class='highlight'>my mission required transforming this system into a web-based application with simplified user flows while streamlining workflows for advanced calculators</span>. This entailed aligning historically siloed <span class='highlight'>stakeholders</span> on modernization goals and deconstructing specialized processes. ",
               "<span class='highlight'>Key complexities</span> included reconciling the lack of product strategy, establishing clear product narratives and roadmaps, and transforming sophisticated calculation workflows into consistently simple interactions."
@@ -1493,8 +1559,8 @@ class CaseStudyModel {
             ],
             media: {
               type: "image",
-              src: `${process.env.PUBLIC_URL}/media/images/knife.jpg`,
-              alt: "Knife"
+              src: `${process.env.PUBLIC_URL}/media/images/thermo-calc-challenge.png`,
+              alt: "Thermo-Calc Challenges"
             }
           },
           {
@@ -1506,157 +1572,217 @@ class CaseStudyModel {
             ],
             media: {
               type: "image",
-              src: `${process.env.PUBLIC_URL}/media/images/thermo-calc-home.png`,
-              alt: "Knife"
+              src: `${process.env.PUBLIC_URL}/media/images/thermo-calc-design-approach.png`,
+              alt: "Thermo-Calc Home"
             }
           },
-
+          {
+            title: "",
+            paragraphs: [
+             
+            
+            ],
+            media: {
+              type: "image",
+              src: `${process.env.PUBLIC_URL}/media/images/thermo-calc-design-system.png`,
+              alt: "Thermo-Calc Design System"
+            }
+          },
+          {
+            title: "",
+            paragraphs: [
+             
+            
+            ],
+            media: {
+              type: "image",
+              src: `${process.env.PUBLIC_URL}/media/images/thermo-calc-newhome.png`,
+              alt: "Thermo-Calc Homepage"
+            }
+          },
+          {
+            title: "",
+            paragraphs: [
+             
+            
+            ],
+            media: {
+              type: "image",
+              src: `${process.env.PUBLIC_URL}/media/images/thermo-calc-system.png`,
+              alt: "Thermo-Calc System"
+            }
+          },
+          {
+            title: "",
+            paragraphs: [
+             
+            
+            ],
+            media: {
+              type: "video",
+              src: `${process.env.PUBLIC_URL}/media/videos/thermo-calc-system-definer.mp4`,
+              alt: "Thermo-Calc System Definer"
+            }
+          },
           
+          {
+            title: "",
+            paragraphs: [
+             
+            
+            ],
+            media: {
+              type: "video",
+              src: `${process.env.PUBLIC_URL}/media/videos/thermo-calc-plot-settings.mp4`,
+              alt: "Thermo-Calc Plot Settings"
+            }
+          },
+          {
+            title: "Biggest Impacts",
+            paragraphs: [
+              "Simplicity & Efficiency",
+              "<span class='highlight'>To complete defining a system</span>, users only need <span class='highlight'>1 step</span> writing down their alloys compared with at least <span class='highlight'>4 steps</span> in the legacy application.",
+              "To iterate on the result, users no need to <span class='highlight'>re-run the calculation</span>, instead, they can <span class='highlight'>freely tweak plot / axis settings</span> and see the updates in real-time.",
+              "To overlay / compare multiple plots, users can <span class='highlight'>merge by choosing from avaible results</span>, instead of duplicating calculations, which significantly <span class='highlight'>reduces users' efforts & improves efficiency</span>.",
+              "Highlights are:",
+              "The new Navigation Menu which replaced the previous drable flow cards for improving accessibility & usability.",
+              "The new Sharing feature which allows users to <span class='highlight'>share their calculations</span> with coworkers, which ensure <span class='highlight'>high-quality outcomes</span> by peer reviews.",
+              "Left image shows my design documentation for 'Define System' view."
+            
+            ],
+            media: {
+              type: "image",
+              src: `${process.env.PUBLIC_URL}/media/images/thermo-calc-impact.png`,
+              alt: "Thermo-Calc Challenges"
+            }
+          },
         ]
       },
 
       /***********************************
-       *        Scania Help Center project           *  
+       *        Creative coding projects          *  
        ***********************************/
-      // 'scania-help-center': {
-      //   id: 'bbc-project',
-      //   title: 'BBC News App Redesign',
-      //   client: 'BBC',
-      //   role: 'UX/UI Design Lead',
-      //   time: 'Jan 2023 - Jun 2023',
-      //   process: 'Research → Ideation → Design → Prototype → Test',
-      //   description: '"Reimagining the BBC News app for a more personalized and engaging user experience."',
-      //   credits: ['Jane Smith', 'John Doe', 'Alice Johnson', 'Bob Williams'],
-      //   videoSrc: `${process.env.PUBLIC_URL}/media/videos/bbc-demo.mp4`,
-      //   detailedIntro: 'The BBC News app redesign project aimed to modernize the user interface, improve content discovery, and enhance the overall user experience for millions of global users.',
-      //   sections: [
-      //     {
-      //       title: "1. Context",
-      //       paragraphs: [
-      //         "The BBC News app is one of the most popular news applications globally, serving millions of users with up-to-date news and information.",
-      //         "With changing user behaviors and expectations in the digital news landscape, BBC recognized the need to evolve its mobile app to maintain its competitive edge and better serve its diverse user base.",
-      //         "Our team was tasked with redesigning the app to improve content discovery, personalization, and overall user engagement while maintaining BBC's reputation for reliable and impartial news reporting."
-      //       ],
-      //       media: {
-      //         type: "image",
-      //         src: `${process.env.PUBLIC_URL}/media/images/bbc-context.png`,
-      //         alt: "BBC News App Context"
-      //       }
-      //     },
-      //     {
-      //       title: "2. Problem",
-      //       paragraphs: [
-      //         "The existing BBC News app faced several challenges:",
-      //         "• Limited personalization options, leading to a one-size-fits-all approach to news delivery",
-      //         "• Difficulty in discovering diverse content beyond top headlines",
-      //         "• Outdated user interface that didn't align with modern design standards",
-      //         "• Lack of features to encourage user engagement and interaction with news content"
-      //       ],
-      //       media: {
-      //         type: "image",
-      //         src: `${process.env.PUBLIC_URL}/media/images/bbc-problem.png`,
-      //         alt: "BBC News App Problems"
-      //       }
-      //     },
-      //     {
-      //       title: "3. Design Process",
-      //       paragraphs: [
-      //         "Our design process for the BBC News app redesign involved the following steps:",
-      //         "• User Research: Conducted surveys, interviews, and usability tests with existing app users to understand pain points and desires.",
-      //         "• Competitive Analysis: Analyzed other popular news apps to identify best practices and potential areas for innovation.",
-      //         "• Ideation: Brainstormed solutions for key issues identified in the research phase, focusing on personalization and content discovery.",
-      //         "• Wireframing: Created low-fidelity wireframes to quickly iterate on layout and functionality ideas.",
-      //         "• Prototyping: Developed high-fidelity prototypes to visualize the new design and test user flows.",
-      //         "• User Testing: Conducted multiple rounds of user testing with prototypes to gather feedback and refine the design.",
-      //         "• Visual Design: Crafted a modern, clean visual design language that aligned with BBC's brand guidelines while introducing fresh elements.",
-      //         "• Handoff & Implementation: Worked closely with the development team to ensure accurate implementation of the design."
-      //       ],
-      //       media: {
-      //         type: "image",
-      //         src: `${process.env.PUBLIC_URL}/media/images/bbc-design-process.png`,
-      //         alt: "BBC News App Design Process"
-      //       }
-      //     },
-      //     {
-      //       title: "4. Key Features",
-      //       paragraphs: [
-      //         "The redesigned BBC News app introduced several key features:",
-      //         "• Personalized News Feed: An AI-driven feed that learns from user behavior to deliver more relevant content.",
-      //         "• Topic Explorer: A new section allowing users to dive deep into specific topics or regions of interest.",
-      //         "• Interactive Content: Integration of polls, quizzes, and comment sections to increase user engagement.",
-      //         "• Dark Mode: Implementation of a dark theme for improved readability in low-light conditions.",
-      //         "• Customizable Navigation: Allowing users to tailor their quick access menu to their most-used sections."
-      //       ],
-      //       media: {
-      //         type: "video",
-      //         src: `${process.env.PUBLIC_URL}/media/videos/bbc-features-demo.mp4`,
-      //         alt: "BBC News App Key Features Demo"
-      //       }
-      //     },
-      //     {
-      //       title: "5. Impacts",
-      //       paragraphs: [
-      //         "The redesigned BBC News app has been well-received by users and stakeholders alike. Key impacts include:",
-      //         "• 30% increase in daily active users within the first month of launch",
-      //         "• 45% improvement in user engagement metrics, including time spent in the app and articles read",
-      //         "• 25% increase in user-generated content interactions (comments, polls, etc.)",
-      //         "• Positive user feedback, with the app store rating improving from 3.8 to 4.6 stars",
-      //         "• Successfully modernized BBC's digital presence while maintaining its core values and reputation"
-      //       ],
-      //       media: {
-      //         type: "image",
-      //         src: `${process.env.PUBLIC_URL}/media/images/bbc-impact.png`,
-      //         alt: "BBC News App Redesign Impact"
-      //       }
-      //     }
-      //   ]
-      // },
-// 'creative-coding-project': {
-//   id: 'creative-coding-project1',
-//   title: 'Creative Coding Project',
-//   client: 'School project',
-//   role: 'Creative Coding',
-//   time: '2024',
-//   process: 'Research → Ideation → Design → Prototype → Test',
-//   description: 'Creative Coding Project: Index 1',
-//   credits: [],
-//   videoSrc: `${process.env.PUBLIC_URL}/media/videos/creative-coding-project2.mp4`,
-//   detailedIntro: 'Creative Coding Project: Index 1',
-//   sections: [
+      
+'creative-coding-project': {
+  id: 'creative-coding-project',
+  title: 'Creative Coding Project: Bubbles',
+  client: 'Passion Project',
+  role: 'Creative Coding',
+  time: '2024',
+  process: 'Visual Design, Openprocessing',
+  description: 'Index 1: Bubbles',
+  credits: [],
+  videoSrc: `${process.env.PUBLIC_URL}/media/videos/creative-coding-bob.mp4`,
+  detailedIntro: 'Creative Coding Project: Bubbles',
+  sections: [
 
-//   ],
-//       },
-// 'creative-coding-project2': {
-//   id: 'creative-coding-project2',
-//   title: 'Creative Coding Project',
-//   client: 'School project',
-//   role: 'Creative Coding',
-//   time: '2024',
-//   process: 'Research → Ideation → Design → Prototype → Test',
-//   description: 'Creative Coding Project: Index 2',
-//   credits: [],
-//   videoSrc: `${process.env.PUBLIC_URL}/media/videos/creative-coding-project.mp4`,
-//   detailedIntro: 'Creative Coding Project: Index 2',
-//   sections: [
+  ],
+      },
+'creative-coding-project2': {
+  id: 'creative-coding-project2',
+  title: 'Creative Coding Project',
+  client: 'Passion Project',
+  role: 'Creative Coding',
+  time: '2024',
+  process: 'Visual Design, Openprocessing',
+  description: 'Index 2: Fireworks',
+  credits: [],
+  videoSrc: `${process.env.PUBLIC_URL}/media/videos/creative-coding-fireworks.mp4`,
+  detailedIntro: 'Creative Coding Project: Index 2',
+  sections: [
 
-//   ],
-//       },
-// 'creative-coding-project3': {
-//   id: 'creative-coding-project3',
-//   title: 'Creative Coding Project',
-//   client: 'School project',
-//   role: 'Creative Coding',
-//   time: '2024',
-//   process: 'Research → Ideation → Design → Prototype → Test',
-//   description: 'Creative Coding Project: Firework',
-//   credits: [],
-//   videoSrc: `${process.env.PUBLIC_URL}/media/videos/creative-coding-firework.mp4`,
-//   detailedIntro: 'Creative Coding Project: Firework',
-//   sections: [
+  ],
+      },
+'creative-coding-project3': {
+  id: 'creative-coding-project3',
+  title: 'Creative Coding Project',
+  client: 'Passion Project',
+  role: 'Creative Coding',
+  time: '2024',
+  process: 'Visual Design, Openprocessing',
+  description: 'Index 3: Dynamic Type',
+  credits: [],
+  videoSrc: `${process.env.PUBLIC_URL}/media/videos/creative-coding-type.mp4`,
+  detailedIntro: 'Creative Coding Project: Dynamic Type',
+  sections: [
 
-//   ],
-// },
+  ],
+},
+'creative-coding-project4': {
+  id: 'creative-coding-project4',
+  title: 'Creative Coding Project',
+  client: 'Passion Project',
+  role: 'Creative Coding',
+  time: '2024',
+  process: 'Visual Design, Openprocessing',
+  description: 'Index 4:Spring Rain',
+  credits: [],
+  videoSrc: `${process.env.PUBLIC_URL}/media/videos/creative-coding-rain.mp4`,
+  detailedIntro: 'Creative Coding Project: Spring Rain',
+  sections: [
 
+  ],
+},
+'creative-coding-project5': {
+  id: 'creative-coding-project5',
+  title: 'Creative Coding Project',
+  client: 'Passion Project',
+  role: 'Creative Coding',
+  time: '2024',
+  process: 'Visual Design, Openprocessing',
+  description: 'Index 5: Network',
+  credits: [],
+  videoSrc: `${process.env.PUBLIC_URL}/media/videos/creative-coding-network.mp4`,
+  detailedIntro: 'Creative Coding Project: Network',
+  sections: [
+
+  ],
+},
+'creative-coding-project6': {
+  id: 'creative-coding-project6',
+  title: 'Creative Coding Project',
+  client: 'Passion Project',
+  role: 'Creative Coding',
+  time: '2024',
+  process: 'Visual Design, Openprocessing',
+  description: 'Index 6: Generated Pattern Gray',
+  credits: [],
+  imageSrc: `${process.env.PUBLIC_URL}/media/images/generated_pattern_gray.png`,
+  detailedIntro: 'Creative Coding Project: Generated Pattern Gray',
+  sections: [
+
+  ],
+      },
+'creative-coding-project7': {
+  id: 'creative-coding-project7',
+  title: 'Creative Coding Project',
+  client: 'Passion Project',
+  role: 'Creative Coding',
+  time: '2024',
+  process: 'Visual Design, Openprocessing',
+  description: 'Index 7: Generated Pattern Blue',
+  credits: [],
+  imageSrc: `${process.env.PUBLIC_URL}/media/images/generated_pattern_blue.png`,
+  detailedIntro: 'Creative Coding Project: Generated Pattern Blue',
+  sections: [
+
+  ],
+},
+'creative-coding-project8': {
+  id: 'creative-coding-project8',
+  title: 'Creative Coding Project',
+  client: 'Passion Project',
+  role: 'Creative Coding',
+  time: '2024',
+  process: 'Visual Design, Openprocessing',
+  description: 'Index 8: Generated Pattern White',
+  credits: [],
+  imageSrc: `${process.env.PUBLIC_URL}/media/images/generated_pattern_white.png`,
+  detailedIntro: 'Creative Coding Project: Generated Pattern White',
+  sections: [
+
+  ],
+},
     };
   }
 

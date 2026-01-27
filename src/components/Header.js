@@ -7,9 +7,9 @@ function Header() {
     <header className="header">
       <div className="header-content">
         <div className="info-social-container">
-{/*           
+          
           <Intro />
-          <SocialLinks /> */}
+          {/* <SocialLinks /> */}
         </div>
         <div className="intro" >
           {/* 在这设计 */}

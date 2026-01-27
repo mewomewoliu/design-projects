@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import posthog from 'posthog-js';
 import ProjectModel from '../models/ProjectModel';
 import ProjectPresenter from '../presenters/ProjectPresenter';
 import './ProjectsContainer.css';
@@ -155,13 +156,32 @@ function ProjectsContainer({ selectedTag }) {
     e.target.src = '/media/images/fallback.png';
   };
 
+  const handleProjectClick = (project, layoutClass) => {
+    // Track project click event with detailed metadata
+    posthog.capture('project_clicked', {
+      project_id: project.id,
+      project_title: project.alt,
+      project_tags: project.tags,
+      layout_type: layoutClass,
+      media_type: project.type,
+      filtered_by_tag: selectedTag || null,
+      total_filtered_projects: filteredProjects.length,
+      device_type: isMobile ? 'mobile' : 'desktop'
+    });
+  };
+
   return (
     <div className="projects-container"> 
       {filteredProjects.map((project, index) => {
         const layoutClass = projectLayouts[index]?.class || 'project-regular';
         console.log(`Project ${index}: ${project.alt} - Layout: ${layoutClass}`);
         return (
-          <Link to={`/case-study/${project.id}`} key={project.id} className="project-link">
+          <Link 
+            to={`/case-study/${project.id}`} 
+            key={project.id} 
+            className="project-link"
+            onClick={() => handleProjectClick(project, layoutClass)}
+          >
             <div
               className={`project-item ${layoutClass}`}
               ref={(el) => (projectRefs.current[index] = el)}

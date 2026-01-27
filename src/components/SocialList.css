@@ -27,7 +27,9 @@
   
 }
 
-.social-list a {
+.social-list a,
+.social-list a[href],
+.social-list a[href]:visited {
   padding: 0;
   color: #000000;
   text-decoration: none;
@@ -47,42 +49,112 @@
   margin-left: 1rem;
 } 
 
-.social-list a:hover {
+.social-list a:hover,
+.social-list a[href]:hover {
   text-decoration: line-through;
   color: #000000;
   /* transition: transform 0.2s ease-in-out;
   transform: translateX(0.5rem); */
 }
 
-@media (max-width: 1024px) {
+/* Large screens */
+@media (min-width: 2560px) {
+  .social-list {
+    gap: clamp(0.5rem, 4vw, 1rem);
+    padding-bottom: 1.5rem;
+    padding-top: 0.75rem;
+  }
+
+  .social-list a {
+    font-size: 2rem;
+  }
+
+  .social-list .arrow {
+    font-size: 24px;
+    margin-left: 1.5rem;
+  }
+}
+
+@media (min-width: 1920px) and (max-width: 2559px) {
+  .social-list {
+    gap: clamp(0.25rem, 4vw, 0.75rem);
+    padding-bottom: 1.25rem;
+  }
+
+  .social-list a {
+    font-size: 1.75rem;
+  }
+
+  .social-list .arrow {
+    font-size: 22px;
+    margin-left: 1.25rem;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .social-list {
+    gap: clamp(0.125rem, 4vw, 0.625rem);
+  }
+
+  .social-list a {
+    font-size: 1.6rem;
+  }
+}
+
+/* Tablet landscape */
+@media (max-width: 1024px) and (min-width: 769px) {
   .social-list {
     gap: clamp(0.8rem, 3vw, 2rem);
     margin-top: 1rem;
   }
 }
 
-@media (max-width: 768px) {
+/* Tablet portrait and mobile landscape */
+@media (max-width: 768px) and (min-width: 481px) {
   .social-list {
-    gap: 0.5rem;
+    gap: 0.625rem;
     margin: 1rem 0 0 0;
     flex-wrap: wrap;
   }
   
   .social-list a {
-    padding: 0.4rem 0;
+    padding: 0.5rem 0;
+    font-size: 1.4rem;
   }
   
   .social-list .arrow {
-    margin-left: 0.5rem;
+    margin-left: 0.625rem;
   }
 }
 
-@media (max-width: 480px) {
+/* Mobile portrait */
+@media (max-width: 480px) and (min-width: 376px) {
   .social-list {
-    gap: 0.3rem;
+    gap: 0.4rem;
     flex-direction: column;
     align-items: flex-start;
     margin: 1rem 0 0 0;
+  }
+  
+  .social-list li {
+    margin: 0.125rem 0;
+  }
+  
+  .social-list a {
+    padding: 0.4rem 0;
+    font-size: 1.3rem;
+  }
+
+  .social-list .arrow {
+    margin-left: 0.75rem;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 375px) and (min-width: 321px) {
+  .social-list {
+    gap: 0.35rem;
+    margin: 0.875rem 0 0 0;
   }
   
   .social-list li {
@@ -90,18 +162,26 @@
   }
   
   .social-list a {
-    padding: 0.3rem 0;
+    padding: 0.35rem 0;
+    font-size: 1.2rem;
   }
 }
 
+/* Very small mobile */
 @media (max-width: 320px) {
   .social-list {
-    gap: 0.2rem;
-    margin: 0.8rem 0 0 0;
+    gap: 0.3rem;
+    margin: 0.75rem 0 0 0;
   }
   
   .social-list a {
-    padding: 0.2rem 0;
+    padding: 0.3rem 0;
+    font-size: 1.1rem;
+  }
+
+  .social-list .arrow {
+    font-size: 14px;
+    margin-left: 0.625rem;
   }
 }
 
