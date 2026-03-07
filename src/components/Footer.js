@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Intro from './Intro';
-import SocialList from './SocialList';
 import './Footer.css';
+import SocialList from './SocialList';
 
 function Footer({ nextCaseStudy, nextCaseStudyLink }) {
   const currentYear = new Date().getFullYear();
@@ -17,33 +16,24 @@ function Footer({ nextCaseStudy, nextCaseStudyLink }) {
         </div>
       )}
 
-      <div className="brand-header">
-        Mia Liu Design
+     
+      <div className="footer-divider" />
+     {/* Social links */}
+      <div className="social-section" aria-label="Connect">
+                  {/* <span className="nav-item"> ◼ connect</span> */}
+                  <SocialList horizontal />
       </div>
-
-      <div className="footer-intro-wrapper">
-        <Intro />
-      </div>
-
-      <div className="footer-divider"></div>
-
-      <div className="footer-grid">
-        <div className="footer-col col-address">
-          <div className="address-block">
-            <p>📍 Stockholm Based </p>
-            {/* <p>Available for remote work</p> */}
-            <a href="mailto:uxmia1996@gmail.com" className="email-link"> 📌 uxmia1996@gmail.com</a>
-          </div>
+      <div className="footer-bottom-row">
+        
+        <div className="footer-address">
+          <span>Stockholm, Sweden</span>
+          <a href="mailto:uxmia1996@gmail.com" className="footer-email">
+            uxmia1996@gmail.com
+          </a>
         </div>
-
-        <div className="footer-col col-empty">
-          {/* Spacer column or additional info if needed */}
-        </div>
-         <SocialList />
-      </div>
-
-      <div className="footer-bottom-bar">
-        <p className="copyright-text">© {currentYear} crafted by Mia with my bestie Cursor. All rights reserved but high-fives are free ✋ </p>
+        <p className="copyright-text">
+          © {currentYear} crafted by Mia with Claude Code.
+        </p>
       </div>
     </footer>
   );

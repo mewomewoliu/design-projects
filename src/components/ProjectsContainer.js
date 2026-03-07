@@ -1,234 +1,242 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import posthog from 'posthog-js';
 import ProjectModel from '../models/ProjectModel';
 import ProjectPresenter from '../presenters/ProjectPresenter';
 import './ProjectsContainer.css';
 
+const CATEGORIES = [
+  { key: 'client',      label: '[◼ client_work]',         displayLabel: 'Client Work' },
+  { key: 'independent', label: '[◼ independent_prod]', displayLabel: 'Independent Products' },
+  { key: 'creative',    label: '[◼ cool_stuffs]',          displayLabel: 'Cool Stuffs' },
+];
+
+function generateLayout(count, featuredFirst = false) {
+  const FULL    = { span: 'full',    class: 'project-full' };
+  const HALF    = { span: 'half',    class: 'project-half' };
+  const REGULAR = { span: 'regular', class: 'project-regular' };
+
+  const layouts = [];
+  let rowFill = 0;
+
+  for (let i = 0; i < count; i++) {
+    if (i === 0 && featuredFirst) {
+      layouts.push(FULL);
+      rowFill = 0;
+      continue;
+    }
+    const space = 3 - rowFill;
+    if (space === 3 || rowFill === 0) {
+      const r = Math.random();
+      if (r < 0.2)       { layouts.push(FULL);    rowFill = 0; }
+      else if (r < 0.5)  { layouts.push(HALF);    rowFill = 2; }
+      else               { layouts.push(REGULAR);  rowFill = 1; }
+    } else if (space >= 2) {
+      if (Math.random() < 0.4) { layouts.push(HALF);    rowFill = (rowFill + 2) % 3; }
+      else                     { layouts.push(REGULAR);  rowFill = (rowFill + 1) % 3; }
+    } else {
+      layouts.push(REGULAR);
+      rowFill = (rowFill + 1) % 3;
+    }
+  }
+  return layouts;
+}
+
+function ProjectItem({ project, layoutClass, refCallback, imageErrors, onImageError, onProjectClick }) {
+  return (
+    <Link
+      to={`/case-study/${project.id}`}
+      className="project-link"
+      onClick={() => onProjectClick(project, layoutClass)}
+    >
+      <div
+        className={`project-item ${layoutClass}`}
+        ref={refCallback}
+        id={`project-${project.id}`}
+      >
+        <div className="corner-bl" />
+        <div className="corner-br" />
+
+        {project.type === 'image' ? (
+          <img
+            src={project.src}
+            alt={project.alt}
+            loading="lazy"
+            onError={(e) => onImageError(project.id, e)}
+            className={`project-image ${imageErrors[project.id] ? 'error' : ''}`}
+          />
+        ) : (
+          <video
+            src={project.src}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            onError={(e) => {
+              const img = document.createElement('img');
+              img.src = '/media/images/fallback.png';
+              img.alt = project.alt;
+              img.className = 'project-image error';
+              e.target.parentNode.replaceChild(img, e.target);
+            }}
+          />
+        )}
+
+        <div className="project-overlay">
+          <h3 className="project-alt-text">{project.alt}</h3>
+          <p className="project-tags">{'[' + project.tags.join(', ') + ']'}</p>
+        </div>
+      </div>
+    </Link>
+  );
+}
+
 function ProjectsContainer({ selectedTag }) {
   const [projects, setProjects] = useState([]);
   const projectRefs = useRef([]);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
   const [imageErrors, setImageErrors] = useState({});
-  const [projectLayouts, setProjectLayouts] = useState([]);
-
-  // Generate random layout patterns
-  const generateRandomLayout = (projectsLength) => {
-    const layouts = [];
-    const patterns = [
-      { span: 'full', class: 'project-full' },      // Full width (3 columns)
-      { span: 'half', class: 'project-half' },      // Half width (2 columns)
-      { span: 'regular', class: 'project-regular' }  // Regular (1 column)
-    ];
-    
-    let currentRowFilled = 0; // Track how much of current row is filled (out of 3)
-    
-    for (let i = 0; i < projectsLength; i++) {
-      if (i === 0) {
-        // First project is always full width (featured)
-        layouts.push(patterns[0]);
-        currentRowFilled = 0; // Reset for next row since full width completes the row
-      } else {
-        // Determine what fits in current row
-        const remainingSpace = 3 - currentRowFilled;
-        
-        if (remainingSpace >= 3 || currentRowFilled === 0) {
-          // Start of new row - can choose any size
-          const rand = Math.random();
-          if (rand < 0.2) {
-            layouts.push(patterns[0]); // Full width (20%)
-            currentRowFilled = 0; // Full width resets row
-          } else if (rand < 0.5) {
-            layouts.push(patterns[1]); // Half width (30%)
-            currentRowFilled = 2;
-          } else {
-            layouts.push(patterns[2]); // Regular (50%)
-            currentRowFilled = 1;
-          }
-        } else if (remainingSpace >= 2) {
-          // Can fit half or regular
-          const rand = Math.random();
-          if (rand < 0.4) {
-            layouts.push(patterns[1]); // Half width
-            currentRowFilled += 2;
-            if (currentRowFilled >= 3) currentRowFilled = 0;
-          } else {
-            layouts.push(patterns[2]); // Regular
-            currentRowFilled += 1;
-            if (currentRowFilled >= 3) currentRowFilled = 0;
-          }
-        } else {
-          // Only regular fits (remainingSpace = 1)
-          layouts.push(patterns[2]); // Regular
-          currentRowFilled += 1;
-          if (currentRowFilled >= 3) currentRowFilled = 0;
-        }
-      }
-    }
-    return layouts;
-  };
+  const [categoryLayouts, setCategoryLayouts] = useState({});
 
   useEffect(() => {
     const model = new ProjectModel();
     const presenter = new ProjectPresenter(model, {
-      renderProjects: (projectsData) => {
-        console.log('Setting projects:', projectsData);
-        setProjects(projectsData);
-        setProjectLayouts(generateRandomLayout(projectsData.length));
+      renderProjects: (data) => {
+        setProjects(data);
+        const layouts = {};
+        CATEGORIES.forEach(cat => {
+          const catProjects = data.filter(p => p.category === cat.key);
+          layouts[cat.key] = generateLayout(catProjects.length, cat.key === 'client');
+        });
+        setCategoryLayouts(layouts);
       }
     });
-
     presenter.presentProjects();
 
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 767);
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    const onResize = () => setIsMobile(window.innerWidth <= 767);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
   }, []);
 
-  useEffect(() => {
-    if (selectedTag) {
-      const firstMatchingProject = projectRefs.current.find((ref, index) => {
-        const project = projects[index];
-        return project && project.tags.includes(selectedTag);
+  // Global index map: project.id → ref slot (stable across renders)
+  const projectIndexMap = useMemo(() => {
+    const map = {};
+    let idx = 0;
+    CATEGORIES.forEach(cat => {
+      projects.filter(p => p.category === cat.key).forEach(p => {
+        map[p.id] = idx++;
       });
-
-      if (firstMatchingProject) {
-        firstMatchingProject.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-  }, [selectedTag, projects]);
+    });
+    return map;
+  }, [projects]);
 
   useEffect(() => {
     if (isMobile) {
-      projectRefs.current.forEach((ref) => {
-        if (ref) ref.classList.add('visible');
-      });
+      projectRefs.current.forEach(ref => { if (ref) ref.classList.add('visible'); });
       return;
     }
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
+        entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
             const video = entry.target.querySelector('video');
-            if (video) {
-              video.play().catch(error => console.log('Autoplay was prevented:', error));
-            }
+            if (video) video.play().catch(() => {});
           } else {
             const video = entry.target.querySelector('video');
-            if (video) {
-              video.pause();
-            }
+            if (video) video.pause();
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.08 }
     );
 
     const refs = projectRefs.current;
-    
-    refs.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => {
-      refs.forEach((ref) => {
-        if (ref) observer.unobserve(ref);
-      });
-    };
+    refs.forEach(ref => { if (ref) observer.observe(ref); });
+    return () => { refs.forEach(ref => { if (ref) observer.unobserve(ref); }); };
   }, [projects, isMobile]);
 
-  // Filter projects based on selectedTag if it exists
-  const filteredProjects = selectedTag
-    ? projects.filter(project => project.tags.includes(selectedTag))
-    : projects;
-
-  if (projects.length === 0) {
-    console.log('No projects loaded');
-    return <div>Loading...</div>;
-  }
-
   const handleImageError = (projectId, e) => {
-    console.error(`Error loading image for project ${projectId}:`, e);
     setImageErrors(prev => ({ ...prev, [projectId]: true }));
     e.target.src = '/media/images/fallback.png';
   };
 
   const handleProjectClick = (project, layoutClass) => {
-    // Track project click event with detailed metadata
     posthog.capture('project_clicked', {
       project_id: project.id,
       project_title: project.alt,
+      project_category: project.category,
       project_tags: project.tags,
       layout_type: layoutClass,
       media_type: project.type,
       filtered_by_tag: selectedTag || null,
-      total_filtered_projects: filteredProjects.length,
-      device_type: isMobile ? 'mobile' : 'desktop'
+      device_type: isMobile ? 'mobile' : 'desktop',
     });
   };
 
+  if (projects.length === 0) {
+    return <div className="projects-loading">Loading_</div>;
+  }
+
+  // ── Tag filter: flat grid across all categories ────────────────────────────
+  if (selectedTag) {
+    const filtered = projects.filter(p => p.tags.includes(selectedTag));
+    const layouts = generateLayout(filtered.length, true);
+    return (
+      <div className="projects-all-categories">
+        <div className="category-filter-label">
+          Filtered by <span className="filter-tag">[{selectedTag}]</span>
+        </div>
+        <div className="projects-container">
+          {filtered.map((project, i) => (
+            <ProjectItem
+              key={project.id}
+              project={project}
+              layoutClass={layouts[i]?.class || 'project-regular'}
+              refCallback={el => (projectRefs.current[i] = el)}
+              imageErrors={imageErrors}
+              onImageError={handleImageError}
+              onProjectClick={handleProjectClick}
+            />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // ── Grouped by category ────────────────────────────────────────────────────
   return (
-    <div className="projects-container"> 
-      {filteredProjects.map((project, index) => {
-        const layoutClass = projectLayouts[index]?.class || 'project-regular';
-        console.log(`Project ${index}: ${project.alt} - Layout: ${layoutClass}`);
+    <div className="projects-all-categories">
+      {CATEGORIES.map(cat => {
+        const catProjects = projects.filter(p => p.category === cat.key);
+        if (catProjects.length === 0) return null;
+        const layouts = categoryLayouts[cat.key] || generateLayout(catProjects.length, cat.key === 'client');
+
         return (
-          <Link 
-            to={`/case-study/${project.id}`} 
-            key={project.id} 
-            className="project-link"
-            onClick={() => handleProjectClick(project, layoutClass)}
-          >
-            <div
-              className={`project-item ${layoutClass}`}
-              ref={(el) => (projectRefs.current[index] = el)}
-              id={`project-${project.id}`}
-            >
-              <div className="corner-bl"></div>
-              <div className="corner-br"></div>
-              
-              {project.type === 'image' ? (
-                <img 
-                  src={project.src} 
-                  alt={project.alt} 
-                  loading="lazy"
-                  onError={(e) => handleImageError(project.id, e)}
-                  className={`project-image ${imageErrors[project.id] ? 'error' : ''}`}
-                />
-              ) : (
-                <video 
-                  src={project.src} 
-                  alt={project.alt} 
-                  autoPlay 
-                  muted 
-                  loop 
-                  playsInline
-                  preload="metadata"
-                  poster={project.src.replace('.mp4', '-poster.png')}
-                  onError={(e) => {
-                    console.error(`Error loading video ${project.id}:`, e);
-                    const img = document.createElement('img');
-                    img.src = '/media/images/fallback.png';
-                    img.alt = project.alt;
-                    img.className = 'project-image error';
-                    e.target.parentNode.replaceChild(img, e.target);
-                  }}
-                >
-                  Your browser does not support the video tag.
-                </video>
-              )}
-              
-              <div className="project-overlay">
-                <h1 className="project-alt-text">{project.alt}</h1>
-                <h2 className="project-tags">{'[' + project.tags.join(', ') + ']'}</h2>            
+          <section key={cat.key} className="category-section">
+            <div className="category-sidebar">
+              <span className="category-name">{cat.label}</span>
+              <span className="category-count">[{String(catProjects.length).padStart(2, '0')}]</span>
+            </div>
+
+            <div className="category-content">
+              <div className="projects-container">
+                {catProjects.map((project, i) => (
+                  <ProjectItem
+                    key={project.id}
+                    project={project}
+                    layoutClass={layouts[i]?.class || 'project-regular'}
+                    refCallback={el => (projectRefs.current[projectIndexMap[project.id]] = el)}
+                    imageErrors={imageErrors}
+                    onImageError={handleImageError}
+                    onProjectClick={handleProjectClick}
+                  />
+                ))}
               </div>
             </div>
-          </Link>
+          </section>
         );
       })}
     </div>

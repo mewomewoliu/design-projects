@@ -1,31 +1,31 @@
 class ProjectModel {
   constructor() {
     this.projects = [
-      { id: 'thermo-cal', type: 'video', src: '/media/videos/thermo-cal.mp4', alt: 'Thermo Cal ||| 2025', tags: ['Product Design', 'UX/UI Design', 'Research', 'AI-Integrated designworkflow'] },
-      { id: 'bbc', type: 'video', src: '/media/videos/bbc.mp4', alt: 'Blablacar App ||| 2020-2021', tags: ['Product Design','Framer prototyping'] },
-      { id: 'storykit-design-system', type: 'image', src: '/media/images/storykit-design-system.png', alt: 'Storykit Design System ||| 2023-2024', tags: ['Design System', 'Product Design'] },
-      { id: 'music-library', type: 'video', src: '/media/videos/storykit-music-lib.mp4', alt: 'Storykit Music Library ||| 2023-2024', tags:  ['UX&UI Design', 'Research', 'Growth', 'Design System','Brand Identity']},
-      { id: 'scania-helpcenter', type: 'video', src: '/media/videos/scania-helpcenter.mp4', alt: 'Scania Help Center ||| 2024', tags: ['Product Design', 'Research', 'Copy Writing', 'UI Design', 'Workshop'] },  
-      { id: 'music-mash', type: 'image', src: '/media/images/music-mash-app.png', alt: 'Music mash on Spotify App ||| 2020-2021', tags: ['UX Design', 'UI Design', 'Research', 'Testing', 'UI Engineering'] },
-      // { id: 'music-mash-web', type: 'video', src: '/media/videos/music-mash-web.mp4', alt: 'Music mash on Spotify App ||| 2020-2021', tags: ['UX Design, UI Design, Research, Testing, UI Engineering'] },
-      { id: 'blankt-home', type: 'video', src: '/media/videos/blank-collection.mp4', alt: 'blankt.com Home ||| 2020-2021', tags: ['UX Design', 'UI Design', 'Research', 'Testing', 'Growth', 'Brand Design'] },
-      { id: 'blankt-web', type: 'video', src: '/media/videos/blankt.mp4', alt: 'blankt.com Graphic Editor ||| 2020-2021', tags:  ['UX Design', 'UI Design', 'Research', 'Testing', 'Growth', 'Product Design'] },
-      // { id: 'blankt-mobile', type: 'video', src: '/media/videos/blanktmobile.mp4', alt: 'blankt.com Mobile ||| 2020-2021', tags:  ['UX Design', 'UI Design', 'Research', 'Testing', 'Growth', 'Responsibe Design'] }, 
-      { id: 'bbc-design-system', type: 'image', src: '/media/images/bbc-crm-overview.png', alt: 'Blablacar Design System for Customer Success ||| 2021', tags: ['Design System', 'Product Design'] },
-      { id: 'create', type: 'image', src: '/media/images/storykit-create-page.png', alt: 'Storykit AI Video Creator ||| 2023-2024', tags: ['UX Design', 'UI Design', 'Research', 'Growth', 'Design System']},
-      // { id: 'yourbeetweb', type: 'image', src: '/media/images/yourbeetweb.png', alt: 'Yourbeet ||| 2020-2021', tags: ['UX Design', 'UI Design', 'Research', 'Testing', 'Branding', 'Product Design'] },
-      // { id: 'yourbeetmobile', type: 'video', src: '/media/videos/beet.mp4', alt: 'Your Beet Recipe App ||| 2020-2021', tags: ['UX Design', 'UI Design', 'Research', 'Testing', 'Branding', 'Product Design'] },
-      
-      { id: 'creative-coding-project', type: 'video', src: '/media/videos/creative-coding-bob.mp4', alt: 'Creative Coding Project: Visual Design ||| 2024', tags: ['Visual Design','Creative Coding', 'p5.js','Graphic Design'] },
-      { id: 'creative-coding-project2', type: 'video', src: '/media/videos/creative-coding-fireworks.mp4', alt: 'Creative Coding Project: Firework ||| 2024', tags: ['Visual Design','Creative Coding', 'p5.js'] },
-      { id: 'creative-coding-project3', type: 'video', src: '/media/videos/creative-coding-type.mp4', alt: 'Creative Coding Project: Dynamic Type ||| 2024', tags: ['Visual Design','Creative Coding', 'p5.js'] },
-      { id: 'creative-coding-project5', type: 'video', src: '/media/videos/creative-coding-network.mp4', alt: 'Creative Coding Project:  ||| 2024', tags: ['Visual Design','Creative Coding', 'p5.js'] },
-      { id: 'creative-coding-project4', type: 'video', src: '/media/videos/creative-coding-rain.mp4', alt: 'Creative Coding Project: Spring Rain ||| 2024', tags: ['Visual Design', 'Creative Coding', 'p5.js'] },
-      { id: 'creative-coding-project6', type: 'image', src: '/media/images/generated_pattern_gray.png', alt: 'Creative Coding Project: Generated Pattern Gray ||| 2024', tags: ['Visual Design', 'Creative Coding', 'p5.js', 'Graphic Design'] },
-      { id: 'creative-coding-project7', type: 'image', src: '/media/images/generated_pattern_blue.png', alt: 'Creative Coding Project: Generated Pattern Blue ||| 2024', tags: ['Visual Design','Creative Coding', 'p5.js','Graphic Design'] },
-      { id: 'creative-coding-project8', type: 'image', src: '/media/images/generated_pattern_white.png', alt: 'Creative Coding Project: Generated Pattern White ||| 2024', tags: ['Visual Design','Creative Coding', 'p5.js','Graphic Design'] },
+
+      // ── Client Work ────────────────────────────────────────────────────────
+      { id: 'thermo-cal', category: 'client', type: 'video', src: '/media/videos/thermo-cal.mp4', alt: 'Thermo-Cal SaaS App ||| 2025', tags: ['Product Design', 'UX/UI Design', 'Research', 'AI-Integrated Design Workflow'] },
+      { id: 'bbc', category: 'client', type: 'video', src: '/media/videos/bbc.mp4', alt: 'BlaBlacar Smart Price ||| 2021–2022', tags: ['Product Design', 'Framer Prototyping'] },
+      { id: 'storykit-design-system', category: 'client', type: 'image', src: '/media/images/storykit-design-system.png', alt: 'Storykit Design System ||| 2023–2024', tags: ['Design System', 'Product Design'] },
+      { id: 'music-library', category: 'client', type: 'video', src: '/media/videos/storykit-music-lib.mp4', alt: 'Storykit Music Library ||| 2023–2024', tags: ['UX/UI Design', 'Research', 'Growth', 'Design System', 'Brand Identity'] },
+      { id: 'scania-helpcenter', category: 'client', type: 'video', src: '/media/videos/scania-helpcenter.mp4', alt: 'Scania Help Center ||| 2023–2024', tags: ['Product Design', 'Research', 'Copy Writing', 'UI Design', 'Workshop'] },
+      { id: 'bbc-design-system', category: 'client', type: 'image', src: '/media/images/bbc-crm-overview.png', alt: 'BlaBlacar Design System for CRM ||| 2021', tags: ['Design System', 'Product Design'] },
+      { id: 'create', category: 'client', type: 'image', src: '/media/images/storykit-create-page.png', alt: 'Storykit AI Video Creator ||| 2023–2024', tags: ['UX Design', 'UI Design', 'Research', 'Growth', 'Design System'] },
+
+      // ── Independent Products ───────────────────────────────────────────────
+      { id: 'music-mash', category: 'independent', type: 'image', src: '/media/images/music-mash-app.png', alt: 'Music Mash — Spotify App ||| 2020–2021', tags: ['UX Design', 'UI Design', 'Research', 'Testing', 'UI Engineering'] },
+      { id: 'blankt-home', category: 'independent', type: 'video', src: '/media/videos/blank-collection.mp4', alt: 'blankt.com — Home ||| 2021–2022', tags: ['UX Design', 'UI Design', 'Research', 'Testing', 'Growth', 'Brand Design'] },
+      { id: 'blankt-web', category: 'independent', type: 'video', src: '/media/videos/blankt.mp4', alt: 'blankt.com — Graphic Editor ||| 2021–2022', tags: ['UX Design', 'UI Design', 'Research', 'Testing', 'Growth', 'Product Design'] },
+
+      // ── Cool Stuffs ────────────────────────────────────────────────────────
+      { id: 'creative-coding-project', category: 'creative', type: 'video', src: '/media/videos/creative-coding-bob.mp4', alt: 'Visual Design — Bob ||| 2024', tags: ['Visual Design', 'Creative Coding', 'p5.js', 'Graphic Design'] },
+      { id: 'creative-coding-project2', category: 'creative', type: 'video', src: '/media/videos/creative-coding-fireworks.mp4', alt: 'Generative — Firework ||| 2024', tags: ['Visual Design', 'Creative Coding', 'p5.js'] },
+      { id: 'creative-coding-project3', category: 'creative', type: 'video', src: '/media/videos/creative-coding-type.mp4', alt: 'Dynamic Type ||| 2024', tags: ['Visual Design', 'Creative Coding', 'p5.js'] },
+      { id: 'creative-coding-project5', category: 'creative', type: 'video', src: '/media/videos/creative-coding-network.mp4', alt: 'Network Simulation ||| 2024', tags: ['Visual Design', 'Creative Coding', 'p5.js'] },
+      { id: 'creative-coding-project4', category: 'creative', type: 'video', src: '/media/videos/creative-coding-rain.mp4', alt: 'Spring Rain ||| 2024', tags: ['Visual Design', 'Creative Coding', 'p5.js'] },
+      { id: 'creative-coding-project6', category: 'creative', type: 'image', src: '/media/images/generated_pattern_gray.png', alt: 'Generated Pattern — Gray ||| 2024', tags: ['Visual Design', 'Creative Coding', 'p5.js', 'Graphic Design'] },
+      { id: 'creative-coding-project7', category: 'creative', type: 'image', src: '/media/images/generated_pattern_blue.png', alt: 'Generated Pattern — Blue ||| 2024', tags: ['Visual Design', 'Creative Coding', 'p5.js', 'Graphic Design'] },
+      { id: 'creative-coding-project8', category: 'creative', type: 'image', src: '/media/images/generated_pattern_white.png', alt: 'Generated Pattern — White ||| 2024', tags: ['Visual Design', 'Creative Coding', 'p5.js', 'Graphic Design'] },
     ];
-      
   }
 
   getAllProjects() {
@@ -34,6 +34,10 @@ class ProjectModel {
 
   getProjectById(id) {
     return this.projects.find(project => project.id === id);
+  }
+
+  getProjectsByCategory(category) {
+    return this.projects.filter(project => project.category === category);
   }
 }
 
