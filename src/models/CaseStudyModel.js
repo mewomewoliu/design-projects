@@ -1783,6 +1783,61 @@ class CaseStudyModel {
 
   ],
 },
+
+      'bayer-bmdt': {
+        id: 'bayer-bmdt',
+        title: 'Biomarker Data Tracking SaaS',
+        client: 'Bayer',
+        role: 'Product Designer',
+        time: 'Nov 2025 – Feb 2026',
+        process: 'Research → Define → Design → Deliver',
+        description: 'Redesigning biomarker data-tracking workflows to accelerate clinical research timelines at Bayer.',
+        credits: [],
+        imageSrc: `${process.env.PUBLIC_URL}/media/images/bayer-bmdt.png`,
+        detailedIntro: '',
+        sections: [
+          {
+            title: 'Overview',
+            paragraphs: [
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+              'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            ],
+            media: { type: 'image', src: '', alt: '' },
+          },
+          {
+            title: 'Problem',
+            paragraphs: [
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
+              'Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.',
+            ],
+            media: { type: 'image', src: '', alt: '' },
+          },
+          {
+            title: 'Research & Discovery',
+            paragraphs: [
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.',
+              'Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.',
+            ],
+            media: { type: 'image', src: '', alt: '' },
+          },
+          {
+            title: 'Design Solution',
+            paragraphs: [
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non enim in turpis pulvinar facilisis. Ut felis.',
+              'Header Level 3: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis molestie dictum semper, metus arcu tristique purus, a porttitor eros massa purus metus.',
+            ],
+            media: { type: 'image', src: '', alt: '' },
+          },
+          {
+            title: 'Impact',
+            paragraphs: [
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo posuere pede. Mauris ut est. Ut quis purus. Sed ac odio.',
+              'More placeholder content will be added here. Stay tuned for detailed impact metrics and outcomes from this project.',
+            ],
+            media: { type: 'image', src: '', alt: '' },
+          },
+        ],
+      },
     };
   }
 

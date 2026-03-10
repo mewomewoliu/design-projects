@@ -103,6 +103,13 @@ function About() {
               design principles: restraint in service of clarity.
             </p>
           </div>
+          <div className="ab-hero-portrait">
+            <img
+              src="/about-portrait.png"
+              alt="Mia Liu"
+              className="ab-portrait-img"
+            />
+          </div>
         </header>
       </div>
 

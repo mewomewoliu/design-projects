@@ -9,16 +9,34 @@ function Blogs() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
+        const mediumUrl = 'https://medium.com/feed/@mewomewoliu';
         const response = await fetch(
-          'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@mewomewoliu'
+          `https://api.allorigins.win/get?url=${encodeURIComponent(mediumUrl)}`
         );
         if (!response.ok) throw new Error('Failed to fetch blogs');
-        const data = await response.json();
-        if (data.status === 'ok') {
-          setPosts(data.items);
-        } else {
-          throw new Error('Failed to load blogs');
-        }
+        const { contents } = await response.json();
+
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(contents, 'text/xml');
+        const items = Array.from(xml.querySelectorAll('item')).map((item) => {
+          // <link> in RSS is a text node sibling, not an attribute
+          const linkEl = item.querySelector('link');
+          const link = linkEl?.nextSibling?.nodeValue?.trim() || linkEl?.textContent?.trim() || '';
+          // content:encoded uses a namespace prefix
+          const encoded = item.getElementsByTagName('content:encoded')[0]?.textContent
+            || item.getElementsByTagName('encoded')[0]?.textContent
+            || item.querySelector('description')?.textContent || '';
+          return {
+            title: item.querySelector('title')?.textContent || '',
+            link,
+            pubDate: item.querySelector('pubDate')?.textContent || '',
+            description: encoded,
+            categories: Array.from(item.querySelectorAll('category')).map((c) => c.textContent),
+          };
+        });
+
+        if (!items.length) throw new Error('No articles found');
+        setPosts(items);
       } catch (err) {
         setError(err.message);
       } finally {
