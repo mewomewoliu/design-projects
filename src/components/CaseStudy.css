@@ -16,7 +16,7 @@
 .cs-inner {
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: 0 var(--pad);
+  padding: 0;
 }
 
 /* ── Sticky back nav ──────────────────────────────────────────────────────── */
@@ -30,11 +30,13 @@
   top: 0;
   background: var(--bg);
   z-index: 100;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .cs-back {
   font-family: var(--sans);
-  font-size: clam(1rem,2vw, 2rem);
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
   letter-spacing: 0.05em;
   color: var(--fg-muted);
   text-decoration: none;
@@ -93,6 +95,8 @@
   line-height: 0.95;
   color: var(--fg);
   margin: 0 0 1.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .cs-desc {
@@ -104,6 +108,8 @@
   color: var(--fg-muted);
   margin: 0;
   max-width: 60ch;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 /* ── Brief metadata row ───────────────────────────────────────────────────── */
@@ -111,23 +117,26 @@
 .cs-brief {
 
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 2rem;
   border-top: 1px solid var(--border);
   padding-top: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  
 }
 
 .cs-brief-item {
   display: flex;
-  
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0rem;
 }
 
 .cs-brief-key {
   font-family: var(--sans);
   font-size: 0.7rem;
-  color: var(--fg-subtle);
+  color: var(--fg-muted);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -153,15 +162,15 @@
 }
 
 .cs-hero-media {
-  /* width: 100%; */
-  height: 100%;
-  max-height: 88vh;
+  width: 100%;
+  /* background-color: rgb(240, 240, 240); */
+  max-height: auto;
+  /* padding: 8rem; */
   object-fit: cover;
   display: block;
   outline: none;
   -webkit-appearance: none;
   appearance: none;
-  align-items: center;
 }
 
 /* ── Content wrapper ──────────────────────────────────────────────────────── */
@@ -169,82 +178,98 @@
 .cs-content {
   display: flex;
   flex-direction: column;
-  gap: clamp(1rem, 2vw, 1.5rem);
-  padding-top: clamp(2.5rem, 5vw, 4rem);
-  padding-bottom: clamp(3rem, 6vw, 5rem);
+  padding-top: clamp(3rem, 5vw, 5rem);
+  padding-bottom: 0;
 }
 
-/* ── Sections — card style ────────────────────────────────────────────────── */
+/* ── Sections ─────────────────────────────────────────────────────────────── */
+/*
+  4-column named grid — direct children: title, text, media
+  ┌──────────┬─────────────┬─────────────┬────────────┐
+  │ label    │  text col 1 │  text col 2 │  (empty)   │
+  │ (sticky) │             │             │            │
+  ├──────────┼─────────────┴─────────────┴────────────┤
+  │          │  media — wide (cols 2–4)               │
+  └──────────┴────────────────────────────────────────┘
+*/
 
-@keyframes csCardReveal {
-  from { opacity: 0; transform: translateY(18px); }
+@keyframes csRowReveal {
+  from { opacity: 0; transform: translateY(5px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
 .cs-section {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(2rem, 2.5vw, rem);
-  background: var(--bg-media);
-  border-radius: 16px;
-  padding: clamp(0.6rem, 3vw, 1.2rem);
-  animation: csCardReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
-  transition: box-shadow 0.3s ease;
-}
-
-.cs-section:hover {
-  background-color: rgb(249, 248, 235);
+  display: grid;
+  grid-template-columns: 20% 1fr 2fr 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 2.5%;
+  row-gap: clamp(2rem, 2.5vw, 3rem);
+  padding: clamp(1rem, 2vw, 2rem) 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-top: 1px solid var(--fg);
+  animation: csRowReveal 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 /* Stagger first 8 sections */
-.cs-section:nth-child(1) { animation-delay: 0.3s; }
-.cs-section:nth-child(2) { animation-delay: 0.38s; }
-.cs-section:nth-child(3) { animation-delay: 0.46s; }
-.cs-section:nth-child(4) { animation-delay: 0.54s; }
-.cs-section:nth-child(5) { animation-delay: 0.62s; }
-.cs-section:nth-child(6) { animation-delay: 0.68s; }
-.cs-section:nth-child(7) { animation-delay: 0.72s; }
-.cs-section:nth-child(8) { animation-delay: 0.76s; }
+.cs-section:nth-child(1) { animation-delay: 0.08s; }
+.cs-section:nth-child(2) { animation-delay: 0.13s; }
+.cs-section:nth-child(3) { animation-delay: 0.18s; }
+.cs-section:nth-child(4) { animation-delay: 0.23s; }
+.cs-section:nth-child(5) { animation-delay: 0.27s; }
+.cs-section:nth-child(6) { animation-delay: 0.30s; }
+.cs-section:nth-child(7) { animation-delay: 0.33s; }
+.cs-section:nth-child(8) { animation-delay: 0.35s; }
 
-.cs-section--full {
-  background: none;
-  padding: 0;
-  border-radius: 0;
-  gap: 0;
-}
-
-/* 2-col body layout inside card: text left, media right */
-
-.cs-section-body {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: clamp(4rem, 4vw, 8rem);
-  align-items: start;
-}
-
-/* Section title — full width above body */
+/* ── Sticky label — col 1, row 1 ──────────────────────────────────────────── */
 
 .cs-section-title {
+  grid-column: 1;
+  grid-row: 1;
+  position: sticky;
+  top: calc(var(--nav-h) + 2rem);
+  align-self: start;
   font-family: var(--sans);
-  font-size: clamp(1.2rem, 1.5vw, 1.6rem);
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  line-height: 1.2;
+  font-size: clamp(1.2rem, 1.1vw, 1.6rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
   color: var(--fg);
   margin: 0;
 }
 
-.cs-section-text p {
-  font-family: var(--sans);
-  font-size: clamp(1rem, 1.2vw, 1.05rem);
-  line-height: 1.8;
-  color: var(--fg-muted);
-  margin: 0 0 0.85rem;
+/* ── Text — cols 2–3, row 1, 2-column newspaper flow ─────────────────────── */
+
+.cs-section-text {
+  grid-column: 2 / 4;
+  grid-row: 1;
+  columns: 2;
+  column-gap: clamp(1rem, 3vw, 2rem);
+  column-fill: balance;
 }
 
-.cs-section-text p:last-child {
-  margin-bottom: 0;
+/* col 4 is intentionally empty white space */
+
+/* ── Media — cols 2–4, row 2, wide layout ─────────────────────────────────── */
+
+.cs-section-media {
+  grid-column: 2 / -1;
+  grid-row: 2;
 }
+
+/* ── Section text typography ──────────────────────────────────────────────── */
+
+.cs-section-text p {
+  font-family: var(--sans);
+  font-size: clamp(1rem, 1.05vw, 1.6rem);
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+  color: var(--fg-muted);
+  margin: 0 0 1rem;
+  break-inside: avoid-column;
+}
+
+.cs-section-text p:last-child { margin-bottom: 0; }
 
 .cs-section-text .highlight,
 .cs-section-text strong {
@@ -252,10 +277,7 @@
   font-weight: 500;
 }
 
-.cs-section-text span {
-  color: var(--fg);
-  font-weight: 500;
-}
+.cs-section-text span { color: var(--fg); font-weight: 500; }
 
 .cs-section-text a {
   color: var(--fg);
@@ -264,7 +286,15 @@
   text-underline-offset: 3px;
 }
 
-/* Section media — natural aspect ratio */
+/* ── Full-width media-only sections ───────────────────────────────────────── */
+
+.cs-section--full {
+  display: block;
+  padding: 0 0;
+  border-top: none;
+}
+
+/* ── Media assets ─────────────────────────────────────────────────────────── */
 
 .cs-section-media img,
 .cs-section-media video,
@@ -279,12 +309,10 @@
   appearance: none;
 }
 
-/* Full-width section media — no radius since it's standalone */
-
 .cs-section--full .cs-section-media img,
 .cs-section--full .cs-section-media video,
 .cs-section--full .cs-media {
-  border-radius: 16px;
+  border-radius: 0px;
 }
 
 /* ── Video controls ───────────────────────────────────────────────────────── */
@@ -323,19 +351,22 @@
   display: flex;
   gap: clamp(2rem, 5vw, 5rem);
   align-items: flex-start;
-  background: var(--bg-media);
-  border-radius: 16px;
+  background: var(--bg);
+  border-radius: 0px;
+  border-top: solid 1px #000;
   padding: clamp(1.5rem, 3vw, 2.5rem);
+  margin-top: 4rem;
+  /* margin-left: 1rem;
+  margin-right: 1rem; */
 }
 
 .cs-credits-label {
   font-family: var(--sans);
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  color: var(--fg-subtle);
-  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+  /* text-transform: uppercase; */
   white-space: nowrap;
-  padding-top: 0.1rem;
   min-width: 80px;
 }
 
@@ -350,10 +381,10 @@
 
 .cs-credits li {
   font-family: var(--sans);
-  font-size: 0.875rem;
-  color: var(--fg-muted);
-  letter-spacing: 0.01em;
-  line-height: 1.5;
+  font-size: 0.9rem;
+  color: var(--fg);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
 }
 
 /* ── Loading / error ──────────────────────────────────────────────────────── */
@@ -378,27 +409,67 @@
 
 /* ── Responsive ───────────────────────────────────────────────────────────── */
 
-@media (max-width: 1024px) {
-  .cs-section-body {
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(1.5rem, 3vw, 3rem);
+/* Large tablet: drop the empty 4th col → 3-col grid */
+@media (max-width: 1100px) {
+  .cs-section {
+    grid-template-columns: 24% 1fr 1fr;
+    column-gap: 3%;
+  }
+
+  .cs-section-text  { grid-column: 2 / 4; }
+  .cs-section-media { grid-column: 2 / -1; }
+}
+
+/* Brief collapses to 2 cols before layout gets too cramped */
+@media (max-width: 720px) {
+  .cs-brief {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem 1.5rem;
   }
 }
 
-@media (max-width: 768px) {
-  .cs-brief {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem 2rem;
-  }
-
-  .cs-section-body {
+/* Small tablet: single-column section, label on top, text stays 2-col */
+@media (max-width: 820px) {
+  .cs-section {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
+    grid-template-rows: auto auto auto;
+    row-gap: 1.25rem;
+    /* Use padding-top/bottom only — preserves base padding-left/right: 1rem */
+    padding-top: clamp(1.5rem, 3.5vw, 2.5rem);
+    padding-bottom: clamp(1.5rem, 3.5vw, 2.5rem);
   }
 
-  .cs-hero-media {
-    max-height: 55vw;
+  .cs-section-title {
+    grid-column: 1;
+    grid-row: 1;
+    position: static;
   }
+
+  .cs-section-text {
+    grid-column: 1;
+    grid-row: 2;
+    columns: 2;
+  }
+
+  .cs-section-media {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .cs-hero-media { max-height: 60vw; }
+}
+
+/* Mobile: single text column, tighter spacing */
+@media (max-width: 560px) {
+  .cs-section {
+    padding-top: clamp(1.25rem, 4vw, 2rem);
+    padding-bottom: clamp(1.25rem, 4vw, 2rem);
+    row-gap: 1rem;
+  }
+
+  .cs-section-text { columns: 1; }
+
+  .cs-hero-media { max-height: 65vw; }
 }
 
 @media (max-width: 480px) {
@@ -409,26 +480,28 @@
 
   .cs-brief {
     grid-template-columns: 1fr 1fr;
-    gap: 1.25rem 1.5rem;
-  }
-
-  .cs-section {
-    border-radius: 12px;
-    padding: 1.25rem;
+    gap: 1rem 1.25rem;
   }
 
   .cs-credits {
     flex-direction: column;
     gap: 0.75rem;
-    border-radius: 12px;
   }
+}
+
+/* Very small phones */
+@media (max-width: 375px) {
+  .cs-header  { padding-left: 0.75rem; padding-right: 0.75rem; }
+  .cs-brief   { padding-left: 0.75rem; padding-right: 0.75rem; }
+  .cs-section { padding-left: 0.75rem; padding-right: 0.75rem; }
+
+  .cs-brief { grid-template-columns: 1fr; }
 }
 
 @media (min-width: 2560px) {
   .cs-section-text p { font-size: 1.15rem; }
-  .cs-brief-val       { font-size: 1rem; }
-  .cs-credits li      { font-size: 1rem; }
-  .cs-section-title   { font-size: 1.6rem; }
+  .cs-brief-val      { font-size: 1rem; }
+  .cs-credits li     { font-size: 1rem; }
 }
 
 @media (min-width: 1920px) and (max-width: 2559px) {

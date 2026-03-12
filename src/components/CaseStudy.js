@@ -4,6 +4,7 @@ import posthog from 'posthog-js';
 import CaseStudyModel from '../models/CaseStudyModel';
 import CaseStudyPresenter from '../presenters/CaseStudyPresenter';
 import Footer from './Footer';
+import SEO from './SEO';
 import './CaseStudy.css';
 
 function CaseStudy() {
@@ -142,8 +143,17 @@ function CaseStudy() {
     { key: 'Process', val: study.process },
   ];
 
+  const seoTitle = `${study.title} — Case Study by Mia Liu`;
+  const seoDescription = `${study.description} — Product design case study by Mia Liu, Product Designer at Netlight.`;
+
   return (
     <div className="case-study">
+      <SEO
+        title={seoTitle}
+        description={seoDescription}
+        canonicalUrl={`https://mialiu.se/case-study/${study.id}`}
+        ogImage="https://mialiu.se/logo.png"
+      />
 
       {/* ── Sticky nav ─────────────────────────────────────────────────── */}
       <div className="cs-inner">
@@ -210,18 +220,16 @@ function CaseStudy() {
                       className="cs-section-title"
                       dangerouslySetInnerHTML={{ __html: section.title }}
                     />
-                    <div className="cs-section-body">
-                      <div className="cs-section-text">
-                        {section.paragraphs.map((p, i) => (
-                          <p key={i} dangerouslySetInnerHTML={{ __html: p }} />
-                        ))}
-                      </div>
-                      {section.media && (
-                        <div className="cs-section-media">
-                          {renderMedia(section.media)}
-                        </div>
-                      )}
+                    <div className="cs-section-text">
+                      {section.paragraphs.map((p, i) => (
+                        <p key={i} dangerouslySetInnerHTML={{ __html: p }} />
+                      ))}
                     </div>
+                    {section.media && (
+                      <div className="cs-section-media">
+                        {renderMedia(section.media)}
+                      </div>
+                    )}
                   </>
                 )}
                 {isFullWidth && section.media && (

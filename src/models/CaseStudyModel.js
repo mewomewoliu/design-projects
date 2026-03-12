@@ -1515,7 +1515,7 @@ class CaseStudyModel {
         detailedIntro: 'Thermo-Cal is a simple & collaborative web-based Thermodynamic Calculator that helps engineers, scientists, students calculate thermodynamic properties of materials',
         sections: [
           {
-            title: "Client",
+            title: "The Client",
             paragraphs: [
               "Thermo-Calc Software AB is a Sweden-based company founded in 1997 specializing in <span class='highlight'>computational materials engineering software</span>.",
               "The software leverages the CALPHAD method to model phase equilibria, transformation temperatures, thermophysical properties (e.g., heat capacity, elastic moduli), and kinetic processes (e.g., diffusion, precipitation) in multicomponent systems."
@@ -1523,12 +1523,12 @@ class CaseStudyModel {
             ],
             media: {
               type: "image",
-              src: `${process.env.PUBLIC_URL}/media/images/thermo-calc-overview1.png`,
+              src: ``,
               alt: "Thermo-Calc Overview"
             }
           },
           {
-            title: "Product",
+            title: "What Does the Product Do",
             paragraphs: [
              
               "Imagine you are a materials engineer and try creating a new metal material for super <span class='highlight'>strong knife blades</span>.",
@@ -1546,12 +1546,12 @@ class CaseStudyModel {
             ],
             media: {
               type: "image",
-              src: `${process.env.PUBLIC_URL}/media/images/knife.jpg`,
+              src: `${process.env.PUBLIC_URL}/media/images/thermo-calc-product.png`,
               alt: "Knife"
             }
           },
           {
-            title: "Challenges",
+            title: "Problems",
             paragraphs: [
               "The Thermo-Calc legacy application, a Java-based desktop platform has been building since 27 years ago, prioritized <span class='highlight'>functionality over usability</span>. As Thermo Calc’s inaugural design lead,<span class='highlight'>my mission required transforming this system into a web-based application with simplified user flows while streamlining workflows for advanced calculators</span>. This entailed aligning historically siloed <span class='highlight'>stakeholders</span> on modernization goals and deconstructing specialized processes. ",
               "<span class='highlight'>Key complexities</span> included reconciling the lack of product strategy, establishing clear product narratives and roadmaps, and transforming sophisticated calculation workflows into consistently simple interactions."
@@ -1564,7 +1564,7 @@ class CaseStudyModel {
             }
           },
           {
-            title: "Design Approach",
+            title: "How Did I Design",
             paragraphs: [
               "My <span class='highlight'>design approach</span> focused on transforming complex user flows into simple/straitforward steps leveraging <span class='highlight'>minimalistic design language & communications</span>, also add <span class='highlight'>product strateges</span> as the heart of the product.",
               "The design process began with immense research and <span class='highlight'>product discovery</span>, where I defined the product strategy through focused <span class='highlight'>workshops</span> with Sales and Software teams. After mapping user needs, technical constraints, and business goals, I prioritized short- and long-term design initiatives with PM based on team capacity and impact. This enabled focused exploration of A&B solutions for simplifying web app workflows while integrating <span class='highlight'>new value propositions</span>: collaborative calculation features for efficient knowledge sharing and scalable license frameworks.",
@@ -1620,7 +1620,7 @@ class CaseStudyModel {
             ],
             media: {
               type: "video",
-              src: `${process.env.PUBLIC_URL}/media/videos/thermo-calc-system-definer.mp4`,
+              // src: `${process.env.PUBLIC_URL}/media/videos/thermo-calc-system-definer.mp4`,
               alt: "Thermo-Calc System Definer"
             }
           },
@@ -1633,7 +1633,7 @@ class CaseStudyModel {
             ],
             media: {
               type: "video",
-              src: `${process.env.PUBLIC_URL}/media/videos/thermo-calc-plot-settings.mp4`,
+              // src: `${process.env.PUBLIC_URL}/media/videos/thermo-calc-plot-settings.mp4`,
               alt: "Thermo-Calc Plot Settings"
             }
           },
@@ -1652,9 +1652,10 @@ class CaseStudyModel {
             ],
             media: {
               type: "image",
-              src: `${process.env.PUBLIC_URL}/media/images/thermo-calc-impact.png`,
-              alt: "Thermo-Calc Challenges"
+              src: `${process.env.PUBLIC_URL}/media/images/impact.png`,
+              alt: "Thermo-Calc System"
             }
+          
           },
         ]
       },
@@ -1793,49 +1794,67 @@ class CaseStudyModel {
         process: 'Research → Define → Design → Deliver',
         description: 'Redesigning biomarker data-tracking workflows to accelerate clinical research timelines at Bayer.',
         credits: [],
-        imageSrc: `${process.env.PUBLIC_URL}/media/images/bayer-bmdt.png`,
+        videoSrc: `${process.env.PUBLIC_URL}/media/videos/bayer_mastertracker2.mp4`,
         detailedIntro: '',
         sections: [
           {
-            title: 'Overview',
+            title: 'What Did I Do <br /> Designing a Biomarker Data Tracking System from 0. ',
             paragraphs: [
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
-              'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+              "How I led BMDT end-to-end as the sole designer — unifying fragmented clinical data to cut drug study monitoring time by 50%, while navigating deep uncertainty, a complex stakeholder landscape, and no prior system to build from.",
+              
+            ],
+            media: { type: 'image', src: `${process.env.PUBLIC_URL}/media/images/bayer_mastertracker.png`, alt: '' },
+          },
+          {
+            title: 'The Bigger Picture: <br /> A drug takes 10–15 years to reach patients. Every day of delay is a life at stake.',
+            paragraphs: [
+              "Bayer — one of the world's oldest pharmaceutical companies, creator of Aspirin in 1899 — runs complex scientific pipelines to develop new medicines. At the heart of modern drug development are biomarkers: measurable biological signals in the body — blood, plasma, tissue, tumour samples, urine — that tell scientists how a disease is behaving and how a drug is responding.",
+              "In clinical studies, biomarkers are collected from patients across multiple clinic sites, processed by external analysis vendors, and stored in central labs. Without efficient tools to monitor and orchestrate this data, the entire pipeline slows down — and millions of patients keep waiting.",
+            ],
+            media: { type: 'image', src: `${process.env.PUBLIC_URL}/media/images/bayer_dashboard.png`, alt: '' },
+          },
+          {
+            title: 'The Problem To Solve',
+            paragraphs: [
+              "<span class='highlight'> No system.  <br /> No consistency.<br /> No clear way forward. </span>",
+              "Clinical trials generate massive amounts of biomarker data flowing from multiple sources — clinic sites, analysis vendors, central labs — each operating in their own systems with their own formats. Biosample Technical Experts at Bayer were spending enormous amounts of time manually coordinating this data, chasing updates, and compiling reports. The absence of an integrated system meant slow turnaround times, duplicated effort, and reduced visibility across study pipelines. Every delay in biomarker monitoring translated directly into delays in getting life-saving medicines to patients.",
+              
+            ],
+            media: { type: 'image', src: `${process.env.PUBLIC_URL}/media/images/bayer_drug.png`, alt: '' },
+          },
+          {
+            title: 'The Opportunity',
+            paragraphs: [
+              "By building a dedicated Biomarker Data Tracking System (BMDT), we could cut the time cost of each medicine study by 50% — accelerating biomarker monitoring, streamlining cross-team communication, and shortening the turnaround for analysis reports.",
+              
             ],
             media: { type: 'image', src: '', alt: '' },
           },
           {
-            title: 'Problem',
+            title: 'How We Worked',
             paragraphs: [
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
-              'Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.',
+              "<span class='highlight'> Product Discovery — Finding the Right Problems First </span> <br /> Before designing anything, I partnered with the Product Owner to run a structured discovery phase. Rather than jumping to features, we focused on a single question: what are the most impactful problems to solve? <br /> This meant interviewing Biosample Technical Experts to understand their daily workflows, pain points, and the invisible workarounds they had built to cope with broken processes. We mapped these findings to define a clear problem space and set measurable KPIs that would tell us whether BMDT was actually working. <br /> <br /> <span class='highlight'> Prioritisation & Roadmap — Turning Complexity Into a Plan </span> <br /> Drug research pipelines involve dozens of roles, data sources, and ways of working. There was no single 'correct' process we could design around. To bring structure to this complexity, I facilitated workshops with the full team to build a Q4 2025 roadmap. We broke the roadmap into 2-week sprints, sequencing work so that we tackled the highest-impact, best-understood problems first — while leaving room to adapt as we learned. <br /> <br /> <span class='highlight'> Design & Test — Fast Iterations, Real Feedback. </span> <br /> For each prioritised feature, I developed user cases and user journeys, then moved quickly into user flows and information architecture. Using the Materio UI library and Figma Make, I built interactive prototypes directly in Figma — without needing developer support. <br /> Each design iteration took less than one week from prototype to tested. I ran continuous rounds of user testing, redesigning based on what I observed until the feedback validated the design hypothesis. Speed without cutting corners — the goal was to learn fast, not ship fast. ",
+              "<span class='highlight'> Building the MLP — Bridging Design and Engineering </span> <br /> Once features were validated, I worked alongside developers to support implementation — reviewing builds, flagging discrepancies, and ensuring the product stayed true to the validated designs. <br /> But the most time-consuming work at this stage wasn't visual — it was data. BMDT depends on reliable, consistent data flowing from clinic sites, analysis vendors, and central labs, each using different systems and formats. I invested heavily in stakeholder engagement: speaking with users, Bayer data teams, and Biosample Operation Managers to map every data source, understand its constraints, and ensure the product was built on a solid data foundation. <br /> <br /> <span class='highlight'> Test & Refine — Staying Responsive Post-Launch </span> <br /> We established monthly group feedback sessions with users to surface issues early and capture evolving needs. Each session produced actionable points that fed directly back into the sprint cycle — keeping the team responsive without losing focus.",
             ],
             media: { type: 'image', src: '', alt: '' },
           },
           {
-            title: 'Research & Discovery',
+            title: 'Impacts',
             paragraphs: [
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.',
-              'Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.',
+              "BMDT gave Biosample Technical Experts a single, reliable system to monitor biomarker data across their studies. Instead of manually chasing updates across disconnected tools, they could see the status of samples, flag issues, and communicate with stakeholders in one place. Shorter analysis report turnaround times. Faster cross-team communication. Less time spent on coordination — more time spent on science.",
+              ""
             ],
-            media: { type: 'image', src: '', alt: '' },
+            media: { type: 'image', src: `${process.env.PUBLIC_URL}/media/images/bayer_edts.png`, alt: '' },
           },
           {
-            title: 'Design Solution',
+            title: 'The Hardest Parts',
             paragraphs: [
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non enim in turpis pulvinar facilisis. Ut felis.',
-              'Header Level 3: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis molestie dictum semper, metus arcu tristique purus, a porttitor eros massa purus metus.',
+              "<span class='highlight'> Designing Without a Map </span> <br /> <br /> There was no consistent way that users worked. Different study teams had different processes, different data sources, and different expectations. Designing a system flexible enough to accommodate all of them — while still being simple and coherent — required holding a lot of uncertainty without letting it paralyse progress. <br /> <br /> <span class='highlight'> My approach </span>  was to stay hypothesis-driven: make explicit assumptions, test them quickly, and update based on evidence rather than consensus. This kept the team moving without pretending we had answers we didn't.",
+              "<span class='highlight'> Data as the Real Design Problem </span> <br /> <br />In a product like BMDT, data isn't a backend concern — it's the product. The reliability and consistency of the data users see directly determines whether they trust the system. But data was flowing from multiple external sources with no standardisation. <br /> I spent significant time working with data teams and operation managers to understand how data moved through the pipeline and where it broke down. Surfacing these issues early — before they became design assumptions — was one of the highest-value contributions I made to the project. <br /> <br /> <span class='highlight'> Stakeholder Management Across Boundaries </span> <br /> <br /> BMDT touched many teams and roles inside and outside the Bolt team. Keeping communication clear, expectations aligned, and the right people informed — without creating meeting overhead that slowed everything down — required constant judgment about when to escalate, when to decide, and when to just move."
             ],
             media: { type: 'image', src: '', alt: '' },
           },
-          {
-            title: 'Impact',
-            paragraphs: [
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo posuere pede. Mauris ut est. Ut quis purus. Sed ac odio.',
-              'More placeholder content will be added here. Stay tuned for detailed impact metrics and outcomes from this project.',
-            ],
-            media: { type: 'image', src: '', alt: '' },
-          },
+
         ],
       },
     };
