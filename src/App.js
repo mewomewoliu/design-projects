@@ -256,13 +256,42 @@ function AppContent() {
 
   const seoConfig = getSEOConfig();
 
-  // ── Case study / About pages (no top nav) ─────────────────────────────────
-  if (isCaseStudy || isAbout) {
+  // ── Case study pages (no top nav) ─────────────────────────────────────────
+  if (isCaseStudy) {
     return (
       <div className="App">
         <SEO {...seoConfig} />
         <Routes>
           <Route path="/case-study/:id" element={<CaseStudy />} />
+        </Routes>
+      </div>
+    );
+  }
+
+  // ── About page (with top nav) ──────────────────────────────────────────────
+  if (isAbout) {
+    return (
+      <div className="App">
+        <SEO {...seoConfig} />
+        <nav className="top-nav" role="navigation" aria-label="Main navigation">
+          <NavLink
+            to="/"
+            className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`}
+            end
+          >
+            WORKS
+          </NavLink>
+          <NavLink
+            to="/blogs"
+            className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`}
+          >
+            DESIGN_APPROACH
+          </NavLink>
+          <Link to="/about" className="nav-item active">
+            ABOUT
+          </Link>
+        </nav>
+        <Routes>
           <Route path="/about" element={<About />} />
         </Routes>
       </div>
@@ -314,8 +343,8 @@ function AppContent() {
                 </section>
 
               
-                 <div className="brand-header">Breaking </div>
-                 <div className="brand-header">Boundaries_</div>
+                 <div className="brand-header">Design Systems</div>
+                 <div className="brand-header">Not Just Screens_</div>
 
                 {/* Footer */}
                 <div className="footer-section">
@@ -332,9 +361,10 @@ function AppContent() {
               <>
                 <div className="page-header">
                   <span className="page-header-label">_design_approach</span>
-                  <h1 className="page-header-title">Writing & Thinking</h1>
+                  <h1 className="page-header-title">How I Think and How I Design</h1>
                   <p className="page-header-desc">
-                    Articles on product design, AI in design, and the creative process.
+                    On systematic design, and the full
+                    equation of desirable, viable, and feasible using AI as tools.
                   </p>
                 </div>
                 <section className="projects-section">

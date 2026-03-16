@@ -1,7 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Footer from './Footer';
-import SocialList from './SocialList';
 import './About.css';
 
 const EXPERIENCE = [
@@ -43,19 +41,34 @@ const EXPERIENCE = [
   },
 ];
 
-const SKILLS = [
-  'Product Strategy',
-  'UX / UI Design',
-  'Design Systems',
-  'AI-Integrated Workflows',
-  'Growth Design',
-  'Service Design',
-  'User Research',
-  'Accessibility',
-  'Workshop Facilitation',
-  'Stakeholder Management',
-  'Brand Identity',
-  'Figma · Framer · Prototyping',
+const PILLARS = [
+  {
+    num: '01',
+    title: 'Think in systems, not screens',
+    text: 'Good design works backward from outcomes. I draw the system map before I open Figma — so what ships is coherent end-to-end, not just beautiful at the component level.',
+  },
+  {
+    num: '02',
+    title: 'AI as a thinking partner',
+    text: "I've embedded AI into every stage of my process — not to move faster, but to think deeper. The result is more rigorous research, sharper concepts, better products.",
+  },
+  {
+    num: '03',
+    title: 'Clarity through restraint',
+    text: 'If a product needs a manual, the design failed. Influenced by Japanese and Swiss minimalism, I find the simplest path that actually solves the problem.',
+  },
+  {
+    num: '04',
+    title: 'Design the whole equation',
+    text: 'Every brief has three questions: Is this what people need? Can the business sustain it? Can engineering build it? Most design stops at the first. I hold all three.',
+  },
+];
+
+const SKILL_GROUPS = [
+  { label: 'Strategy',  skills: ['Product Strategy', 'Growth Design', 'Service Design'] },
+  { label: 'Design',    skills: ['UX / UI Design', 'Design Systems', 'Brand Identity'] },
+  { label: 'Research',  skills: ['User Research', 'Workshop Facilitation', 'Accessibility'] },
+  { label: 'Process',   skills: ['AI-Integrated Workflows', 'Stakeholder Management', 'Figma · Framer · Prototyping'] },
 ];
 
 const EDUCATION = [
@@ -75,117 +88,77 @@ function About() {
   return (
     <div className="about-page">
 
-      {/* ── Nav ──────────────────────────────────────────────────────────── */}
-      <div className="ab-inner">
-        <nav className="ab-nav">
-          <Link to="/" className="ab-back">GOOOOOOOOO BACK TO HOMEPAGE</Link>
-        </nav>
-      </div>
+      {/* ── Hero: portrait card + mission panel ───────────────────────────── */}
+      <div id="overview" className="ab-hero-band">
+        <div className="ab-hero-grid">
 
-      {/* ── Opening: Name + statement ────────────────────────────────────── */}
-      <div className="ab-inner">
-        <header className="ab-hero">
-          <div className="ab-hero-left">
-            <h1 className="ab-name">Mia Liu</h1>
-            <p className="ab-title-line">Product Designer · Product Maker</p>
-            <p className="ab-location">Stockholm, Sweden</p>
-          </div>
-          <div className="ab-hero-right">
-            <p className="ab-statement">
-              I design products that didn't exist before —
-              at the intersection of human empathy
-              and machine intelligence.
-            </p>
-            <p className="ab-statement-body">
-              Not just a designer. A maker who treats AI as a
-              creative collaborator and ships work that genuinely changes
-              how people do things. Influenced by Japanese and Swiss
-              design principles: restraint in service of clarity.
-            </p>
-          </div>
-          <div className="ab-hero-portrait">
+          {/* Portrait card */}
+          <div className="ab-hero-card">
+            <span className="ab-hero-card-tag">◼ Product Designer</span>
             <img
               src="/about-portrait.png"
               alt="Mia Liu"
-              className="ab-portrait-img"
+              className="ab-hero-img"
             />
+            <div className="ab-hero-card-bottom">
+              <h1 className="ab-hero-card-name">Mia Liu</h1>
+              <span className="ab-hero-card-sub">Stockholm · Sweden</span>
+            </div>
           </div>
-        </header>
+
+          {/* Mission panel */}
+          <div className="ab-hero-panel">
+            <div className="ab-hero-panel-label">◼ Mission</div>
+            <p className="ab-statement">
+              I make complex products feel inevitable — mapping the full system
+              from user need to business model to technical reality, before
+              I touch a single screen.
+            </p>
+            <p className="ab-statement-body">
+              A systems thinker who works backward from outcomes, not forward
+              from assumptions. Research-grounded, AI-assisted, and embedded
+              via Netlight AB in some of Sweden's most demanding product
+              organisations.
+            </p>
+            <div className="ab-hero-panel-meta">
+              <span className="ab-hero-panel-role">Product Designer · Product Maker</span>
+              <span className="ab-hero-panel-avail">Open to roles &amp; conversations</span>
+            </div>
+          </div>
+
+        </div>
       </div>
 
-      {/* ── Currently ────────────────────────────────────────────────────── */}
-      {/* <div className="ab-inner">
-        <section className="ab-section">
-          <div className="ab-section-label">Currently</div>
-          <div className="ab-currently">
-            <div className="ab-current-item">
-              <span className="ab-current-key">Working on</span>
-              <span className="ab-current-val">
-                UX Design for Thermo-Calc SaaS, via Netlight AB
-              </span>
+      {/* ── How I Think — grey band ──────────────────────────────────────── */}
+      <div className="ab-band ab-band--alt" id="approach">
+        <div className="ab-inner">
+          <section className="ab-section">
+            <div className="ab-section-label">How I think</div>
+            <div className="ab-pillars-grid">
+              {PILLARS.map(({ num, title, text }) => (
+                <div className="ab-pillar-cell" key={num}>
+                  <span className="ab-pillar-num">{num}</span>
+                  <h3 className="ab-pillar-title">{title}</h3>
+                  <p className="ab-pillar-text">{text}</p>
+                </div>
+              ))}
             </div>
-            <div className="ab-current-item">
-              <span className="ab-current-key">Thinking about</span>
-              <span className="ab-current-val">
-                How AI redistributes authorship in design decisions
-              </span>
-            </div>
-            <div className="ab-current-item">
-              <span className="ab-current-key">Available for</span>
-              <span className="ab-current-val">
-                Consulting, product design roles, and conversations
-              </span>
-            </div>
-          </div>
-        </section>
-      </div> */}
-
-      {/* ── How I think ──────────────────────────────────────────────────── */}
-      <div className="ab-inner">
-        <section className="ab-section">
-          <div className="ab-section-label">How I think</div>
-          <div className="ab-pillars">
-            <div className="ab-pillar">
-              <h3 className="ab-pillar-title">Think in systems, not screens</h3>
-              <p className="ab-pillar-text">
-                Good design works backward from outcomes. I map the full
-                system before touching a single component — so what ships
-                is coherent, not just beautiful.
-              </p>
-            </div>
-            <div className="ab-pillar">
-              <h3 className="ab-pillar-title">AI as a thinking partner</h3>
-              <p className="ab-pillar-text">
-                I've embedded AI into every stage of my process — not to
-                move faster, but to think deeper. The result is more
-                rigorous research, sharper concepts, better products.
-              </p>
-            </div>
-            <div className="ab-pillar">
-              <h3 className="ab-pillar-title">Clarity through restraint</h3>
-              <p className="ab-pillar-text">
-                If a product needs a manual, the design failed. Influenced
-                by Japanese and Swiss minimalism, I find the simplest path
-                that actually solves the problem.
-              </p>
-            </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
-
 
       {/* ── Experience ───────────────────────────────────────────────────── */}
-      <div className="ab-inner">
+      <div className="ab-inner" id="experience">
         <section className="ab-section">
           <div className="ab-section-label">Experience</div>
           <div className="ab-experience">
             <div className="ab-exp-consulting">
               <span className="ab-exp-badge">Oct 2022 – Present</span>
-              <span className="ab-exp-consultant">IT Consultant at Netlight AB</span>
+              <span className="ab-exp-consultant">IT Consultant · Netlight AB</span>
               <p className="ab-exp-note">
-                Embedded designer across complex product organisations —
-                translating ambiguous business goals into sharp UX strategy
-                and shipped outcomes.
+                Embedded across complex product organisations — translating
+                ambiguous business goals into sharp UX strategy and shipped
+                outcomes that move metrics.
               </p>
             </div>
             {EXPERIENCE.map(({ company, role, period, impact }) => (
@@ -200,19 +173,26 @@ function About() {
           </div>
         </section>
       </div>
-{/* ── Capabilities ─────────────────────────────────────────────────── */}
-<div className="ab-inner">
-        <section className="ab-section">
-          <div className="ab-section-label">Capabilities</div>
-          <ul className="ab-skills">
-            {SKILLS.map(skill => (
-              <li key={skill} className="ab-skill">{skill}</li>
-            ))}
-          </ul>
-        </section>
+
+      {/* ── Capabilities — grey band ─────────────────────────────────────── */}
+      <div className="ab-band ab-band--alt" id="capabilities">
+        <div className="ab-inner">
+          <section className="ab-section">
+            <div className="ab-section-label">Capabilities</div>
+            <div className="ab-skills-groups">
+              {SKILL_GROUPS.map(({ label, skills }) => (
+                <div className="ab-skill-group" key={label}>
+                  <span className="ab-skill-group-label">{label}</span>
+                  <span className="ab-skill-group-items">{skills.join(' · ')}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
       </div>
+
       {/* ── Education ────────────────────────────────────────────────────── */}
-      <div className="ab-inner">
+      <div className="ab-inner" id="education">
         <section className="ab-section">
           <div className="ab-section-label">Education</div>
           <div className="ab-education">
@@ -231,14 +211,8 @@ function About() {
         </section>
       </div>
 
-      
-
-      
-
       {/* ── Footer ───────────────────────────────────────────────────────── */}
-      <div className="ab-inner">
-        <Footer />
-      </div>
+      <Footer />
 
     </div>
   );

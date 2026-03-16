@@ -5,10 +5,19 @@ import ProjectModel from '../models/ProjectModel';
 import ProjectPresenter from '../presenters/ProjectPresenter';
 import './ProjectsContainer.css';
 
+const DESIGN_QUOTES = [
+  { text: 'Details are not the details.\nThey make the design.', attr: '— Charles Eames' },
+  { text: 'Less,\nbut better.', attr: '— Dieter Rams' },
+  { text: 'Good design is\nas little design\nas possible.', attr: '— Dieter Rams' },
+  { text: 'Design is not\nhow it looks.\nDesign is how\nit works.', attr: '— Steve Jobs' },
+  { text: 'Simplicity is the\nultimate sophistication.', attr: '— Leonardo da Vinci' },
+  { text: 'Form follows\nfunction.', attr: '— Louis Sullivan' },
+];
+
 const CATEGORIES = [
   { key: 'client',      label: '[◼ client_work]',         displayLabel: 'Client Work' },
   { key: 'independent', label: '[◼ independent_prod]', displayLabel: 'Independent Products' },
-  { key: 'creative',    label: '[◼ cool_stuffs]',          displayLabel: 'Cool Stuffs' },
+  { key: 'creative',    label: '[◼ experiments_]',           displayLabel: 'Experiments' },
 ];
 
 function generateLayout(count, featuredFirst = false) {
@@ -42,28 +51,52 @@ function generateLayout(count, featuredFirst = false) {
   return layouts;
 }
 
+function getQuote(projectId) {
+  const hash = String(projectId).split('').reduce((acc, c) => acc + c.charCodeAt(0), 0);
+  return DESIGN_QUOTES[hash % DESIGN_QUOTES.length];
+}
+
+function ProjectPlaceholder({ projectId }) {
+  const quote = getQuote(projectId);
+  return (
+    <div className="project-placeholder">
+      <span className="project-placeholder-mark">◼</span>
+      <blockquote className="project-placeholder-quote">
+        {quote.text.split('\n').map((line, i) => (
+          <span key={i}>{line}<br /></span>
+        ))}
+      </blockquote>
+      <cite className="project-placeholder-attr">{quote.attr}</cite>
+    </div>
+  );
+}
+
 function ProjectItem({ project, layoutClass, refCallback, imageErrors, onImageError, onProjectClick }) {
+  const hasError = imageErrors[project.id];
+
   return (
     <Link
       to={`/case-study/${project.id}`}
-      className="project-link"
+      className={`project-link ${layoutClass}`}
       onClick={() => onProjectClick(project, layoutClass)}
     >
       <div
-        className={`project-item ${layoutClass}`}
+        className="project-item"
         ref={refCallback}
         id={`project-${project.id}`}
       >
         <div className="corner-bl" />
         <div className="corner-br" />
 
-        {project.type === 'image' ? (
+        {hasError ? (
+          <ProjectPlaceholder projectId={project.id} />
+        ) : project.type === 'image' ? (
           <img
             src={project.src}
             alt={project.alt}
             loading="lazy"
-            onError={(e) => onImageError(project.id, e)}
-            className={`project-image ${imageErrors[project.id] ? 'error' : ''}`}
+            onError={() => onImageError(project.id)}
+            className="project-image"
           />
         ) : (
           <video
@@ -73,13 +106,7 @@ function ProjectItem({ project, layoutClass, refCallback, imageErrors, onImageEr
             loop
             playsInline
             preload="metadata"
-            onError={(e) => {
-              const img = document.createElement('img');
-              img.src = '/media/images/fallback.png';
-              img.alt = project.alt;
-              img.className = 'project-image error';
-              e.target.parentNode.replaceChild(img, e.target);
-            }}
+            onError={() => onImageError(project.id)}
           />
         )}
 
@@ -158,9 +185,8 @@ function ProjectsContainer({ selectedTag }) {
     return () => { refs.forEach(ref => { if (ref) observer.unobserve(ref); }); };
   }, [projects, isMobile]);
 
-  const handleImageError = (projectId, e) => {
+  const handleImageError = (projectId) => {
     setImageErrors(prev => ({ ...prev, [projectId]: true }));
-    e.target.src = '/media/images/fallback.png';
   };
 
   const handleProjectClick = (project, layoutClass) => {

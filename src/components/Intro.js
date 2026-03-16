@@ -90,16 +90,15 @@ function Intro() {
           <span className="cursor-blink">_</span>
         </h1>
         <p className="hero-lead">
-        I design at the edge where<br />
-        human intuition meets<br />
-        AI & technology.
-      </p>
+        Build Human-first design <br />
+          using AI as tools<br />
+        </p>
       <div className="hero-meta">
         <span className="hero-tag">[PRODUCT_MAKER]</span>
         <span className="hero-tag-sep">/</span>
         <span className="hero-tag">[STOCKHOLM]</span>
         <span className="hero-tag-sep">/</span>
-        <span className="hero-tag">[AI_NATIVE]</span>
+        <span className="hero-tag">[AI_DESIGNER]</span>
         {time && (
           <>
             <span className="hero-tag-sep">/</span>
@@ -112,10 +111,9 @@ function Intro() {
       
 
       <div className="hero-body">
-        <p>
-          Not just a designer — a <strong>Product Maker</strong> who embraces AI as coworking
-          mates. I envision a future where design
-          and intelligence are inseparable, and I build toward it every day :D
+        {/* <p>
+          Hi, I am a <strong>AI Product Maker</strong> who designs systems, not screens: starting from what people
+          need, what the business can sustain, and what engineering can ship.
         </p>
         <p>
           Currently consulting at{' '}
@@ -124,9 +122,9 @@ function Intro() {
           <a href="https://www.scania.com/" target="_blank" rel="noopener noreferrer">Scania</a>,{' '}
           <a href="https://www.thermo-calc.com/" target="_blank" rel="noopener noreferrer">Thermo-Calc</a>, and{' '}
           <a href="https://www.storykit.com/" target="_blank" rel="noopener noreferrer">Storykit</a> —
-          solving complex product challenges through research, systems thinking,
-          and AI-integrated workflows.
-        </p>
+          translating complex product challenges into research-grounded,
+          AI-integrated design.
+        </p> */}
       </div>
     </div>
   );

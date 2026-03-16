@@ -25,7 +25,7 @@
   height: var(--nav-h);
   display: flex;
   align-items: center;
-  /* border-bottom: 1px solid var(--border-strong); */
+  border-bottom: 1px solid var(--border-strong);
   position: sticky;
   top: 0;
   background: var(--bg);
@@ -75,7 +75,7 @@
 }
 
 .cs-header {
-  padding: clamp(10rem, 7vw, 12rem) 0 clamp(2rem, 4vw, 3rem);
+  padding: 3rem 0 1rem;
   animation: csHeaderReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
 }
 
@@ -84,13 +84,13 @@
 }
 
 .cs-header-text {
-  margin-bottom: clamp(1rem, 4vw, 2rem);
+  margin-bottom: 1rem;
 }
 
 .cs-title {
   font-family: var(--sans);
   font-size: clamp(2.75rem, 6.5vw, 7.5rem);
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 0.95;
   color: var(--fg);
@@ -135,9 +135,9 @@
 
 .cs-brief-key {
   font-family: var(--sans);
-  font-size: 0.7rem;
+  font-size: 0.62rem;
   color: var(--fg-muted);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
@@ -154,7 +154,7 @@
 .cs-hero {
   width: 100%;
   background: var(--bg);
-  margin: clamp(2rem, 4vw, 3rem) 0 0;
+  margin: 1rem 0 0;
   overflow: hidden;
   display:flex;
   flex-direction: column;
@@ -178,7 +178,7 @@
 .cs-content {
   display: flex;
   flex-direction: column;
-  padding-top: clamp(3rem, 5vw, 5rem);
+  padding-top: 1rem;
   padding-bottom: 0;
 }
 
@@ -203,11 +203,9 @@
   grid-template-columns: 20% 1fr 2fr 1fr;
   grid-template-rows: auto auto;
   column-gap: 2.5%;
-  row-gap: clamp(2rem, 2.5vw, 3rem);
-  padding: clamp(1rem, 2vw, 2rem) 0;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  border-top: 1px solid var(--fg);
+  row-gap: 1rem;
+  padding: 1rem;
+  border-top: 1px solid var(--border-strong);
   animation: csRowReveal 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
@@ -230,11 +228,12 @@
   top: calc(var(--nav-h) + 2rem);
   align-self: start;
   font-family: var(--sans);
-  font-size: clamp(1.2rem, 1.1vw, 1.6rem);
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.3;
-  color: var(--fg);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  color: var(--fg-muted);
   margin: 0;
 }
 
@@ -302,7 +301,7 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 8px;
+  border-radius: 0;
   background: var(--bg-media);
   outline: none;
   -webkit-appearance: none;
@@ -349,15 +348,13 @@
 
 .cs-credits {
   display: flex;
-  gap: clamp(2rem, 5vw, 5rem);
+  gap: 1rem;
   align-items: flex-start;
   background: var(--bg);
-  border-radius: 0px;
-  border-top: solid 1px #000;
-  padding: clamp(1.5rem, 3vw, 2.5rem);
-  margin-top: 4rem;
-  /* margin-left: 1rem;
-  margin-right: 1rem; */
+  border-radius: 0;
+  border-top: 1px solid var(--border-strong);
+  padding: 1rem;
+  margin-top: 2rem;
 }
 
 .cs-credits-label {
@@ -433,10 +430,8 @@
   .cs-section {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
-    row-gap: 1.25rem;
-    /* Use padding-top/bottom only — preserves base padding-left/right: 1rem */
-    padding-top: clamp(1.5rem, 3.5vw, 2.5rem);
-    padding-bottom: clamp(1.5rem, 3.5vw, 2.5rem);
+    row-gap: 1rem;
+    padding: 1rem;
   }
 
   .cs-section-title {
@@ -462,8 +457,7 @@
 /* Mobile: single text column, tighter spacing */
 @media (max-width: 560px) {
   .cs-section {
-    padding-top: clamp(1.25rem, 4vw, 2rem);
-    padding-bottom: clamp(1.25rem, 4vw, 2rem);
+    padding: 1rem;
     row-gap: 1rem;
   }
 

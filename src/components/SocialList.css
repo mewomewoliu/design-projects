@@ -67,13 +67,13 @@
 
 .social-list--horizontal a,
 .social-list--horizontal a:visited {
-  padding: 0.5rem 2rem 0.5rem 0;
+  padding: 0.5rem 1rem 0.5rem 0;
   font-size: 1rem;
-  padding-right: 2rem;
+  padding-right: 1rem;
 }
 
 .social-list--horizontal li:not(:first-child) a {
-  padding-left: 1.75rem;
+  padding-left: 1rem;
   border-left: none;
 }
 
