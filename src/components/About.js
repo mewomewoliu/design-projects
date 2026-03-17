@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Footer from './Footer';
 import './About.css';
 
@@ -91,6 +91,23 @@ const EDUCATION = [
 ];
 
 function About() {
+  useEffect(() => {
+    const sections = document.querySelectorAll('.ab-section');
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.06, rootMargin: '0px 0px -40px 0px' }
+    );
+    sections.forEach(s => obs.observe(s));
+    return () => obs.disconnect();
+  }, []);
+
   return (
     <div className="about-page">
 

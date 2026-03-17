@@ -285,9 +285,15 @@ h2, .main-h2 {
     gap: 0;
   }
 
-  .nav-item { font-size: 0.6rem; letter-spacing: 0.08em; padding: 0 0.75rem; }
+  /* Remove desktop min-width so items shrink to content on small screens */
+  .nav-item {
+    min-width: 0;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    padding: 0 0.75rem;
+  }
 
-  .hero-section { padding: 1rem; }
+  .hero-section { padding: 2rem 1rem 1rem; }
   .projects-section { padding: 1rem 0 4rem; }
   .social-section { padding: 1rem; }
 
@@ -295,10 +301,15 @@ h2, .main-h2 {
   h2, .main-h2 { font-size: 2rem; }
 }
 
+@media (max-width: 600px) {
+  /* About is accessible via footer — drop it from mobile nav */
+  .top-nav .nav-item:last-child { display: none; }
+}
+
 @media (max-width: 480px) {
-  .nav-item { font-size: 0.65rem; }
+  .nav-item { font-size: 0.58rem; letter-spacing: 0.06em; padding: 0 0.6rem; }
 }
 
 @media (max-width: 375px) {
-  .nav-item { font-size: 0.62rem; letter-spacing: 0; }
+  .nav-item { letter-spacing: 0; padding: 0 0.5rem; }
 }

@@ -176,6 +176,8 @@
   .blog-row {
     grid-template-columns: 2.25rem 1fr;
     grid-template-rows: auto auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .blog-end {
@@ -191,6 +193,8 @@
     opacity: 1;
     transform: none;
   }
+
+  .blogs-state { padding-left: 1rem; padding-right: 1rem; }
 }
 
 @media (max-width: 480px) {

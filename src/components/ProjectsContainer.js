@@ -71,6 +71,34 @@ function ProjectPlaceholder({ projectId }) {
   );
 }
 
+function ProjectListItem({ project, index, imageErrors, onImageError, onProjectClick }) {
+  const hasError = imageErrors[project.id];
+  const num = String(index + 1).padStart(2, '0');
+
+  return (
+    <Link
+      to={`/case-study/${project.id}`}
+      className="project-list-item"
+      onClick={() => onProjectClick(project, 'list')}
+    >
+      <span className="pli-num">{num}</span>
+      <div className="pli-thumb">
+        {hasError ? (
+          <div className="pli-thumb-fallback">◼</div>
+        ) : project.type === 'image' ? (
+          <img src={project.src} alt="" onError={() => onImageError(project.id)} />
+        ) : (
+          <video src={project.src} muted playsInline preload="none" />
+        )}
+      </div>
+      <div className="pli-info">
+        <h3 className="pli-title">{project.alt}</h3>
+        <p className="pli-tags">{'[' + project.tags.join(', ') + ']'}</p>
+      </div>
+    </Link>
+  );
+}
+
 function ProjectItem({ project, layoutClass, refCallback, imageErrors, onImageError, onProjectClick }) {
   const hasError = imageErrors[project.id];
 
@@ -158,6 +186,25 @@ function ProjectsContainer({ selectedTag }) {
     return map;
   }, [projects]);
 
+  // Scroll-triggered reveal for category sections
+  useEffect(() => {
+    if (projects.length === 0) return;
+    const sections = document.querySelectorAll('.category-section');
+    const sectionObs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            sectionObs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.05, rootMargin: '0px 0px -40px 0px' }
+    );
+    sections.forEach(s => sectionObs.observe(s));
+    return () => sectionObs.disconnect();
+  }, [projects]);
+
   useEffect(() => {
     if (isMobile) {
       projectRefs.current.forEach(ref => { if (ref) ref.classList.add('visible'); });
@@ -215,19 +262,34 @@ function ProjectsContainer({ selectedTag }) {
         <div className="category-filter-label">
           Filtered by <span className="filter-tag">[{selectedTag}]</span>
         </div>
-        <div className="projects-container">
-          {filtered.map((project, i) => (
-            <ProjectItem
-              key={project.id}
-              project={project}
-              layoutClass={layouts[i]?.class || 'project-full'}
-              refCallback={el => (projectRefs.current[i] = el)}
-              imageErrors={imageErrors}
-              onImageError={handleImageError}
-              onProjectClick={handleProjectClick}
-            />
-          ))}
-        </div>
+        {isMobile ? (
+          <div className="projects-list">
+            {filtered.map((project, i) => (
+              <ProjectListItem
+                key={project.id}
+                project={project}
+                index={i}
+                imageErrors={imageErrors}
+                onImageError={handleImageError}
+                onProjectClick={handleProjectClick}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className="projects-container">
+            {filtered.map((project, i) => (
+              <ProjectItem
+                key={project.id}
+                project={project}
+                layoutClass={layouts[i]?.class || 'project-full'}
+                refCallback={el => (projectRefs.current[i] = el)}
+                imageErrors={imageErrors}
+                onImageError={handleImageError}
+                onProjectClick={handleProjectClick}
+              />
+            ))}
+          </div>
+        )}
       </div>
     );
   }
@@ -248,19 +310,34 @@ function ProjectsContainer({ selectedTag }) {
             </div>
 
             <div className="category-content">
-              <div className="projects-container">
-                {catProjects.map((project, i) => (
-                  <ProjectItem
-                    key={project.id}
-                    project={project}
-                    layoutClass={layouts[i]?.class || 'project-regular'}
-                    refCallback={el => (projectRefs.current[projectIndexMap[project.id]] = el)}
-                    imageErrors={imageErrors}
-                    onImageError={handleImageError}
-                    onProjectClick={handleProjectClick}
-                  />
-                ))}
-              </div>
+              {isMobile ? (
+                <div className="projects-list">
+                  {catProjects.map((project, i) => (
+                    <ProjectListItem
+                      key={project.id}
+                      project={project}
+                      index={i}
+                      imageErrors={imageErrors}
+                      onImageError={handleImageError}
+                      onProjectClick={handleProjectClick}
+                    />
+                  ))}
+                </div>
+              ) : (
+                <div className="projects-container">
+                  {catProjects.map((project, i) => (
+                    <ProjectItem
+                      key={project.id}
+                      project={project}
+                      layoutClass={layouts[i]?.class || 'project-regular'}
+                      refCallback={el => (projectRefs.current[projectIndexMap[project.id]] = el)}
+                      imageErrors={imageErrors}
+                      onImageError={handleImageError}
+                      onProjectClick={handleProjectClick}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
           </section>
         );
