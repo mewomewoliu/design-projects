@@ -46,7 +46,9 @@
   color: var(--fg);
   width: 100%;
   box-sizing: border-box;
-  padding: 2rem 1rem 3rem 1rem;
+  padding: 1rem 1rem 2rem 1rem;
+  border-bottom: 2.5px solid var(--border-strong);
+  border-top: 1px solid var(--border-strong);
 }
 
 /* ── Footer grid — Freitag-style columns ──────────────────────────────────── */
@@ -70,34 +72,34 @@
 .footer-col-header {
   font-family: var(--sans);
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 1);
+  color: rgba(230, 230, 231, 0.576);
   margin-bottom: 0.5rem;
 }
 
 .footer-link {
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 0.8rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--bg);
   text-decoration: none;
   transition: color 0.1s ease;
 }
 
 .footer-link:hover {
-  color: rgba(255, 255, 255, 1);
+  color: rgb(211, 215, 255);
   text-decoration: line-through;
 }
 
 .footer-meta {
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 0.8rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--bg);
   line-height: 1.6;
 }
 
@@ -124,7 +126,8 @@
 
 @media (max-width: 768px) {
   .brand-header {
-    font-size: 14vw;
+    font-size: 10vw;
+    margin-bottom: 0rem;
   }
 
   .footer-grid {
@@ -135,13 +138,15 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
-    padding: 1rem var(--pad) 1.5rem;
+    padding: 1rem var(--pad) 1rem;
   }
 }
 
 @media (max-width: 480px) {
   .brand-header {
-    font-size: 13vw;
+    font-size: 10vw;
+    margin-bottom: 0rem;
+
   }
 }
 

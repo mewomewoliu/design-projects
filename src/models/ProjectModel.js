@@ -3,9 +3,9 @@ class ProjectModel {
     this.projects = [
 
       // ── Client Work ────────────────────────────────────────────────────────
-      { id: 'bayer-bmdt', category: 'client', type: 'video', src: '/media/videos/bayer-demo.mp4', alt: 'Biomarker Data Tracking SaaS — Bayer ||| 2025–2026', tags: ['UX Research', 'Stakeholder Management', 'UX&UI Design', 'Design System', 'AI'] },
-      { id: 'thermo-cal', category: 'client', type: 'video', src: '/media/videos/thermo-cal.mp4', alt: 'Thermo-Cal SaaS App ||| 2025', tags: ['Product Design', 'UX/UI Design', 'Research', 'AI-Integrated Design Workflow'] },
+      { id: 'bayer-bmdt', category: 'client', type: 'video', src: '/media/videos/bayer_mastertracker2.mp4', alt: 'Biomarker Data Tracking SaaS — Bayer ||| 2025–2026', tags: ['UX Research', 'Stakeholder Management', 'UX&UI Design', 'Design System', 'AI'] },
       { id: 'bbc', category: 'client', type: 'video', src: '/media/videos/bbc.mp4', alt: 'BlaBlacar Smart Price ||| 2021–2022', tags: ['Product Design', 'Framer Prototyping'] },
+      { id: 'thermo-cal', category: 'client', type: 'video', src: '/media/videos/thermo-cal.mp4', alt: 'Thermo-Cal SaaS App ||| 2025', tags: ['Product Design', 'UX/UI Design', 'Research', 'AI-Integrated Design Workflow'] },
       { id: 'storykit-design-system', category: 'client', type: 'image', src: '/media/images/storykit-design-system.png', alt: 'Storykit Design System ||| 2023–2024', tags: ['Design System', 'Product Design'] },
       { id: 'music-library', category: 'client', type: 'video', src: '/media/videos/storykit-music-lib.mp4', alt: 'Storykit Music Library ||| 2023–2024', tags: ['UX/UI Design', 'Research', 'Growth', 'Design System', 'Brand Identity'] },
       { id: 'scania-helpcenter', category: 'client', type: 'video', src: '/media/videos/scania-helpcenter.mp4', alt: 'Scania Help Center ||| 2023–2024', tags: ['Product Design', 'Research', 'Copy Writing', 'UI Design', 'Workshop'] },

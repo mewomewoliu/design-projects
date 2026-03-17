@@ -244,7 +244,7 @@ function CaseStudy() {
           {/* ── Credits ──────────────────────────────────────────────── */}
           {study.credits?.length > 0 && (
             <div className="cs-credits">
-              <span className="cs-credits-label">Credits</span>
+              <span className="cs-section-title">Credits</span>
               <ul>
                 {study.credits.map((credit, i) => (
                   <li key={i}>{credit}</li>

@@ -68,7 +68,13 @@ const SKILL_GROUPS = [
   { label: 'Strategy',  skills: ['Product Strategy', 'Growth Design', 'Service Design'] },
   { label: 'Design',    skills: ['UX / UI Design', 'Design Systems', 'Brand Identity'] },
   { label: 'Research',  skills: ['User Research', 'Workshop Facilitation', 'Accessibility'] },
-  { label: 'Process',   skills: ['AI-Integrated Workflows', 'Stakeholder Management', 'Figma · Framer · Prototyping'] },
+  { label: 'Process',   skills: ['AI-Integrated Workflows', 'Stakeholder Management', 'Figma', 'Framer', 'Prototyping'] },
+];
+
+const STATS = [
+  { value: '5+', label: 'Years' },
+  { value: '6',  label: 'Companies' },
+  { value: '3',  label: 'Countries' },
 ];
 
 const EDUCATION = [
@@ -120,6 +126,15 @@ function About() {
               via Netlight AB in some of Sweden's most demanding product
               organisations.
             </p>
+            <div className="ab-hero-stats">
+              {STATS.map(({ value, label }) => (
+                <div className="ab-hero-stat" key={label}>
+                  <span className="ab-hero-stat-value">{value}</span>
+                  <span className="ab-hero-stat-label">{label}</span>
+                </div>
+              ))}
+            </div>
+
             <div className="ab-hero-panel-meta">
               <span className="ab-hero-panel-role">Product Designer · Product Maker</span>
               <span className="ab-hero-panel-avail">Open to roles &amp; conversations</span>
@@ -183,7 +198,11 @@ function About() {
               {SKILL_GROUPS.map(({ label, skills }) => (
                 <div className="ab-skill-group" key={label}>
                   <span className="ab-skill-group-label">{label}</span>
-                  <span className="ab-skill-group-items">{skills.join(' · ')}</span>
+                  <div className="ab-skill-group-items">
+                    {skills.map(skill => (
+                      <span className="ab-skill-tag" key={skill}>{skill}</span>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>

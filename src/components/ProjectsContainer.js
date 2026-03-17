@@ -220,7 +220,7 @@ function ProjectsContainer({ selectedTag }) {
             <ProjectItem
               key={project.id}
               project={project}
-              layoutClass={layouts[i]?.class || 'project-regular'}
+              layoutClass={layouts[i]?.class || 'project-full'}
               refCallback={el => (projectRefs.current[i] = el)}
               imageErrors={imageErrors}
               onImageError={handleImageError}
