@@ -25,29 +25,34 @@ function generateLayout(count, featuredFirst = false) {
   const HALF    = { span: 'half',    class: 'project-half' };
   const REGULAR = { span: 'regular', class: 'project-regular' };
 
-  const layouts = [];
-  let rowFill = 0;
+  // Fixed row templates that always fill the 3-column grid
+  const ROW_TEMPLATES = [
+    [FULL],                         // A: 3 cols
+    [HALF, REGULAR],                // B: 2+1 cols
+    [REGULAR, HALF],                // C: 1+2 cols
+    [REGULAR, REGULAR, REGULAR],    // D: 1+1+1 cols
+  ];
 
-  for (let i = 0; i < count; i++) {
-    if (i === 0 && featuredFirst) {
-      layouts.push(FULL);
-      rowFill = 0;
-      continue;
-    }
-    const space = 3 - rowFill;
-    if (space === 3 || rowFill === 0) {
-      const r = Math.random();
-      if (r < 0.2)       { layouts.push(FULL);    rowFill = 0; }
-      else if (r < 0.5)  { layouts.push(HALF);    rowFill = 2; }
-      else               { layouts.push(REGULAR);  rowFill = 1; }
-    } else if (space >= 2) {
-      if (Math.random() < 0.4) { layouts.push(HALF);    rowFill = (rowFill + 2) % 3; }
-      else                     { layouts.push(REGULAR);  rowFill = (rowFill + 1) % 3; }
-    } else {
-      layouts.push(REGULAR);
-      rowFill = (rowFill + 1) % 3;
-    }
+  const layouts = [];
+  let i = 0;
+  let rowIndex = 0;
+
+  if (featuredFirst) {
+    layouts.push(FULL);
+    i = 1;
+    rowIndex = 1; // skip Row A after forced full
   }
+
+  while (i < count) {
+    const template = ROW_TEMPLATES[rowIndex % ROW_TEMPLATES.length];
+    for (const item of template) {
+      if (i >= count) break;
+      layouts.push(item);
+      i++;
+    }
+    rowIndex++;
+  }
+
   return layouts;
 }
 
@@ -152,19 +157,12 @@ function ProjectsContainer({ selectedTag }) {
   const projectRefs = useRef([]);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
   const [imageErrors, setImageErrors] = useState({});
-  const [categoryLayouts, setCategoryLayouts] = useState({});
 
   useEffect(() => {
     const model = new ProjectModel();
     const presenter = new ProjectPresenter(model, {
       renderProjects: (data) => {
         setProjects(data);
-        const layouts = {};
-        CATEGORIES.forEach(cat => {
-          const catProjects = data.filter(p => p.category === cat.key);
-          layouts[cat.key] = generateLayout(catProjects.length, cat.key === 'client');
-        });
-        setCategoryLayouts(layouts);
       }
     });
     presenter.presentProjects();
@@ -300,7 +298,7 @@ function ProjectsContainer({ selectedTag }) {
       {CATEGORIES.map(cat => {
         const catProjects = projects.filter(p => p.category === cat.key);
         if (catProjects.length === 0) return null;
-        const layouts = categoryLayouts[cat.key] || generateLayout(catProjects.length, cat.key === 'client');
+        const layouts = generateLayout(catProjects.length, cat.key === 'client');
 
         return (
           <section key={cat.key} className="category-section">
