@@ -1,9 +1,9 @@
-/* ── About page ────────────────────────────────────────────────────────────── */
+/* ── About page ───────────────────────────────────────────────────────────── */
 
 .about-page {
   width: 100%;
-  overflow-x: hidden;
-  animation: aboutReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  /* NO overflow-x: hidden — it creates a new BFC that breaks position: sticky */
+  animation: aboutReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 @keyframes aboutReveal {
@@ -11,75 +11,116 @@
   to   { opacity: 1; }
 }
 
-/* ── Hero band ────────────────────────────────────────────────────────────── */
+/* ── Two-column layout ────────────────────────────────────────────────────── */
 
-.ab-hero-band {
-  width: 100%;
-  border-bottom: 1px solid var(--border);
-}
-
-.ab-hero-grid {
+.ab-layout {
   display: grid;
-  grid-template-columns: 1.55fr 1fr;
-  background: var(--border);
-  gap: 1px;
-  height: 540px;
+  grid-template-columns: 38% 62%;
+  align-items: start;
+  border-bottom: 1px solid var(--border-strong);
 }
 
-/* ── Portrait card ────────────────────────────────────────────────────────── */
+/* ── Sticky left panel ────────────────────────────────────────────────────── */
 
-.ab-hero-card {
-  position: relative;
-  overflow: hidden;
+.ab-sticky-left {
+  position: sticky;
+  top: var(--nav-h);
+  height: calc(100vh - var(--nav-h));
   background: var(--fg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-.ab-hero-card-tag {
+/* Chapter indicator */
+.ab-chapter-indicator {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.9);
-  z-index: 2;
+  z-index: 10;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  pointer-events: none;
 }
 
-.ab-hero-img {
+.ab-chapter-num {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.ab-chapter-label {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Portrait */
+.ab-sticky-portrait {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center top;
   display: block;
-  filter: grayscale(18%) contrast(1.05);
-  transition: filter 0.5s ease;
+  filter: grayscale(20%) contrast(1.05);
+  transition: filter 0.6s ease;
 }
 
-.ab-hero-card:hover .ab-hero-img {
+.ab-sticky-left:hover .ab-sticky-portrait {
   filter: grayscale(0%) contrast(1);
 }
 
-.ab-hero-card-bottom {
+/* Progress bar — right edge */
+.ab-progress-track {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.ab-progress-fill {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.55);
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform 0.12s linear;
+}
+
+/* Bottom overlay */
+.ab-sticky-bottom {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 2.5rem 1.25rem 1.25rem;
   background: linear-gradient(
     to top,
-    rgba(12, 12, 11, 0.88) 0%,
+    rgba(12, 12, 11, 0.97) 0%,
+    rgba(12, 12, 11, 0.7) 55%,
     rgba(12, 12, 11, 0) 100%
   );
+  padding: 3.5rem 1.25rem 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
-  z-index: 2;
+  gap: 1rem;
+  pointer-events: none;
 }
 
-.ab-hero-card-name {
+.ab-sticky-identity {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.ab-sticky-name {
   font-family: var(--sans);
-  font-size: clamp(2.5rem, 4.5vw, 5.5rem);
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
   font-weight: 700;
   letter-spacing: -0.035em;
   line-height: 0.95;
@@ -88,136 +129,111 @@
   text-transform: uppercase;
 }
 
-.ab-hero-card-sub {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
-}
-
-/* ── Mission panel ────────────────────────────────────────────────────────── */
-
-.ab-hero-panel {
-  background: var(--bg);
-  padding: 2rem 1.5rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  overflow-y: auto;
-}
-
-.ab-hero-panel-label {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--fg-muted);
-}
-
-.ab-statement {
-  font-family: var(--sans);
-  font-size: clamp(1.1rem, 1.6vw, 1.45rem);
-  font-weight: 500;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
-  color: var(--fg);
-  margin: 0;
-}
-
-.ab-statement-body {
-  font-family: var(--sans);
-  font-size: 0.875rem;
-  line-height: 1.75;
-  color: var(--fg-muted);
-  margin: 0;
-}
-
-/* ── Stats row ────────────────────────────────────────────────────────────── */
-
-.ab-hero-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-  margin-top: auto;
-}
-
-.ab-hero-stat {
-  background: var(--bg);
-  padding: 0.75rem 0.875rem;
+.ab-sticky-meta {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
-  transition: background 0.1s ease;
 }
 
-.ab-hero-stat:hover {
-  background: var(--fg);
-}
-
-.ab-hero-stat-value {
-  font-family: var(--mono);
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  line-height: 1;
-  color: var(--fg);
-  transition: color 0.1s ease;
-}
-
-.ab-hero-stat:hover .ab-hero-stat-value {
-  color: var(--bg);
-}
-
-.ab-hero-stat-label {
+.ab-sticky-role {
   font-family: var(--mono);
   font-size: 0.58rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--fg-subtle);
-  transition: color 0.1s ease;
+  color: rgba(255, 255, 255, 0.8);
 }
 
-.ab-hero-stat:hover .ab-hero-stat-label {
-  color: rgba(255, 255, 255, 0.5);
+.ab-sticky-loc {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
 }
 
-/* ── Panel meta ───────────────────────────────────────────────────────────── */
+/* ── Right column ─────────────────────────────────────────────────────────── */
 
-.ab-hero-panel-meta {
+.ab-scroll-right {
+  border-left: 1px solid var(--border-strong);
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--border);
 }
 
-.ab-hero-panel-role {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--fg);
+/* ── Storytelling block ───────────────────────────────────────────────────── */
+
+.ab-story {
+  padding: 3.75rem 3.75rem 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Each paragraph reveals individually on scroll */
+.ab-story-para {
+  font-family: var(--sans);
+  font-size: clamp(1.35rem, 2.4vw, 2.25rem);
   font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+  color: var(--fg);
+  margin: 0;
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) var(--delay, 0s),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) var(--delay, 0s);
 }
 
-.ab-hero-panel-avail {
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--fg-subtle);
+.ab-story-para.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Key phrases — hover highlight */
+.ab-key {
+  display: inline;
+  position: relative;
+  cursor: default;
+  transition: color 0.2s ease;
+}
+
+.ab-key::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0.05em;
+  width: 100%;
+  height: 1px;
+  background: var(--fg);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ab-story-para:hover .ab-key::after {
+  transform: scaleX(1);
+}
+
+/* The last line — make it heavier for emphasis */
+.ab-story-para:last-of-type {
+  color: var(--fg);
+}
+
+/* ── Availability row ─────────────────────────────────────────────────────── */
+
+.ab-avail-row {
   display: flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.6rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  /* override paragraph font size for this row */
+  font-size: 0 !important;
 }
 
-.ab-hero-panel-avail::before {
-  content: '';
-  width: 6px;
-  height: 6px;
+.ab-avail-dot {
+  width: 5px;
+  height: 5px;
   background: var(--fg);
   flex-shrink: 0;
   animation: availPulse 2.4s ease-in-out infinite;
@@ -225,408 +241,65 @@
 
 @keyframes availPulse {
   0%, 100% { opacity: 1; }
-  50%       { opacity: 0.15; }
+  50%       { opacity: 0.12; }
 }
 
-/* ── Band system — alternating backgrounds ────────────────────────────────── */
-
-.ab-band {
-  width: 100%;
-}
-
-.ab-band--alt {
-  background: var(--bg);
-}
-
-/* Sections inside bands: border-top would disappear into grey — keep it */
-.ab-band .ab-section {
-  border-top: 1px solid var(--border);
-}
-
-/* ── Inner container ──────────────────────────────────────────────────────── */
-
-.ab-inner {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 0 var(--pad);
-}
-
-/* ── Section layout: label left, content right ────────────────────────────── */
-
-.ab-section {
-  display: grid;
-  grid-template-columns: clamp(191px, 16%, 240px) 2fr;
-  gap: 0 1rem;
-  align-items: start;
-  padding: 1rem 0;
-  border-top: 1px solid var(--border);
-  opacity: 0;
-  transform: translateY(20px);
-  transition:
-    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.ab-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.ab-section-label {
-  font-family: var(--sans);
-  font-size: 0.62rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--fg-muted);
-  padding-top: 0.2rem;
-  position: sticky;
-  top: calc(var(--nav-h) + 1.5rem);
-}
-
-/* ── Pillars / how I think — catalogue cells ──────────────────────────────── */
-
-.ab-pillars-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-  width: 100%;
-}
-
-.ab-pillar-cell {
-  background: var(--bg);
-  padding: 1.5rem 1rem 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  min-height: 260px;
-  transition: background 0.1s ease;
-}
-
-.ab-pillar-cell:hover {
-  background: var(--fg);
-}
-
-.ab-pillar-num {
-  font-family: var(--mono);
-  font-size: clamp(3rem, 5vw, 4.5rem);
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  line-height: 1;
-  color: var(--fg);
-  transition: color 0.1s ease, opacity 0.1s ease;
-}
-
-.ab-pillar-cell:hover .ab-pillar-num {
-  color: var(--bg);
-  opacity: 0.35;
-}
-
-.ab-pillar-title {
-  font-family: var(--sans);
-  font-size: clamp(0.85rem, 1.2vw, 1rem);
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  line-height: 1.25;
-  color: var(--fg);
-  margin: 0;
-  transition: color 0.1s ease;
-}
-
-.ab-pillar-cell:hover .ab-pillar-title {
-  color: var(--bg);
-}
-
-.ab-pillar-text {
-  font-family: var(--sans);
-  font-size: 0.82rem;
-  line-height: 1.7;
-  color: var(--fg-muted);
-  margin: 0;
-  transition: color 0.1s ease;
-}
-
-.ab-pillar-cell:hover .ab-pillar-text {
-  color: rgba(255, 255, 255, 0.75);
-}
-
-/* ── Experience ───────────────────────────────────────────────────────────── */
-
-.ab-experience {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-/* Netlight consulting header */
-.ab-exp-consulting {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  padding-bottom: 1rem;
-  margin-bottom: 0.5rem;
-  border-bottom: 1px solid var(--border);
-}
-
-.ab-exp-badge {
-  font-family: var(--sans);
-  font-size: 0.62rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--fg-muted);
-}
-
-.ab-exp-consultant {
-  font-family: var(--sans);
-  font-size: clamp(1rem, 1.6vw, 1.35rem);
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: var(--fg);
-}
-
-.ab-exp-note {
-  font-family: var(--sans);
-  font-size: 0.875rem;
-  line-height: 1.65;
-  color: var(--fg-muted);
-  margin: 0;
-  max-width: 54ch;
-}
-
-/* Individual experience rows */
-.ab-exp-row {
-  display: grid;
-  grid-template-columns: clamp(160px, 30%, 240px) 1fr;
-  gap: 1rem;
-  align-items: start;
-  padding: 1rem;
-  margin: 0 -1rem;
-  /* border-bottom: 1px solid var(--border); */
-  transition: background 0.1s ease;
-}
-
-.ab-exp-row:hover {
-  background: var(--fg);
-}
-
-.ab-exp-row:hover .ab-exp-company {
-  color: rgba(255, 255, 255, 0.95);
-}
-
-.ab-exp-row:hover .ab-exp-role {
-  color: rgba(255, 255, 255, 0.45);
-}
-
-.ab-exp-row:hover .ab-exp-impact {
-  color: rgba(255, 255, 255, 0.65);
-}
-
-.ab-exp-left {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-
-.ab-exp-company {
-  font-family: var(--sans);
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--fg);
-  letter-spacing: -0.005em;
-}
-
-.ab-exp-role {
-  font-family: var(--sans);
-  font-size: 0.72rem;
-  color: var(--fg-subtle);
-  letter-spacing: 0.02em;
-}
-
-.ab-exp-impact {
-  font-family: var(--sans);
-  font-size: 0.875rem;
-  line-height: 1.65;
-  color: var(--fg-muted);
-  margin: 0;
-}
-
-/* ── Education ────────────────────────────────────────────────────────────── */
-
-.ab-education {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.ab-edu-row {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 1rem;
-  align-items: start;
-  padding: 1rem 0;
-  /* border-bottom: 1px solid var(--border); */
-  transition: opacity 0.2s ease;
-}
-
-.ab-edu-row:hover {
-  opacity: 0.65;
-}
-
-.ab-edu-school {
-  font-family: var(--sans);
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--fg);
-  line-height: 1.4;
-}
-
-.ab-edu-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.15rem;
-}
-
-.ab-edu-degree {
-  font-family: var(--sans);
-  font-size: 0.82rem;
-  color: var(--fg-muted);
-  text-align: right;
-}
-
-.ab-edu-year {
-  font-family: var(--sans);
-  font-size: 0.7rem;
-  color: var(--fg-subtle);
-  letter-spacing: 0.04em;
-}
-
-/* ── Skills — grouped catalogue rows ──────────────────────────────────────── */
-
-.ab-skills-groups {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.ab-skill-group {
-  display: grid;
-  grid-template-columns: clamp(72px, 14%, 100px) 1fr;
-  gap: 1rem;
-  padding: 0.75rem 0;
-  /* border-top: 1px solid var(--border); */
-  align-items: baseline;
-}
-
-.ab-skill-group-label {
-  font-family: var(--mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--fg-subtle);
-  flex-shrink: 0;
-}
-
-.ab-skill-group-items {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  align-items: center;
-}
-
-.ab-skill-tag {
+.ab-avail-text {
   font-family: var(--mono);
   font-size: 0.62rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--fg);
-  border: 1px solid var(--border);
-  padding: 0.2rem 0.55rem;
-  cursor: default;
-  transition: background 0.1s ease, color 0.1s ease, border-color 0.1s ease;
+  color: var(--fg-subtle);
 }
 
-.ab-skill-tag:hover {
-  background: var(--fg);
-  color: var(--bg);
-  border-color: var(--fg);
-}
-
-/* ── Responsive ───────────────────────────────────────────────────────────── */
+/* ── Responsive: collapse at 960px ───────────────────────────────────────── */
 
 @media (max-width: 960px) {
-  .ab-hero-grid {
+  .ab-layout {
     grid-template-columns: 1fr;
-    height: auto;
   }
 
-  .ab-hero-card {
-    height: 480px;
+  .ab-sticky-left {
+    position: relative;
+    top: 0;
+    height: 460px;
   }
 
-  .ab-pillars-grid {
-    grid-template-columns: 1fr 1fr;
+  .ab-progress-track { display: none; }
+
+  .ab-scroll-right {
+    border-left: none;
+    border-top: 1px solid var(--border-strong);
+  }
+
+  .ab-story {
+    padding: 2.5rem 2rem 3.5rem;
+    gap: 1.75rem;
   }
 }
 
 @media (max-width: 768px) {
-  .ab-hero-card {
-    height: 380px;
-  }
+  .ab-sticky-left  { height: 360px; }
+  .ab-sticky-name  { font-size: 1.6rem; }
 
-  .ab-hero-panel {
-    gap: 1rem;
-    padding: 1.5rem 1rem 1rem;
-  }
-
-  .ab-section {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .ab-section-label {
-    position: static;
-  }
-
-  .ab-pillars-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .ab-exp-row {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-  }
-
-  .ab-edu-row {
-    grid-template-columns: 1fr;
-    gap: 0.4rem;
-  }
-
-  .ab-edu-right {
-    align-items: flex-start;
+  .ab-story {
+    padding: 2rem 1.25rem 3rem;
+    gap: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
-  .ab-hero-card {
-    height: 300px;
-  }
-
-  .ab-hero-card-name {
-    font-size: clamp(2rem, 10vw, 3rem);
-  }
+  .ab-sticky-left { height: 300px; }
 }
 
-@media (min-width: 1920px) and (max-width: 2559px) {
-  .ab-hero-grid      { height: 620px; }
-  .ab-statement-body { font-size: 1rem; }
+/* ── Large screens ────────────────────────────────────────────────────────── */
+
+@media (min-width: 1440px) {
+  .ab-layout { grid-template-columns: 34% 66%; }
+  .ab-story  { padding: 4.5rem 4.5rem 6rem; gap: 2.5rem; }
 }
 
-@media (min-width: 2560px) {
-  .ab-hero-grid      { height: 720px; }
-  .ab-statement      { font-size: 2rem; }
-  .ab-statement-body { font-size: 1.1rem; }
-  .ab-pillar-text    { font-size: 1rem; }
-  .ab-exp-impact     { font-size: 1rem; }
+@media (min-width: 1920px) {
+  .ab-layout { grid-template-columns: 32% 68%; }
+  .ab-story  { padding: 5rem 5rem 7rem; gap: 3rem; }
 }

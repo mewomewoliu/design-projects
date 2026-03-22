@@ -106,6 +106,17 @@ html, body {
   color: var(--bg);
 }
 
+/* Nav text switching — full label vs symbol */
+.nav-text-short {
+  display: none;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.nav-text-full {
+  display: inline;
+}
+
 /* ── Main container ───────────────────────────────────────────────────────── */
 
 .main-container {
@@ -122,9 +133,10 @@ html, body {
 /* ── Hero section ─────────────────────────────────────────────────────────── */
 
 .hero-section {
-  padding: 3rem 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 0 1rem;
+  height: calc(100vh - var(--nav-h));
+  display: flex;
+  flex-direction: column;
 }
 
 /* ── Projects section ─────────────────────────────────────────────────────── */
@@ -156,6 +168,9 @@ html, body {
 .footer-section {
   margin-top: auto;
   padding-top: 0;
+  /* Full-bleed: escape max-width container so footer touches viewport edges */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
 }
 
 /* ── Page header (blogs etc.) ─────────────────────────────────────────────── */
@@ -302,8 +317,16 @@ h2, .main-h2 {
 }
 
 @media (max-width: 600px) {
-  /* About is accessible via footer — drop it from mobile nav */
-  .top-nav .nav-item:last-child { display: none; }
+  /* Switch to symbols so all 4 tabs fit */
+  .nav-text-full  { display: none; }
+  .nav-text-short { display: inline; }
+
+  /* Tighter item width when showing symbols */
+  .nav-item {
+    min-width: 0;
+    padding: 0 0.875rem;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 480px) {

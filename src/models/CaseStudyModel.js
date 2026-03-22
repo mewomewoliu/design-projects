@@ -1511,7 +1511,7 @@ class CaseStudyModel {
         process: 'Research → Product Discovery → Product Strategy → Ideation → Roadmap → UX Design → Prototype',
         description: 'A simple & collaborative web-based Thermodynamic Calculator',
         credits: ['Johan Jeppsson', 'Marcus Fröling'],
-        videoSrc: `${process.env.PUBLIC_URL}/media/videos/thermo-cal.mp4`,
+        videoSrc: `${process.env.PUBLIC_URL}/media/videos/thermo-cal1.mp4`,
         detailedIntro: 'Thermo-Cal is a simple & collaborative web-based Thermodynamic Calculator that helps engineers, scientists, students calculate thermodynamic properties of materials',
         sections: [
           {
@@ -1844,7 +1844,7 @@ class CaseStudyModel {
               "BMDT gave Biosample Technical Experts a single, reliable system to monitor biomarker data across their studies. Instead of manually chasing updates across disconnected tools, they could see the status of samples, flag issues, and communicate with stakeholders in one place. Shorter analysis report turnaround times. Faster cross-team communication. Less time spent on coordination — more time spent on science.",
               ""
             ],
-            media: { type: 'image', src: `${process.env.PUBLIC_URL}/media/images/bayer_edts.png`, alt: '' },
+            media: { type: 'image', src: `${process.env.PUBLIC_URL}/media/images/bayer-commercial.png`, alt: '' },
           },
           {
             title: 'The Hardest Parts',
@@ -1852,7 +1852,7 @@ class CaseStudyModel {
               "<span class='highlight'> Designing Without a Map </span> <br /> <br /> There was no consistent way that users worked. Different study teams had different processes, different data sources, and different expectations. Designing a system flexible enough to accommodate all of them — while still being simple and coherent — required holding a lot of uncertainty without letting it paralyse progress. <br /> <br /> <span class='highlight'> My approach </span>  was to stay hypothesis-driven: make explicit assumptions, test them quickly, and update based on evidence rather than consensus. This kept the team moving without pretending we had answers we didn't.",
               "<span class='highlight'> Data as the Real Design Problem </span> <br /> <br />In a product like BMDT, data isn't a backend concern — it's the product. The reliability and consistency of the data users see directly determines whether they trust the system. But data was flowing from multiple external sources with no standardisation. <br /> I spent significant time working with data teams and operation managers to understand how data moved through the pipeline and where it broke down. Surfacing these issues early — before they became design assumptions — was one of the highest-value contributions I made to the project. <br /> <br /> <span class='highlight'> Stakeholder Management Across Boundaries </span> <br /> <br /> BMDT touched many teams and roles inside and outside the Bolt team. Keeping communication clear, expectations aligned, and the right people informed — without creating meeting overhead that slowed everything down — required constant judgment about when to escalate, when to decide, and when to just move."
             ],
-            media: { type: 'image', src: '', alt: '' },
+            media: { type: 'image', src: ``, alt: '' },
           },
 
         ],

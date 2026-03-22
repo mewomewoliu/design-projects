@@ -15,9 +15,9 @@ const DESIGN_QUOTES = [
 ];
 
 const CATEGORIES = [
-  { key: 'client',      label: '[◼ client_work]',         displayLabel: 'Client Work' },
-  { key: 'independent', label: '[◼ independent_prod]', displayLabel: 'Independent Products' },
-  { key: 'creative',    label: '[◼ experiments_]',           displayLabel: 'Experiments' },
+  { key: 'client',      label: '[◼ Selected_Work]',         displayLabel: 'Client Work' },
+  { key: 'independent', label: '[◼ Independent_Prod]', displayLabel: 'Independent Products' },
+  { key: 'creative',    label: '[◼ Openprocessing_]',           displayLabel: 'Experiments' },
 ];
 
 function generateLayout(count, featuredFirst = false) {
@@ -93,7 +93,7 @@ function ProjectListItem({ project, index, imageErrors, onImageError, onProjectC
         ) : project.type === 'image' ? (
           <img src={project.src} alt="" onError={() => onImageError(project.id)} />
         ) : (
-          <video src={project.src} muted playsInline preload="none" />
+          <video src={project.src} muted playsInline preload="metadata" />
         )}
       </div>
       <div className="pli-info">
@@ -298,7 +298,9 @@ function ProjectsContainer({ selectedTag }) {
       {CATEGORIES.map(cat => {
         const catProjects = projects.filter(p => p.category === cat.key);
         if (catProjects.length === 0) return null;
-        const layouts = generateLayout(catProjects.length, cat.key === 'client');
+        const layouts = cat.key === 'client'
+          ? catProjects.map(() => ({ class: 'project-full' }))
+          : generateLayout(catProjects.length, false);
 
         return (
           <section key={cat.key} className="category-section">

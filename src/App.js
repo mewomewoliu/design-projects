@@ -6,6 +6,7 @@ import Blogs from './components/Blogs';
 import Footer from './components/Footer';
 import CaseStudy from './components/CaseStudy';
 import About from './components/About';
+import MyProducts from './components/MyProducts';
 import SEO from './components/SEO';
 import Intro from './components/Intro';
 import SocialList from './components/SocialList';
@@ -24,6 +25,7 @@ function AppContent() {
   const location = useLocation();
   const isCaseStudy = location.pathname.includes('/case-study');
   const isAbout = location.pathname === '/about';
+  const isProducts = location.pathname === '/products';
   const [selectedTag, setSelectedTag] = useState(null);
   const sessionStartRef = useRef(null);
   const pageStartRef = useRef(null);
@@ -235,6 +237,16 @@ function AppContent() {
       };
     }
 
+    if (isProducts) {
+      return {
+        title: `My Products - ${baseTitle}`,
+        description: 'Products, agents, and workflows built by Mia Liu to solve real design and workflow painpoints.',
+        keywords: `${baseKeywords}, Products, Agents, Workflows, Tools`,
+        canonicalUrl: `${baseUrl}/products`,
+        ogImage: `${baseUrl}/logo.png`,
+      };
+    }
+
     if (location.pathname === '/blogs') {
       return {
         title: `Design Approach - ${baseTitle}`,
@@ -274,21 +286,21 @@ function AppContent() {
       <div className="App">
         <SEO {...seoConfig} />
         <nav className="top-nav" role="navigation" aria-label="Main navigation">
-          <NavLink
-            to="/"
-            className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`}
-            end
-          >
-            WORKS
+          <NavLink to="/" className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`} end aria-label="Works">
+            <span className="nav-text-full">WORKS</span>
+            <span className="nav-text-short" aria-hidden="true">◼</span>
           </NavLink>
-          <NavLink
-            to="/blogs"
-            className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`}
-          >
-            DESIGN_APPROACH
+          <NavLink to="/products" className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`} aria-label="My Products">
+            <span className="nav-text-full">Independent_Prod</span>
+            <span className="nav-text-short" aria-hidden="true">◎</span>
           </NavLink>
-          <Link to="/about" className="nav-item active">
-            ABOUT
+          <NavLink to="/blogs" className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`} aria-label="Design Approach">
+            <span className="nav-text-full">DESIGN_APPROACH</span>
+            <span className="nav-text-short" aria-hidden="true">◈</span>
+          </NavLink>
+          <Link to="/about" className="nav-item active" aria-label="About">
+            <span className="nav-text-full">ABOUT</span>
+            <span className="nav-text-short" aria-hidden="true">◉</span>
           </Link>
         </nav>
         <Routes>
@@ -305,21 +317,21 @@ function AppContent() {
 
       {/* ── Top nav ─────────────────────────────────────────────────────── */}
       <nav className="top-nav" role="navigation" aria-label="Main navigation">
-        <NavLink
-          to="/"
-          className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`}
-          end
-        >
-          WORKS
+        <NavLink to="/" className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`} end aria-label="Works">
+          <span className="nav-text-full">Selected WORK</span>
+          <span className="nav-text-short" aria-hidden="true">◼</span>
         </NavLink>
-        <NavLink
-          to="/blogs"
-          className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`}
-        >
-          DESIGN_APPROACH
+        <NavLink to="/products" className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`} aria-label="My Products">
+          <span className="nav-text-full">Independent_Projects</span>
+          <span className="nav-text-short" aria-hidden="true">◎</span>
         </NavLink>
-        <Link to="/about" className="nav-item">
-        ABOUT
+        <NavLink to="/blogs" className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`} aria-label="Design Approach">
+          <span className="nav-text-full">DESIGN_APPROACH</span>
+          <span className="nav-text-short" aria-hidden="true">◈</span>
+        </NavLink>
+        <Link to="/about" className="nav-item" aria-label="About">
+          <span className="nav-text-full">ABOUT</span>
+          <span className="nav-text-short" aria-hidden="true">◉</span>
         </Link>
       </nav>
 
@@ -353,6 +365,9 @@ function AppContent() {
               </>
             }
           />
+
+          {/* My Products */}
+          <Route path="/products" element={<MyProducts />} />
 
           {/* Blogs / Design approach */}
           <Route
