@@ -125,7 +125,6 @@ function CaseStudy() {
           autoPlay muted loop playsInline
           webkit-playsinline="true"
           preload="metadata"
-          controls={!isMobile}
         >
           <source src={media.src} type="video/mp4" />
         </video>

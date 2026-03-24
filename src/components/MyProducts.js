@@ -112,7 +112,7 @@ function ProductListItem({ project, index, imageErrors, onImageError }) {
         ) : project.type === 'image' ? (
           <img src={project.src} alt="" onError={() => onImageError(project.id)} />
         ) : (
-          <video src={project.src} muted playsInline preload="metadata" />
+          <video src={project.src} muted playsInline preload="auto" />
         )}
       </div>
       <div className="pli-info">
@@ -166,7 +166,7 @@ function MyProducts() {
   const handleImageError = (id) =>
     setImageErrors(prev => ({ ...prev, [id]: true }));
 
-  const layouts = generateLayout(products.length);
+  const layouts = products.map(() => ({ class: 'project-full' }));
 
   return (
     <>

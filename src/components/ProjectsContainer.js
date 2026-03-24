@@ -93,7 +93,7 @@ function ProjectListItem({ project, index, imageErrors, onImageError, onProjectC
         ) : project.type === 'image' ? (
           <img src={project.src} alt="" onError={() => onImageError(project.id)} />
         ) : (
-          <video src={project.src} muted playsInline preload="metadata" />
+          <video src={project.src} muted playsInline preload="auto" />
         )}
       </div>
       <div className="pli-info">
@@ -298,7 +298,7 @@ function ProjectsContainer({ selectedTag }) {
       {CATEGORIES.map(cat => {
         const catProjects = projects.filter(p => p.category === cat.key);
         if (catProjects.length === 0) return null;
-        const layouts = cat.key === 'client'
+        const layouts = (cat.key === 'client' || cat.key === 'independent')
           ? catProjects.map(() => ({ class: 'project-full' }))
           : generateLayout(catProjects.length, false);
 

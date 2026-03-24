@@ -3,7 +3,7 @@ class ProjectModel {
     this.projects = [
 
       // ── Client Work ────────────────────────────────────────────────────────
-      { id: 'bayer-bmdt', category: 'client', type: 'video', src: '/media/videos/bayer_mastertracker2.mp4', alt: 'Biomarker Data Tracking SaaS — Bayer ||| 2025–2026', tags: ['UX Research','UX&UI Design', 'Design System', 'AI'] },
+      { id: 'bayer-bmdt', category: 'client', type: 'video', src: '/media/videos/bayer_mastertracker3.mp4', alt: 'Biomarker Data Tracking SaaS — Bayer ||| 2025–2026', tags: ['UX Research','UX&UI Design', 'Design System', 'AI'] },
       { id: 'bbc', category: 'client', type: 'video', src: '/media/videos/bbc.mp4', alt: 'BlaBlacar Smart Price ||| 2021–2022', tags: ['Product Design', 'Framer Prototyping'] },
       { id: 'thermo-cal', category: 'client', type: 'video', src: '/media/videos/thermo-cal1.mp4', alt: 'Thermo-Cal SaaS App ||| 2025', tags: ['Product Design', 'UX/UI Design', 'Research', 'AI-Integrated Design Workflow'] },
       { id: 'storykit-design-system', category: 'client', type: 'image', src: '/media/images/storykit-design-system.png', alt: 'Storykit Design System ||| 2023–2024', tags: ['Design System', 'Product Design'] },
@@ -14,8 +14,9 @@ class ProjectModel {
 
       // ── Independent Products ───────────────────────────────────────────────
       
-      { id: 'ici-studio', category: 'independent', type: 'video', src: '/media/videos/ici-studio-mockup.mp4', alt: 'ici Studio Mockup Creator ||| 2026', tags: ['AI Design'] },
-      { id: 'agent-studio', category: 'independent', type: 'video', src: '/media/videos/agent-studio2.mp4', alt: 'Agent Studio: AI Agents ||| 2026', tags: ['AI Design Workflow','AI Agents'] },
+      { id: 'ici-studio', category: 'independent', type: 'video', src: '/media/videos/ici-studio-mockup.mp4', alt: 'ici Studio Mockup Creator ||| 2026', tags: ['Designed with Claude','Vibe Coded'] },
+      { id: 'agent-studio', category: 'independent', type: 'video', src: '/media/videos/agent-studio2.mp4', alt: 'Agent Studio: AI Design Agents ||| 2026', tags: ['AI Design Workflow','Multi Agents', 'AI Orchestration'] },
+      { id: 'cv-live', category: 'independent', type: 'video', src: '/media/videos/cv_live.mp4', alt: 'CV Live: Live CV Generator ||| 2026', tags: ['AI Design Workflow','Multi Agents', 'AI Orchestration'] },
       // { id: 'music-mash', category: 'independent', type: 'image', src: '/media/images/music-mash-app.png', alt: 'Music Mash — Spotify App ||| 2020–2021', tags: ['UX Design', 'UI Design', 'Research', 'Testing', 'UI Engineering'] },
       // { id: 'blankt-home', category: 'independent', type: 'video', src: '/media/videos/blank-collection-old.mp4', alt: 'blankt.com — Home ||| 2021–2022', tags: ['UX Design', 'UI Design', 'Research', 'Testing', 'Growth', 'Brand Design'] },
       // { id: 'blankt-web', category: 'independent', type: 'video', src: '/media/videos/blankt.mp4', alt: 'blankt.com — Graphic Editor ||| 2021–2022', tags: ['UX Design', 'UI Design', 'Research', 'Testing', 'Growth', 'Product Design'] },

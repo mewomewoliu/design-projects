@@ -185,14 +185,14 @@
   }
 
   .hero-name {
-    font-size: clamp(3.5rem, 14vw, 5rem);
+    font-size: clamp(2.75rem, 12vw, 4rem);
     letter-spacing: -0.03em;
   }
 
   .hero-lead {
     font-size: 1.25rem;
     line-height: 1.2;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 
   .hero-body {

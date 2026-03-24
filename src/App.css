@@ -308,7 +308,7 @@ h2, .main-h2 {
     padding: 0 0.75rem;
   }
 
-  .hero-section { padding: 2rem 1rem 1rem; }
+  .hero-section { padding: 2rem 1rem 1rem; height: auto; }
   .projects-section { padding: 1rem 0 4rem; }
   .social-section { padding: 1rem; }
 
