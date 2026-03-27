@@ -291,7 +291,7 @@ function AppContent() {
             <span className="nav-text-short" aria-hidden="true">◼</span>
           </NavLink>
           <NavLink to="/products" className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`} aria-label="My Products">
-            <span className="nav-text-full">Independent_Prod</span>
+            <span className="nav-text-full">AI_Projects</span>
             <span className="nav-text-short" aria-hidden="true">◎</span>
           </NavLink>
           <NavLink to="/blogs" className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`} aria-label="Design Approach">
@@ -322,11 +322,11 @@ function AppContent() {
           <span className="nav-text-short" aria-hidden="true">◼</span>
         </NavLink>
         <NavLink to="/products" className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`} aria-label="My Products">
-          <span className="nav-text-full">Independent_Projects</span>
+          <span className="nav-text-full">AI_Projects</span>
           <span className="nav-text-short" aria-hidden="true">◎</span>
         </NavLink>
         <NavLink to="/blogs" className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`} aria-label="Design Approach">
-          <span className="nav-text-full">DESIGN_APPROACH</span>
+          <span className="nav-text-full">Blogs</span>
           <span className="nav-text-short" aria-hidden="true">◈</span>
         </NavLink>
         <Link to="/about" className="nav-item" aria-label="About">

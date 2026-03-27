@@ -93,7 +93,7 @@ function ProjectListItem({ project, index, imageErrors, onImageError, onProjectC
         ) : project.type === 'image' ? (
           <img src={project.src} alt="" onError={() => onImageError(project.id)} />
         ) : (
-          <video src={project.src} muted playsInline preload="auto" />
+          <video src={project.src} autoPlay muted loop playsInline preload="auto" />
         )}
       </div>
       <div className="pli-info">

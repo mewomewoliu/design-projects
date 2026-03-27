@@ -1876,145 +1876,89 @@ class CaseStudyModel {
       },
       'ici-studio': {
         id: 'ici-studio',
-        title: 'Biomarker Data Tracking SaaS',
-        client: 'Bayer',
-        role: 'Product Designer',
-        time: 'Nov 2025 – Feb 2026',
-        process: 'Research → Define → Design → Deliver',
-        description: 'Redesigning biomarker data-tracking workflows to accelerate clinical research timelines at Bayer.',
+        title: 'ici Studio mockups ',
+        client: 'Hobby project',
+        role: 'AI Product Designer',
+        time: 'Feb 2026',
+        process: 'Research→Define→Prototype→Iterate→Develop',
+        description: 'A mockup platform where designers create high-end mockups in 1 min.',
         credits: [],
-        videoSrc: `${process.env.PUBLIC_URL}/media/videos/bayer_mastertracker2.mp4`,
+        videoSrc: `${process.env.PUBLIC_URL}/media/videos/ici-studio-mockup.mp4`,
         detailedIntro: '',
         sections: [
           {
-            title: 'What Did I Do <br /> Designing a Biomarker Data Tracking System from 0. ',
+            title: 'Try it out here',
             paragraphs: [
-              "How I led BMDT end-to-end as the sole designer — unifying fragmented clinical data to cut drug study monitoring time by 50%, while navigating deep uncertainty, a complex stakeholder landscape, and no prior system to build from.",
+              "https://ici-studio-mockup-app.vercel.app/",
               
             ],
-            media: { type: 'image', src: `${process.env.PUBLIC_URL}/media/images/bayer_mastertracker.png`, alt: '' },
+            media: { type: 'image', src: `${process.env.PUBLIC_URL}`, alt: '' },
           },
-          {
-            title: 'The Bigger Picture: <br /> A drug takes 10–15 years to reach patients. Every day of delay is a life at stake.',
-            paragraphs: [
-              "Bayer — one of the world's oldest pharmaceutical companies, creator of Aspirin in 1899 — runs complex scientific pipelines to develop new medicines. At the heart of modern drug development are biomarkers: measurable biological signals in the body — blood, plasma, tissue, tumour samples, urine — that tell scientists how a disease is behaving and how a drug is responding.",
-              "In clinical studies, biomarkers are collected from patients across multiple clinic sites, processed by external analysis vendors, and stored in central labs. Without efficient tools to monitor and orchestrate this data, the entire pipeline slows down — and millions of patients keep waiting.",
-            ],
-            media: { type: 'image', src: `${process.env.PUBLIC_URL}/media/images/bayer_dashboard.png`, alt: '' },
-          },
-          {
-            title: 'The Problem To Solve',
-            paragraphs: [
-              "<span class='highlight'> No system.  <br /> No consistency.<br /> No clear way forward. </span>",
-              "Clinical trials generate massive amounts of biomarker data flowing from multiple sources — clinic sites, analysis vendors, central labs — each operating in their own systems with their own formats. Biosample Technical Experts at Bayer were spending enormous amounts of time manually coordinating this data, chasing updates, and compiling reports. The absence of an integrated system meant slow turnaround times, duplicated effort, and reduced visibility across study pipelines. Every delay in biomarker monitoring translated directly into delays in getting life-saving medicines to patients.",
-              
-            ],
-            media: { type: 'image', src: `${process.env.PUBLIC_URL}/media/images/bayer_drug.png`, alt: '' },
-          },
-          {
-            title: 'The Opportunity',
-            paragraphs: [
-              "By building a dedicated Biomarker Data Tracking System (BMDT), we could cut the time cost of each medicine study by 50% — accelerating biomarker monitoring, streamlining cross-team communication, and shortening the turnaround for analysis reports.",
-              
-            ],
-            media: { type: 'image', src: '', alt: '' },
-          },
-          {
-            title: 'How We Worked',
-            paragraphs: [
-              "<span class='highlight'> Product Discovery — Finding the Right Problems First </span> <br /> Before designing anything, I partnered with the Product Owner to run a structured discovery phase. Rather than jumping to features, we focused on a single question: what are the most impactful problems to solve? <br /> This meant interviewing Biosample Technical Experts to understand their daily workflows, pain points, and the invisible workarounds they had built to cope with broken processes. We mapped these findings to define a clear problem space and set measurable KPIs that would tell us whether BMDT was actually working. <br /> <br /> <span class='highlight'> Prioritisation & Roadmap — Turning Complexity Into a Plan </span> <br /> Drug research pipelines involve dozens of roles, data sources, and ways of working. There was no single 'correct' process we could design around. To bring structure to this complexity, I facilitated workshops with the full team to build a Q4 2025 roadmap. We broke the roadmap into 2-week sprints, sequencing work so that we tackled the highest-impact, best-understood problems first — while leaving room to adapt as we learned. <br /> <br /> <span class='highlight'> Design & Test — Fast Iterations, Real Feedback. </span> <br /> For each prioritised feature, I developed user cases and user journeys, then moved quickly into user flows and information architecture. Using the Materio UI library and Figma Make, I built interactive prototypes directly in Figma — without needing developer support. <br /> Each design iteration took less than one week from prototype to tested. I ran continuous rounds of user testing, redesigning based on what I observed until the feedback validated the design hypothesis. Speed without cutting corners — the goal was to learn fast, not ship fast. ",
-              "<span class='highlight'> Building the MLP — Bridging Design and Engineering </span> <br /> Once features were validated, I worked alongside developers to support implementation — reviewing builds, flagging discrepancies, and ensuring the product stayed true to the validated designs. <br /> But the most time-consuming work at this stage wasn't visual — it was data. BMDT depends on reliable, consistent data flowing from clinic sites, analysis vendors, and central labs, each using different systems and formats. I invested heavily in stakeholder engagement: speaking with users, Bayer data teams, and Biosample Operation Managers to map every data source, understand its constraints, and ensure the product was built on a solid data foundation. <br /> <br /> <span class='highlight'> Test & Refine — Staying Responsive Post-Launch </span> <br /> We established monthly group feedback sessions with users to surface issues early and capture evolving needs. Each session produced actionable points that fed directly back into the sprint cycle — keeping the team responsive without losing focus.",
-            ],
-            media: { type: 'image', src: '', alt: '' },
-          },
-          {
-            title: 'Impacts',
-            paragraphs: [
-              "BMDT gave Biosample Technical Experts a single, reliable system to monitor biomarker data across their studies. Instead of manually chasing updates across disconnected tools, they could see the status of samples, flag issues, and communicate with stakeholders in one place. Shorter analysis report turnaround times. Faster cross-team communication. Less time spent on coordination — more time spent on science.",
-              ""
-            ],
-            media: { type: 'image', src: `${process.env.PUBLIC_URL}/media/images/bayer_edts.png`, alt: '' },
-          },
-          {
-            title: 'The Hardest Parts',
-            paragraphs: [
-              "<span class='highlight'> Designing Without a Map </span> <br /> <br /> There was no consistent way that users worked. Different study teams had different processes, different data sources, and different expectations. Designing a system flexible enough to accommodate all of them — while still being simple and coherent — required holding a lot of uncertainty without letting it paralyse progress. <br /> <br /> <span class='highlight'> My approach </span>  was to stay hypothesis-driven: make explicit assumptions, test them quickly, and update based on evidence rather than consensus. This kept the team moving without pretending we had answers we didn't.",
-              "<span class='highlight'> Data as the Real Design Problem </span> <br /> <br />In a product like BMDT, data isn't a backend concern — it's the product. The reliability and consistency of the data users see directly determines whether they trust the system. But data was flowing from multiple external sources with no standardisation. <br /> I spent significant time working with data teams and operation managers to understand how data moved through the pipeline and where it broke down. Surfacing these issues early — before they became design assumptions — was one of the highest-value contributions I made to the project. <br /> <br /> <span class='highlight'> Stakeholder Management Across Boundaries </span> <br /> <br /> BMDT touched many teams and roles inside and outside the Bolt team. Keeping communication clear, expectations aligned, and the right people informed — without creating meeting overhead that slowed everything down — required constant judgment about when to escalate, when to decide, and when to just move."
-            ],
-            media: { type: 'image', src: '', alt: '' },
-          },
+          
 
         ],
       },
       'cv-live': {
-        id: 'ici-studio',
-        title: 'Biomarker Data Tracking SaaS',
-        client: 'Bayer',
+        id: 'cv-live',
+        title: 'ici studio Read CV Live app',
+        client: 'Hobby project',
         role: 'Product Designer',
-        time: 'Nov 2025 – Feb 2026',
-        process: 'Research → Define → Design → Deliver',
-        description: 'Redesigning biomarker data-tracking workflows to accelerate clinical research timelines at Bayer.',
+        time: 'Feb 2026',
+        process: 'Research → Define → Prototype → Develop',
+        description: 'Creative CV creator and hosting site enabling users to create aesthetic CVs and share CV online',
         credits: [],
-        videoSrc: `${process.env.PUBLIC_URL}/media/videos/bayer_mastertracker2.mp4`,
+        videoSrc: `${process.env.PUBLIC_URL}/media/videos/cv_live.mp4`,
         detailedIntro: '',
         sections: [
           {
-            title: 'What Did I Do <br /> Designing a Biomarker Data Tracking System from 0. ',
+            title: ' ',
             paragraphs: [
-              "How I led BMDT end-to-end as the sole designer — unifying fragmented clinical data to cut drug study monitoring time by 50%, while navigating deep uncertainty, a complex stakeholder landscape, and no prior system to build from.",
+              "",
               
             ],
-            media: { type: 'image', src: `${process.env.PUBLIC_URL}/media/images/bayer_mastertracker.png`, alt: '' },
+            media: { type: 'image', src: `${process.env.PUBLIC_URL}/media/`, alt: '' },
           },
+          
+
+        ],
+      },
+      'agent-studio': {
+        id: 'agent-studio',
+        title: 'AI Product Team Agents ',
+        client: 'Hobby project',
+        role: 'AI Product Designer',
+        time: 'Feb 2026',
+        process: 'Research→Define→Develop→Iterate→Test',
+        description: 'A multi-agents AI product team working on products in Agile way.',
+        credits: [],
+        videoSrc: `${process.env.PUBLIC_URL}/media/videos/agent-studio1.mp4`,
+        detailedIntro: '',
+        sections: [
           {
-            title: 'The Bigger Picture: <br /> A drug takes 10–15 years to reach patients. Every day of delay is a life at stake.',
+            title: 'The Idea',
             paragraphs: [
-              "Bayer — one of the world's oldest pharmaceutical companies, creator of Aspirin in 1899 — runs complex scientific pipelines to develop new medicines. At the heart of modern drug development are biomarkers: measurable biological signals in the body — blood, plasma, tissue, tumour samples, urine — that tell scientists how a disease is behaving and how a drug is responding.",
-              "In clinical studies, biomarkers are collected from patients across multiple clinic sites, processed by external analysis vendors, and stored in central labs. Without efficient tools to monitor and orchestrate this data, the entire pipeline slows down — and millions of patients keep waiting.",
-            ],
-            media: { type: 'image', src: `${process.env.PUBLIC_URL}/media/images/bayer_dashboard.png`, alt: '' },
-          },
-          {
-            title: 'The Problem To Solve',
-            paragraphs: [
-              "<span class='highlight'> No system.  <br /> No consistency.<br /> No clear way forward. </span>",
-              "Clinical trials generate massive amounts of biomarker data flowing from multiple sources — clinic sites, analysis vendors, central labs — each operating in their own systems with their own formats. Biosample Technical Experts at Bayer were spending enormous amounts of time manually coordinating this data, chasing updates, and compiling reports. The absence of an integrated system meant slow turnaround times, duplicated effort, and reduced visibility across study pipelines. Every delay in biomarker monitoring translated directly into delays in getting life-saving medicines to patients.",
-              
-            ],
-            media: { type: 'image', src: `${process.env.PUBLIC_URL}/media/images/bayer_drug.png`, alt: '' },
-          },
-          {
-            title: 'The Opportunity',
-            paragraphs: [
-              "By building a dedicated Biomarker Data Tracking System (BMDT), we could cut the time cost of each medicine study by 50% — accelerating biomarker monitoring, streamlining cross-team communication, and shortening the turnaround for analysis reports.",
-              
+              "<span class='highlight'> Product design is slow not because designers are slow. </span> It is slow because of everything around the design work: translating a raw idea into a brief, aligning on what problem is actually being solved, designing a solution, reviewing it from multiple angles, translating it into something engineers can build, and measuring whether the whole thing was worth doing. </br> </br> Each of those steps involves waiting, re-explanation, and information loss. A brief handed to a designer already carries the assumptions the PM chose to carry forward and dropped the rest. A design handed to an engineer has already lost the reasoning behind every screen. By the time a feature ships, the original insight that sparked it is buried under a dozen handoffs.",
+              "<span class='highlight'> Agent Studio is a multi-agent AI system built to eliminate those seams. Instead of a linear chain of handoffs, it runs a team of specialised AI agents that collaborate on a shared context — each one reading everything that came before, writing only to its own designated output, and passing the full picture forward. </span> <br /> <br /> The agents are not a replacement for the product team. They are the infrastructure layer that produces the first high-quality draft of every deliverable — grounded in user psychology, tested against edge cases, and ready for the human decision that actually matters."
             ],
             media: { type: 'image', src: '', alt: '' },
           },
           {
-            title: 'How We Worked',
-            paragraphs: [
-              "<span class='highlight'> Product Discovery — Finding the Right Problems First </span> <br /> Before designing anything, I partnered with the Product Owner to run a structured discovery phase. Rather than jumping to features, we focused on a single question: what are the most impactful problems to solve? <br /> This meant interviewing Biosample Technical Experts to understand their daily workflows, pain points, and the invisible workarounds they had built to cope with broken processes. We mapped these findings to define a clear problem space and set measurable KPIs that would tell us whether BMDT was actually working. <br /> <br /> <span class='highlight'> Prioritisation & Roadmap — Turning Complexity Into a Plan </span> <br /> Drug research pipelines involve dozens of roles, data sources, and ways of working. There was no single 'correct' process we could design around. To bring structure to this complexity, I facilitated workshops with the full team to build a Q4 2025 roadmap. We broke the roadmap into 2-week sprints, sequencing work so that we tackled the highest-impact, best-understood problems first — while leaving room to adapt as we learned. <br /> <br /> <span class='highlight'> Design & Test — Fast Iterations, Real Feedback. </span> <br /> For each prioritised feature, I developed user cases and user journeys, then moved quickly into user flows and information architecture. Using the Materio UI library and Figma Make, I built interactive prototypes directly in Figma — without needing developer support. <br /> Each design iteration took less than one week from prototype to tested. I ran continuous rounds of user testing, redesigning based on what I observed until the feedback validated the design hypothesis. Speed without cutting corners — the goal was to learn fast, not ship fast. ",
-              "<span class='highlight'> Building the MLP — Bridging Design and Engineering </span> <br /> Once features were validated, I worked alongside developers to support implementation — reviewing builds, flagging discrepancies, and ensuring the product stayed true to the validated designs. <br /> But the most time-consuming work at this stage wasn't visual — it was data. BMDT depends on reliable, consistent data flowing from clinic sites, analysis vendors, and central labs, each using different systems and formats. I invested heavily in stakeholder engagement: speaking with users, Bayer data teams, and Biosample Operation Managers to map every data source, understand its constraints, and ensure the product was built on a solid data foundation. <br /> <br /> <span class='highlight'> Test & Refine — Staying Responsive Post-Launch </span> <br /> We established monthly group feedback sessions with users to surface issues early and capture evolving needs. Each session produced actionable points that fed directly back into the sprint cycle — keeping the team responsive without losing focus.",
+            title: 'How the Agent Team Works?',
+            paragraphs: [ 
+              "<span class='highlight'> The system runs a single pipeline triggered by one input: an Opportunity Input — a structured description of the user, the friction they face, what they do today instead, and what a successful outcome looks like. </span> </br> </br> From that input, six specialised agents run in sequence — with three running in parallel inside the Design Pod — each reading the full shared context and writing only to their designated output.",
+              "<span class='highlight'>  </span> <br /> <br /> "
             ],
-            media: { type: 'image', src: '', alt: '' },
+            media: { type: 'image', src: `${process.env.PUBLIC_URL}/media/images/agent_studio_pipeline.png`, alt: '' },
           },
           {
-            title: 'Impacts',
+            title: 'What is Next',
             paragraphs: [
-              "BMDT gave Biosample Technical Experts a single, reliable system to monitor biomarker data across their studies. Instead of manually chasing updates across disconnected tools, they could see the status of samples, flag issues, and communicate with stakeholders in one place. Shorter analysis report turnaround times. Faster cross-team communication. Less time spent on coordination — more time spent on science.",
-              ""
+              "<span class='highlight'> The current system is a complete end-to-end pipeline: from opportunity to engineer-ready spec, with measurement built in. The next phase addresses three directions </span> Right now agents produce structured JSON. The next step is connecting those outputs to the tools teams already use: </br></br> • Jira — PM agent creates Epics and User Stories via API, ready for sprint planning </br></br> • GitHub — Engineer agent opens issues directly, with acceptance criteria pre-populated </br></br> • Figma — Design System agent syncs token JSON to Figma Variables; UX/UI agent reads existing Figma frames via MCP to generate implementation code </br></br> • Slack — Evaluator agent posts a run summary after every pipeline completion",
+              "<span class='highlight'> Debate mode </span> <br /> <br /> The current pipeline is sequential with a critique loop. A more powerful architecture runs agents in adversarial parallel — each agent holds a position and must defend it against challenges from the others. The PM agent defends scope. The UX/UI agent defends experience completeness. A Devil's Advocate agent exclusively attacks every assumption. An Arbitrator resolves conflicts using the user utility framework as the only valid currency. </br> </br> This mode produces decisions that have been stress-tested rather than just reviewed — and a transcript of the debate that becomes the most valuable artifact: a complete record of every alternative that was considered and why it was rejected."
             ],
-            media: { type: 'image', src: `${process.env.PUBLIC_URL}/media/images/bayer_edts.png`, alt: '' },
+            media: { type: 'video', src: `${process.env.PUBLIC_URL}/media/videos/agent-studio2.mp4`, alt: '' },
           },
-          {
-            title: 'The Hardest Parts',
-            paragraphs: [
-              "<span class='highlight'> Designing Without a Map </span> <br /> <br /> There was no consistent way that users worked. Different study teams had different processes, different data sources, and different expectations. Designing a system flexible enough to accommodate all of them — while still being simple and coherent — required holding a lot of uncertainty without letting it paralyse progress. <br /> <br /> <span class='highlight'> My approach </span>  was to stay hypothesis-driven: make explicit assumptions, test them quickly, and update based on evidence rather than consensus. This kept the team moving without pretending we had answers we didn't.",
-              "<span class='highlight'> Data as the Real Design Problem </span> <br /> <br />In a product like BMDT, data isn't a backend concern — it's the product. The reliability and consistency of the data users see directly determines whether they trust the system. But data was flowing from multiple external sources with no standardisation. <br /> I spent significant time working with data teams and operation managers to understand how data moved through the pipeline and where it broke down. Surfacing these issues early — before they became design assumptions — was one of the highest-value contributions I made to the project. <br /> <br /> <span class='highlight'> Stakeholder Management Across Boundaries </span> <br /> <br /> BMDT touched many teams and roles inside and outside the Bolt team. Keeping communication clear, expectations aligned, and the right people informed — without creating meeting overhead that slowed everything down — required constant judgment about when to escalate, when to decide, and when to just move."
-            ],
-            media: { type: 'image', src: '', alt: '' },
-          },
+          
 
         ],
       },
