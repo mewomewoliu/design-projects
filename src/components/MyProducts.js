@@ -12,34 +12,6 @@ const DESIGN_QUOTES = [
   { text: 'Form follows\nfunction.', attr: '— Louis Sullivan' },
 ];
 
-function generateLayout(count) {
-  const FULL    = { span: 'full',    class: 'project-full' };
-  const HALF    = { span: 'half',    class: 'project-half' };
-  const REGULAR = { span: 'regular', class: 'project-regular' };
-  const ROW_TEMPLATES = [
-    [FULL],
-    [HALF, REGULAR],
-    [REGULAR, HALF],
-    [REGULAR, REGULAR, REGULAR],
-  ];
-  const layouts = [];
-  let i = 0;
-  let rowIndex = 0;
-  // Start with full-width for first item
-  layouts.push(FULL);
-  i = 1;
-  rowIndex = 1;
-  while (i < count) {
-    const template = ROW_TEMPLATES[rowIndex % ROW_TEMPLATES.length];
-    for (const item of template) {
-      if (i >= count) break;
-      layouts.push(item);
-      i++;
-    }
-    rowIndex++;
-  }
-  return layouts;
-}
 
 function getQuote(projectId) {
   const hash = String(projectId).split('').reduce((acc, c) => acc + c.charCodeAt(0), 0);

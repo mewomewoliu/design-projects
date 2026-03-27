@@ -9,7 +9,6 @@ import About from './components/About';
 import MyProducts from './components/MyProducts';
 import SEO from './components/SEO';
 import Intro from './components/Intro';
-import SocialList from './components/SocialList';
 import Cursor from './components/Cursor';
 import ProjectModel from './models/ProjectModel';
 import ProjectPresenter from './presenters/ProjectPresenter';
