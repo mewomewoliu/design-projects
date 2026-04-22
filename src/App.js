@@ -12,10 +12,11 @@ import Intro from './components/Intro';
 import Cursor from './components/Cursor';
 import ProjectModel from './models/ProjectModel';
 import ProjectPresenter from './presenters/ProjectPresenter';
+import useScrollSaver from './hooks/useScrollRestoration';
 import './App.css';
 
 // Initialize PostHog
-posthog.init('phc_wLQOzTGjeDsu2ZhwJBgSNc8qkerfTS1PA998617YbJY', {
+posthog.init(process.env.REACT_APP_POSTHOG_KEY, {
   api_host: 'https://eu.i.posthog.com',
   person_profiles: 'identified_only',
 });
@@ -113,6 +114,12 @@ function AppContent() {
     const model = new ProjectModel();
     const presenter = new ProjectPresenter(model, { renderProjects: () => {} });
     presenter.presentProjects();
+  }, []);
+
+  // ── Scroll saving + browser restoration override ───────────────────────────
+  useScrollSaver();
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) window.history.scrollRestoration = 'manual';
   }, []);
 
   // ── Page tracking + URL params ─────────────────────────────────────────────
@@ -290,7 +297,7 @@ function AppContent() {
             <span className="nav-text-short" aria-hidden="true">◼</span>
           </NavLink>
           <NavLink to="/products" className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`} aria-label="My Products">
-            <span className="nav-text-full">AI_Projects</span>
+            <span className="nav-text-full">AI_PROJECTS</span>
             <span className="nav-text-short" aria-hidden="true">◎</span>
           </NavLink>
           <NavLink to="/blogs" className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`} aria-label="Design Approach">
@@ -317,15 +324,15 @@ function AppContent() {
       {/* ── Top nav ─────────────────────────────────────────────────────── */}
       <nav className="top-nav" role="navigation" aria-label="Main navigation">
         <NavLink to="/" className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`} end aria-label="Works">
-          <span className="nav-text-full">Selected WORK</span>
+          <span className="nav-text-full">WORKS</span>
           <span className="nav-text-short" aria-hidden="true">◼</span>
         </NavLink>
         <NavLink to="/products" className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`} aria-label="My Products">
-          <span className="nav-text-full">AI_Projects</span>
+          <span className="nav-text-full">AI_PROJECTS</span>
           <span className="nav-text-short" aria-hidden="true">◎</span>
         </NavLink>
         <NavLink to="/blogs" className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`} aria-label="Design Approach">
-          <span className="nav-text-full">Blogs</span>
+          <span className="nav-text-full">DESIGN_APPROACH</span>
           <span className="nav-text-short" aria-hidden="true">◈</span>
         </NavLink>
         <Link to="/about" className="nav-item" aria-label="About">
@@ -354,8 +361,24 @@ function AppContent() {
                 </section>
 
               
-                 <div className="brand-header">Design Systems</div>
-                 <div className="brand-header">Not Just Screens_</div>
+                <div className="brand-header" aria-label="Design Systems">
+                  <span className="brand-marquee-track brand-marquee-track--left" aria-hidden="true">
+                    <span>Design Systems&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span>Not Just Screens&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                  </span>
+                </div>
+                <div className="brand-header" aria-label="Not Just Screens_">
+                  <span className="brand-marquee-track brand-marquee-track--right" aria-hidden="true">
+                    <span>Research&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span>Design&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span>Build&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span>Design&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span>Build&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span>Design&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span>Build&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                   
+                  </span>
+                </div>
 
                 {/* Footer */}
                 <div className="footer-section">

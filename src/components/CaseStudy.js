@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import posthog from 'posthog-js';
 import CaseStudyModel from '../models/CaseStudyModel';
 import CaseStudyPresenter from '../presenters/CaseStudyPresenter';
@@ -13,6 +13,7 @@ function CaseStudy() {
   const [notFound, setNotFound] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const { id } = useParams();
+  const navigate = useNavigate();
   const sectionsRef = useRef([]);
   const startTimeRef = useRef(null);
   const sectionViewTimesRef = useRef({});
@@ -157,7 +158,11 @@ function CaseStudy() {
       {/* ── Sticky nav ─────────────────────────────────────────────────── */}
       <div className="cs-inner">
         <nav className="cs-nav">
-          <Link to="/" className="cs-back"> GOOOOOOO BACK_</Link>
+          <Link
+            to="/"
+            className="cs-back"
+            onClick={(e) => { e.preventDefault(); navigate(-1); }}
+          >GOOOOOOO BACK_</Link>
         </nav>
       </div>
 
@@ -196,6 +201,19 @@ function CaseStudy() {
           )}
         </div>
       )}
+
+      {/* ── In-progress notice ────────────────────────────────────────── */}
+      {/* {study.status === 'in-progress' && (
+        <div className="cs-inner">
+          <div className="cs-wip-banner">
+            <span className="cs-wip-mark">◼</span>
+            <div className="cs-wip-text">
+              <span className="cs-wip-label">DOCUMENTATION IN PROGRESS</span>
+              <span className="cs-wip-detail">Full case study available on request — <a href="mailto:uxmia1996@gmail.com">uxmia1996@gmail.com</a></span>
+            </div>
+          </div>
+        </div>
+      )} */}
 
       {/* ── Content ────────────────────────────────────────────────────── */}
       <div className="cs-inner">

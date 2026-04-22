@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import posthog from 'posthog-js';
+import { saveScroll, restoreScroll } from '../hooks/useScrollRestoration';
 import ProjectModel from '../models/ProjectModel';
 import ProjectPresenter from '../presenters/ProjectPresenter';
 import './ProjectsContainer.css';
@@ -25,12 +26,11 @@ function generateLayout(count, featuredFirst = false) {
   const HALF    = { span: 'half',    class: 'project-half' };
   const REGULAR = { span: 'regular', class: 'project-regular' };
 
-  // Fixed row templates that always fill the 3-column grid
   const ROW_TEMPLATES = [
-    [FULL],                         // A: 3 cols
-    [HALF, REGULAR],                // B: 2+1 cols
-    [REGULAR, HALF],                // C: 1+2 cols
-    [REGULAR, REGULAR, REGULAR],    // D: 1+1+1 cols
+    [FULL],
+    [HALF, REGULAR],
+    [REGULAR, HALF],
+    [REGULAR, REGULAR, REGULAR],
   ];
 
   const layouts = [];
@@ -40,7 +40,7 @@ function generateLayout(count, featuredFirst = false) {
   if (featuredFirst) {
     layouts.push(FULL);
     i = 1;
-    rowIndex = 1; // skip Row A after forced full
+    rowIndex = 1;
   }
 
   while (i < count) {
@@ -91,7 +91,7 @@ function ProjectListItem({ project, index, imageErrors, onImageError, onProjectC
         {hasError ? (
           <div className="pli-thumb-fallback">◼</div>
         ) : project.type === 'image' ? (
-          <img src={project.src} alt="" onError={() => onImageError(project.id)} />
+          <img src={project.src} alt={project.alt} onError={() => onImageError(project.id)} />
         ) : (
           <video src={project.src} autoPlay muted loop playsInline preload="auto" />
         )}
@@ -104,7 +104,7 @@ function ProjectListItem({ project, index, imageErrors, onImageError, onProjectC
   );
 }
 
-function ProjectItem({ project, layoutClass, refCallback, imageErrors, onImageError, onProjectClick }) {
+function ProjectItem({ project, layoutClass, refCallback, imageErrors, onImageError, onProjectClick, index = 0, showOverlay = true }) {
   const hasError = imageErrors[project.id];
 
   return (
@@ -117,6 +117,8 @@ function ProjectItem({ project, layoutClass, refCallback, imageErrors, onImageEr
         className="project-item"
         ref={refCallback}
         id={`project-${project.id}`}
+        data-project-id={project.id}
+        style={{ '--item-delay': `${Math.min(index, 5) * 0.05}s` }}
       >
         <div className="corner-bl" />
         <div className="corner-br" />
@@ -143,10 +145,12 @@ function ProjectItem({ project, layoutClass, refCallback, imageErrors, onImageEr
           />
         )}
 
-        <div className="project-overlay">
-          <h3 className="project-alt-text">{project.alt}</h3>
-          <p className="project-tags">{'[' + project.tags.join(', ') + ']'}</p>
-        </div>
+        {showOverlay && (
+          <div className="project-overlay">
+            <h3 className="project-alt-text">{project.alt}</h3>
+            <p className="project-tags">{'[' + project.tags.join(', ') + ']'}</p>
+          </div>
+        )}
       </div>
     </Link>
   );
@@ -155,8 +159,11 @@ function ProjectItem({ project, layoutClass, refCallback, imageErrors, onImageEr
 function ProjectsContainer({ selectedTag }) {
   const [projects, setProjects] = useState([]);
   const projectRefs = useRef([]);
+  const indexItemRefs = useRef({});
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
   const [imageErrors, setImageErrors] = useState({});
+  const [activeProjectId, setActiveProjectId] = useState(null);
+  const { key: locationKey } = useLocation();
 
   useEffect(() => {
     const model = new ProjectModel();
@@ -172,7 +179,13 @@ function ProjectsContainer({ selectedTag }) {
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
-  // Global index map: project.id → ref slot (stable across renders)
+  // Restore saved scroll after projects are in the DOM
+  useEffect(() => {
+    if (projects.length === 0) return;
+    restoreScroll(locationKey);
+  }, [projects, locationKey]);
+
+  // Global index map: project.id → ref slot
   const projectIndexMap = useMemo(() => {
     const map = {};
     let idx = 0;
@@ -203,6 +216,7 @@ function ProjectsContainer({ selectedTag }) {
     return () => sectionObs.disconnect();
   }, [projects]);
 
+  // Project item reveal + video play/pause
   useEffect(() => {
     if (isMobile) {
       projectRefs.current.forEach(ref => { if (ref) ref.classList.add('visible'); });
@@ -230,11 +244,45 @@ function ProjectsContainer({ selectedTag }) {
     return () => { refs.forEach(ref => { if (ref) observer.unobserve(ref); }); };
   }, [projects, isMobile]);
 
+  // Track the topmost visible project to drive the sidebar index highlight
+  useEffect(() => {
+    if (isMobile || projects.length === 0) return;
+
+    const visibleIds = new Set();
+    const allProjectsOrdered = CATEGORIES.flatMap(cat =>
+      projects.filter(p => p.category === cat.key)
+    );
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const id = entry.target.dataset.projectId;
+        if (entry.isIntersecting) visibleIds.add(id);
+        else visibleIds.delete(id);
+      });
+      const active = allProjectsOrdered.find(p => visibleIds.has(String(p.id)));
+      setActiveProjectId(active ? active.id : null);
+    }, {
+      rootMargin: '0px 0px -40% 0px',
+      threshold: 0,
+    });
+
+    document.querySelectorAll('[data-project-id]').forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, [projects, isMobile]);
+
+  // Keep active index item in view within the sticky sidebar list
+  useEffect(() => {
+    if (!activeProjectId) return;
+    const el = indexItemRefs.current[activeProjectId];
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, [activeProjectId]);
+
   const handleImageError = (projectId) => {
     setImageErrors(prev => ({ ...prev, [projectId]: true }));
   };
 
   const handleProjectClick = (project, layoutClass) => {
+    saveScroll(locationKey);
     posthog.capture('project_clicked', {
       project_id: project.id,
       project_title: project.alt,
@@ -245,6 +293,11 @@ function ProjectsContainer({ selectedTag }) {
       filtered_by_tag: selectedTag || null,
       device_type: isMobile ? 'mobile' : 'desktop',
     });
+  };
+
+  const handleIndexClick = (projectId) => {
+    const el = document.getElementById(`project-${projectId}`);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   if (projects.length === 0) {
@@ -284,6 +337,8 @@ function ProjectsContainer({ selectedTag }) {
                 imageErrors={imageErrors}
                 onImageError={handleImageError}
                 onProjectClick={handleProjectClick}
+                index={i}
+                showOverlay={true}
               />
             ))}
           </div>
@@ -305,8 +360,24 @@ function ProjectsContainer({ selectedTag }) {
         return (
           <section key={cat.key} className="category-section">
             <div className="category-sidebar">
-              <span className="category-name">{cat.label}</span>
-              <span className="category-count">[{String(catProjects.length).padStart(2, '0')}]</span>
+              <div className="category-sidebar-header">
+                <span className="category-name">{cat.label}</span>
+                <span className="category-count">[{String(catProjects.length).padStart(2, '0')}]</span>
+              </div>
+              <ol className="project-index">
+                {catProjects.map((project, i) => (
+                  <li
+                    key={project.id}
+                    className={`project-index-item${activeProjectId === project.id ? ' is-active' : ''}`}
+                    ref={el => { indexItemRefs.current[project.id] = el; }}
+                    onClick={() => handleIndexClick(project.id)}
+                  >
+                    <span className="pi-num">{String(i + 1).padStart(2, '0')}</span>
+                    <span className="pi-name">{'//'+ project.alt}</span>
+                    {/* <span className="pi-tags">{'[' + project.tags.join(', ') + ']'}</span> */}
+                  </li>
+                ))}
+              </ol>
             </div>
 
             <div className="category-content">
@@ -334,6 +405,8 @@ function ProjectsContainer({ selectedTag }) {
                       imageErrors={imageErrors}
                       onImageError={handleImageError}
                       onProjectClick={handleProjectClick}
+                      index={i}
+                      showOverlay={false}
                     />
                   ))}
                 </div>

@@ -1,7 +1,3 @@
-/* ── Fonts ────────────────────────────────────────────────────────────────── */
-
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
-
 /* ── Design tokens ────────────────────────────────────────────────────────── */
 
 :root {
@@ -14,8 +10,8 @@
   --bg-media:      #ffffff;
   --bg-alt:        #f0f0ef;
 
-  --mono: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --mono: var(--sans);
 
   --nav-h:   48px;
   --pad:     1rem;
@@ -44,6 +40,12 @@ html, body {
 *, *::before, *::after {
   box-sizing: border-box;
   cursor: none;
+}
+
+/* Keyboard focus ring — required since cursor:none removes native indicators */
+:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 3px;
 }
 
 /* ── App shell ────────────────────────────────────────────────────────────── */
@@ -268,6 +270,16 @@ h2, .main-h2 {
 @keyframes slideInFromBottom {
   from { opacity: 0; transform: translateY(40px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Reduced motion ───────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* ── Responsive ───────────────────────────────────────────────────────────── */
