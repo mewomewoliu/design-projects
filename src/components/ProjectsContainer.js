@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState, useMemo } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import posthog from 'posthog-js';
 import { saveScroll, restoreScroll } from '../hooks/useScrollRestoration';
 import ProjectModel from '../models/ProjectModel';
@@ -76,7 +76,7 @@ function ProjectPlaceholder({ projectId }) {
   );
 }
 
-function ProjectListItem({ project, index, imageErrors, onImageError, onProjectClick }) {
+function ProjectListItem({ project, index, imageErrors, onImageError, onProjectClick, onTagClick }) {
   const hasError = imageErrors[project.id];
   const num = String(index + 1).padStart(2, '0');
 
@@ -84,6 +84,7 @@ function ProjectListItem({ project, index, imageErrors, onImageError, onProjectC
     <Link
       to={`/case-study/${project.id}`}
       className="project-list-item"
+      state={{ fromPortfolio: true }}
       onClick={() => onProjectClick(project, 'list')}
     >
       <span className="pli-num">{num}</span>
@@ -98,19 +99,28 @@ function ProjectListItem({ project, index, imageErrors, onImageError, onProjectC
       </div>
       <div className="pli-info">
         <h3 className="pli-title">{project.alt}</h3>
-        <p className="pli-tags">{'[' + project.tags.join(', ') + ']'}</p>
+        <div className="pli-tags">
+          {project.tags.map(tag => (
+            <button
+              key={tag}
+              className="pli-tag-btn"
+              onClick={(e) => { e.stopPropagation(); e.preventDefault(); onTagClick(tag); }}
+            >[{tag}]</button>
+          ))}
+        </div>
       </div>
     </Link>
   );
 }
 
-function ProjectItem({ project, layoutClass, refCallback, imageErrors, onImageError, onProjectClick, index = 0, showOverlay = true }) {
+function ProjectItem({ project, layoutClass, refCallback, imageErrors, onImageError, onProjectClick, onTagClick, index = 0, showOverlay = true }) {
   const hasError = imageErrors[project.id];
 
   return (
     <Link
       to={`/case-study/${project.id}`}
       className={`project-link ${layoutClass}`}
+      state={{ fromPortfolio: true }}
       onClick={() => onProjectClick(project, layoutClass)}
     >
       <div
@@ -148,7 +158,15 @@ function ProjectItem({ project, layoutClass, refCallback, imageErrors, onImageEr
         {showOverlay && (
           <div className="project-overlay">
             <h3 className="project-alt-text">{project.alt}</h3>
-            <p className="project-tags">{'[' + project.tags.join(', ') + ']'}</p>
+            <div className="project-tags">
+              {project.tags.map(tag => (
+                <button
+                  key={tag}
+                  className="project-tag-btn"
+                  onClick={(e) => { e.stopPropagation(); e.preventDefault(); onTagClick(tag); }}
+                >[{tag}]</button>
+              ))}
+            </div>
           </div>
         )}
       </div>
@@ -277,6 +295,14 @@ function ProjectsContainer({ selectedTag }) {
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }, [activeProjectId]);
 
+  const navigate = useNavigate();
+
+  const handleTagClick = (tag) => {
+    navigate(`/?tag=${encodeURIComponent(tag)}`);
+  };
+
+  const handleClearFilter = () => navigate('/');
+
   const handleImageError = (projectId) => {
     setImageErrors(prev => ({ ...prev, [projectId]: true }));
   };
@@ -312,6 +338,7 @@ function ProjectsContainer({ selectedTag }) {
       <div className="projects-all-categories">
         <div className="category-filter-label">
           Filtered by <span className="filter-tag">[{selectedTag}]</span>
+          <button className="filter-dismiss" onClick={handleClearFilter} aria-label="Clear filter">×</button>
         </div>
         {isMobile ? (
           <div className="projects-list">
@@ -323,6 +350,7 @@ function ProjectsContainer({ selectedTag }) {
                 imageErrors={imageErrors}
                 onImageError={handleImageError}
                 onProjectClick={handleProjectClick}
+                onTagClick={handleTagClick}
               />
             ))}
           </div>
@@ -337,6 +365,7 @@ function ProjectsContainer({ selectedTag }) {
                 imageErrors={imageErrors}
                 onImageError={handleImageError}
                 onProjectClick={handleProjectClick}
+                onTagClick={handleTagClick}
                 index={i}
                 showOverlay={true}
               />
@@ -391,6 +420,7 @@ function ProjectsContainer({ selectedTag }) {
                       imageErrors={imageErrors}
                       onImageError={handleImageError}
                       onProjectClick={handleProjectClick}
+                      onTagClick={handleTagClick}
                     />
                   ))}
                 </div>

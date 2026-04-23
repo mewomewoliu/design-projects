@@ -10,6 +10,7 @@ class CaseStudyModel {
         time: 'Sep 2023 - Oct 2024',
         process: 'Research → Design → Test → Deliver',
         description: 'Redesigned Help Center which reduced Customer Support Cost',
+        status: 'in-progress',
         credits: ['Anders Odevik', 'Moa Axelsson', 'Jonas Howding'],
         videoSrc: `${process.env.PUBLIC_URL}/media/videos/scania-helpcenter.mp4`,
         detailedIntro: '',
@@ -1798,7 +1799,7 @@ class CaseStudyModel {
         detailedIntro: '',
         sections: [
           {
-            title: 'What Did I Do <br /> Designing a Biomarker Data Tracking System from 0. ',
+            title: 'Overview <br /> Designing a Biomarker Data Tracking System from 0. ',
             paragraphs: [
               "How I led BMDT end-to-end as the sole designer — unifying fragmented clinical data to cut drug study monitoring time by 50%, while navigating deep uncertainty, a complex stakeholder landscape, and no prior system to build from.",
               
@@ -1889,7 +1890,7 @@ class CaseStudyModel {
           {
             title: 'Try it out here',
             paragraphs: [
-              "https://ici-studio-mockup-app.vercel.app/",
+              '<a href="https://ici-studio-mockup-app.vercel.app/" target="_blank" rel="noopener noreferrer">ici-studio-mockup-app.vercel.app</a>',
               
             ],
             media: { type: 'image', src: `${process.env.PUBLIC_URL}`, alt: '' },

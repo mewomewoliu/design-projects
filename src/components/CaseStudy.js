@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
 import posthog from 'posthog-js';
 import CaseStudyModel from '../models/CaseStudyModel';
 import CaseStudyPresenter from '../presenters/CaseStudyPresenter';
@@ -14,6 +14,7 @@ function CaseStudy() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const { id } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
   const sectionsRef = useRef([]);
   const startTimeRef = useRef(null);
   const sectionViewTimesRef = useRef({});
@@ -111,7 +112,12 @@ function CaseStudy() {
     return () => { sections.forEach(s => { if (s) observer.unobserve(s); }); };
   }, [study, id]);
 
-  if (notFound) return <div className="cs-message">Case study not found.</div>;
+  if (notFound) return (
+    <div className="cs-message">
+      <p>Case study not found.</p>
+      <Link to="/" className="cs-back">← Back to works</Link>
+    </div>
+  );
   if (!study)   return <div className="cs-message cs-message--loading">Loading_</div>;
 
   const renderMedia = (media) => {
@@ -161,7 +167,14 @@ function CaseStudy() {
           <Link
             to="/"
             className="cs-back"
-            onClick={(e) => { e.preventDefault(); navigate(-1); }}
+            onClick={(e) => {
+              e.preventDefault();
+              if (location.state?.fromPortfolio) {
+                navigate(-1);
+              } else {
+                navigate('/');
+              }
+            }}
           >GOOOOOOO BACK_</Link>
         </nav>
       </div>

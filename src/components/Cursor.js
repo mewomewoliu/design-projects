@@ -8,10 +8,19 @@ function Cursor() {
   const ring = useRef({ x: -100, y: -100 });
   const raf = useRef(null);
 
+  const prefersReducedMotion =
+    typeof window !== 'undefined'
+      ? (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false)
+      : false;
+
   useEffect(() => {
+    if (prefersReducedMotion) return;
+
     const dot = dotRef.current;
     const ringEl = ringRef.current;
     if (!dot || !ringEl) return;
+
+    document.body.classList.add('js-cursor-ready');
 
     const onMove = (e) => {
       mouse.current = { x: e.clientX, y: e.clientY };
@@ -30,8 +39,11 @@ function Cursor() {
     return () => {
       window.removeEventListener('mousemove', onMove);
       cancelAnimationFrame(raf.current);
+      document.body.classList.remove('js-cursor-ready');
     };
-  }, []);
+  }, [prefersReducedMotion]);
+
+  if (prefersReducedMotion) return null;
 
   return (
     <>

@@ -10,6 +10,12 @@
   --bg-media:      #ffffff;
   --bg-alt:        #f0f0ef;
 
+  --fg-inv-faint:  rgba(255, 255, 255, 0.10);
+  --fg-inv-subtle: rgba(255, 255, 255, 0.12);
+  --fg-inv-muted:  rgba(255, 255, 255, 0.30);
+  --fg-inv-mid:    rgba(255, 255, 255, 0.55);
+  --fg-inv-header: rgba(230, 230, 231, 0.58);
+
   --sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --mono: var(--sans);
 
@@ -39,6 +45,11 @@ html, body {
 
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+.js-cursor-ready *,
+.js-cursor-ready *::before,
+.js-cursor-ready *::after {
   cursor: none;
 }
 
@@ -90,7 +101,7 @@ html, body {
   white-space: nowrap;
   display: inline-flex;
   align-items: center;
-  min-width: 14rem;
+  min-width: 18.3rem;
   height: 100%;
   padding: 0 1rem;
   border-right: 1px solid var(--border);
@@ -279,6 +290,7 @@ h2, .main-h2 {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    cursor: auto !important;
   }
 }
 

@@ -187,11 +187,23 @@ function Intro() {
     return () => clearInterval(id);
   }, []);
 
-  // p5 sketch mount/unmount
+  // p5 sketch mount/unmount + visibility pause
   useEffect(() => {
     if (!canvasRef.current) return;
     p5Ref.current = new p5(dynamicTypeSketch, canvasRef.current);
+
+    const handleVisibility = () => {
+      if (!p5Ref.current) return;
+      if (document.visibilityState === 'hidden') {
+        p5Ref.current.noLoop();
+      } else {
+        p5Ref.current.loop();
+      }
+    };
+    document.addEventListener('visibilitychange', handleVisibility);
+
     return () => {
+      document.removeEventListener('visibilitychange', handleVisibility);
       p5Ref.current && p5Ref.current.remove();
     };
   }, []);
@@ -216,7 +228,7 @@ function Intro() {
 
       <div className="hero-name-block">
 
-      
+        <span className="hero-person-label">MIAOMIAO LIU</span>
         <h1
           className="hero-name"
           onMouseEnter={handleMouseEnter}
@@ -229,9 +241,9 @@ function Intro() {
         Mia is a digital product designer
         </p>
       <div className="hero-meta">
-        <span className="hero-tag">[DIGITAL_DESIGNER]</span>
+        <span className="hero-tag">[Creative_Designer]</span>
         <span className="hero-tag-sep">/</span>
-        <span className="hero-tag">[STOCKHOLM]</span>
+        <span className="hero-tag">[Product_Designer]</span>
         <span className="hero-tag-sep">/</span>
         <span className="hero-tag">[AI_DESIGNER]</span>
         {time && (
@@ -247,16 +259,16 @@ function Intro() {
 
       <div className="hero-body">
         {/* <p>
-          Hi, I am a <strong>AI Product Maker</strong> who designs systems, not screens: starting from what people
+          I design systems, not screens — starting from what people
           need, what the business can sustain, and what engineering can ship.
         </p>
         <p>
           Currently consulting at{' '}
           <a href="https://www.netlight.com/" target="_blank" rel="noopener noreferrer">Netlight AB</a>,
-          embedded with{' '}
+          working across{' '}
           <a href="https://www.scania.com/" target="_blank" rel="noopener noreferrer">Scania</a>,{' '}
           <a href="https://www.thermo-calc.com/" target="_blank" rel="noopener noreferrer">Thermo-Calc</a>, and{' '}
-          <a href="https://www.storykit.com/" target="_blank" rel="noopener noreferrer">Storykit</a> —
+          <a href="https://www.bayer.com/" target="_blank" rel="noopener noreferrer">Bayer</a> —
           translating complex product challenges into research-grounded,
           AI-integrated design.
         </p> */}
