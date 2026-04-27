@@ -3,7 +3,7 @@ class ProjectModel {
     this.projects = [
 
       // ── Client Work ────────────────────────────────────────────────────────
-      { id: 'bayer-bmdt', category: 'client', type: 'video', src: '/media/videos/bayer_mastertracker3.mp4', alt: 'Biomarker Data Tracking SaaS — Bayer ||| 2025–2026', tags: ['UX Research','UX&UI Design', 'Design System', 'AI'] },
+      { id: 'bayer-bmdt', category: 'client', type: 'video', src: '/media/videos/bayer_mastertracker3.mp4', alt: 'BayerBiomarker Data Tracking||| 2025–2026', tags: ['UX Research','UX&UI Design', 'Design System', 'AI'] },
       { id: 'bbc', category: 'client', type: 'video', src: '/media/videos/bbc.mp4', alt: 'BlaBlacar Smart Price ||| 2021–2022', tags: ['Product Design', 'Framer Prototyping'] },
       { id: 'thermo-cal', category: 'client', type: 'video', src: '/media/videos/thermo-cal1.mp4', alt: 'Thermo-Cal SaaS App ||| 2025', tags: ['Product Design', 'UX/UI Design', 'Research', 'AI-Integrated Design Workflow'] },
       { id: 'storykit-design-system', category: 'client', type: 'image', src: '/media/images/storykit-design-system.png', alt: 'Storykit Design System ||| 2023–2024', tags: ['Design System', 'Product Design'] },

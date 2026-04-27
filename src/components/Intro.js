@@ -241,6 +241,8 @@ function Intro() {
         Mia is a digital product designer
         </p>
       <div className="hero-meta">
+        <span className="hero-tag">[UI_Designer]</span>
+        <span className="hero-tag-sep">/</span>
         <span className="hero-tag">[Creative_Designer]</span>
         <span className="hero-tag-sep">/</span>
         <span className="hero-tag">[Product_Designer]</span>

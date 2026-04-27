@@ -72,7 +72,7 @@ function About() {
     const handleScroll = () => {
       const el = scrollRightRef.current;
       if (!el) return;
-      const navH = 48;
+      const navH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 48;
       const rect = el.getBoundingClientRect();
       const elDocTop = rect.top + window.scrollY;
       const elHeight = el.offsetHeight;
@@ -124,10 +124,10 @@ function About() {
 
           <div className="ab-sticky-bottom">
             <div className="ab-sticky-identity">
-              <h1 className="ab-sticky-name">Mia Liu</h1>
+              <h1 className="ab-sticky-name">Miaomiao(Mia) Liu</h1>
               <div className="ab-sticky-meta">
-                <span className="ab-sticky-role">◼ Product Designer</span>
-                <span className="ab-sticky-loc">Stockholm · Sweden</span>
+                {/* <span className="ab-sticky-role">◼ Product Designer</span> */}
+               
               </div>
             </div>
           </div>

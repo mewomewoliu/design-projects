@@ -216,7 +216,7 @@ function AppContent() {
   // ── SEO config ─────────────────────────────────────────────────────────────
   const getSEOConfig = () => {
     const baseUrl = 'https://mialiu.se';
-    const baseTitle = 'Mia Liu (Miaomiao) - Product Designer & UX Designer Portfolio';
+    const baseTitle = 'Mia Liu (Miaomiao) - Creative Designer & UI Designer & Visual Designer';
     const baseDescription =
       'Mia Liu (Miaomiao) is a Product Designer and UX Designer specializing in Product Strategy, UX/UI Design, Design Systems, and AI-integrated workflows. View design portfolio and case studies.';
     const baseKeywords =

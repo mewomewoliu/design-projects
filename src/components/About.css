@@ -227,8 +227,8 @@
   gap: 0.6rem;
   padding-top: 1rem;
   border-top: 1px solid var(--border);
-  /* override paragraph font size for this row */
-  font-size: 0 !important;
+  /* explicit size resets the inherited large paragraph size */
+  font-size: 0;
 }
 
 .ab-avail-dot {

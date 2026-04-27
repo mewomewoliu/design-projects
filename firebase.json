@@ -42,6 +42,7 @@
       }
     ],
     "public": "build",
+    "limit": 5,
     "ignore": [
       "firebase.json",
       "**/.*",
