@@ -238,7 +238,7 @@ function Intro() {
           <span className="cursor-blink">_</span>
         </h1>
         <p className="hero-lead">
-        Mia is a digital product designer
+        Mia is a Creative Designer 
         </p>
       <div className="hero-meta">
         <span className="hero-tag">[UI_Designer]</span>

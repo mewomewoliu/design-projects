@@ -226,7 +226,7 @@ function AppContent() {
       return {
         title: `About - ${baseTitle}`,
         description:
-          'Learn more about Mia Liu (Miaomiao), Product Designer and UX Designer. View CV, experience, and skills in Product Strategy, UX/UI Design, and Design Systems.',
+          'Learn more about Mia Liu (Miaomiao), Creative Designer & UI Designer & Visual Designer. View CV, experience, and skills in Product Strategy, UX/UI Design, and Design Systems.',
         keywords: `${baseKeywords}, CV, Resume, About Mia Liu, Designer Portfolio`,
         canonicalUrl: `${baseUrl}/about`,
         ogImage: `${baseUrl}/logo.png`,
