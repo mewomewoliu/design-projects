@@ -11,17 +11,19 @@ class ProjectModel {
       { id: 'bbc-design-system', category: 'client', type: 'image', src: '/media/images/bbc-crm-overview.png', alt: 'BlaBlacar Design System for CRM ||| 2021', tags: ['Design System', 'Product Design'] },
       { id: 'scania-helpcenter', category: 'client', type: 'video', src: '/media/videos/scania-helpcenter.mp4', alt: 'Scania Help Center ||| 2023–2024', tags: ['Product Design', 'Research', 'Copy Writing', 'UI Design', 'Workshop'] },
       // { id: 'create', category: 'client', type: 'image', src: '/media/images/storykit-create-page.png', alt: 'Storykit AI Video Creator ||| 2023–2024', tags: ['UX Design', 'UI Design', 'Research', 'Growth', 'Design System'] },
-
+      { id: 'kiki-kat', category: 'independent', type: 'video', src: '/media/videos/branding-kikikatfam1.mp4', alt: 'Kiki Kat Fam Branding ||| 2026', tags: ['AI Design Workflow','Branding', 'Visual Design'] },
       // ── Independent Products ───────────────────────────────────────────────
       
       { id: 'ici-studio', category: 'independent', type: 'video', src: '/media/videos/ici-studio-mockup.mp4', alt: 'ici Studio Mockup Creator ||| 2026', tags: ['Designed with Claude','Vibe Coded'] },
       { id: 'agent-studio', category: 'independent', type: 'video', src: '/media/videos/agent-studio2.mp4', alt: 'Agent Studio: AI Design Agents ||| 2026', tags: ['AI Design Workflow','Multi Agents', 'AI Orchestration'] },
-      { id: 'cv-live', category: 'independent', type: 'video', src: '/media/videos/cv_live.mp4', alt: 'CV Live: Live CV Generator ||| 2026', tags: ['AI Design Workflow','Multi Agents', 'AI Orchestration'] },
+     
+      
       // { id: 'music-mash', category: 'independent', type: 'image', src: '/media/images/music-mash-app.png', alt: 'Music Mash — Spotify App ||| 2020–2021', tags: ['UX Design', 'UI Design', 'Research', 'Testing', 'UI Engineering'] },
       // { id: 'blankt-home', category: 'independent', type: 'video', src: '/media/videos/blank-collection-old.mp4', alt: 'blankt.com — Home ||| 2021–2022', tags: ['UX Design', 'UI Design', 'Research', 'Testing', 'Growth', 'Brand Design'] },
       // { id: 'blankt-web', category: 'independent', type: 'video', src: '/media/videos/blankt.mp4', alt: 'blankt.com — Graphic Editor ||| 2021–2022', tags: ['UX Design', 'UI Design', 'Research', 'Testing', 'Growth', 'Product Design'] },
 
       // ── Cool Stuffs ────────────────────────────────────────────────────────
+      
       { id: 'creative-coding-project', category: 'creative', type: 'video', src: '/media/videos/creative-coding-bob.mp4', alt: 'Visual Design — Bob ||| 2024', tags: ['Visual Design', 'Creative Coding', 'p5.js'] },
       { id: 'creative-coding-project2', category: 'creative', type: 'video', src: '/media/videos/creative-coding-fireworks.mp4', alt: 'Generative — Firework ||| 2024', tags: ['Visual Design', 'Creative Coding', 'p5.js'] },
       { id: 'creative-coding-project3', category: 'creative', type: 'video', src: '/media/videos/creative-coding-type.mp4', alt: 'Dynamic Type ||| 2024', tags: ['Visual Design', 'Creative Coding', 'p5.js'] },
